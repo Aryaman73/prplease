@@ -1,0 +1,98 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* Bitmap type must not be scaled by the browser's own smoothing. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-mono);
+  font-size: var(--text-lg);
+  line-height: 1.5;
+  color: var(--booth-text);
+  background-color: var(--booth-wall);
+  /* A dim overhead lamp above the desk — the booth is lit from one point. */
+  background-image:
+    radial-gradient(ellipse 90% 55% at 50% -10%, rgba(154, 148, 132, 0.13), transparent 70%),
+    linear-gradient(var(--booth-wall), var(--booth-void));
+  background-attachment: fixed;
+}
+
+/* Grain over the whole booth, under all content. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: var(--grain);
+  opacity: 0.045;
+  pointer-events: none;
+  z-index: 0;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-pixel);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+input, button {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--crt);
+  outline-offset: 2px;
+}
+
+/*
+ * Bitmap type renders muddy when antialiased; keep the edges hard.
+ *
+ * The component classes are listed here rather than each carrying the `.pixel`
+ * utility because they set the pixel face in their own rule and are built in too
+ * many places to tag by hand. They were being antialiased, which is half of why
+ * the old 8px labels looked mushy — a 5px capital has no pixels to spare.
+ */
+.pixel,
+.paper__band,
+.tab,
+.button,
+.figure__label {
+  font-family: var(--font-pixel);
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: unset;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

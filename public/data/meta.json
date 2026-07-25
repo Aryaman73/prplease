@@ -1,0 +1,40 @@
+{
+  "dataChangedAt": "2026-07-25T02:36:39.595Z",
+  "generator": "scripts/sync.mjs",
+  "history": {
+    "processingSnapshots": 1
+  },
+  "sources": {
+    "draws": {
+      "hash": "1f4db59bc9923d65",
+      "records": 431,
+      "url": "https://www.canada.ca/content/dam/ircc/documents/json/ee_rounds_123_en.json"
+    },
+    "processing": {
+      "hash": "2d510eb4ed01eb0d",
+      "streams": 4,
+      "upstreamUpdated": "July 7, 2026",
+      "url": "https://www.canada.ca/content/dam/ircc/documents/json/flpt-en.json"
+    },
+    "timelines": {
+      "hash": "f496aeaf49c549e7",
+      "records": 0,
+      "source": "data/timelines.csv (hand-curated)"
+    }
+  },
+  "warnings": {
+    "bandSumMismatches": [
+      {
+        "band": "dd3",
+        "date": "2023-04-26",
+        "delta": -180,
+        "draw": "247",
+        "published": 55867,
+        "sumOfSubBands": 55687
+      }
+    ],
+    "timelineErrors": [],
+    "uncategorizedDrawNames": [],
+    "unparsedTieBreaks": 1
+  }
+}

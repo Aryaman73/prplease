@@ -1,0 +1,919 @@
+/* ---------------------------------------------------------------------------
+ * Layout
+ * ------------------------------------------------------------------------- */
+
+.booth {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4) var(--space-7);
+}
+
+/* ---------------------------------------------------------------------------
+ * Masthead — a stencilled sign bolted above the window.
+ * ------------------------------------------------------------------------- */
+
+.masthead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-bottom: var(--space-4);
+  border-bottom: 3px double var(--rule);
+  margin-bottom: var(--space-6);
+}
+
+.masthead__title {
+  font-size: var(--px-lg);
+  line-height: 1.1;
+  color: #b9b2a0;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+.masthead__sub {
+  margin-top: var(--space-2);
+  font-size: var(--text-xs);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--booth-text-dim);
+}
+
+/* The freshness marker. Deliberately prominent: a stale immigration figure is
+ * worse than no figure, so the age of the data is part of the data. */
+.datestamp {
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--font-pixel);
+  font-size: var(--px-sm);
+  line-height: 1.4;
+  text-align: right;
+  color: var(--crt);
+  border: 1px solid rgba(154, 184, 124, 0.35);
+  background: rgba(154, 184, 124, 0.05);
+}
+
+.datestamp span {
+  display: block;
+  color: var(--booth-text-dim);
+}
+
+/* ---------------------------------------------------------------------------
+ * Paper — the document surface. The only bright plane in the interface.
+ * ------------------------------------------------------------------------- */
+
+.paper {
+  position: relative;
+  background-color: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--paper-edge);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.35),
+    0 18px 30px -18px rgba(0, 0, 0, 0.8);
+}
+
+.paper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--grain);
+  mix-blend-mode: multiply;
+  opacity: 0.07;
+  pointer-events: none;
+}
+
+.paper + .paper {
+  margin-top: var(--space-6);
+}
+
+/* Two documents laid side by side on the desk. */
+.paper-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+
+/* The row is a sibling in its own right, so it needs the same separation a bare
+ * document would get — `.paper + .paper` never matches across it. */
+.paper-row + .paper,
+.paper + .paper-row,
+.paper-row + .paper-row { margin-top: var(--space-6); }
+
+.paper-row .paper + .paper { margin-top: 0; }
+
+/* Coloured band across the top of a document, as on an entry permit. */
+.paper__band {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-pixel);
+  font-size: var(--px-sm);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: var(--stamp-blue);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+}
+
+.paper__band--olive { background: #565b3c; }
+.paper__band--rust  { background: #6d3a2a; }
+
+.paper__body {
+  position: relative;
+  padding: var(--space-5) var(--space-4);
+}
+
+.paper__title {
+  font-size: var(--px-md);
+  line-height: 1.2;
+  margin-bottom: var(--space-2);
+}
+
+.paper__note {
+  margin: var(--space-4) 0 0;
+  font-size: var(--text-md);
+  color: var(--ink-soft);
+}
+
+/* ---------------------------------------------------------------------------
+ * Fields — label, dotted leader, value. The core bureaucratic unit.
+ * ------------------------------------------------------------------------- */
+
+.fields {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+}
+
+.field {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+/*
+ * Typewriter, not pixel. Field labels have to sit *under* their values in the
+ * hierarchy, and Silkscreen has no size that does that — 16px would match the
+ * value's cap height exactly and flatten the pair. It is also far narrower:
+ * "Total applications waiting" is 187px here against 397px set in 16px pixel
+ * type, which is the difference between fitting a card and not.
+ */
+.field__label {
+  flex: none;
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.field__leader {
+  flex: 1;
+  min-width: var(--space-4);
+  border-bottom: 1px dotted var(--rule-soft);
+  transform: translateY(-4px);
+}
+
+.field__value {
+  /* Shrinkable, not `none`: some values are whole IRCC sentences ("We need more
+   * time to process your application") and must wrap rather than run off-page. */
+  flex: 0 1 auto;
+  min-width: 0;
+  font-weight: 700;
+  text-align: right;
+}
+
+.field__value--muted {
+  font-weight: 400;
+  color: var(--ink-faint);
+}
+
+/* The headline figure of a document. */
+.figure {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  margin: var(--space-4) 0;
+}
+
+.figure__value {
+  font-family: var(--font-pixel);
+  /* 44px was off the pixel grid — 38.5px advance, 27.5px cap. 40 is the nearest
+   * crisp size below it. */
+  font-size: var(--px-xl);
+  line-height: 1;
+  color: var(--ink);
+}
+
+.figure__label {
+  font-family: var(--font-pixel);
+  font-size: var(--px-sm);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* ---------------------------------------------------------------------------
+ * Stamps — the interaction verb of the whole site.
+ * ------------------------------------------------------------------------- */
+
+.stamp {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  font-family: var(--font-pixel);
+  font-size: var(--px-sm);
+  letter-spacing: 0.1em;
+  color: var(--stamp-red);
+  border: 3px solid currentColor;
+  box-shadow: inset 0 0 0 1px currentColor;
+  transform: rotate(-7deg);
+  /* Multiply makes the ink sit *in* the paper rather than on top of it. */
+  mix-blend-mode: multiply;
+  opacity: 0.95;
+  white-space: nowrap;
+}
+
+.stamp--approved { color: var(--stamp-green); transform: rotate(4deg); }
+.stamp--denied   { color: var(--stamp-red); }
+.stamp--flag     { color: var(--stamp-red); transform: rotate(-2deg); }
+
+/* Screen-blended grain eats speckles out of the ink so it reads as pressed,
+ * not printed. */
+.stamp::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  background-image: var(--grain);
+  mix-blend-mode: screen;
+  /* Enough to break the ink up, not enough to eat the letterforms. */
+  opacity: 0.26;
+  pointer-events: none;
+}
+
+/* The stamp coming down. Overshoots, lands hard, settles. */
+@keyframes stamp-down {
+  0%   { transform: rotate(var(--rot, -7deg)) scale(2.4); opacity: 0; }
+  55%  { transform: rotate(var(--rot, -7deg)) scale(0.94); opacity: 1; }
+  75%  { transform: rotate(var(--rot, -7deg)) scale(1.04); }
+  100% { transform: rotate(var(--rot, -7deg)) scale(1); opacity: 0.95; }
+}
+
+.stamp--land {
+  animation: stamp-down 260ms cubic-bezier(0.2, 0.9, 0.3, 1) both;
+}
+
+.stamp--approved.stamp--land { --rot: 4deg; }
+.stamp--flag.stamp--land { --rot: -2deg; }
+
+/* ---------------------------------------------------------------------------
+ * Inspection panel — the CRS check.
+ * ------------------------------------------------------------------------- */
+
+.inspect {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.inspect__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.inspect__label {
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.inspect__input {
+  width: 8ch;
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--font-pixel);
+  font-size: var(--px-sm);
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid var(--ink-soft);
+  border-radius: 0;
+}
+
+/* Numeric spinners break the typewriter alignment. */
+.inspect__input::-webkit-outer-spin-button,
+.inspect__input::-webkit-inner-spin-button { appearance: none; margin: 0; }
+.inspect__input { appearance: textfield; }
+
+/* The one-line verdict on a run of rounds — the answer most readers want before
+ * they read the individual stamps. */
+.inspect__tally {
+  margin: var(--space-5) 0 0;
+  font-size: var(--text-md);
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.inspect__tally:empty { display: none; }
+
+/* Scope toggle — radios kept real for keyboard and screen readers, painted as
+ * a segmented control. */
+.scope {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.scope legend {
+  padding: 0;
+  margin-bottom: var(--space-2);
+}
+
+.scope__option {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+  border: 1px solid var(--ink-soft);
+  cursor: pointer;
+}
+
+.scope__option + .scope__option { border-left: none; }
+
+.scope__radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.scope__option:hover { background: rgba(255, 255, 255, 0.2); }
+
+.scope__option:has(.scope__radio:checked) {
+  color: var(--paper);
+  background: #4a4335;
+  border-color: #2c281f;
+}
+
+.scope__option:has(.scope__radio:focus-visible) {
+  outline: 2px solid var(--stamp-blue);
+  outline-offset: 2px;
+}
+
+.button {
+  padding: var(--space-2) var(--space-4);
+  font-family: var(--font-pixel);
+  font-size: var(--px-sm);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: #4a4335;
+  border: 1px solid #2c281f;
+  border-radius: 0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 2px 0 #2c281f;
+  cursor: pointer;
+}
+
+.button:hover { background: #564e3d; }
+.button:active { transform: translateY(2px); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1); }
+
+/* ---------------------------------------------------------------------------
+ * Verdicts — one row per category, stamped against the applicant's score.
+ * ------------------------------------------------------------------------- */
+
+.verdicts {
+  display: grid;
+  gap: var(--space-1);
+  margin: var(--space-5) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.verdict {
+  display: grid;
+  grid-template-columns: 1fr auto minmax(120px, auto);
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  border-bottom: 1px dotted var(--rule-soft);
+}
+
+.verdict__name {
+  font-size: var(--text-md);
+}
+
+.verdict__meta {
+  font-size: var(--text-xs);
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+
+.verdict__mark {
+  justify-self: end;
+}
+
+.empty {
+  padding: var(--space-5) 0 0;
+  font-size: var(--text-md);
+  color: var(--ink-faint);
+}
+
+/* ---------------------------------------------------------------------------
+ * Tabs — index tabs on a file divider.
+ * ------------------------------------------------------------------------- */
+
+.tabs {
+  display: flex;
+  /* Five tabs at 16px come to ~790px against a 868px content box. That fits, but
+   * with no room for a narrower window, so let them wrap rather than overflow. */
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin-bottom: var(--space-5);
+  border-bottom: 1px solid var(--rule);
+}
+
+.tab {
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--font-pixel);
+  font-size: var(--px-sm);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--booth-text-dim);
+  background: var(--booth-panel);
+  border: 1px solid var(--rule);
+  border-bottom: none;
+  transform: translateY(1px);
+}
+
+.tab:hover { color: var(--booth-text); background: var(--desk); }
+
+.tab--active {
+  color: var(--ink);
+  background: var(--paper);
+  border-color: var(--paper-edge);
+}
+
+/* ---------------------------------------------------------------------------
+ * Filter row — one row, above everything it scopes.
+ * ------------------------------------------------------------------------- */
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.control__label {
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--booth-text-dim);
+}
+
+.control__input {
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-md);
+  color: var(--booth-text);
+  background: var(--booth-panel);
+  border: 1px solid var(--rule);
+  border-radius: 0;
+}
+
+/* ---------------------------------------------------------------------------
+ * Chart
+ * ------------------------------------------------------------------------- */
+
+.chart__host {
+  position: relative;
+  margin-top: var(--space-4);
+}
+
+.chart { display: block; }
+.chart:focus-visible { outline: 2px solid var(--stamp-blue); outline-offset: 2px; }
+
+/* Solid hairlines, one step off the paper. Never dashed — dashing reads as a
+ * threshold or a projection when it is only a grid. */
+.chart__grid { stroke: var(--chart-grid); stroke-width: 1; }
+.chart__axis { stroke: var(--ink-faint); stroke-width: 1; }
+
+/*
+ * The one place the pixel face cannot go. Ticks must stay small — a dozen month
+ * labels at 16px collide across the x-axis — and Silkscreen has no small size.
+ * Courier Prime at 12px is within 0.2px per character of the old 8px pixel type,
+ * so nothing reflows, and it is the readable option besides. This is the
+ * "numbers are never stylized past the point of being readable" rule applied to
+ * the axis rather than only to the marks.
+ */
+.chart__tick {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  fill: var(--ink-soft);
+  text-anchor: middle;
+}
+
+.chart__tick--y { text-anchor: end; }
+
+.chart__marks rect { fill: var(--chart-accent); }
+/* The surface ring that keeps overlapping marks legible. */
+.chart__ring { fill: var(--paper); }
+
+.chart__line {
+  fill: none;
+  stroke: var(--chart-accent);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.chart__crosshair { stroke: var(--ink-faint); stroke-width: 1; }
+.chart__highlight { fill: none; stroke: var(--ink); stroke-width: 1.5; }
+
+.chart__tooltip {
+  position: absolute;
+  z-index: 2;
+  min-width: 118px;
+  padding: var(--space-2) var(--space-3);
+  pointer-events: none;
+  background: var(--booth-panel);
+  border: 1px solid var(--rule);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.chart__tooltip-value {
+  font-family: var(--font-pixel);
+  font-size: var(--px-sm);
+  color: #cfc7b4;
+}
+
+.chart__tooltip-label {
+  margin-top: var(--space-1);
+  font-size: var(--text-xs);
+  color: var(--booth-text);
+}
+
+.chart__tooltip-meta {
+  font-size: var(--text-xs);
+  color: var(--booth-text-dim);
+}
+
+/* ---------------------------------------------------------------------------
+ * Pool — stacked areas over an ordinal ramp.
+ * ------------------------------------------------------------------------- */
+
+.pool-band--1 { fill: var(--pool-1); }
+.pool-band--2 { fill: var(--pool-2); }
+.pool-band--3 { fill: var(--pool-3); }
+.pool-band--4 { fill: var(--pool-4); }
+.pool-band--5 { fill: var(--pool-5); }
+.pool-band--6 { fill: var(--pool-6); }
+.pool-band--7 { fill: var(--pool-7); }
+
+/* The surface-coloured separator between stacked areas — the area-chart
+ * equivalent of the 2px gap, doing the job a stroke would do badly. */
+.pool-sep {
+  fill: none;
+  stroke: var(--paper);
+  stroke-width: 1.5;
+}
+
+/* Ordered scale, so the legend is a ramp rather than a row of swatches. */
+.ramp {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: var(--space-4) 0 var(--space-2);
+  flex-wrap: wrap;
+}
+
+.ramp__cap {
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.ramp__step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 6px;
+  font-size: var(--text-xs);
+  font-variant-numeric: tabular-nums;
+  color: var(--paper);
+  border: 1px solid var(--paper);
+}
+
+.ramp__step--1 { background: var(--pool-1); }
+.ramp__step--2 { background: var(--pool-2); }
+.ramp__step--3 { background: var(--pool-3); }
+.ramp__step--4 { background: var(--pool-4); }
+.ramp__step--5 { background: var(--pool-5); }
+.ramp__step--6 { background: var(--pool-6); }
+.ramp__step--7 { background: var(--pool-7); }
+
+/* Tooltip rows: a short key, the band, then the value. */
+.pool-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: 2px;
+  font-size: var(--text-xs);
+  font-variant-numeric: tabular-nums;
+  color: var(--booth-text);
+}
+
+.pool-row__key { width: 10px; height: 3px; flex: none; }
+.pool-row__key--1 { background: var(--pool-1); }
+.pool-row__key--2 { background: var(--pool-2); }
+.pool-row__key--3 { background: var(--pool-3); }
+.pool-row__key--4 { background: var(--pool-4); }
+.pool-row__key--5 { background: var(--pool-5); }
+.pool-row__key--6 { background: var(--pool-6); }
+.pool-row__key--7 { background: var(--pool-7); }
+
+.pool-row__band { flex: 1; color: var(--booth-text-dim); }
+.pool-row__value { font-weight: 700; }
+
+/* No legend on the timeline: it carries a single series, so the summary line
+ * above it already names what is plotted and a one-swatch box would restate it. */
+
+.ledger__summary {
+  margin: 0;
+  font-size: var(--text-md);
+  color: var(--ink-soft);
+}
+
+/* ---------------------------------------------------------------------------
+ * Ledger — the table view. Every charted value is readable here unhovered.
+ * ------------------------------------------------------------------------- */
+
+.paper__body--flush { padding: 0; }
+
+.ledger__scroll {
+  max-height: 70vh;
+  overflow: auto;
+}
+
+.ledger {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
+}
+
+.ledger th,
+.ledger td {
+  padding: var(--space-2) var(--space-3);
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.ledger th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  /* Typewriter for the same reason as the axis ticks: the pool table carries
+   * nine `white-space: nowrap` columns, and 16px pixel headers would push it
+   * from 756px to ~1300px and force the scroller to work for a living. */
+  font-size: var(--text-xs);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  background: var(--paper-shade);
+  border-bottom: 1px solid var(--paper-edge);
+}
+
+.ledger tbody tr:hover { background: rgba(255, 255, 255, 0.22); }
+
+.ledger .num { text-align: right; }
+.ledger .strong { font-weight: 700; }
+.ledger .muted { color: var(--ink-faint); }
+
+/* ---------------------------------------------------------------------------
+ * Rulebook — the glossary, set like a bound reference.
+ * ------------------------------------------------------------------------- */
+
+.rulebook__section { margin-top: var(--space-6); }
+.rulebook__section[hidden] { display: none; }
+
+/*
+ * Section headings and term names are both 16px now — the pixel scale has no
+ * step between them — so the hierarchy is carried by register instead: headings
+ * are uppercase and widely tracked against the mixed-case terms, on top of the
+ * full-width double rule they already had.
+ *
+ * Not by weight. Silkscreen's 700 advance is 0.733em, which is fractional at
+ * every size (11.73px at 16px), so bold pixel type never lands on the grid.
+ */
+.rulebook__heading {
+  padding-bottom: var(--space-2);
+  font-size: var(--px-sm);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  /* Was --rule-soft at 0.22 alpha, which all but vanished on parchment. With the
+   * size step gone this rule is now carrying the section break on its own. */
+  border-bottom: 3px double var(--ink-faint);
+}
+
+.rulebook__entry {
+  display: grid;
+  /* Widened with the term names: 16px pixel type is 2x the advance of 8px, and
+   * at 220px "Background check" wrapped mid-term. */
+  grid-template-columns: minmax(200px, 260px) 1fr;
+  gap: var(--space-4);
+  padding: var(--space-3) 0;
+  border-bottom: 1px dotted var(--rule-soft);
+}
+
+.rulebook__entry[hidden] { display: none; }
+
+.rulebook__term { display: flex; flex-direction: column; gap: 2px; }
+
+.rulebook__name {
+  font-size: var(--px-sm);
+  line-height: 1.3;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+}
+
+.rulebook__expansion {
+  font-size: var(--text-xs);
+  font-style: italic;
+  color: var(--ink-faint);
+}
+
+.rulebook__definition {
+  margin: 0;
+  font-size: var(--text-md);
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+/* ---------------------------------------------------------------------------
+ * Your File — the milestone timeline.
+ * ------------------------------------------------------------------------- */
+
+.timeline {
+  margin-top: var(--space-5);
+  border-top: 1px solid var(--rule-soft);
+}
+
+.timeline__row {
+  display: grid;
+  grid-template-columns: minmax(150px, 1fr) auto minmax(120px, auto) minmax(110px, auto);
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  border-bottom: 1px dotted var(--rule-soft);
+}
+
+.timeline__head { display: flex; flex-direction: column; gap: 2px; }
+
+.timeline__label {
+  font-size: var(--px-sm);
+  line-height: 1.3;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+}
+
+.timeline__row--done .timeline__label { color: var(--ink); }
+
+.timeline__hint { font-size: var(--text-xs); color: var(--ink-faint); }
+
+.timeline__date {
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid var(--ink-soft);
+  border-radius: 0;
+}
+
+.timeline__gap {
+  font-size: var(--text-xs);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-faint);
+  text-align: right;
+}
+
+.timeline__mark { justify-self: end; }
+
+.timeline__pending {
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.timeline__actions { margin-top: var(--space-5); }
+
+/* ---------------------------------------------------------------------------
+ * Colophon
+ * ------------------------------------------------------------------------- */
+
+.colophon {
+  margin-top: var(--space-7);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--rule);
+  font-size: var(--text-xs);
+  line-height: 1.7;
+  color: var(--booth-text-dim);
+}
+
+.colophon a { color: var(--booth-text); }
+
+/* ---------------------------------------------------------------------------
+ * Mobile — the booth metaphor does not survive at 375px, so it is dropped.
+ * Palette, stamps and type carry the aesthetic instead.
+ * ------------------------------------------------------------------------- */
+
+@media (max-width: 620px) {
+  .booth { padding: var(--space-5) var(--space-3) var(--space-6); }
+
+  .masthead__title { font-size: var(--px-md); }
+
+  .datestamp { text-align: left; }
+
+  /* 32, not 34: the next crisp step down. */
+  .figure__value { font-size: var(--px-lg); }
+
+  /* Rotated stamps overflow narrow containers and force horizontal scroll.
+   * Each selector must match the specificity of the desktop rule it overrides —
+   * a media query adds none of its own — and --rot has to be reset alongside,
+   * because the landing animation's `both` fill mode outranks any transform
+   * declared here. */
+  .stamp,
+  .stamp--approved,
+  .stamp--flag { transform: none; }
+
+  .stamp--land,
+  .stamp--approved.stamp--land,
+  .stamp--flag.stamp--land { --rot: 0deg; }
+
+  /* One column: the stamp drops below the row it belongs to and sits left, as
+   * though pressed onto the line. Three columns at 375px wrapped every category
+   * name to three lines. */
+  .verdict {
+    grid-template-columns: 1fr;
+    row-gap: var(--space-2);
+    padding: var(--space-3) 0;
+  }
+
+  .verdict__mark { justify-self: start; }
+
+  .controls { gap: var(--space-3); }
+  .control { flex: 1 1 140px; }
+  .control__input { width: 100%; }
+
+  .tabs { gap: 0; }
+  .tab { text-align: center; padding: var(--space-2); }
+
+  /* The ledger keeps its own horizontal scroll so the page body never does. */
+  .ledger__scroll { max-height: 60vh; }
+
+  .paper-row { grid-template-columns: 1fr; }
+  .paper-row .paper + .paper { margin-top: var(--space-5); }
+
+  /* Four columns don't fit; the stamp rides beside the label and the date and
+   * day-count sit underneath. */
+  .timeline__row {
+    grid-template-columns: 1fr auto;
+    row-gap: var(--space-2);
+  }
+
+  .timeline__date { grid-column: 1; }
+  .timeline__gap { grid-column: 2; text-align: right; }
+  .timeline__mark { grid-column: 2; grid-row: 1; }
+
+  .rulebook__entry { grid-template-columns: 1fr; gap: var(--space-2); }
+
+  /* At this width a long value wrapped beside its label reads as a ragged block;
+   * stacking it is clearer, and the leader has nothing left to lead. */
+  .field { flex-wrap: wrap; }
+  .field__leader { display: none; }
+  .field__value { flex: 1 1 100%; text-align: left; }
+
+  /* Five tabs won't sit in one row at 375px. `.tabs` wraps at every width now,
+   * so this only has to say how the wrapped rows fill. */
+  .tab { flex: 1 0 auto; }
+}

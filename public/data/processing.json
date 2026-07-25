@@ -1,0 +1,6123 @@
+{
+  "federalSkilledTrades": {
+    "days": null,
+    "known": false,
+    "raw": "Not enough data"
+  },
+  "streams": [
+    {
+      "byAorMonth": {
+        "2016-01": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-02": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-03": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-04": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-05": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-06": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-07": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-08": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-09": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-10": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-11": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-12": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-01": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-02": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-03": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-04": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-05": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-06": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-07": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-08": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-09": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-10": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-11": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-12": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-01": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-02": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-03": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-04": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-05": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-06": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-07": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-08": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-09": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-10": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-11": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-12": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-01": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-02": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-03": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-04": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-05": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-06": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-07": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-08": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-09": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-10": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-11": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-12": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-01": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-02": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-03": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-04": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-05": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-06": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-07": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-08": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-09": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-10": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-11": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-12": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-01": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-02": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-03": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-04": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-05": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-06": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-07": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-08": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-09": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-10": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-11": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": 30,
+            "known": true,
+            "raw": "About 1 month left"
+          }
+        },
+        "2021-12": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-01": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-02": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": 30,
+            "known": true,
+            "raw": "About 1 month left"
+          }
+        },
+        "2022-03": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-04": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-05": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-06": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-07": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-08": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-09": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-10": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-11": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-12": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-01": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-02": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-03": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-04": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-05": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-06": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-07": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-08": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-09": {
+          "peopleAhead": {
+            "count": 400,
+            "known": true,
+            "raw": "About 400 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-10": {
+          "peopleAhead": {
+            "count": 400,
+            "known": true,
+            "raw": "About 400 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-11": {
+          "peopleAhead": {
+            "count": 400,
+            "known": true,
+            "raw": "About 400 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-12": {
+          "peopleAhead": {
+            "count": 500,
+            "known": true,
+            "raw": "About 500 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-01": {
+          "peopleAhead": {
+            "count": 500,
+            "known": true,
+            "raw": "About 500 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-02": {
+          "peopleAhead": {
+            "count": 600,
+            "known": true,
+            "raw": "About 600 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-03": {
+          "peopleAhead": {
+            "count": 600,
+            "known": true,
+            "raw": "About 600 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-04": {
+          "peopleAhead": {
+            "count": 700,
+            "known": true,
+            "raw": "About 700 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-05": {
+          "peopleAhead": {
+            "count": 700,
+            "known": true,
+            "raw": "About 700 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-06": {
+          "peopleAhead": {
+            "count": 800,
+            "known": true,
+            "raw": "About 800 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-07": {
+          "peopleAhead": {
+            "count": 800,
+            "known": true,
+            "raw": "About 800 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-08": {
+          "peopleAhead": {
+            "count": 1000,
+            "known": true,
+            "raw": "About 1,000 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-09": {
+          "peopleAhead": {
+            "count": 1200,
+            "known": true,
+            "raw": "About 1,200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-10": {
+          "peopleAhead": {
+            "count": 1400,
+            "known": true,
+            "raw": "About 1,400 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-11": {
+          "peopleAhead": {
+            "count": 1500,
+            "known": true,
+            "raw": "About 1,500 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-12": {
+          "peopleAhead": {
+            "count": 1700,
+            "known": true,
+            "raw": "About 1,700 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2025-01": {
+          "peopleAhead": {
+            "count": 1800,
+            "known": true,
+            "raw": "About 1,800 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2025-02": {
+          "peopleAhead": {
+            "count": 1900,
+            "known": true,
+            "raw": "About 1,900 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2025-03": {
+          "peopleAhead": {
+            "count": 2200,
+            "known": true,
+            "raw": "About 2,200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2025-04": {
+          "peopleAhead": {
+            "count": 2400,
+            "known": true,
+            "raw": "About 2,400 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2025-05": {
+          "peopleAhead": {
+            "count": 2500,
+            "known": true,
+            "raw": "About 2,500 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2025-06": {
+          "peopleAhead": {
+            "count": 2500,
+            "known": true,
+            "raw": "About 2,500 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2025-07": {
+          "peopleAhead": {
+            "count": 2700,
+            "known": true,
+            "raw": "About 2,700 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2025-08": {
+          "peopleAhead": {
+            "count": 3100,
+            "known": true,
+            "raw": "About 3,100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2025-09": {
+          "peopleAhead": {
+            "count": 3500,
+            "known": true,
+            "raw": "About 3,500 people ahead of you"
+          },
+          "waitTime": {
+            "days": 30,
+            "known": true,
+            "raw": "About 1 month left"
+          }
+        },
+        "2025-10": {
+          "peopleAhead": {
+            "count": 4200,
+            "known": true,
+            "raw": "About 4,200 people ahead of you"
+          },
+          "waitTime": {
+            "days": 30,
+            "known": true,
+            "raw": "About 1 month left"
+          }
+        },
+        "2025-11": {
+          "peopleAhead": {
+            "count": 6200,
+            "known": true,
+            "raw": "About 6,200 people ahead of you"
+          },
+          "waitTime": {
+            "days": 30,
+            "known": true,
+            "raw": "About 1 month left"
+          }
+        },
+        "2025-12": {
+          "peopleAhead": {
+            "count": 8000,
+            "known": true,
+            "raw": "About 8,000 people ahead of you"
+          },
+          "waitTime": {
+            "days": 30,
+            "known": true,
+            "raw": "About 1 month left"
+          }
+        },
+        "2026-01": {
+          "peopleAhead": {
+            "count": 11500,
+            "known": true,
+            "raw": "About 11,500 people ahead of you"
+          },
+          "waitTime": {
+            "days": 30,
+            "known": true,
+            "raw": "About 1 month left"
+          }
+        },
+        "2026-02": {
+          "peopleAhead": {
+            "count": 17200,
+            "known": true,
+            "raw": "About 17,200 people ahead of you"
+          },
+          "waitTime": {
+            "days": 30,
+            "known": true,
+            "raw": "About 1 month left"
+          }
+        },
+        "2026-03": {
+          "peopleAhead": {
+            "count": 31000,
+            "known": true,
+            "raw": "About 31,000 people ahead of you"
+          },
+          "waitTime": {
+            "days": 61,
+            "known": true,
+            "raw": "2 months left"
+          }
+        },
+        "2026-04": {
+          "peopleAhead": {
+            "count": 44000,
+            "known": true,
+            "raw": "About 44,000 people ahead of you"
+          },
+          "waitTime": {
+            "days": 122,
+            "known": true,
+            "raw": "4 months left"
+          }
+        },
+        "2026-05": {
+          "peopleAhead": {
+            "count": 55400,
+            "known": true,
+            "raw": "About 55,400 people ahead of you"
+          },
+          "waitTime": {
+            "days": 122,
+            "known": true,
+            "raw": "4 months left"
+          }
+        },
+        "2026-06": {
+          "peopleAhead": {
+            "count": 61500,
+            "known": true,
+            "raw": "About 61,500 people ahead of you"
+          },
+          "waitTime": {
+            "days": 152,
+            "known": true,
+            "raw": "5 months left"
+          }
+        }
+      },
+      "current": {
+        "days": 183,
+        "known": true,
+        "raw": "About 6 months"
+      },
+      "key": "cec",
+      "label": "Canadian Experience Class",
+      "totalWaiting": {
+        "count": 61500,
+        "known": true,
+        "raw": "About 61,500 people waiting"
+      }
+    },
+    {
+      "byAorMonth": {
+        "2016-01": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-02": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-03": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-04": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-05": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-06": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-07": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-08": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-09": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-10": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-11": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-12": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-01": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-02": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-03": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-04": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-05": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-06": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-07": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-08": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-09": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-10": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-11": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-12": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-01": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-02": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-03": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-04": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-05": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-06": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-07": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-08": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-09": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-10": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-11": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-12": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-01": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-02": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-03": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-04": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-05": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-06": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-07": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-08": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-09": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-10": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-11": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-12": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-01": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-02": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-03": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-04": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-05": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-06": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-07": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-08": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-09": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-10": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-11": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-12": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-01": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-02": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-03": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": 30,
+            "known": true,
+            "raw": "About 1 month left"
+          }
+        },
+        "2021-04": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": 30,
+            "known": true,
+            "raw": "About 1 month left"
+          }
+        },
+        "2021-05": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-06": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-07": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-08": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-09": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-10": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-11": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-12": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-01": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-02": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-03": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-04": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-05": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-06": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-07": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-08": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-09": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-10": {
+          "peopleAhead": {
+            "count": 400,
+            "known": true,
+            "raw": "About 400 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-11": {
+          "peopleAhead": {
+            "count": 400,
+            "known": true,
+            "raw": "About 400 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-12": {
+          "peopleAhead": {
+            "count": 400,
+            "known": true,
+            "raw": "About 400 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-01": {
+          "peopleAhead": {
+            "count": 400,
+            "known": true,
+            "raw": "About 400 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-02": {
+          "peopleAhead": {
+            "count": 400,
+            "known": true,
+            "raw": "About 400 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-03": {
+          "peopleAhead": {
+            "count": 400,
+            "known": true,
+            "raw": "About 400 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-04": {
+          "peopleAhead": {
+            "count": 500,
+            "known": true,
+            "raw": "About 500 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-05": {
+          "peopleAhead": {
+            "count": 500,
+            "known": true,
+            "raw": "About 500 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-06": {
+          "peopleAhead": {
+            "count": 500,
+            "known": true,
+            "raw": "About 500 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-07": {
+          "peopleAhead": {
+            "count": 600,
+            "known": true,
+            "raw": "About 600 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-08": {
+          "peopleAhead": {
+            "count": 600,
+            "known": true,
+            "raw": "About 600 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-09": {
+          "peopleAhead": {
+            "count": 700,
+            "known": true,
+            "raw": "About 700 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-10": {
+          "peopleAhead": {
+            "count": 800,
+            "known": true,
+            "raw": "About 800 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-11": {
+          "peopleAhead": {
+            "count": 800,
+            "known": true,
+            "raw": "About 800 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-12": {
+          "peopleAhead": {
+            "count": 800,
+            "known": true,
+            "raw": "About 800 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-01": {
+          "peopleAhead": {
+            "count": 900,
+            "known": true,
+            "raw": "About 900 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-02": {
+          "peopleAhead": {
+            "count": 900,
+            "known": true,
+            "raw": "About 900 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-03": {
+          "peopleAhead": {
+            "count": 1100,
+            "known": true,
+            "raw": "About 1,100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-04": {
+          "peopleAhead": {
+            "count": 1200,
+            "known": true,
+            "raw": "About 1,200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-05": {
+          "peopleAhead": {
+            "count": 1300,
+            "known": true,
+            "raw": "About 1,300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-06": {
+          "peopleAhead": {
+            "count": 1300,
+            "known": true,
+            "raw": "About 1,300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-07": {
+          "peopleAhead": {
+            "count": 1300,
+            "known": true,
+            "raw": "About 1,300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-08": {
+          "peopleAhead": {
+            "count": 1400,
+            "known": true,
+            "raw": "About 1,400 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-09": {
+          "peopleAhead": {
+            "count": 1500,
+            "known": true,
+            "raw": "About 1,500 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-10": {
+          "peopleAhead": {
+            "count": 1600,
+            "known": true,
+            "raw": "About 1,600 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-11": {
+          "peopleAhead": {
+            "count": 1600,
+            "known": true,
+            "raw": "About 1,600 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-12": {
+          "peopleAhead": {
+            "count": 1700,
+            "known": true,
+            "raw": "About 1,700 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2025-01": {
+          "peopleAhead": {
+            "count": 1800,
+            "known": true,
+            "raw": "About 1,800 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2025-02": {
+          "peopleAhead": {
+            "count": 1800,
+            "known": true,
+            "raw": "About 1,800 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2025-03": {
+          "peopleAhead": {
+            "count": 2000,
+            "known": true,
+            "raw": "About 2,000 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2025-04": {
+          "peopleAhead": {
+            "count": 2700,
+            "known": true,
+            "raw": "About 2,700 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2025-05": {
+          "peopleAhead": {
+            "count": 3400,
+            "known": true,
+            "raw": "About 3,400 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2025-06": {
+          "peopleAhead": {
+            "count": 3500,
+            "known": true,
+            "raw": "About 3,500 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2025-07": {
+          "peopleAhead": {
+            "count": 3500,
+            "known": true,
+            "raw": "About 3,500 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2025-08": {
+          "peopleAhead": {
+            "count": 3500,
+            "known": true,
+            "raw": "About 3,500 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2025-09": {
+          "peopleAhead": {
+            "count": 3800,
+            "known": true,
+            "raw": "About 3,800 people ahead of you"
+          },
+          "waitTime": {
+            "days": 30,
+            "known": true,
+            "raw": "About 1 month left"
+          }
+        },
+        "2025-10": {
+          "peopleAhead": {
+            "count": 4500,
+            "known": true,
+            "raw": "About 4,500 people ahead of you"
+          },
+          "waitTime": {
+            "days": 30,
+            "known": true,
+            "raw": "About 1 month left"
+          }
+        },
+        "2025-11": {
+          "peopleAhead": {
+            "count": 5400,
+            "known": true,
+            "raw": "About 5,400 people ahead of you"
+          },
+          "waitTime": {
+            "days": 30,
+            "known": true,
+            "raw": "About 1 month left"
+          }
+        },
+        "2025-12": {
+          "peopleAhead": {
+            "count": 9000,
+            "known": true,
+            "raw": "About 9,000 people ahead of you"
+          },
+          "waitTime": {
+            "days": 30,
+            "known": true,
+            "raw": "About 1 month left"
+          }
+        },
+        "2026-01": {
+          "peopleAhead": {
+            "count": 14900,
+            "known": true,
+            "raw": "About 14,900 people ahead of you"
+          },
+          "waitTime": {
+            "days": 61,
+            "known": true,
+            "raw": "2 months left"
+          }
+        },
+        "2026-02": {
+          "peopleAhead": {
+            "count": 21100,
+            "known": true,
+            "raw": "About 21,100 people ahead of you"
+          },
+          "waitTime": {
+            "days": 61,
+            "known": true,
+            "raw": "2 months left"
+          }
+        },
+        "2026-03": {
+          "peopleAhead": {
+            "count": 26000,
+            "known": true,
+            "raw": "About 26,000 people ahead of you"
+          },
+          "waitTime": {
+            "days": 91,
+            "known": true,
+            "raw": "3 months left"
+          }
+        },
+        "2026-04": {
+          "peopleAhead": {
+            "count": 38000,
+            "known": true,
+            "raw": "About 38,000 people ahead of you"
+          },
+          "waitTime": {
+            "days": 122,
+            "known": true,
+            "raw": "4 months left"
+          }
+        },
+        "2026-05": {
+          "peopleAhead": {
+            "count": 46900,
+            "known": true,
+            "raw": "About 46,900 people ahead of you"
+          },
+          "waitTime": {
+            "days": 152,
+            "known": true,
+            "raw": "5 months left"
+          }
+        },
+        "2026-06": {
+          "peopleAhead": {
+            "count": 55800,
+            "known": true,
+            "raw": "About 55,800 people ahead of you"
+          },
+          "waitTime": {
+            "days": 183,
+            "known": true,
+            "raw": "6 months left"
+          }
+        }
+      },
+      "current": {
+        "days": 213,
+        "known": true,
+        "raw": "About 7 months"
+      },
+      "key": "fsw",
+      "label": "Federal Skilled Worker",
+      "totalWaiting": {
+        "count": 55800,
+        "known": true,
+        "raw": "About 55,800 people waiting"
+      }
+    },
+    {
+      "byAorMonth": {
+        "2016-01": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-02": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-03": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-04": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-05": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-06": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-07": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-08": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-09": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-10": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-11": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-12": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-01": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-02": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-03": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-04": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-05": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-06": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-07": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-08": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-09": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-10": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-11": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-12": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-01": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-02": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-03": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-04": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-05": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-06": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-07": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-08": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-09": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-10": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-11": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-12": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-01": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-02": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-03": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-04": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-05": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-06": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-07": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-08": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-09": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-10": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-11": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-12": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-01": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-02": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-03": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-04": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-05": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-06": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-07": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-08": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-09": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-10": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-11": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-12": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-01": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-02": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-03": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-04": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-05": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-06": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-07": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-08": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-09": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-10": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-11": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-12": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-01": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-02": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-03": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-04": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-05": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-06": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-07": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-08": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-09": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-10": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-11": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-12": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-01": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-02": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-03": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-04": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-05": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-06": {
+          "peopleAhead": {
+            "count": 400,
+            "known": true,
+            "raw": "About 400 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-07": {
+          "peopleAhead": {
+            "count": 500,
+            "known": true,
+            "raw": "About 500 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-08": {
+          "peopleAhead": {
+            "count": 600,
+            "known": true,
+            "raw": "About 600 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-09": {
+          "peopleAhead": {
+            "count": 600,
+            "known": true,
+            "raw": "About 600 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-10": {
+          "peopleAhead": {
+            "count": 700,
+            "known": true,
+            "raw": "About 700 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-11": {
+          "peopleAhead": {
+            "count": 900,
+            "known": true,
+            "raw": "About 900 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-12": {
+          "peopleAhead": {
+            "count": 1000,
+            "known": true,
+            "raw": "About 1,000 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-01": {
+          "peopleAhead": {
+            "count": 1200,
+            "known": true,
+            "raw": "About 1,200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-02": {
+          "peopleAhead": {
+            "count": 1300,
+            "known": true,
+            "raw": "About 1,300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-03": {
+          "peopleAhead": {
+            "count": 1400,
+            "known": true,
+            "raw": "About 1,400 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-04": {
+          "peopleAhead": {
+            "count": 1500,
+            "known": true,
+            "raw": "About 1,500 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-05": {
+          "peopleAhead": {
+            "count": 1600,
+            "known": true,
+            "raw": "About 1,600 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-06": {
+          "peopleAhead": {
+            "count": 1700,
+            "known": true,
+            "raw": "About 1,700 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-07": {
+          "peopleAhead": {
+            "count": 1900,
+            "known": true,
+            "raw": "About 1,900 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-08": {
+          "peopleAhead": {
+            "count": 2100,
+            "known": true,
+            "raw": "About 2,100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-09": {
+          "peopleAhead": {
+            "count": 2300,
+            "known": true,
+            "raw": "About 2,300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-10": {
+          "peopleAhead": {
+            "count": 2400,
+            "known": true,
+            "raw": "About 2,400 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-11": {
+          "peopleAhead": {
+            "count": 2600,
+            "known": true,
+            "raw": "About 2,600 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-12": {
+          "peopleAhead": {
+            "count": 2800,
+            "known": true,
+            "raw": "About 2,800 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2025-01": {
+          "peopleAhead": {
+            "count": 3100,
+            "known": true,
+            "raw": "About 3,100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2025-02": {
+          "peopleAhead": {
+            "count": 3200,
+            "known": true,
+            "raw": "About 3,200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2025-03": {
+          "peopleAhead": {
+            "count": 3300,
+            "known": true,
+            "raw": "About 3,300 people ahead of you"
+          },
+          "waitTime": {
+            "days": 30,
+            "known": true,
+            "raw": "About 1 month left"
+          }
+        },
+        "2025-04": {
+          "peopleAhead": {
+            "count": 3700,
+            "known": true,
+            "raw": "About 3,700 people ahead of you"
+          },
+          "waitTime": {
+            "days": 30,
+            "known": true,
+            "raw": "About 1 month left"
+          }
+        },
+        "2025-05": {
+          "peopleAhead": {
+            "count": 3900,
+            "known": true,
+            "raw": "About 3,900 people ahead of you"
+          },
+          "waitTime": {
+            "days": 30,
+            "known": true,
+            "raw": "About 1 month left"
+          }
+        },
+        "2025-06": {
+          "peopleAhead": {
+            "count": 4200,
+            "known": true,
+            "raw": "About 4,200 people ahead of you"
+          },
+          "waitTime": {
+            "days": 30,
+            "known": true,
+            "raw": "About 1 month left"
+          }
+        },
+        "2025-07": {
+          "peopleAhead": {
+            "count": 4400,
+            "known": true,
+            "raw": "About 4,400 people ahead of you"
+          },
+          "waitTime": {
+            "days": 30,
+            "known": true,
+            "raw": "About 1 month left"
+          }
+        },
+        "2025-08": {
+          "peopleAhead": {
+            "count": 4600,
+            "known": true,
+            "raw": "About 4,600 people ahead of you"
+          },
+          "waitTime": {
+            "days": 30,
+            "known": true,
+            "raw": "About 1 month left"
+          }
+        },
+        "2025-09": {
+          "peopleAhead": {
+            "count": 4700,
+            "known": true,
+            "raw": "About 4,700 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2025-10": {
+          "peopleAhead": {
+            "count": 4900,
+            "known": true,
+            "raw": "About 4,900 people ahead of you"
+          },
+          "waitTime": {
+            "days": 61,
+            "known": true,
+            "raw": "2 months left"
+          }
+        },
+        "2025-11": {
+          "peopleAhead": {
+            "count": 5100,
+            "known": true,
+            "raw": "About 5,100 people ahead of you"
+          },
+          "waitTime": {
+            "days": 61,
+            "known": true,
+            "raw": "2 months left"
+          }
+        },
+        "2025-12": {
+          "peopleAhead": {
+            "count": 5600,
+            "known": true,
+            "raw": "About 5,600 people ahead of you"
+          },
+          "waitTime": {
+            "days": 61,
+            "known": true,
+            "raw": "2 months left"
+          }
+        },
+        "2026-01": {
+          "peopleAhead": {
+            "count": 6800,
+            "known": true,
+            "raw": "About 6,800 people ahead of you"
+          },
+          "waitTime": {
+            "days": 91,
+            "known": true,
+            "raw": "3 months left"
+          }
+        },
+        "2026-02": {
+          "peopleAhead": {
+            "count": 7400,
+            "known": true,
+            "raw": "About 7,400 people ahead of you"
+          },
+          "waitTime": {
+            "days": 122,
+            "known": true,
+            "raw": "4 months left"
+          }
+        },
+        "2026-03": {
+          "peopleAhead": {
+            "count": 8200,
+            "known": true,
+            "raw": "About 8,200 people ahead of you"
+          },
+          "waitTime": {
+            "days": 122,
+            "known": true,
+            "raw": "4 months left"
+          }
+        },
+        "2026-04": {
+          "peopleAhead": {
+            "count": 9000,
+            "known": true,
+            "raw": "About 9,000 people ahead of you"
+          },
+          "waitTime": {
+            "days": 122,
+            "known": true,
+            "raw": "4 months left"
+          }
+        },
+        "2026-05": {
+          "peopleAhead": {
+            "count": 10500,
+            "known": true,
+            "raw": "About 10,500 people ahead of you"
+          },
+          "waitTime": {
+            "days": 152,
+            "known": true,
+            "raw": "5 months left"
+          }
+        },
+        "2026-06": {
+          "peopleAhead": {
+            "count": 12100,
+            "known": true,
+            "raw": "About 12,100 people ahead of you"
+          },
+          "waitTime": {
+            "days": 183,
+            "known": true,
+            "raw": "6 months left"
+          }
+        }
+      },
+      "current": {
+        "days": 213,
+        "known": true,
+        "raw": "About 7 months"
+      },
+      "key": "pnp-ee",
+      "label": "Provincial Nominee (Express Entry)",
+      "totalWaiting": {
+        "count": 12100,
+        "known": true,
+        "raw": "About 12,100 people waiting"
+      }
+    },
+    {
+      "byAorMonth": {
+        "2016-01": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-02": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-03": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-04": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-05": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-06": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-07": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-08": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-09": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-10": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-11": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2016-12": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-01": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-02": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-03": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-04": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-05": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-06": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-07": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-08": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-09": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-10": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-11": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "Less than 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2017-12": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-01": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-02": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-03": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-04": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-05": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-06": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-07": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-08": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-09": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-10": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-11": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2018-12": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-01": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-02": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-03": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-04": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-05": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-06": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-07": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-08": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-09": {
+          "peopleAhead": {
+            "count": 100,
+            "known": true,
+            "raw": "About 100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-10": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-11": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2019-12": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-01": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-02": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-03": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-04": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-05": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-06": {
+          "peopleAhead": {
+            "count": 200,
+            "known": true,
+            "raw": "About 200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-07": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-08": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-09": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-10": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-11": {
+          "peopleAhead": {
+            "count": 300,
+            "known": true,
+            "raw": "About 300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2020-12": {
+          "peopleAhead": {
+            "count": 400,
+            "known": true,
+            "raw": "About 400 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-01": {
+          "peopleAhead": {
+            "count": 400,
+            "known": true,
+            "raw": "About 400 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-02": {
+          "peopleAhead": {
+            "count": 400,
+            "known": true,
+            "raw": "About 400 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-03": {
+          "peopleAhead": {
+            "count": 500,
+            "known": true,
+            "raw": "About 500 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-04": {
+          "peopleAhead": {
+            "count": 500,
+            "known": true,
+            "raw": "About 500 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-05": {
+          "peopleAhead": {
+            "count": 500,
+            "known": true,
+            "raw": "About 500 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-06": {
+          "peopleAhead": {
+            "count": 600,
+            "known": true,
+            "raw": "About 600 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-07": {
+          "peopleAhead": {
+            "count": 600,
+            "known": true,
+            "raw": "About 600 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-08": {
+          "peopleAhead": {
+            "count": 600,
+            "known": true,
+            "raw": "About 600 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-09": {
+          "peopleAhead": {
+            "count": 600,
+            "known": true,
+            "raw": "About 600 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-10": {
+          "peopleAhead": {
+            "count": 700,
+            "known": true,
+            "raw": "About 700 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-11": {
+          "peopleAhead": {
+            "count": 800,
+            "known": true,
+            "raw": "About 800 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2021-12": {
+          "peopleAhead": {
+            "count": 800,
+            "known": true,
+            "raw": "About 800 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-01": {
+          "peopleAhead": {
+            "count": 900,
+            "known": true,
+            "raw": "About 900 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-02": {
+          "peopleAhead": {
+            "count": 900,
+            "known": true,
+            "raw": "About 900 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-03": {
+          "peopleAhead": {
+            "count": 1000,
+            "known": true,
+            "raw": "About 1,000 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-04": {
+          "peopleAhead": {
+            "count": 1100,
+            "known": true,
+            "raw": "About 1,100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-05": {
+          "peopleAhead": {
+            "count": 1100,
+            "known": true,
+            "raw": "About 1,100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-06": {
+          "peopleAhead": {
+            "count": 1200,
+            "known": true,
+            "raw": "About 1,200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-07": {
+          "peopleAhead": {
+            "count": 1300,
+            "known": true,
+            "raw": "About 1,300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-08": {
+          "peopleAhead": {
+            "count": 1400,
+            "known": true,
+            "raw": "About 1,400 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-09": {
+          "peopleAhead": {
+            "count": 1500,
+            "known": true,
+            "raw": "About 1,500 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-10": {
+          "peopleAhead": {
+            "count": 1600,
+            "known": true,
+            "raw": "About 1,600 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-11": {
+          "peopleAhead": {
+            "count": 1800,
+            "known": true,
+            "raw": "About 1,800 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-12": {
+          "peopleAhead": {
+            "count": 2000,
+            "known": true,
+            "raw": "About 2,000 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-01": {
+          "peopleAhead": {
+            "count": 2200,
+            "known": true,
+            "raw": "About 2,200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-02": {
+          "peopleAhead": {
+            "count": 2400,
+            "known": true,
+            "raw": "About 2,400 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-03": {
+          "peopleAhead": {
+            "count": 2600,
+            "known": true,
+            "raw": "About 2,600 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-04": {
+          "peopleAhead": {
+            "count": 2900,
+            "known": true,
+            "raw": "About 2,900 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-05": {
+          "peopleAhead": {
+            "count": 3100,
+            "known": true,
+            "raw": "About 3,100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-06": {
+          "peopleAhead": {
+            "count": 3400,
+            "known": true,
+            "raw": "About 3,400 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-07": {
+          "peopleAhead": {
+            "count": 3700,
+            "known": true,
+            "raw": "About 3,700 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-08": {
+          "peopleAhead": {
+            "count": 4100,
+            "known": true,
+            "raw": "About 4,100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-09": {
+          "peopleAhead": {
+            "count": 4400,
+            "known": true,
+            "raw": "About 4,400 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-10": {
+          "peopleAhead": {
+            "count": 4800,
+            "known": true,
+            "raw": "About 4,800 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-11": {
+          "peopleAhead": {
+            "count": 5300,
+            "known": true,
+            "raw": "About 5,300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2023-12": {
+          "peopleAhead": {
+            "count": 5800,
+            "known": true,
+            "raw": "About 5,800 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-01": {
+          "peopleAhead": {
+            "count": 6300,
+            "known": true,
+            "raw": "About 6,300 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-02": {
+          "peopleAhead": {
+            "count": 6800,
+            "known": true,
+            "raw": "About 6,800 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-03": {
+          "peopleAhead": {
+            "count": 7400,
+            "known": true,
+            "raw": "About 7,400 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-04": {
+          "peopleAhead": {
+            "count": 8100,
+            "known": true,
+            "raw": "About 8,100 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-05": {
+          "peopleAhead": {
+            "count": 8700,
+            "known": true,
+            "raw": "About 8,700 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-06": {
+          "peopleAhead": {
+            "count": 9500,
+            "known": true,
+            "raw": "About 9,500 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2024-07": {
+          "peopleAhead": {
+            "count": 10500,
+            "known": true,
+            "raw": "About 10,500 people ahead of you"
+          },
+          "waitTime": {
+            "days": 30,
+            "known": true,
+            "raw": "About 1 month left"
+          }
+        },
+        "2024-08": {
+          "peopleAhead": {
+            "count": 11800,
+            "known": true,
+            "raw": "About 11,800 people ahead of you"
+          },
+          "waitTime": {
+            "days": 30,
+            "known": true,
+            "raw": "About 1 month left"
+          }
+        },
+        "2024-09": {
+          "peopleAhead": {
+            "count": 13500,
+            "known": true,
+            "raw": "About 13,500 people ahead of you"
+          },
+          "waitTime": {
+            "days": 30,
+            "known": true,
+            "raw": "About 1 month left"
+          }
+        },
+        "2024-10": {
+          "peopleAhead": {
+            "count": 16300,
+            "known": true,
+            "raw": "About 16,300 people ahead of you"
+          },
+          "waitTime": {
+            "days": 30,
+            "known": true,
+            "raw": "About 1 month left"
+          }
+        },
+        "2024-11": {
+          "peopleAhead": {
+            "count": 20600,
+            "known": true,
+            "raw": "About 20,600 people ahead of you"
+          },
+          "waitTime": {
+            "days": 61,
+            "known": true,
+            "raw": "2 months left"
+          }
+        },
+        "2024-12": {
+          "peopleAhead": {
+            "count": 23200,
+            "known": true,
+            "raw": "About 23,200 people ahead of you"
+          },
+          "waitTime": {
+            "days": 61,
+            "known": true,
+            "raw": "2 months left"
+          }
+        },
+        "2025-01": {
+          "peopleAhead": {
+            "count": 25700,
+            "known": true,
+            "raw": "About 25,700 people ahead of you"
+          },
+          "waitTime": {
+            "days": 61,
+            "known": true,
+            "raw": "2 months left"
+          }
+        },
+        "2025-02": {
+          "peopleAhead": {
+            "count": 27600,
+            "known": true,
+            "raw": "About 27,600 people ahead of you"
+          },
+          "waitTime": {
+            "days": 61,
+            "known": true,
+            "raw": "2 months left"
+          }
+        },
+        "2025-03": {
+          "peopleAhead": {
+            "count": 29500,
+            "known": true,
+            "raw": "About 29,500 people ahead of you"
+          },
+          "waitTime": {
+            "days": 91,
+            "known": true,
+            "raw": "3 months left"
+          }
+        },
+        "2025-04": {
+          "peopleAhead": {
+            "count": 30900,
+            "known": true,
+            "raw": "About 30,900 people ahead of you"
+          },
+          "waitTime": {
+            "days": 91,
+            "known": true,
+            "raw": "3 months left"
+          }
+        },
+        "2025-05": {
+          "peopleAhead": {
+            "count": 32300,
+            "known": true,
+            "raw": "About 32,300 people ahead of you"
+          },
+          "waitTime": {
+            "days": 91,
+            "known": true,
+            "raw": "3 months left"
+          }
+        },
+        "2025-06": {
+          "peopleAhead": {
+            "count": 33600,
+            "known": true,
+            "raw": "About 33,600 people ahead of you"
+          },
+          "waitTime": {
+            "days": 91,
+            "known": true,
+            "raw": "3 months left"
+          }
+        },
+        "2025-07": {
+          "peopleAhead": {
+            "count": 35200,
+            "known": true,
+            "raw": "About 35,200 people ahead of you"
+          },
+          "waitTime": {
+            "days": 91,
+            "known": true,
+            "raw": "3 months left"
+          }
+        },
+        "2025-08": {
+          "peopleAhead": {
+            "count": 36800,
+            "known": true,
+            "raw": "About 36,800 people ahead of you"
+          },
+          "waitTime": {
+            "days": 91,
+            "known": true,
+            "raw": "3 months left"
+          }
+        },
+        "2025-09": {
+          "peopleAhead": {
+            "count": 38800,
+            "known": true,
+            "raw": "About 38,800 people ahead of you"
+          },
+          "waitTime": {
+            "days": 91,
+            "known": true,
+            "raw": "3 months left"
+          }
+        },
+        "2025-10": {
+          "peopleAhead": {
+            "count": 41900,
+            "known": true,
+            "raw": "About 41,900 people ahead of you"
+          },
+          "waitTime": {
+            "days": 122,
+            "known": true,
+            "raw": "4 months left"
+          }
+        },
+        "2025-11": {
+          "peopleAhead": {
+            "count": 49000,
+            "known": true,
+            "raw": "About 49,000 people ahead of you"
+          },
+          "waitTime": {
+            "days": 122,
+            "known": true,
+            "raw": "4 months left"
+          }
+        },
+        "2025-12": {
+          "peopleAhead": {
+            "count": 58000,
+            "known": true,
+            "raw": "About 58,000 people ahead of you"
+          },
+          "waitTime": {
+            "days": 152,
+            "known": true,
+            "raw": "5 months left"
+          }
+        },
+        "2026-01": {
+          "peopleAhead": {
+            "count": 66300,
+            "known": true,
+            "raw": "About 66,300 people ahead of you"
+          },
+          "waitTime": {
+            "days": 183,
+            "known": true,
+            "raw": "6 months left"
+          }
+        },
+        "2026-02": {
+          "peopleAhead": {
+            "count": 73800,
+            "known": true,
+            "raw": "About 73,800 people ahead of you"
+          },
+          "waitTime": {
+            "days": 213,
+            "known": true,
+            "raw": "7 months left"
+          }
+        },
+        "2026-03": {
+          "peopleAhead": {
+            "count": 82200,
+            "known": true,
+            "raw": "About 82,200 people ahead of you"
+          },
+          "waitTime": {
+            "days": 244,
+            "known": true,
+            "raw": "8 months left"
+          }
+        },
+        "2026-04": {
+          "peopleAhead": {
+            "count": 90400,
+            "known": true,
+            "raw": "About 90,400 people ahead of you"
+          },
+          "waitTime": {
+            "days": 274,
+            "known": true,
+            "raw": "9 months left"
+          }
+        },
+        "2026-05": {
+          "peopleAhead": {
+            "count": 97200,
+            "known": true,
+            "raw": "About 97,200 people ahead of you"
+          },
+          "waitTime": {
+            "days": 304,
+            "known": true,
+            "raw": "10 months left"
+          }
+        },
+        "2026-06": {
+          "peopleAhead": {
+            "count": 103800,
+            "known": true,
+            "raw": "About 103,800 people ahead of you"
+          },
+          "waitTime": {
+            "days": 335,
+            "known": true,
+            "raw": "11 months left"
+          }
+        }
+      },
+      "current": {
+        "days": 365,
+        "known": true,
+        "raw": "About 12 months"
+      },
+      "key": "pnp-base",
+      "label": "Provincial Nominee (base, non-EE)",
+      "totalWaiting": {
+        "count": 103800,
+        "known": true,
+        "raw": "About 103,800 people waiting"
+      }
+    }
+  ],
+  "updateInterval": "monthly",
+  "updatedUpstream": "July 7, 2026"
+}

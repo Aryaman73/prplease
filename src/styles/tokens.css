@@ -1,0 +1,154 @@
+/*
+ * Design tokens.
+ *
+ * The palette is the booth, not the documents. Everything structural is a dim,
+ * desaturated interior; the paper is the only bright surface on screen, so the
+ * data always sits on the lightest thing in view. Saturated colour is rationed —
+ * it belongs to stamps and to nothing else.
+ */
+
+@font-face {
+  font-family: 'Silkscreen';
+  src: url('/fonts/silkscreen-400.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+/*
+ * Silkscreen ships a 700 weight and this project deliberately does not load it.
+ * Its advance is 0.733em — fractional at every size, where the 400 weight is
+ * 0.875em and lands on whole pixels at multiples of 8. Bold pixel type would
+ * therefore always render off-grid, and with font-smoothing disabled that reads
+ * as damage rather than emphasis. Emphasis in pixel type is a size step; in
+ * running text it is the typewriter face's 700, which is loaded below.
+ */
+@font-face {
+  font-family: 'Courier Prime';
+  src: url('/fonts/courierprime-400.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Courier Prime';
+  src: url('/fonts/courierprime-700.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  /* Booth interior — structure, chrome, background. */
+  --booth-void: #131210;
+  --booth-wall: #1c1a16;
+  --booth-panel: #24211b;
+  --desk: #322d24;
+  --desk-edge: #453e31;
+
+  /* Paper — every document surface. The only bright values in the system. */
+  --paper: #d7cdb8;
+  --paper-shade: #c6bba3;
+  --paper-edge: #b3a88f;
+
+  /* Ink — text on paper. */
+  --ink: #26241e;
+  --ink-soft: #55503f;
+  --ink-faint: #7d7663;
+
+  /* Text on the booth (off-paper). */
+  --booth-text: #9a9484;
+  --booth-text-dim: #6a6557;
+
+  /* Stamps. Rationed: these appear nowhere except stamps and status marks. */
+  --stamp-red: #97281f;
+  /* Darker than it looks like it should be: multiply-blended onto parchment
+   * lifts it several steps, and green loses more contrast there than red. */
+  --stamp-green: #2f4b33;
+  --stamp-blue: #2f4a63;
+
+  /* The one live colour — reserved for freshness/updating indicators only. */
+  --crt: #9ab87c;
+
+  /*
+   * Chart marks. The timeline plots a single series — the caller scopes the data,
+   * so there is never more than one category on the plot and no categorical
+   * palette is needed at all.
+   *
+   * Validated against the parchment surface (#d7cdb8) rather than a white one:
+   *   node dataviz/scripts/validate_palette.js "#2a6ba8" --mode light --surface "#d7cdb8"
+   *   → lightness band, chroma floor and contrast all PASS.
+   * Do not re-pick this by eye; re-run the validator.
+   */
+  --chart-accent: #2a6ba8;
+  --chart-grid: #c6bba3;
+
+  /*
+   * Pool bands — an ordinal ramp, not a categorical palette. The seven CRS bands
+   * are an ordered scale, so they take one hue running light→dark with score,
+   * never seven separate hues.
+   *
+   * The ramp starts mid-tone rather than pale: parchment is itself a light
+   * surface, and a conventional light-end step washes out against it (a first
+   * attempt failed the light-end contrast check at 1.05:1).
+   *
+   *   node dataviz/scripts/validate_palette.js "<the seven below>" \
+   *        --ordinal --mode light --surface "#d7cdb8"
+   *   → monotone lightness, all adjacent ΔL >= 0.06, light end 2.06:1, hue spread 10°.
+   */
+  --pool-1: #6b93b3;  /* 0-300      */
+  --pool-2: #5a7fa0;  /* 301-350    */
+  --pool-3: #4a6c8c;  /* 351-400    */
+  --pool-4: #3b5a78;  /* 401-450    */
+  --pool-5: #2d4964;  /* 451-500    */
+  --pool-6: #203851;  /* 501-600    */
+  --pool-7: #14273d;  /* 601-1200   */
+
+  --rule: #4a4335;
+  --rule-soft: rgba(38, 36, 30, 0.22);
+
+  --font-pixel: 'Silkscreen', 'Courier New', monospace;
+  --font-mono: 'Courier Prime', 'Courier New', monospace;
+
+  /*
+   * Silkscreen is a bitmap face. Measured: cap height 0.625em, advance 0.875em,
+   * and no lowercase differentiation — so both land on whole pixels only at
+   * multiples of 8px. 9px through 15px all render on fractional pixels.
+   *
+   * The scale therefore starts at 16, not 8. An 8px step existed once and was
+   * the single worst thing in the type system: it draws a 5px capital, which is
+   * *shorter than the 6.8px x-height* of the 15px body copy, so every label set
+   * in it read as smaller than the prose it was labelling. There is no crisp
+   * size between 8 and 16, so anything that genuinely needs to be small takes
+   * the typewriter face below instead. These are not to be interpolated.
+   */
+  --px-sm: 16px;  /* cap 10px — tabs, bands, term names, stamps */
+  --px-md: 24px;  /* cap 15px — document titles */
+  --px-lg: 32px;  /* cap 20px — masthead */
+  --px-xl: 40px;  /* cap 25px — headline figures */
+
+  /*
+   * Courier Prime, for everything that is read rather than stamped. Four steps,
+   * each with one job — annotation, dense data, prose, body.
+   *
+   * --text-xs is where the old 8px pixel labels went. At 12px Courier Prime's
+   * advance is 7.20px against Silkscreen-at-8's 7.00px, so the swap costs
+   * essentially no horizontal space and buys 39% more cap height (5px → 6.96px).
+   */
+  --text-xs: 12px;  /* axis ticks, table headers, field labels, meta */
+  --text-sm: 13px;  /* ledger cells, controls, dates */
+  --text-md: 14px;  /* notes, definitions, secondary prose */
+  --text-lg: 15px;  /* body */
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  --measure: 68ch;
+
+  /*
+   * Paper grain. Generated rather than fetched so the page stays self-contained;
+   * feTurbulence is cheap and gives a far better tooth than a repeating gradient.
+   */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23g)'/%3E%3C/svg%3E");
+}

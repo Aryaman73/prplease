@@ -1,0 +1,18 @@
+{
+  "name": "prplease",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "PR, Please — an Express Entry draws and PR process tracker, in the style of Papers, Please.",
+  "scripts": {
+    "sync": "node scripts/sync.mjs",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7"
+  }
+}

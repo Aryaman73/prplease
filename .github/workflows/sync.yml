@@ -1,0 +1,51 @@
+name: Sync IRCC data
+
+on:
+  schedule:
+    # Twice daily. Draws typically land midday ET, so 14:00 UTC catches them the
+    # same day and 02:00 UTC picks up late edits. GitHub's shared runners drift by
+    # 10-30 min at peak times; nothing here is time-sensitive enough to care.
+    - cron: '0 14 * * *'
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+  push:
+    # Re-aggregate as soon as hand-curated timelines are edited.
+    paths:
+      - 'data/timelines.csv'
+      - 'scripts/sync.mjs'
+      - '.github/workflows/sync.yml'
+
+# Prevent a scheduled run and a manual run from racing to commit.
+concurrency:
+  group: sync-data
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # No `npm ci`: sync.mjs has zero dependencies by design, so there is nothing
+      # to install and nothing to break when a transitive dep publishes a bad version.
+      - name: Sync
+        run: node scripts/sync.mjs
+
+      - name: Commit if data changed
+        run: |
+          git config user.name  'prplease-bot'
+          git config user.email 'actions@github.com'
+          git add public/data data/history
+          if git diff --staged --quiet; then
+            echo "No data changes."
+            exit 0
+          fi
+          git commit -m "data: sync IRCC feeds ($(date -u +%Y-%m-%d))"
+          git push
