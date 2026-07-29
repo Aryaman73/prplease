@@ -17,13 +17,48 @@
 .masthead {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-end;
+  align-items: stretch;
   justify-content: space-between;
   gap: var(--space-4);
   padding-bottom: var(--space-4);
   border-bottom: 3px double var(--rule);
   margin-bottom: var(--space-6);
 }
+
+/*
+ * The sign itself: a steel plate screwed to the booth wall. The four bolts are
+ * painted as background gradients rather than built as elements — they are
+ * ornament, and ornament has no business in the document.
+ */
+.masthead__plate {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-5);
+  background-color: var(--booth-panel);
+  background-image:
+    radial-gradient(circle 4px at 11px 11px, #5f5847 0 40%, #26231b 72%, transparent 74%),
+    radial-gradient(circle 4px at calc(100% - 11px) 11px, #5f5847 0 40%, #26231b 72%, transparent 74%),
+    radial-gradient(circle 4px at 11px calc(100% - 11px), #5f5847 0 40%, #26231b 72%, transparent 74%),
+    radial-gradient(circle 4px at calc(100% - 11px) calc(100% - 11px), #5f5847 0 40%, #26231b 72%, transparent 74%),
+    /* One lamp, above and left, same as the booth's. */
+    linear-gradient(160deg, rgba(154, 148, 132, 0.09), transparent 60%);
+  border: 1px solid var(--rule);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 2px 6px rgba(0, 0, 0, 0.45);
+}
+
+/* Hard cell edges, and the same cast shadow the stencilled title takes, so the
+ * mark and the name read as one object stamped into the plate. */
+.crest {
+  flex: none;
+  color: #b9b2a0;
+  shape-rendering: crispEdges;
+  filter: drop-shadow(0 2px 0 rgba(0, 0, 0, 0.5));
+}
+
+.crest rect { fill: currentColor; }
 
 .masthead__title {
   font-size: var(--px-lg);
@@ -40,22 +75,48 @@
   color: var(--booth-text-dim);
 }
 
-/* The freshness marker. Deliberately prominent: a stale immigration figure is
- * worse than no figure, so the age of the data is part of the data. */
+/* The freshness marker, as the booth's own monitor. Deliberately prominent: a
+ * stale immigration figure is worse than no figure, so the age of the data is
+ * part of the data. */
 .datestamp {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: var(--space-2) var(--space-3);
   font-family: var(--font-pixel);
   font-size: var(--px-sm);
   line-height: 1.4;
   text-align: right;
   color: var(--crt);
+  text-shadow: 0 0 7px rgba(154, 184, 124, 0.5);
   border: 1px solid rgba(154, 184, 124, 0.35);
   background: rgba(154, 184, 124, 0.05);
+  box-shadow: inset 0 0 16px rgba(154, 184, 124, 0.07);
 }
 
 .datestamp span {
   display: block;
   color: var(--booth-text-dim);
+  text-shadow: none;
+}
+
+/*
+ * Scanlines. The green alone reads as a coloured box; the lines are what make it
+ * a screen. Kept to a 3px pitch and low alpha — the pixel face's capitals are
+ * 10px, so anything denser starts eating letterforms rather than glazing them.
+ */
+.datestamp::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.24) 0 1px,
+    transparent 1px 3px
+  );
+  pointer-events: none;
 }
 
 /* ---------------------------------------------------------------------------
@@ -82,6 +143,40 @@
   opacity: 0.07;
   pointer-events: none;
 }
+
+/*
+ * A second sheet showing under the first. Papers arrive at a desk in small
+ * piles, and the offset sheet is what says "document" rather than "card" — the
+ * cheapest possible version of the whole conceit.
+ *
+ * Drawn rather than built, and behind the paper's own background: `.paper` is
+ * positioned but sets no z-index, so it opens no stacking context and this sits
+ * behind it while still painting over `.booth`, which does.
+ */
+.paper--stacked::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 5px -5px -5px 5px;
+  background: var(--paper-shade);
+  border: 1px solid var(--paper-edge);
+}
+
+/* The issuer's mark, printed into the document the way a permit carries one.
+ * Multiply keeps it in the parchment; at this opacity it survives the grain
+ * without ever competing with a figure set on top of it. */
+.paper__seal {
+  position: absolute;
+  right: var(--space-3);
+  bottom: var(--space-3);
+  color: var(--ink);
+  opacity: 0.05;
+  mix-blend-mode: multiply;
+  shape-rendering: crispEdges;
+  pointer-events: none;
+}
+
+.paper__seal rect { fill: currentColor; }
 
 .paper + .paper {
   margin-top: var(--space-6);
@@ -851,6 +946,11 @@
   .booth { padding: var(--space-5) var(--space-3) var(--space-6); }
 
   .masthead__title { font-size: var(--px-md); }
+
+  .masthead__plate { padding: var(--space-3); gap: var(--space-3); }
+
+  /* 2 cells, not 3 — the next whole-pixel step down. */
+  .crest { width: 42px; height: 26px; }
 
   .datestamp { text-align: left; }
 

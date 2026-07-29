@@ -1,18 +1,24 @@
+import { crest } from './crest';
 import { el } from './dom';
 import { int, stampDate } from './format';
 import { ROUTES, type Route } from './router';
 import type { Meta, Round } from './types';
 
-/** A stencilled sign bolted above the window. */
+/** A stencilled sign bolted above the window, and the clock beside it. */
 export function masthead(meta: Meta | null, latest: Round | undefined) {
   return el(
     'header',
     { class: 'masthead' },
     el(
       'div',
-      {},
-      el('h1', { class: 'masthead__title pixel', text: 'PR, PLEASE' }),
-      el('p', { class: 'masthead__sub', text: 'Ministry of Immigration · Daily Bulletin' }),
+      { class: 'masthead__plate' },
+      crest(),
+      el(
+        'div',
+        {},
+        el('h1', { class: 'masthead__title pixel', text: 'PR, PLEASE' }),
+        el('p', { class: 'masthead__sub', text: 'Ministry of Immigration · Daily Bulletin' }),
+      ),
     ),
     el(
       'div',

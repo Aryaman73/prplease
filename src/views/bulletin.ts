@@ -1,3 +1,4 @@
+import { crest } from '../crest';
 import { el, field } from '../dom';
 import { daysAgo, int, stampDate, stampDateTime } from '../format';
 import type { Draws, Round } from '../types';
@@ -24,7 +25,7 @@ function stamp(text: string, kind: 'approved' | 'denied' | 'flag', land = false)
 function drawCard(round: Round, bandLeft: string, note?: string) {
   return el(
     'article',
-    { class: 'paper' },
+    { class: 'paper paper--stacked' },
     el(
       'div',
       { class: 'paper__band' },
@@ -34,6 +35,10 @@ function drawCard(round: Round, bandLeft: string, note?: string) {
     el(
       'div',
       { class: 'paper__body' },
+      // Security print, the way a real permit carries its issuer's mark. Large
+      // and very faint rather than small and faint: at watermark opacity a small
+      // mark reads as a smudge on the scan, and only size makes it deliberate.
+      crest(9, 'paper__seal'),
       el('h2', { class: 'paper__title pixel', text: round.categoryLabel }),
       el('p', { class: 'paper__note', text: note ?? round.name }),
       el(
