@@ -2,8 +2,12 @@
 
 An Express Entry draws tracker and PR process tracker, in the style of *Papers, Please*.
 
-Static site, deployed to GitHub Pages at `aryamans.me/prplease`. Data is refreshed
-twice daily by a GitHub Action and committed into `public/data/`.
+### → [aryamans.me/prplease](https://aryamans.me/prplease/)
+
+[![The bulletin view: a stencilled masthead with a maple-leaf crest, a green CRT panel showing the last draw date, and the two most recent rounds of invitations laid out as parchment documents.](docs/screenshot.png)](https://aryamans.me/prplease/)
+
+Static site, deployed to GitHub Pages. Data is refreshed twice daily by a GitHub
+Action and committed into `public/data/`.
 
 **Unofficial.** Data is derived from IRCC's own public feeds, but this site is not
 affiliated with or endorsed by IRCC or the Government of Canada. Always confirm
@@ -205,6 +209,24 @@ republishing anyone else's dataset verbatim.
 pages are served from a subpath, `vite.config.ts` sets `base: '/prplease/'` and all
 runtime data fetches go through `import.meta.env.BASE_URL`. Repository settings must
 have Pages source set to **GitHub Actions**, not a branch.
+
+`docs/` holds the README screenshot only and is not part of the build. To refresh it
+after a visual change, serve `dist/` under the `/prplease/` subpath the app expects —
+a bare `file://` load will not do, since every asset URL is absolute:
+
+```bash
+npm run build && mkdir -p /tmp/shot/prplease && cp -R dist/. /tmp/shot/prplease/
+(cd /tmp/shot && python3 -m http.server 4173 &) && sleep 1
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new \
+  --hide-scrollbars --force-device-scale-factor=2 --window-size=1120,690 \
+  --virtual-time-budget=10000 --screenshot=docs/screenshot.png \
+  http://127.0.0.1:4173/prplease/
+magick docs/screenshot.png -strip -colors 256 PNG8:docs/screenshot.png
+```
+
+The palette pass is not cosmetic: the grain is `feTurbulence` noise, which is
+high-entropy and defeats PNG compression outright. Full colour lands at 1.4 MB and
+256 colours at 276 KB, with no visible difference at any zoom.
 
 ## Operational notes
 
