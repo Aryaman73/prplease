@@ -3,6 +3,17 @@ name: Deploy to Pages
 on:
   push:
     branches: [main]
+
+  # The sync workflow's own commits do not appear here. GitHub deliberately
+  # refuses to raise events for pushes made with the default GITHUB_TOKEN,
+  # because a workflow that commits would otherwise re-trigger itself forever.
+  # So every data commit landed on main without deploying, and the site sat on
+  # whatever the last *human* push produced — 13 days stale at worst, while
+  # both workflows reported green. Watch the run instead of the push it makes.
+  workflow_run:
+    workflows: ['Sync IRCC data']
+    types: [completed]
+
   workflow_dispatch:
 
 # Only one deploy at a time; queue rather than cancel, so a data commit landing
@@ -18,9 +29,23 @@ permissions:
 
 jobs:
   build:
+    # workflow_run fires on *completion*, not on success. Without this, a sync
+    # that bailed out on schema drift would still trigger a deploy. `deploy`
+    # needs `build`, so skipping here skips the publish too.
+    if: >-
+      github.event_name != 'workflow_run'
+      || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
+      # Pinned to main rather than left to default. Under workflow_run the
+      # checked-out SHA is tied to the triggering run, which *started* before
+      # sync pushed its data commit — so a default checkout risks deploying
+      # everything except the data that prompted the deploy. Naming the branch
+      # makes this correct no matter which SHA the event carries, and is a
+      # no-op for the push and dispatch paths, which are already on main.
       - uses: actions/checkout@v4
+        with:
+          ref: main
 
       - uses: actions/setup-node@v4
         with:

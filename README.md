@@ -205,10 +205,25 @@ republishing anyone else's dataset verbatim.
 
 ## Deployment
 
-`deploy.yml` builds and publishes to Pages on every push to `main`. Because project
-pages are served from a subpath, `vite.config.ts` sets `base: '/prplease/'` and all
-runtime data fetches go through `import.meta.env.BASE_URL`. Repository settings must
-have Pages source set to **GitHub Actions**, not a branch.
+`deploy.yml` publishes to Pages on every push to `main` **and after every successful
+run of `sync.yml`**. Because project pages are served from a subpath,
+`vite.config.ts` sets `base: '/prplease/'` and all runtime data fetches go through
+`import.meta.env.BASE_URL`. Repository settings must have Pages source set to
+**GitHub Actions**, not a branch.
+
+The second trigger is not redundant, and removing it will silently freeze the site.
+GitHub refuses to raise events for pushes made with the default `GITHUB_TOKEN` — a
+workflow that commits would otherwise trigger itself forever — so the sync's data
+commits reach `main` without producing a `push` event that `deploy.yml` can see.
+Watching the *run* rather than the push it makes is what closes the gap. Two things
+this leaves fragile:
+
+- **`workflows: ['Sync IRCC data']` matches `sync.yml`'s `name:` as a literal
+  string.** Rename that workflow and the deploy stops chaining, with both workflows
+  still green.
+- **The checkout is pinned to `main`.** Under `workflow_run` the event's SHA is tied
+  to the triggering run, which started *before* sync pushed — an unpinned checkout
+  can deploy everything except the data that prompted the deploy.
 
 `docs/` holds the README screenshot only and is not part of the build. To refresh it
 after a visual change, serve `dist/` under the `/prplease/` subpath the app expects —
@@ -230,6 +245,13 @@ high-entropy and defeats PNG compression outright. Full colour lands at 1.4 MB a
 
 ## Operational notes
 
+- **Green workflows are not a deployed site.** From 2026-07-23 to 2026-08-06 the sync
+  ran twice daily and passed every time, committing two new rounds to `main` — and
+  the live site served none of them, because nothing was rebuilding it. Both
+  dashboards were green throughout. When the data looks stale, compare
+  `public/data/draws.json` on `main` against `aryamans.me/prplease/data/draws.json`
+  before looking at the sync at all: if they differ, the sync is fine and the
+  deploy is the problem.
 - **The 60-day cron problem.** GitHub disables scheduled workflows after 60 days with
   no repository activity, and pushes made with the default `GITHUB_TOKEN` do not
   reliably reset that clock. If the sync goes quiet, that's why. Fix it by pushing the
