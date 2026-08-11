@@ -1,8 +1,8 @@
 {
-  "dataChangedAt": "2026-08-07T14:50:56.436Z",
+  "dataChangedAt": "2026-08-11T03:40:58.663Z",
   "generator": "scripts/sync.mjs",
   "history": {
-    "processingSnapshots": 17
+    "processingSnapshots": 18
   },
   "sources": {
     "draws": {
@@ -11,9 +11,9 @@
       "url": "https://www.canada.ca/content/dam/ircc/documents/json/ee_rounds_123_en.json"
     },
     "processing": {
-      "hash": "2d510eb4ed01eb0d",
+      "hash": "f794e63e27b1f8cc",
       "streams": 4,
-      "upstreamUpdated": "July 7, 2026",
+      "upstreamUpdated": "August 10, 2026",
       "url": "https://www.canada.ca/content/dam/ircc/documents/json/flpt-en.json"
     },
     "timelines": {
