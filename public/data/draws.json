@@ -212,7 +212,7 @@
         "total": 226859
       },
       "poolAsOf": "August 16, 2026",
-      "publishedAt": null,
+      "publishedAt": "2026-08-19T12:35:37.000Z",
       "tieBreak": "2026-03-01T18:34:05.000Z",
       "tieBreakRaw": "March 1, 2026 at 18:34:05 UTC",
       "version": 2
@@ -393,7 +393,7 @@
       },
       "poolAsOf": "August 3, 2026",
       "publishedAt": "2026-08-05T10:41:26.000Z",
-      "tieBreak": null,
+      "tieBreak": "2026-07-03T21:35:13.000Z",
       "tieBreakRaw": "July 3rd 2026 at 21:35:13 UTC",
       "version": null
     },
