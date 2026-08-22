@@ -205,8 +205,8 @@ function stripHtml(value) {
  * Roughly 20% of historical `drawCutOff` values deviate from the nominal
  * "Month DD, YYYY at HH:MM:SS UTC" format: single-digit days, double spaces,
  * "." instead of ",", a stray "AM"/"PM" appended to a 24-hour clock, a missing
- * "at", a missing "UTC", and at least one row with no year at all. We normalize
- * what we can and return null for the rest.
+ * "at", a missing "UTC", an ordinal day with the comma dropped, and at least one
+ * row with no year at all. We normalize what we can and return null for the rest.
  */
 function parseTimestamp(value) {
   if (typeof value !== 'string' || !value.trim()) return null;
@@ -216,6 +216,11 @@ function parseTimestamp(value) {
     .replace(/\bat\b/gi, ' ')
     .replace(/\bUTC\b/gi, ' ')
     .replace(/\b[AP]M\b/gi, ' ')       // times are already 24-hour; the meridiem is noise
+    // "July 3rd 2026" — draw 432 is the first round to write the day as an
+    // ordinal, and it drops the comma along with it. Both halves have to be
+    // tolerated: the suffix here, the missing comma by the collapse below.
+    // Anchored to the digits, so it can never bite into a month name.
+    .replace(/\b(\d{1,2})(st|nd|rd|th)\b/gi, '$1')
     .replace(/,/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
@@ -675,20 +680,39 @@ async function main() {
 
   // Surface anything that needs a human. None of these are fatal, but silent
   // drift is how this project would quietly start lying.
+  //
+  // These were already printed and still went unnoticed for two weeks: draw 432
+  // arrived with an ordinal day ("July 3rd 2026"), the tie-break counter went
+  // from 1 to 2, and the line scrolled past in a log nobody opens on a green
+  // run. `notice` also emits a GitHub annotation, which surfaces on the run
+  // summary instead of only in the log body. Still non-fatal — the rest of the
+  // data is good, and blocking a whole sync over one unparsed field would trade
+  // a missing timestamp for missing draws.
+  const notice = (message) => {
+    console.warn(`[warn] ${message}`);
+    if (process.env.GITHUB_ACTIONS === 'true') console.log(`::warning::${message}`);
+  };
+
   const { uncategorizedDrawNames, bandSumMismatches, unparsedTieBreaks, timelineErrors } = meta.warnings;
   if (uncategorizedDrawNames.length) {
-    console.warn(`[warn] ${uncategorizedDrawNames.length} uncategorized draw name(s) — add a rule in KEYWORD_CATEGORIES:`);
+    notice(`${uncategorizedDrawNames.length} uncategorized draw name(s) — add a rule in KEYWORD_CATEGORIES`);
     for (const n of uncategorizedDrawNames) console.warn(`         "${n}"`);
   }
   if (bandSumMismatches.length) {
-    console.warn(`[warn] ${bandSumMismatches.length} CRS band-sum mismatch(es) in upstream data:`);
+    notice(`${bandSumMismatches.length} CRS band-sum mismatch(es) in upstream data`);
     for (const m of bandSumMismatches) {
       console.warn(`         draw ${m.draw} (${m.date}) ${m.band}: published ${m.published}, sub-bands sum to ${m.sumOfSubBands}`);
     }
   }
-  if (unparsedTieBreaks) console.warn(`[warn] ${unparsedTieBreaks} tie-break timestamp(s) unparseable — raw string retained`);
+  // Draw 208 has no year in its raw string and can never be recovered, so one is
+  // the floor, not a clean bill of health. Anything above it is a new format.
+  if (unparsedTieBreaks > 1) {
+    notice(`${unparsedTieBreaks} tie-break timestamp(s) unparseable — a new upstream format, only draw 208 is expected`);
+  } else if (unparsedTieBreaks) {
+    console.warn('[warn] 1 tie-break timestamp unparseable (draw 208, no year upstream) — raw string retained');
+  }
   if (timelineErrors.length) {
-    console.warn(`[warn] ${timelineErrors.length} timeline row(s) rejected:`);
+    notice(`${timelineErrors.length} timeline row(s) rejected`);
     for (const e of timelineErrors) console.warn(`         data/timelines.csv:${e.line} — ${e.error}`);
   }
 
