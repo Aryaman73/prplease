@@ -10,6 +10,14 @@
     />
     <meta name="color-scheme" content="dark" />
     <meta name="theme-color" content="#1c1a16" />
+    <!--
+      SVG first so the mark stays crisp above 32px; the .ico carries 16 and 32
+      for anything that will not take an SVG. Vite rewrites these onto the
+      /prplease/ base at build time.
+    -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="/favicon.ico" sizes="16x16 32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="preload" href="/fonts/silkscreen-400.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/courierprime-400.woff2" as="font" type="font/woff2" crossorigin />
   </head>

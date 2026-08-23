@@ -6,6 +6,7 @@
   "description": "PR, Please — an Express Entry draws and PR process tracker, in the style of Papers, Please.",
   "scripts": {
     "sync": "node scripts/sync.mjs",
+    "favicon": "node scripts/favicon.mjs",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",

@@ -20,6 +20,7 @@ npm run sync       # refresh public/data/ from IRCC (no dependencies required)
 npm run dev        # local dev server at /prplease/
 npm run build      # production build to dist/
 npm run typecheck  # tsc over src/
+npm run favicon    # redraw public/favicon.* from the sprite in scripts/favicon.mjs
 ```
 
 ## Design
@@ -46,6 +47,14 @@ stylized past the point of being readable.
 - **Everything is generated.** Paper grain and noise come from an inline
   `feTurbulence` data URI, so the page has no external asset dependencies at all.
   Fonts are self-hosted (26 KB total, OFL).
+- **The mark is drawn cell by cell, twice.** The masthead crest (`src/crest.ts`)
+  is a 21x13 sprite emitted as SVG rects — a smooth-edged logo beside bitmap type
+  reads as pasted in from another project, so the crest ages exactly as the type
+  does. The favicon (`scripts/favicon.mjs`) is the crest's leaf alone on a 16x16
+  field: the full crest collapses into mush at tab size. It ships as SVG, as a
+  16/32 `.ico`, and as a 180px Apple touch icon, all encoded by that script with
+  no image toolchain involved. Parchment field, stamp-red leaf — a dark tile in
+  the booth palette would vanish into dark browser chrome.
 - **Mobile drops the booth.** Below 620px the desk metaphor is abandoned: stamps
   unrotate, verdict rows go single-column. Palette, stamps and type carry it instead.
 
