@@ -150,7 +150,7 @@
       "label": "Skilled military recruits"
     },
     {
-      "count": 2,
+      "count": 3,
       "key": "physicians",
       "label": "Physicians"
     },
@@ -181,6 +181,42 @@
     }
   ],
   "rounds": [
+    {
+      "category": "physicians",
+      "categoryLabel": "Physicians",
+      "crsCutoff": 198,
+      "date": "2026-09-03",
+      "invitations": 229,
+      "name": "Physicians with Canadian Work Experience, 2026-Version 1",
+      "number": "440",
+      "pool": {
+        "bands": {
+          "0-300": 7735,
+          "301-350": 17495,
+          "351-400": 46824,
+          "401-410": 10723,
+          "401-450": 60413,
+          "411-420": 11183,
+          "421-430": 11811,
+          "431-440": 13233,
+          "441-450": 13463,
+          "451-460": 14800,
+          "451-500": 74105,
+          "461-470": 16099,
+          "471-480": 16981,
+          "481-490": 13273,
+          "491-500": 12952,
+          "501-600": 19542,
+          "601-1200": 559
+        },
+        "total": 226673
+      },
+      "poolAsOf": "August 30, 2026",
+      "publishedAt": "2026-09-03T11:18:08.000Z",
+      "tieBreak": "2026-08-06T19:40:38.000Z",
+      "tieBreakRaw": "August 06, 2026 at 19:40:38 UTC",
+      "version": 1
+    },
     {
       "category": "cec",
       "categoryLabel": "Canadian Experience Class",
