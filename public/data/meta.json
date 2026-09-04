@@ -1,13 +1,13 @@
 {
-  "dataChangedAt": "2026-09-04T06:54:27.000Z",
+  "dataChangedAt": "2026-09-04T17:21:27.900Z",
   "generator": "scripts/sync.mjs",
   "history": {
     "processingSnapshots": 42
   },
   "sources": {
     "draws": {
-      "hash": "a2b0abdb636e3781",
-      "records": 441,
+      "hash": "b2d5d8a1c78bb0d7",
+      "records": 442,
       "url": "https://www.canada.ca/content/dam/ircc/documents/json/ee_rounds_123_en.json"
     },
     "processing": {
