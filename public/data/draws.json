@@ -110,7 +110,7 @@
       "label": "Agriculture and agri-food"
     },
     {
-      "count": 69,
+      "count": 70,
       "key": "cec",
       "label": "Canadian Experience Class"
     },
@@ -181,6 +181,42 @@
     }
   ],
   "rounds": [
+    {
+      "category": "cec",
+      "categoryLabel": "Canadian Experience Class",
+      "crsCutoff": 518,
+      "date": "2026-09-29",
+      "invitations": 2000,
+      "name": "Canadian Experience Class",
+      "number": "446",
+      "pool": {
+        "bands": {
+          "0-300": 7707,
+          "301-350": 17359,
+          "351-400": 47298,
+          "401-410": 11454,
+          "401-450": 62611,
+          "411-420": 11888,
+          "421-430": 12173,
+          "431-440": 13419,
+          "441-450": 13677,
+          "451-460": 14847,
+          "451-500": 73131,
+          "461-470": 16257,
+          "471-480": 16465,
+          "481-490": 12817,
+          "491-500": 12745,
+          "501-600": 21070,
+          "601-1200": 728
+        },
+        "total": 229904
+      },
+      "poolAsOf": "September 27, 2026",
+      "publishedAt": "2026-09-29T10:19:21.000Z",
+      "tieBreak": "2026-02-13T20:48:08.000Z",
+      "tieBreakRaw": "February 13, 2026 at 20:48:08 UTC",
+      "version": null
+    },
     {
       "category": "pnp",
       "categoryLabel": "Provincial Nominee Program",
