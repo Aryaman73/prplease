@@ -2,10 +2,11 @@ name: Sync IRCC data
 
 on:
   schedule:
-    # Twice daily. Draws typically land midday ET, so 14:00 UTC catches them the
-    # same day and 02:00 UTC picks up late edits. GitHub's shared runners drift by
-    # 10-30 min at peak times; nothing here is time-sensitive enough to care.
-    - cron: '0 14 * * *'
+    # Twice daily. Draws typically land midday ET, so 19:00 UTC (3 PM EDT / 2 PM
+    # EST; cron is UTC-only) catches them the same afternoon and 02:00 UTC picks
+    # up late edits. GitHub's shared runners drift by 10-30 min at peak times;
+    # nothing here is time-sensitive enough to care.
+    - cron: '0 19 * * *'
     - cron: '0 2 * * *'
   workflow_dispatch:
   push:
