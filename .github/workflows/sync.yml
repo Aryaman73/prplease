@@ -10,7 +10,9 @@ on:
     - cron: '0 2 * * *'
   workflow_dispatch:
   push:
-    # Re-aggregate as soon as hand-curated timelines are edited.
+    # Re-aggregate as soon as hand-curated timelines are edited. main only: on any
+    # other branch the job commits data onto that branch, which then has to merge.
+    branches: [main]
     paths:
       - 'data/timelines.csv'
       - 'scripts/sync.mjs'
