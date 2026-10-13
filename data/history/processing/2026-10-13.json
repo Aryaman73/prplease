@@ -9,9 +9,9 @@
       },
       "key": "cec",
       "totalWaiting": {
-        "count": 58900,
+        "count": 53900,
         "known": true,
-        "raw": "About 58,900 people waiting"
+        "raw": "About 53,900 people waiting"
       }
     },
     {
@@ -22,9 +22,9 @@
       },
       "key": "fsw",
       "totalWaiting": {
-        "count": 53800,
+        "count": 58300,
         "known": true,
-        "raw": "About 53,800 people waiting"
+        "raw": "About 58,300 people waiting"
       }
     },
     {
@@ -35,9 +35,9 @@
       },
       "key": "pnp-ee",
       "totalWaiting": {
-        "count": 12800,
+        "count": 13100,
         "known": true,
-        "raw": "About 12,800 people waiting"
+        "raw": "About 13,100 people waiting"
       }
     },
     {
@@ -48,11 +48,11 @@
       },
       "key": "pnp-base",
       "totalWaiting": {
-        "count": 101500,
+        "count": 96500,
         "known": true,
-        "raw": "About 101,500 people waiting"
+        "raw": "About 96,500 people waiting"
       }
     }
   ],
-  "upstreamUpdated": "September 3, 2026"
+  "upstreamUpdated": "October 9, 2026"
 }

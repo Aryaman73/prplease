@@ -1149,9 +1149,9 @@
         },
         "2023-12": {
           "peopleAhead": {
-            "count": 500,
+            "count": 400,
             "known": true,
-            "raw": "About 500 people ahead of you"
+            "raw": "About 400 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -1197,9 +1197,9 @@
         },
         "2024-04": {
           "peopleAhead": {
-            "count": 700,
+            "count": 600,
             "known": true,
-            "raw": "About 700 people ahead of you"
+            "raw": "About 600 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -1257,9 +1257,9 @@
         },
         "2024-09": {
           "peopleAhead": {
-            "count": 1200,
+            "count": 1100,
             "known": true,
-            "raw": "About 1,200 people ahead of you"
+            "raw": "About 1,100 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -1293,9 +1293,9 @@
         },
         "2024-12": {
           "peopleAhead": {
-            "count": 1600,
+            "count": 1500,
             "known": true,
-            "raw": "About 1,600 people ahead of you"
+            "raw": "About 1,500 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -1341,9 +1341,9 @@
         },
         "2025-04": {
           "peopleAhead": {
-            "count": 2300,
+            "count": 2200,
             "known": true,
-            "raw": "About 2,300 people ahead of you"
+            "raw": "About 2,200 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -1365,9 +1365,9 @@
         },
         "2025-06": {
           "peopleAhead": {
-            "count": 2400,
+            "count": 2300,
             "known": true,
-            "raw": "About 2,400 people ahead of you"
+            "raw": "About 2,300 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -1401,9 +1401,9 @@
         },
         "2025-09": {
           "peopleAhead": {
-            "count": 3200,
+            "count": 3100,
             "known": true,
-            "raw": "About 3,200 people ahead of you"
+            "raw": "About 3,100 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -1413,33 +1413,33 @@
         },
         "2025-10": {
           "peopleAhead": {
-            "count": 3600,
+            "count": 3500,
             "known": true,
-            "raw": "About 3,600 people ahead of you"
+            "raw": "About 3,500 people ahead of you"
           },
           "waitTime": {
-            "days": 30,
-            "known": true,
-            "raw": "About 1 month left"
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
           }
         },
         "2025-11": {
           "peopleAhead": {
-            "count": 4400,
+            "count": 4100,
             "known": true,
-            "raw": "About 4,400 people ahead of you"
+            "raw": "About 4,100 people ahead of you"
           },
           "waitTime": {
-            "days": 30,
-            "known": true,
-            "raw": "About 1 month left"
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
           }
         },
         "2025-12": {
           "peopleAhead": {
-            "count": 5200,
+            "count": 4800,
             "known": true,
-            "raw": "About 5,200 people ahead of you"
+            "raw": "About 4,800 people ahead of you"
           },
           "waitTime": {
             "days": 30,
@@ -1449,9 +1449,9 @@
         },
         "2026-01": {
           "peopleAhead": {
-            "count": 7400,
+            "count": 6100,
             "known": true,
-            "raw": "About 7,400 people ahead of you"
+            "raw": "About 6,100 people ahead of you"
           },
           "waitTime": {
             "days": 30,
@@ -1461,9 +1461,9 @@
         },
         "2026-02": {
           "peopleAhead": {
-            "count": 10500,
+            "count": 7900,
             "known": true,
-            "raw": "About 10,500 people ahead of you"
+            "raw": "About 7,900 people ahead of you"
           },
           "waitTime": {
             "days": 30,
@@ -1473,21 +1473,21 @@
         },
         "2026-03": {
           "peopleAhead": {
-            "count": 17000,
+            "count": 12400,
             "known": true,
-            "raw": "About 17,000 people ahead of you"
+            "raw": "About 12,400 people ahead of you"
           },
           "waitTime": {
-            "days": 30,
+            "days": 61,
             "known": true,
-            "raw": "About 1 month left"
+            "raw": "2 months left"
           }
         },
         "2026-04": {
           "peopleAhead": {
-            "count": 27300,
+            "count": 18800,
             "known": true,
-            "raw": "About 27,300 people ahead of you"
+            "raw": "About 18,800 people ahead of you"
           },
           "waitTime": {
             "days": 61,
@@ -1497,21 +1497,21 @@
         },
         "2026-05": {
           "peopleAhead": {
-            "count": 36800,
+            "count": 26500,
             "known": true,
-            "raw": "About 36,800 people ahead of you"
+            "raw": "About 26,500 people ahead of you"
           },
           "waitTime": {
-            "days": 61,
+            "days": 91,
             "known": true,
-            "raw": "2 months left"
+            "raw": "3 months left"
           }
         },
         "2026-06": {
           "peopleAhead": {
-            "count": 42300,
+            "count": 31100,
             "known": true,
-            "raw": "About 42,300 people ahead of you"
+            "raw": "About 31,100 people ahead of you"
           },
           "waitTime": {
             "days": 91,
@@ -1521,9 +1521,9 @@
         },
         "2026-07": {
           "peopleAhead": {
-            "count": 49000,
+            "count": 36700,
             "known": true,
-            "raw": "About 49,000 people ahead of you"
+            "raw": "About 36,700 people ahead of you"
           },
           "waitTime": {
             "days": 91,
@@ -1533,14 +1533,26 @@
         },
         "2026-08": {
           "peopleAhead": {
-            "count": 58900,
+            "count": 45800,
             "known": true,
-            "raw": "About 58,900 people ahead of you"
+            "raw": "About 45,800 people ahead of you"
           },
           "waitTime": {
             "days": 152,
             "known": true,
             "raw": "5 months left"
+          }
+        },
+        "2026-09": {
+          "peopleAhead": {
+            "count": 53900,
+            "known": true,
+            "raw": "About 53,900 people ahead of you"
+          },
+          "waitTime": {
+            "days": 183,
+            "known": true,
+            "raw": "6 months left"
           }
         }
       },
@@ -1552,9 +1564,9 @@
       "key": "cec",
       "label": "Canadian Experience Class",
       "totalWaiting": {
-        "count": 58900,
+        "count": 53900,
         "known": true,
-        "raw": "About 58,900 people waiting"
+        "raw": "About 53,900 people waiting"
       }
     },
     {
@@ -2533,9 +2545,9 @@
         },
         "2022-10": {
           "peopleAhead": {
-            "count": 400,
+            "count": 300,
             "known": true,
-            "raw": "About 400 people ahead of you"
+            "raw": "About 300 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -2689,9 +2701,9 @@
         },
         "2023-11": {
           "peopleAhead": {
-            "count": 800,
+            "count": 700,
             "known": true,
-            "raw": "About 800 people ahead of you"
+            "raw": "About 700 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -2833,9 +2845,9 @@
         },
         "2024-11": {
           "peopleAhead": {
-            "count": 1600,
+            "count": 1500,
             "known": true,
-            "raw": "About 1,600 people ahead of you"
+            "raw": "About 1,500 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -2869,9 +2881,9 @@
         },
         "2025-02": {
           "peopleAhead": {
-            "count": 1800,
+            "count": 1700,
             "known": true,
-            "raw": "About 1,800 people ahead of you"
+            "raw": "About 1,700 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -2881,9 +2893,9 @@
         },
         "2025-03": {
           "peopleAhead": {
-            "count": 2000,
+            "count": 1900,
             "known": true,
-            "raw": "About 2,000 people ahead of you"
+            "raw": "About 1,900 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -2893,9 +2905,9 @@
         },
         "2025-04": {
           "peopleAhead": {
-            "count": 2500,
+            "count": 2400,
             "known": true,
-            "raw": "About 2,500 people ahead of you"
+            "raw": "About 2,400 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -2905,9 +2917,9 @@
         },
         "2025-05": {
           "peopleAhead": {
-            "count": 3100,
+            "count": 3000,
             "known": true,
-            "raw": "About 3,100 people ahead of you"
+            "raw": "About 3,000 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -2917,9 +2929,9 @@
         },
         "2025-06": {
           "peopleAhead": {
-            "count": 3100,
+            "count": 3000,
             "known": true,
-            "raw": "About 3,100 people ahead of you"
+            "raw": "About 3,000 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -2929,6 +2941,18 @@
         },
         "2025-07": {
           "peopleAhead": {
+            "count": 3000,
+            "known": true,
+            "raw": "About 3,000 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2025-08": {
+          "peopleAhead": {
             "count": 3100,
             "known": true,
             "raw": "About 3,100 people ahead of you"
@@ -2939,23 +2963,11 @@
             "raw": "We need more time to process your application"
           }
         },
-        "2025-08": {
-          "peopleAhead": {
-            "count": 3200,
-            "known": true,
-            "raw": "About 3,200 people ahead of you"
-          },
-          "waitTime": {
-            "days": null,
-            "known": false,
-            "raw": "We need more time to process your application"
-          }
-        },
         "2025-09": {
           "peopleAhead": {
-            "count": 3400,
+            "count": 3300,
             "known": true,
-            "raw": "About 3,400 people ahead of you"
+            "raw": "About 3,300 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -2965,9 +2977,9 @@
         },
         "2025-10": {
           "peopleAhead": {
-            "count": 4000,
+            "count": 3800,
             "known": true,
-            "raw": "About 4,000 people ahead of you"
+            "raw": "About 3,800 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -2977,9 +2989,9 @@
         },
         "2025-11": {
           "peopleAhead": {
-            "count": 4700,
+            "count": 4400,
             "known": true,
-            "raw": "About 4,700 people ahead of you"
+            "raw": "About 4,400 people ahead of you"
           },
           "waitTime": {
             "days": 30,
@@ -2989,9 +3001,9 @@
         },
         "2025-12": {
           "peopleAhead": {
-            "count": 6800,
+            "count": 6100,
             "known": true,
-            "raw": "About 6,800 people ahead of you"
+            "raw": "About 6,100 people ahead of you"
           },
           "waitTime": {
             "days": 30,
@@ -3001,9 +3013,9 @@
         },
         "2026-01": {
           "peopleAhead": {
-            "count": 9700,
+            "count": 8500,
             "known": true,
-            "raw": "About 9,700 people ahead of you"
+            "raw": "About 8,500 people ahead of you"
           },
           "waitTime": {
             "days": 30,
@@ -3013,33 +3025,9 @@
         },
         "2026-02": {
           "peopleAhead": {
-            "count": 13500,
+            "count": 11300,
             "known": true,
-            "raw": "About 13,500 people ahead of you"
-          },
-          "waitTime": {
-            "days": 30,
-            "known": true,
-            "raw": "About 1 month left"
-          }
-        },
-        "2026-03": {
-          "peopleAhead": {
-            "count": 17400,
-            "known": true,
-            "raw": "About 17,400 people ahead of you"
-          },
-          "waitTime": {
-            "days": 30,
-            "known": true,
-            "raw": "About 1 month left"
-          }
-        },
-        "2026-04": {
-          "peopleAhead": {
-            "count": 27300,
-            "known": true,
-            "raw": "About 27,300 people ahead of you"
+            "raw": "About 11,300 people ahead of you"
           },
           "waitTime": {
             "days": 61,
@@ -3047,11 +3035,35 @@
             "raw": "2 months left"
           }
         },
+        "2026-03": {
+          "peopleAhead": {
+            "count": 14000,
+            "known": true,
+            "raw": "About 14,000 people ahead of you"
+          },
+          "waitTime": {
+            "days": 61,
+            "known": true,
+            "raw": "2 months left"
+          }
+        },
+        "2026-04": {
+          "peopleAhead": {
+            "count": 21900,
+            "known": true,
+            "raw": "About 21,900 people ahead of you"
+          },
+          "waitTime": {
+            "days": 91,
+            "known": true,
+            "raw": "3 months left"
+          }
+        },
         "2026-05": {
           "peopleAhead": {
-            "count": 34500,
+            "count": 28300,
             "known": true,
-            "raw": "About 34,500 people ahead of you"
+            "raw": "About 28,300 people ahead of you"
           },
           "waitTime": {
             "days": 91,
@@ -3061,9 +3073,9 @@
         },
         "2026-06": {
           "peopleAhead": {
-            "count": 42400,
+            "count": 35500,
             "known": true,
-            "raw": "About 42,400 people ahead of you"
+            "raw": "About 35,500 people ahead of you"
           },
           "waitTime": {
             "days": 122,
@@ -3073,26 +3085,38 @@
         },
         "2026-07": {
           "peopleAhead": {
+            "count": 38900,
+            "known": true,
+            "raw": "About 38,900 people ahead of you"
+          },
+          "waitTime": {
+            "days": 152,
+            "known": true,
+            "raw": "5 months left"
+          }
+        },
+        "2026-08": {
+          "peopleAhead": {
             "count": 46200,
             "known": true,
             "raw": "About 46,200 people ahead of you"
           },
           "waitTime": {
-            "days": 122,
-            "known": true,
-            "raw": "4 months left"
-          }
-        },
-        "2026-08": {
-          "peopleAhead": {
-            "count": 53800,
-            "known": true,
-            "raw": "About 53,800 people ahead of you"
-          },
-          "waitTime": {
             "days": 183,
             "known": true,
             "raw": "6 months left"
+          }
+        },
+        "2026-09": {
+          "peopleAhead": {
+            "count": 58300,
+            "known": true,
+            "raw": "About 58,300 people ahead of you"
+          },
+          "waitTime": {
+            "days": 213,
+            "known": true,
+            "raw": "7 months left"
           }
         }
       },
@@ -3104,9 +3128,9 @@
       "key": "fsw",
       "label": "Federal Skilled Worker",
       "totalWaiting": {
-        "count": 53800,
+        "count": 58300,
         "known": true,
-        "raw": "About 53,800 people waiting"
+        "raw": "About 58,300 people waiting"
       }
     },
     {
@@ -3823,7 +3847,7 @@
           "peopleAhead": {
             "count": 100,
             "known": true,
-            "raw": "About 100 people ahead of you"
+            "raw": "Less than 100 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -3835,7 +3859,7 @@
           "peopleAhead": {
             "count": 100,
             "known": true,
-            "raw": "About 100 people ahead of you"
+            "raw": "Less than 100 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -3847,7 +3871,7 @@
           "peopleAhead": {
             "count": 100,
             "known": true,
-            "raw": "About 100 people ahead of you"
+            "raw": "Less than 100 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -3859,7 +3883,7 @@
           "peopleAhead": {
             "count": 100,
             "known": true,
-            "raw": "About 100 people ahead of you"
+            "raw": "Less than 100 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -4229,9 +4253,9 @@
         },
         "2023-10": {
           "peopleAhead": {
-            "count": 700,
+            "count": 600,
             "known": true,
-            "raw": "About 700 people ahead of you"
+            "raw": "About 600 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -4277,9 +4301,9 @@
         },
         "2024-02": {
           "peopleAhead": {
-            "count": 1200,
+            "count": 1100,
             "known": true,
-            "raw": "About 1,200 people ahead of you"
+            "raw": "About 1,100 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -4337,9 +4361,9 @@
         },
         "2024-07": {
           "peopleAhead": {
-            "count": 1800,
+            "count": 1700,
             "known": true,
-            "raw": "About 1,800 people ahead of you"
+            "raw": "About 1,700 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -4397,9 +4421,9 @@
         },
         "2024-12": {
           "peopleAhead": {
-            "count": 2700,
+            "count": 2600,
             "known": true,
-            "raw": "About 2,700 people ahead of you"
+            "raw": "About 2,600 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -4433,9 +4457,9 @@
         },
         "2025-03": {
           "peopleAhead": {
-            "count": 3200,
+            "count": 3100,
             "known": true,
-            "raw": "About 3,200 people ahead of you"
+            "raw": "About 3,100 people ahead of you"
           },
           "waitTime": {
             "days": 61,
@@ -4445,26 +4469,26 @@
         },
         "2025-04": {
           "peopleAhead": {
-            "count": 3500,
+            "count": 3400,
             "known": true,
-            "raw": "About 3,500 people ahead of you"
+            "raw": "About 3,400 people ahead of you"
           },
           "waitTime": {
-            "days": 61,
+            "days": 91,
             "known": true,
-            "raw": "2 months left"
+            "raw": "3 months left"
           }
         },
         "2025-05": {
           "peopleAhead": {
-            "count": 3800,
+            "count": 3700,
             "known": true,
-            "raw": "About 3,800 people ahead of you"
+            "raw": "About 3,700 people ahead of you"
           },
           "waitTime": {
-            "days": 61,
+            "days": 91,
             "known": true,
-            "raw": "2 months left"
+            "raw": "3 months left"
           }
         },
         "2025-06": {
@@ -4486,28 +4510,28 @@
             "raw": "About 4,200 people ahead of you"
           },
           "waitTime": {
-            "days": 61,
+            "days": 91,
             "known": true,
-            "raw": "2 months left"
+            "raw": "3 months left"
           }
         },
         "2025-08": {
           "peopleAhead": {
-            "count": 4400,
+            "count": 4300,
             "known": true,
-            "raw": "About 4,400 people ahead of you"
+            "raw": "About 4,300 people ahead of you"
           },
           "waitTime": {
-            "days": 61,
+            "days": 91,
             "known": true,
-            "raw": "2 months left"
+            "raw": "3 months left"
           }
         },
         "2025-09": {
           "peopleAhead": {
-            "count": 4500,
+            "count": 4400,
             "known": true,
-            "raw": "About 4,500 people ahead of you"
+            "raw": "About 4,400 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -4517,21 +4541,21 @@
         },
         "2025-10": {
           "peopleAhead": {
-            "count": 4700,
+            "count": 4600,
             "known": true,
-            "raw": "About 4,700 people ahead of you"
+            "raw": "About 4,600 people ahead of you"
           },
           "waitTime": {
-            "days": 61,
+            "days": 91,
             "known": true,
-            "raw": "2 months left"
+            "raw": "3 months left"
           }
         },
         "2025-11": {
           "peopleAhead": {
-            "count": 4900,
+            "count": 4800,
             "known": true,
-            "raw": "About 4,900 people ahead of you"
+            "raw": "About 4,800 people ahead of you"
           },
           "waitTime": {
             "days": 91,
@@ -4541,9 +4565,9 @@
         },
         "2025-12": {
           "peopleAhead": {
-            "count": 5300,
+            "count": 5200,
             "known": true,
-            "raw": "About 5,300 people ahead of you"
+            "raw": "About 5,200 people ahead of you"
           },
           "waitTime": {
             "days": 91,
@@ -4553,29 +4577,41 @@
         },
         "2026-01": {
           "peopleAhead": {
-            "count": 6300,
+            "count": 6100,
             "known": true,
-            "raw": "About 6,300 people ahead of you"
+            "raw": "About 6,100 people ahead of you"
           },
           "waitTime": {
-            "days": 91,
+            "days": 122,
             "known": true,
-            "raw": "3 months left"
+            "raw": "4 months left"
           }
         },
         "2026-02": {
           "peopleAhead": {
-            "count": 6800,
+            "count": 6600,
             "known": true,
-            "raw": "About 6,800 people ahead of you"
+            "raw": "About 6,600 people ahead of you"
           },
           "waitTime": {
-            "days": 91,
+            "days": 122,
             "known": true,
-            "raw": "3 months left"
+            "raw": "4 months left"
           }
         },
         "2026-03": {
+          "peopleAhead": {
+            "count": 7000,
+            "known": true,
+            "raw": "About 7,000 people ahead of you"
+          },
+          "waitTime": {
+            "days": 122,
+            "known": true,
+            "raw": "4 months left"
+          }
+        },
+        "2026-04": {
           "peopleAhead": {
             "count": 7300,
             "known": true,
@@ -4587,47 +4623,35 @@
             "raw": "4 months left"
           }
         },
-        "2026-04": {
+        "2026-05": {
           "peopleAhead": {
             "count": 7600,
             "known": true,
             "raw": "About 7,600 people ahead of you"
           },
           "waitTime": {
-            "days": 122,
+            "days": 152,
             "known": true,
-            "raw": "4 months left"
-          }
-        },
-        "2026-05": {
-          "peopleAhead": {
-            "count": 8000,
-            "known": true,
-            "raw": "About 8,000 people ahead of you"
-          },
-          "waitTime": {
-            "days": 122,
-            "known": true,
-            "raw": "4 months left"
+            "raw": "5 months left"
           }
         },
         "2026-06": {
           "peopleAhead": {
-            "count": 8500,
+            "count": 8100,
             "known": true,
-            "raw": "About 8,500 people ahead of you"
+            "raw": "About 8,100 people ahead of you"
           },
           "waitTime": {
-            "days": 122,
+            "days": 152,
             "known": true,
-            "raw": "4 months left"
+            "raw": "5 months left"
           }
         },
         "2026-07": {
           "peopleAhead": {
-            "count": 10300,
+            "count": 8900,
             "known": true,
-            "raw": "About 10,300 people ahead of you"
+            "raw": "About 8,900 people ahead of you"
           },
           "waitTime": {
             "days": 152,
@@ -4637,14 +4661,26 @@
         },
         "2026-08": {
           "peopleAhead": {
-            "count": 12800,
+            "count": 10800,
             "known": true,
-            "raw": "About 12,800 people ahead of you"
+            "raw": "About 10,800 people ahead of you"
           },
           "waitTime": {
             "days": 183,
             "known": true,
             "raw": "6 months left"
+          }
+        },
+        "2026-09": {
+          "peopleAhead": {
+            "count": 13100,
+            "known": true,
+            "raw": "About 13,100 people ahead of you"
+          },
+          "waitTime": {
+            "days": 213,
+            "known": true,
+            "raw": "7 months left"
           }
         }
       },
@@ -4656,9 +4692,9 @@
       "key": "pnp-ee",
       "label": "Provincial Nominee (Express Entry)",
       "totalWaiting": {
-        "count": 12800,
+        "count": 13100,
         "known": true,
-        "raw": "About 12,800 people waiting"
+        "raw": "About 13,100 people waiting"
       }
     },
     {
@@ -5313,9 +5349,9 @@
         },
         "2020-07": {
           "peopleAhead": {
-            "count": 300,
+            "count": 200,
             "known": true,
-            "raw": "About 300 people ahead of you"
+            "raw": "About 200 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -5421,9 +5457,9 @@
         },
         "2021-04": {
           "peopleAhead": {
-            "count": 500,
+            "count": 400,
             "known": true,
-            "raw": "About 500 people ahead of you"
+            "raw": "About 400 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -5457,9 +5493,9 @@
         },
         "2021-07": {
           "peopleAhead": {
-            "count": 600,
+            "count": 500,
             "known": true,
-            "raw": "About 600 people ahead of you"
+            "raw": "About 500 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -5493,9 +5529,9 @@
         },
         "2021-10": {
           "peopleAhead": {
-            "count": 700,
+            "count": 600,
             "known": true,
-            "raw": "About 700 people ahead of you"
+            "raw": "About 600 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -5517,9 +5553,9 @@
         },
         "2021-12": {
           "peopleAhead": {
-            "count": 800,
+            "count": 700,
             "known": true,
-            "raw": "About 800 people ahead of you"
+            "raw": "About 700 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -5541,9 +5577,9 @@
         },
         "2022-02": {
           "peopleAhead": {
-            "count": 900,
+            "count": 800,
             "known": true,
-            "raw": "About 900 people ahead of you"
+            "raw": "About 800 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -5577,9 +5613,9 @@
         },
         "2022-05": {
           "peopleAhead": {
-            "count": 1100,
+            "count": 1000,
             "known": true,
-            "raw": "About 1,100 people ahead of you"
+            "raw": "About 1,000 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -5613,6 +5649,18 @@
         },
         "2022-08": {
           "peopleAhead": {
+            "count": 1200,
+            "known": true,
+            "raw": "About 1,200 people ahead of you"
+          },
+          "waitTime": {
+            "days": null,
+            "known": false,
+            "raw": "We need more time to process your application"
+          }
+        },
+        "2022-09": {
+          "peopleAhead": {
             "count": 1300,
             "known": true,
             "raw": "About 1,300 people ahead of you"
@@ -5623,7 +5671,7 @@
             "raw": "We need more time to process your application"
           }
         },
-        "2022-09": {
+        "2022-10": {
           "peopleAhead": {
             "count": 1400,
             "known": true,
@@ -5635,7 +5683,7 @@
             "raw": "We need more time to process your application"
           }
         },
-        "2022-10": {
+        "2022-11": {
           "peopleAhead": {
             "count": 1500,
             "known": true,
@@ -5647,23 +5695,11 @@
             "raw": "We need more time to process your application"
           }
         },
-        "2022-11": {
-          "peopleAhead": {
-            "count": 1600,
-            "known": true,
-            "raw": "About 1,600 people ahead of you"
-          },
-          "waitTime": {
-            "days": null,
-            "known": false,
-            "raw": "We need more time to process your application"
-          }
-        },
         "2022-12": {
           "peopleAhead": {
-            "count": 1800,
+            "count": 1700,
             "known": true,
-            "raw": "About 1,800 people ahead of you"
+            "raw": "About 1,700 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -5673,9 +5709,9 @@
         },
         "2023-01": {
           "peopleAhead": {
-            "count": 2000,
+            "count": 1900,
             "known": true,
-            "raw": "About 2,000 people ahead of you"
+            "raw": "About 1,900 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -5685,9 +5721,9 @@
         },
         "2023-02": {
           "peopleAhead": {
-            "count": 2200,
+            "count": 2100,
             "known": true,
-            "raw": "About 2,200 people ahead of you"
+            "raw": "About 2,100 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -5709,9 +5745,9 @@
         },
         "2023-04": {
           "peopleAhead": {
-            "count": 2700,
+            "count": 2600,
             "known": true,
-            "raw": "About 2,700 people ahead of you"
+            "raw": "About 2,600 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -5721,9 +5757,9 @@
         },
         "2023-05": {
           "peopleAhead": {
-            "count": 2900,
+            "count": 2800,
             "known": true,
-            "raw": "About 2,900 people ahead of you"
+            "raw": "About 2,800 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -5733,9 +5769,9 @@
         },
         "2023-06": {
           "peopleAhead": {
-            "count": 3200,
+            "count": 3100,
             "known": true,
-            "raw": "About 3,200 people ahead of you"
+            "raw": "About 3,100 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -5745,9 +5781,9 @@
         },
         "2023-07": {
           "peopleAhead": {
-            "count": 3500,
+            "count": 3300,
             "known": true,
-            "raw": "About 3,500 people ahead of you"
+            "raw": "About 3,300 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -5757,9 +5793,9 @@
         },
         "2023-08": {
           "peopleAhead": {
-            "count": 3800,
+            "count": 3700,
             "known": true,
-            "raw": "About 3,800 people ahead of you"
+            "raw": "About 3,700 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -5769,9 +5805,9 @@
         },
         "2023-09": {
           "peopleAhead": {
-            "count": 4200,
+            "count": 4100,
             "known": true,
-            "raw": "About 4,200 people ahead of you"
+            "raw": "About 4,100 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -5781,9 +5817,9 @@
         },
         "2023-10": {
           "peopleAhead": {
-            "count": 4500,
+            "count": 4400,
             "known": true,
-            "raw": "About 4,500 people ahead of you"
+            "raw": "About 4,400 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -5793,9 +5829,9 @@
         },
         "2023-11": {
           "peopleAhead": {
-            "count": 5000,
+            "count": 4800,
             "known": true,
-            "raw": "About 5,000 people ahead of you"
+            "raw": "About 4,800 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -5805,9 +5841,9 @@
         },
         "2023-12": {
           "peopleAhead": {
-            "count": 5500,
+            "count": 5400,
             "known": true,
-            "raw": "About 5,500 people ahead of you"
+            "raw": "About 5,400 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -5817,9 +5853,9 @@
         },
         "2024-01": {
           "peopleAhead": {
-            "count": 6000,
+            "count": 5800,
             "known": true,
-            "raw": "About 6,000 people ahead of you"
+            "raw": "About 5,800 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -5829,9 +5865,9 @@
         },
         "2024-02": {
           "peopleAhead": {
-            "count": 6500,
+            "count": 6300,
             "known": true,
-            "raw": "About 6,500 people ahead of you"
+            "raw": "About 6,300 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -5841,9 +5877,9 @@
         },
         "2024-03": {
           "peopleAhead": {
-            "count": 7000,
+            "count": 6900,
             "known": true,
-            "raw": "About 7,000 people ahead of you"
+            "raw": "About 6,900 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -5853,9 +5889,9 @@
         },
         "2024-04": {
           "peopleAhead": {
-            "count": 7700,
+            "count": 7500,
             "known": true,
-            "raw": "About 7,700 people ahead of you"
+            "raw": "About 7,500 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -5865,9 +5901,9 @@
         },
         "2024-05": {
           "peopleAhead": {
-            "count": 8300,
+            "count": 8100,
             "known": true,
-            "raw": "About 8,300 people ahead of you"
+            "raw": "About 8,100 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -5877,9 +5913,9 @@
         },
         "2024-06": {
           "peopleAhead": {
-            "count": 9100,
+            "count": 8800,
             "known": true,
-            "raw": "About 9,100 people ahead of you"
+            "raw": "About 8,800 people ahead of you"
           },
           "waitTime": {
             "days": null,
@@ -5889,9 +5925,9 @@
         },
         "2024-07": {
           "peopleAhead": {
-            "count": 10000,
+            "count": 9800,
             "known": true,
-            "raw": "About 10,000 people ahead of you"
+            "raw": "About 9,800 people ahead of you"
           },
           "waitTime": {
             "days": 30,
@@ -5901,57 +5937,57 @@
         },
         "2024-08": {
           "peopleAhead": {
-            "count": 11200,
+            "count": 10900,
             "known": true,
-            "raw": "About 11,200 people ahead of you"
+            "raw": "About 10,900 people ahead of you"
           },
           "waitTime": {
-            "days": 30,
+            "days": 61,
             "known": true,
-            "raw": "About 1 month left"
+            "raw": "2 months left"
           }
         },
         "2024-09": {
           "peopleAhead": {
-            "count": 12800,
+            "count": 12400,
             "known": true,
-            "raw": "About 12,800 people ahead of you"
+            "raw": "About 12,400 people ahead of you"
           },
           "waitTime": {
-            "days": 30,
+            "days": 61,
             "known": true,
-            "raw": "About 1 month left"
+            "raw": "2 months left"
           }
         },
         "2024-10": {
           "peopleAhead": {
-            "count": 15100,
+            "count": 14500,
             "known": true,
-            "raw": "About 15,100 people ahead of you"
+            "raw": "About 14,500 people ahead of you"
           },
           "waitTime": {
-            "days": 30,
+            "days": 61,
             "known": true,
-            "raw": "About 1 month left"
+            "raw": "2 months left"
           }
         },
         "2024-11": {
           "peopleAhead": {
-            "count": 18400,
+            "count": 17200,
             "known": true,
-            "raw": "About 18,400 people ahead of you"
+            "raw": "About 17,200 people ahead of you"
           },
           "waitTime": {
-            "days": 30,
+            "days": 61,
             "known": true,
-            "raw": "About 1 month left"
+            "raw": "2 months left"
           }
         },
         "2024-12": {
           "peopleAhead": {
-            "count": 20500,
+            "count": 19000,
             "known": true,
-            "raw": "About 20,500 people ahead of you"
+            "raw": "About 19,000 people ahead of you"
           },
           "waitTime": {
             "days": 61,
@@ -5961,81 +5997,81 @@
         },
         "2025-01": {
           "peopleAhead": {
-            "count": 22300,
+            "count": 20600,
             "known": true,
-            "raw": "About 22,300 people ahead of you"
+            "raw": "About 20,600 people ahead of you"
           },
           "waitTime": {
-            "days": 61,
+            "days": 91,
             "known": true,
-            "raw": "2 months left"
+            "raw": "3 months left"
           }
         },
         "2025-02": {
+          "peopleAhead": {
+            "count": 21600,
+            "known": true,
+            "raw": "About 21,600 people ahead of you"
+          },
+          "waitTime": {
+            "days": 91,
+            "known": true,
+            "raw": "3 months left"
+          }
+        },
+        "2025-03": {
+          "peopleAhead": {
+            "count": 22800,
+            "known": true,
+            "raw": "About 22,800 people ahead of you"
+          },
+          "waitTime": {
+            "days": 91,
+            "known": true,
+            "raw": "3 months left"
+          }
+        },
+        "2025-04": {
           "peopleAhead": {
             "count": 23800,
             "known": true,
             "raw": "About 23,800 people ahead of you"
           },
           "waitTime": {
-            "days": 61,
+            "days": 91,
             "known": true,
-            "raw": "2 months left"
-          }
-        },
-        "2025-03": {
-          "peopleAhead": {
-            "count": 25300,
-            "known": true,
-            "raw": "About 25,300 people ahead of you"
-          },
-          "waitTime": {
-            "days": 61,
-            "known": true,
-            "raw": "2 months left"
-          }
-        },
-        "2025-04": {
-          "peopleAhead": {
-            "count": 26400,
-            "known": true,
-            "raw": "About 26,400 people ahead of you"
-          },
-          "waitTime": {
-            "days": 61,
-            "known": true,
-            "raw": "2 months left"
+            "raw": "3 months left"
           }
         },
         "2025-05": {
           "peopleAhead": {
-            "count": 27500,
+            "count": 24700,
             "known": true,
-            "raw": "About 27,500 people ahead of you"
+            "raw": "About 24,700 people ahead of you"
           },
           "waitTime": {
-            "days": 61,
+            "days": 91,
             "known": true,
-            "raw": "2 months left"
+            "raw": "3 months left"
           }
         },
         "2025-06": {
           "peopleAhead": {
-            "count": 28400,
+            "count": 25600,
             "known": true,
-            "raw": "About 28,400 people ahead of you"
+            "raw": "About 25,600 people ahead of you"
           },
           "waitTime": {
-            "days": 61,
+            "days": 91,
             "known": true,
-            "raw": "2 months left"
+            "raw": "3 months left"
           }
         },
         "2025-07": {
           "peopleAhead": {
-            "count": 29800,
+            "count": 26500,
             "known": true,
-            "raw": "About 29,800 people ahead of you"
+            "raw": "About 26,500 people ahead of you"
           },
           "waitTime": {
             "days": 91,
@@ -6045,9 +6081,9 @@
         },
         "2025-08": {
           "peopleAhead": {
-            "count": 31100,
+            "count": 27500,
             "known": true,
-            "raw": "About 31,100 people ahead of you"
+            "raw": "About 27,500 people ahead of you"
           },
           "waitTime": {
             "days": 91,
@@ -6057,9 +6093,9 @@
         },
         "2025-09": {
           "peopleAhead": {
-            "count": 32800,
+            "count": 28800,
             "known": true,
-            "raw": "About 32,800 people ahead of you"
+            "raw": "About 28,800 people ahead of you"
           },
           "waitTime": {
             "days": 91,
@@ -6069,33 +6105,33 @@
         },
         "2025-10": {
           "peopleAhead": {
-            "count": 34400,
+            "count": 30000,
             "known": true,
-            "raw": "About 34,400 people ahead of you"
+            "raw": "About 30,000 people ahead of you"
           },
           "waitTime": {
-            "days": 91,
+            "days": 122,
             "known": true,
-            "raw": "3 months left"
+            "raw": "4 months left"
           }
         },
         "2025-11": {
           "peopleAhead": {
-            "count": 37400,
+            "count": 31900,
             "known": true,
-            "raw": "About 37,400 people ahead of you"
+            "raw": "About 31,900 people ahead of you"
           },
           "waitTime": {
-            "days": 91,
+            "days": 122,
             "known": true,
-            "raw": "3 months left"
+            "raw": "4 months left"
           }
         },
         "2025-12": {
           "peopleAhead": {
-            "count": 45100,
+            "count": 35600,
             "known": true,
-            "raw": "About 45,100 people ahead of you"
+            "raw": "About 35,600 people ahead of you"
           },
           "waitTime": {
             "days": 122,
@@ -6105,9 +6141,9 @@
         },
         "2026-01": {
           "peopleAhead": {
-            "count": 52500,
+            "count": 41000,
             "known": true,
-            "raw": "About 52,500 people ahead of you"
+            "raw": "About 41,000 people ahead of you"
           },
           "waitTime": {
             "days": 152,
@@ -6117,9 +6153,9 @@
         },
         "2026-02": {
           "peopleAhead": {
-            "count": 59500,
+            "count": 47900,
             "known": true,
-            "raw": "About 59,500 people ahead of you"
+            "raw": "About 47,900 people ahead of you"
           },
           "waitTime": {
             "days": 183,
@@ -6129,9 +6165,9 @@
         },
         "2026-03": {
           "peopleAhead": {
-            "count": 67800,
+            "count": 56000,
             "known": true,
-            "raw": "About 67,800 people ahead of you"
+            "raw": "About 56,000 people ahead of you"
           },
           "waitTime": {
             "days": 213,
@@ -6141,9 +6177,9 @@
         },
         "2026-04": {
           "peopleAhead": {
-            "count": 76000,
+            "count": 64200,
             "known": true,
-            "raw": "About 76,000 people ahead of you"
+            "raw": "About 64,200 people ahead of you"
           },
           "waitTime": {
             "days": 244,
@@ -6153,9 +6189,9 @@
         },
         "2026-05": {
           "peopleAhead": {
-            "count": 82700,
+            "count": 71000,
             "known": true,
-            "raw": "About 82,700 people ahead of you"
+            "raw": "About 71,000 people ahead of you"
           },
           "waitTime": {
             "days": 274,
@@ -6165,9 +6201,9 @@
         },
         "2026-06": {
           "peopleAhead": {
-            "count": 89300,
+            "count": 77600,
             "known": true,
-            "raw": "About 89,300 people ahead of you"
+            "raw": "About 77,600 people ahead of you"
           },
           "waitTime": {
             "days": 304,
@@ -6177,9 +6213,9 @@
         },
         "2026-07": {
           "peopleAhead": {
-            "count": 95800,
+            "count": 84000,
             "known": true,
-            "raw": "About 95,800 people ahead of you"
+            "raw": "About 84,000 people ahead of you"
           },
           "waitTime": {
             "days": 335,
@@ -6189,14 +6225,26 @@
         },
         "2026-08": {
           "peopleAhead": {
-            "count": 101500,
+            "count": 90000,
             "known": true,
-            "raw": "About 101,500 people ahead of you"
+            "raw": "About 90,000 people ahead of you"
           },
           "waitTime": {
             "days": 365,
             "known": true,
             "raw": "12 months left"
+          }
+        },
+        "2026-09": {
+          "peopleAhead": {
+            "count": 96500,
+            "known": true,
+            "raw": "About 96,500 people ahead of you"
+          },
+          "waitTime": {
+            "days": 396,
+            "known": true,
+            "raw": "13 months left"
           }
         }
       },
@@ -6208,12 +6256,12 @@
       "key": "pnp-base",
       "label": "Provincial Nominee (base, non-EE)",
       "totalWaiting": {
-        "count": 101500,
+        "count": 96500,
         "known": true,
-        "raw": "About 101,500 people waiting"
+        "raw": "About 96,500 people waiting"
       }
     }
   ],
   "updateInterval": "monthly",
-  "updatedUpstream": "September 3, 2026"
+  "updatedUpstream": "October 9, 2026"
 }
