@@ -585,11 +585,10 @@ function occupationLookup(hw: HighWage, onPick: (tier: WageTier | 'none') => voi
   return el(
     'article',
     { class: 'paper' },
-    el('div', { class: 'paper__band' }, el('span', { text: 'Registry' })),
+    el('div', { class: 'paper__band' }, el('span', { text: 'Occupation Lookup' })),
     el(
       'div',
       { class: 'paper__body' },
-      el('h2', { class: 'paper__title pixel', text: 'Occupation Lookup' }),
       el('p', {
         class: 'paper__note',
         text: 'Search by NOC code or job title. IRCC goes by the NOC that matches your duties, not your job title, so check the code on your profile.',

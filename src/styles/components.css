@@ -233,6 +233,9 @@
   color: var(--ink-soft);
 }
 
+/* A body that opens with its note (no title above it) starts at the padding. */
+.paper__note:first-child { margin-top: 0; }
+
 /* ---------------------------------------------------------------------------
  * Fields — label, dotted leader, value. The core bureaucratic unit.
  * ------------------------------------------------------------------------- */
