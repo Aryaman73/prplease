@@ -30,13 +30,13 @@ const TIER_PAY: Record<WageTier, string> = {
   '1.3x': '1.3× to 1.5×',
 };
 
-const YEAR_OPTIONS = ['Less than 1 year', '1 year', '2 years', '3 years', '4 years', '5 years or more'];
-const OFFER_OPTIONS: { value: WageTier | 'none'; label: string }[] = [
-  { value: 'none', label: 'No job offer' },
-  { value: '2.0x', label: 'In a 2.0× occupation' },
-  { value: '1.5x', label: 'In a 1.5× occupation' },
-  { value: '1.3x', label: 'In a 1.3× occupation' },
-];
+/**
+ * The score check is for CEC applicants only, so experience starts at a year.
+ * Job offers are left out on purpose: with a year of Canadian experience, an
+ * offer in the same tier never beats work-length + bonus, and the cases where
+ * one does (a higher tier, or experience outside the list) mean changing jobs.
+ */
+const YEAR_OPTIONS: [number, string][] = [[1, '1 year'], [2, '2 years'], [3, '3 years'], [4, '4 years'], [5, '5 years or more']];
 
 interface Applicant {
   crs: string;
@@ -45,13 +45,10 @@ interface Applicant {
   hasSpouse: boolean;
   /** 12+ months of that Canadian experience was in the occupation above. */
   hasYear: boolean;
-  offer: WageTier | 'none';
 }
 
-const isTier = (v: unknown): v is WageTier => v === '2.0x' || v === '1.5x' || v === '1.3x';
-
 function load(): Applicant {
-  const empty: Applicant = { crs: '', occupation: '', years: 1, hasSpouse: false, hasYear: true, offer: 'none' };
+  const empty: Applicant = { crs: '', occupation: '', years: 1, hasSpouse: false, hasYear: true };
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return empty;
@@ -59,10 +56,9 @@ function load(): Applicant {
     return {
       crs: typeof p.crs === 'string' ? p.crs : '',
       occupation: typeof p.occupation === 'string' ? p.occupation : '',
-      years: typeof p.years === 'number' && p.years >= 0 && p.years <= 5 ? p.years : empty.years,
+      years: typeof p.years === 'number' && p.years >= 1 && p.years <= 5 ? p.years : empty.years,
       hasSpouse: typeof p.hasSpouse === 'boolean' ? p.hasSpouse : false,
       hasYear: typeof p.hasYear === 'boolean' ? p.hasYear : true,
-      offer: isTier(p.offer) ? p.offer : 'none',
     };
   } catch {
     return empty;
@@ -255,15 +251,9 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
   const yearsSelect = el(
     'select',
     { class: 'hw-input', attrs: { id: 'hw-years' } },
-    ...YEAR_OPTIONS.map((label, i) => el('option', { text: label, attrs: { value: String(i) } })),
+    ...YEAR_OPTIONS.map(([value, label]) => el('option', { text: label, attrs: { value: String(value) } })),
   );
   yearsSelect.value = String(applicant.years);
-  const offerSelect = el(
-    'select',
-    { class: 'hw-input', attrs: { id: 'hw-offer' } },
-    ...OFFER_OPTIONS.map((o) => el('option', { text: o.label, attrs: { value: o.value } })),
-  );
-  offerSelect.value = applicant.offer;
   const yearBox = el('input', { attrs: { type: 'checkbox', id: 'hw-year' } });
   yearBox.checked = applicant.hasYear;
   const spouseBox = el('input', { attrs: { type: 'checkbox', id: 'hw-spouse' } });
@@ -350,7 +340,7 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
     }
 
     if (proj.reach === null) reachInput.value = String(Math.round(result.calibratedReach * 100));
-    reachNote.textContent = `Calibrated: ${Math.round(result.calibratedReach * 100)}%, the share at which this snapshot reproduces the actual cutoff of ${int(base.crsCutoff)}.`;
+    reachNote.textContent = `IRCC doesn't publish how many candidates in the pool are CEC-eligible. ${Math.round(result.calibratedReach * 100)}% is the share at which this snapshot reproduces the actual cutoff of ${int(base.crsCutoff)}. Higher means more competition.`;
 
     figureBefore.textContent = String(result.before);
     figureAfter.textContent = String(result.after);
@@ -394,7 +384,6 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
       years: Number(yearsSelect.value),
       hasSpouse: spouseBox.checked,
       hasYear: yearBox.checked,
-      offer: isTier(offerSelect.value) ? offerSelect.value : 'none',
     };
     save(state);
 
@@ -418,45 +407,21 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
       return;
     }
 
-    // Twelve months in an occupation can't exceed the total; the box means nothing under a year.
-    yearBox.disabled = state.years < 1;
     const experienceTier = occ?.tier && state.hasYear ? occ.tier : null;
-    const offerTier = state.offer === 'none' ? null : state.offer;
-    const r = applicantScore(hw, { crs, years: state.years, hasSpouse: state.hasSpouse, experienceTier, offerTier });
+    const r = applicantScore(hw, { crs, years: state.years, hasSpouse: state.hasSpouse, experienceTier, offerTier: null });
     const margin = r.score - projected;
     const bonus = r.experienceOption - r.workLength;
 
     applicantFields.append(
       field('Score today', int(crs)),
-      field('Work-length points (in that score)', int(r.workLength)),
-      field('Experience option', bonus ? `${r.workLength} + ${bonus} = ${r.experienceOption}` : int(r.experienceOption)),
-      field('Job offer option', offerTier ? int(r.offerOption) : '—', !offerTier),
-      field('New score', `${int(r.score)} (${r.score - crs >= 0 ? '+' : ''}${r.score - crs})`),
+      field('High-wage bonus', occ ? `+${bonus}` : '—', !occ),
+      field('New score', int(r.score)),
       field('Projected CEC cutoff', int(projected)),
     );
-
-    if (state.years < 1) {
-      applicantTally.textContent =
-        `New score ${int(r.score)}. CEC needs at least a year of skilled Canadian work experience, so CEC draws can't invite you yet; general and category draws have their own cutoffs.`;
-      applicantVerdict.append(stamp('NOT CEC', 'flag'));
-      return;
-    }
-
-    const which = offerTier
-      ? r.uses === 'offer'
-        ? `The job offer counts (${r.offerOption} beats ${r.experienceOption}).`
-        : `Your experience counts (${r.experienceOption} beats ${r.offerOption}), so the job offer doesn't change your score.`
-      : '';
-    const verdict =
+    applicantTally.textContent =
       margin >= 0
         ? `${int(r.score)} clears the projected cutoff by ${margin}.`
         : `${int(r.score)} is ${-margin} short of the projected cutoff.`;
-    // Only worth saying when an offer in the applicant's own tier would actually win.
-    const ownTierOffer = occ?.tier ? hw.points.offer[occ.tier] : 0;
-    const hint = !offerTier && ownTierOffer > r.experienceOption
-      ? ` A job offer in this occupation would count instead: ${int(crs - r.workLength + ownTierOffer)}.`
-      : '';
-    applicantTally.textContent = `${which ? `${which} ` : ''}${verdict}${hint}`;
     applicantVerdict.append(stamp(margin >= 0 ? 'APPROVED' : 'DENIED', margin >= 0 ? 'approved' : 'denied'));
   };
 
@@ -467,7 +432,6 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
   yearBox.addEventListener('change', rerunApplicant);
   spouseBox.addEventListener('change', rerunApplicant);
   yearsSelect.addEventListener('change', rerunApplicant);
-  offerSelect.addEventListener('change', rerunApplicant);
 
   baseSelect.addEventListener('change', () => {
     proj.baseIndex = Number(baseSelect.value);
@@ -506,7 +470,7 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
       'div',
       { class: 'paper__body' },
       el('h2', { class: 'paper__title pixel', text: 'Score Check' }),
-      el('p', { class: 'paper__note', text: 'Your score under the new rules, against the projected cutoff below. Your current CRS already includes your Canadian work-length points; the new factor replaces them with the higher of experience and a job offer. Nothing you enter leaves this browser.' }),
+      el('p', { class: 'paper__note', text: 'For people in Canada applying through CEC, with a year or more of skilled Canadian work experience. Your score with the high-wage bonus, against the projected cutoff below. Nothing you enter leaves this browser.' }),
       el(
         'form',
         { class: 'inspect hw-form', on: { submit: (e) => { e.preventDefault(); update(); } } },
@@ -521,9 +485,8 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
           'Canadian work experience (total)',
           'hw-years',
           yearsSelect,
-          el('p', { class: 'hw-hint', text: 'As on your profile. Your CRS today already counts these years, so changing one without the other describes a different applicant.' }),
+          el('p', { class: 'hw-hint', text: 'As on your profile: your CRS today already counts these years.' }),
         ),
-        control('Qualifying job offer', 'hw-offer', offerSelect),
       ),
       el(
         'div',
@@ -533,6 +496,10 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
       ),
       el('div', { class: 'hw-result' }, applicantFields, applicantVerdict),
       applicantTally,
+      el('p', {
+        class: 'hw-hint',
+        text: 'Job offers are not included. With a year of Canadian experience, an offer in the same tier never beats your experience points; one only helps if it is in a higher tier than your experience, or your experience is outside the list.',
+      }),
     ),
   );
 
@@ -564,9 +531,9 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
       chartHost,
       el('p', { class: 'hw-hint', text: 'Candidates a CEC draw can reach, per 5-point bin. 601+ is left out: those are PNP nominees. Job offers are not modelled: everyone a CEC draw reaches has 1+ year of Canadian experience, so an offer in their own tier never beats it.' }),
       el(
-        'details',
+        'section',
         { class: 'hw-assumptions' },
-        el('summary', { class: 'inspect__label', text: 'Assumptions' }),
+        el('h3', { class: 'inspect__label', text: 'Assumptions' }),
         el(
           'div',
           { class: 'hw-grid' },
@@ -586,7 +553,7 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
               el('span', { class: 'hw-tier' }, el('span', { text: 'Not listed' }), noneOut),
             ),
           ),
-          control('Reach (%)', 'hw-reach', reachInput, reachNote),
+          control('CEC-eligible share of the pool (%)', 'hw-reach', reachInput, reachNote),
         ),
       ),
     ),
@@ -622,7 +589,7 @@ function finePrint(hw: HighWage) {
         'ul',
         { class: 'hw-rules hw-rules--fine' },
         el('li', {}, 'IRCC publishes the pool in bands. Scores are spread evenly inside each band, except 501–600, which is assumed to thin out from the 491–500 level. In 2024, 25,304 new profiles scored 501–550 against 1,973 at 551–600.'),
-        el('li', {}, 'IRCC does not say how much of the pool is CEC-eligible. The reach is set so the chosen snapshot reproduces that round’s real cutoff, and is assumed equal at every score.'),
+        el('li', {}, 'IRCC does not say how much of the pool is CEC-eligible. That share is set so the chosen snapshot reproduces that round’s real cutoff, and is assumed equal at every score.'),
         el('li', {}, 'Tiers are assumed independent of score. If high-wage workers already score higher, the real cutoff rises further than shown.'),
         el('li', {}, 'This is the first draw after rescoring only: no new profiles, no change in draw size, no new category draws.'),
         el('li', {}, 'Tier-share sources: 2021 Census employment in TEER 0–3 occupations (Statistics Canada tables 98-10-0449, 98-10-0316, 98-10-0585), and the top 15 occupations of invited candidates in IRCC’s Express Entry Year-End Report 2024. Temporary-resident shares are estimated from 4-digit occupation groups.'),
