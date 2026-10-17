@@ -113,9 +113,9 @@ function paint(container: HTMLElement, { today, shifted, reach, before, after }:
     if (score < LO || score > HI) continue;
     const x = xOf(score);
     svg.append(svgEl('line', { x1: x, x2: x, y1: MARGIN.top - 6, y2: MARGIN.top + plotH, class: 'shift-cutoff' }));
-    const t = text(label, x + (side === 'end' ? -4 : 4), MARGIN.top - 10, 'chart__tick shift-cutoff__label');
-    t.setAttribute('text-anchor', side);
-    svg.append(t);
+    // A class, not the text-anchor attribute: `.chart__tick` centres text in CSS,
+    // and CSS beats SVG presentation attributes, which left the labels colliding.
+    svg.append(text(label, x + (side === 'end' ? -4 : 4), MARGIN.top - 10, `chart__tick shift-cutoff__label shift-cutoff__label--${side}`));
   }
 
   const highlight = svgEl('rect', {

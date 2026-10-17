@@ -69,6 +69,12 @@ function measuredAt(round: Round): number {
 
 const LOOKUP_LIMIT = 8;
 
+/** "2026-11-03" -> "3 November 2026", for prose (stampDate is the form register). */
+function longDate(iso: string): string {
+  const d = new Date(`${iso}T00:00:00Z`);
+  return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+}
+
 /** Code prefix ("2123"), or every word somewhere in the title ("software eng"). */
 function searchOccupations(list: Occupation[], query: string): Occupation[] {
   const q = query.trim().toLowerCase();
@@ -140,12 +146,7 @@ function directive(hw: HighWage) {
   return el(
     'article',
     { class: 'paper' },
-    el(
-      'div',
-      { class: 'paper__band' },
-      el('span', { text: 'Directive' }),
-      el('span', { text: `Effective ${stampDate(hw.effective)}` }),
-    ),
+    el('div', { class: 'paper__band' }, el('span', { text: 'Directive' })),
     el(
       'div',
       { class: 'paper__body' },
@@ -153,7 +154,7 @@ function directive(hw: HighWage) {
       el(
         'p',
         { class: 'paper__note' },
-        `Express Entry adds a bonus for at least 12 months of Canadian work experience in ${listed} occupations IRCC classes as high-wage: those where the median pay across Canada is at least 1.3 times the national median. The bonus goes on top of the Canadian experience points you already get, and is applied automatically. `,
+        `From ${longDate(hw.effective)}, Express Entry adds a bonus for at least 12 months of Canadian work experience in ${listed} occupations IRCC classes as high-wage: those where the median pay across Canada is at least 1.3 times the national median. The bonus goes on top of the Canadian experience points you already get, and is applied automatically. `,
         el('strong', { text: 'It is the occupation that counts, not your own salary.' }),
       ),
     ),
@@ -421,7 +422,7 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
   const applicantPaper = el(
     'article',
     { class: 'paper' },
-    el('div', { class: 'paper__band paper__band--olive' }, el('span', { text: 'Applicant Verification' }), el('span', { text: 'Your score' })),
+    el('div', { class: 'paper__band paper__band--olive' }, el('span', { text: 'Applicant Verification' })),
     el(
       'div',
       { class: 'paper__body' },
@@ -451,7 +452,7 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
   const projectionPaper = el(
     'article',
     { class: 'paper' },
-    el('div', { class: 'paper__band' }, el('span', { text: 'Projection' }), el('span', { text: 'Next CEC draw' })),
+    el('div', { class: 'paper__band' }, el('span', { text: 'Projection' })),
     el(
       'div',
       { class: 'paper__body' },
@@ -504,12 +505,21 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
     ),
     el(
       'div',
+      { class: 'paper__body hw-caption' },
+      el('h3', { class: 'inspect__label hw-subhead', text: 'Invited at the projected cutoff' }),
+    ),
+    el(
+      'div',
       { class: 'paper__body paper__body--flush' },
       el(
-        'table',
-        { class: 'ledger' },
-        el('thead', {}, el('tr', {}, el('th', { text: 'Invited at the projected cutoff' }), el('th', { class: 'num', text: 'Candidates' }), el('th', { class: 'num', text: 'Share' }))),
-        tierBody,
+        'div',
+        { class: 'ledger__scroll' },
+        el(
+          'table',
+          { class: 'ledger' },
+          el('thead', {}, el('tr', {}, el('th', { text: 'Tier' }), el('th', { class: 'num', text: 'Candidates' }), el('th', { class: 'num', text: 'Share' }))),
+          tierBody,
+        ),
       ),
     ),
   );
@@ -573,7 +583,7 @@ function occupationLookup(hw: HighWage, onPick: (tier: WageTier | 'none') => voi
   return el(
     'article',
     { class: 'paper' },
-    el('div', { class: 'paper__band' }, el('span', { text: 'Registry' }), el('span', { text: `NOC 2021 · ${int(hw.occupations.length)} occupations` })),
+    el('div', { class: 'paper__band' }, el('span', { text: 'Registry' })),
     el(
       'div',
       { class: 'paper__body' },
@@ -601,13 +611,14 @@ function finePrint(hw: HighWage) {
   return el(
     'article',
     { class: 'paper' },
-    el('div', { class: 'paper__band paper__band--rust' }, el('span', { text: 'Fine print' }), el('span', { text: 'Estimate, not advice' })),
+    el('div', { class: 'paper__band paper__band--rust' }, el('span', { text: 'Fine print' })),
     el(
       'div',
       { class: 'paper__body' },
       el(
         'ul',
         { class: 'hw-rules hw-rules--fine' },
+        el('li', {}, el('strong', { text: 'This is an estimate, not advice.' }), ' Check your own points with IRCC before acting on it.'),
         el('li', {}, 'IRCC publishes the pool in bands. Scores are spread evenly inside each band, except 501–600, which is assumed to thin out from the 491–500 level. In 2024, 25,304 new profiles scored 501–550 against 1,973 at 551–600.'),
         el('li', {}, 'IRCC does not say how much of the pool is CEC-eligible. That share is set so the chosen snapshot reproduces that round’s real cutoff, and is assumed equal at every score.'),
         el('li', {}, 'Tiers are assumed independent of score. If high-wage workers already score higher, the real cutoff rises further than shown.'),
