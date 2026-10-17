@@ -283,9 +283,9 @@ export function renderCase(processing: Processing | null): HTMLElement {
       el(
         'div',
         { class: 'paper__band' },
-        el('span', { text: 'Queue Position' }),
+        el('span', { text: 'Queue' }),
         el('span', {
-          text: processing?.updatedUpstream ? `IRCC ${processing.updatedUpstream}` : '',
+          text: processing?.updatedUpstream ? processing.updatedUpstream : '',
         }),
       ),
       el(
@@ -307,7 +307,7 @@ export function renderCase(processing: Processing | null): HTMLElement {
         'div',
         { class: 'paper__band paper__band--olive' },
         el('span', { text: 'Your File' }),
-        el('span', { text: 'Application milestones' }),
+        el('span', { text: 'Application' }),
       ),
       el(
         'div',

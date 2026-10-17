@@ -134,7 +134,7 @@ export function renderLog(draws: Draws): HTMLElement {
         'div',
         { class: 'paper__band' },
         el('span', { text: 'Entry Log' }),
-        el('span', { text: 'CRS cut-off by draw' }),
+        el('span', { text: 'CRS cut-offs' }),
       ),
       el('div', { class: 'paper__body' }, summary, chartHost),
     ),

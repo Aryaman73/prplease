@@ -136,7 +136,7 @@ export function renderPoolView(draws: Draws): HTMLElement {
         'div',
         { class: 'paper__band paper__band--olive' },
         el('span', { text: 'Distribution' }),
-        el('span', { text: 'Candidates by CRS band' }),
+        el('span', { text: 'By CRS band' }),
       ),
       el('div', { class: 'paper__body paper__body--flush' }, tableHost),
     ),

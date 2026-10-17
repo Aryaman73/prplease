@@ -952,7 +952,9 @@
   /* 2 cells, not 3 — the next whole-pixel step down. */
   .crest { width: 42px; height: 26px; }
 
-  .datestamp { text-align: left; }
+  /* It wraps onto a row of its own and sits off-centre under the plate; the
+   * bulletin's first card carries the same date, so nothing is lost. */
+  .datestamp { display: none; }
 
   /* 32, not 34: the next crisp step down. */
   .figure__value { font-size: var(--px-lg); }

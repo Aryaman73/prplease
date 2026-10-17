@@ -150,8 +150,8 @@ function inspection(draws: Draws) {
     const active = cec ? cecRecent : all;
 
     bandCount.textContent = cec
-      ? `Last ${cecRecent.length} CEC rounds`
-      : `${all.length} active categories`;
+      ? `Last ${cecRecent.length} CEC`
+      : `${all.length} categories`;
     note.textContent = cec
       ? `Compared against the last ${cecRecent.length} Canadian Experience Class rounds. Past cut-offs are not a prediction of future ones.`
       : 'Compared against the most recent draw in each category. Past cut-offs are not a prediction of future ones.';
@@ -268,7 +268,7 @@ function inspection(draws: Draws) {
     el(
       'div',
       { class: 'paper__band paper__band--olive' },
-      el('span', { text: 'Applicant Verification' }),
+      el('span', { text: 'Verification' }),
       bandCount,
     ),
     el(
