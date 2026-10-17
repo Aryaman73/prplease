@@ -1,6 +1,7 @@
 """Build tier-share presets (share of TEER 0-3 workers/invitees in each high-wage tier) for the calculator.
 
-Inputs (same folder): highwage.tsv, census.json (fetch.py), npr.json (npr.py).
+Inputs (same folder): highwage.tsv, census.json (fetch.py), npr.json (npr.py),
+invitee_tiers.json (invitee_tiers.py).
 Output: presets.json
 """
 import json, os
@@ -42,11 +43,32 @@ def census_series(table, suffix):
 
 
 presets = []
+
+# CEC invitees by occupation, from IRCC open data (invitee_tiers.py). The default:
+# CEC-specific and current, where the Census presets describe 2016-21 landings.
+invitees = json.load(open(os.path.join(HERE, "invitee_tiers.json")))["periods"]
+partial = next(label for label in reversed(list(invitees)) if not label.isdigit())  # e.g. "Jan-Jul 2026"
+
+
+def invitee_shares(labels):
+    counts = {t: sum(invitees[label]["counts"][t] for label in labels) for t in TIERS + ["none"]}
+    total = sum(counts.values())
+    return {t: v / total for t, v in counts.items()}
+
+
+year = partial[-4:]
+presets.append({"key": "cec_invitees_recent", "label": f"CEC invitees, 2025 to {partial.replace('-', '–')}",
+                "note": f"IRCC open data, CEC invitees who applied, 2025 and {partial} combined; NOC 2011 mapped to 2021",
+                "shares": invitee_shares(["2025", partial])})
+presets.append({"key": "cec_invitees_ytd", "label": f"CEC invitees, {partial.replace('-', '–')}",
+                "note": f"IRCC open data, CEC invitees who applied, {partial}",
+                "shares": invitee_shares([partial])})
+
 for key, label, table, suffix, note in [
-    ("census_all", "All workers in Canada", "all", "|total", "2021 Census, experienced labour force, TEER 0-3"),
-    ("census_imm", "All immigrants (PRs)", "imm", "|all_immigrants|any_period", "2021 Census, TEER 0-3"),
-    ("census_cec", "CEC immigrants, landed 2016-21", "imm", "|cec|2016_2021", "2021 Census, TEER 0-3"),
-    ("census_fsw", "Skilled-worker immigrants, landed 2016-21", "imm", "|skilled_workers|2016_2021", "2021 Census, TEER 0-3"),
+    ("census_all", "All workers in Canada (2021 Census)", "all", "|total", "2021 Census, experienced labour force, TEER 0-3"),
+    ("census_imm", "All immigrants (2021 Census)", "imm", "|all_immigrants|any_period", "2021 Census, TEER 0-3"),
+    ("census_cec", "CEC immigrants, 2016–21 landings (overstates listed tiers)", "imm", "|cec|2016_2021", "2021 Census, TEER 0-3"),
+    ("census_fsw", "Skilled-worker immigrants, 2016–21 landings (overstates listed tiers)", "imm", "|skilled_workers|2016_2021", "2021 Census, TEER 0-3"),
 ]:
     presets.append({"key": key, "label": label, "note": note, "shares": shares_from_counts(census_series(table, suffix))})
 

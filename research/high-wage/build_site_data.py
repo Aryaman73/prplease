@@ -3,7 +3,7 @@
 Inputs (this folder):
   highwage.tsv  - IRCC's 186 high-wage NOCs and tiers (canada.ca list published 2026-10-16)
   noc2021.tsv   - all 516 NOC 2021 unit groups, so a lookup can say "not listed" by name
-  presets.json  - tier-share presets (presets.py)
+  presets.json  - tier-share presets (presets.py, which reads invitee_tiers.py's output)
 
 Run: python3 -I research/high-wage/build_site_data.py
 """
@@ -39,7 +39,7 @@ data = {
     },
     "occupations": occupations,
     "presets": presets,
-    "defaultPreset": "ita2024_blend",
+    "defaultPreset": "cec_invitees_recent",
 }
 assert sum(1 for o in occupations if o["tier"]) == 186
 json.dump(data, open(OUT, "w"), indent=1, ensure_ascii=False)

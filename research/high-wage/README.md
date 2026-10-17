@@ -9,7 +9,8 @@ Where the numbers on the **High Wage** tab come from. Python 3, standard library
 | `fetch.py` → `census.json` | 2021 Census counts by NOC unit group, from StatCan WDS (tables 98-10-0449 all workers, 98-10-0316 immigrants by admission category) |
 | `npr.py` → `npr.json` | Temporary residents in high-wage NOCs, estimated from 98-10-0585 (NPR = total − non-immigrants − immigrants), apportioned from 4-digit minor groups |
 | `analyze.py` → `highwage_with_counts.csv` | Workers in high-wage NOCs by population; per-NOC table |
-| `presets.py` → `presets.json` | Tier-share presets for the projection (Census populations, NPR estimate, IRCC Year-End Report 2024 Table 12a) |
+| `invitee_tiers.py` → `invitee_tiers.json` | CEC invitees by occupation from [IRCC open data](https://open.canada.ca/data/en/dataset/593e9165-c6ce-4f9b-b519-03d315f92cd4) (NOC 2011, mapped to 2021 with StatCan's correspondence). Source of the default preset |
+| `presets.py` → `presets.json` | Tier-share presets for the projection (CEC invitees, Census populations, NPR estimate, IRCC Year-End Report 2024 Table 12a) |
 | `model.py` | Reference implementation of the cutoff model; `src/highwage/model.ts` is its port |
 | `build_site_data.py` → `public/data/highwage.json` | What the site loads |
 
@@ -18,11 +19,12 @@ Where the numbers on the **High Wage** tab come from. Python 3, standard library
 ```bash
 python3 -I research/high-wage/fetch.py
 python3 -I research/high-wage/npr.py
+python3 -I research/high-wage/invitee_tiers.py
 python3 -I research/high-wage/presets.py
 python3 -I research/high-wage/build_site_data.py
 ```
 
-Only `build_site_data.py` is needed when IRCC updates the list: edit `highwage.tsv`, then run it.
+Only `build_site_data.py` is needed when IRCC updates the list: edit `highwage.tsv`, then run it. To refresh the default tier shares from IRCC's monthly invitee data, run `invitee_tiers.py`, `presets.py`, then `build_site_data.py`.
 
 ## Caveats
 

@@ -2599,8 +2599,30 @@
  ],
  "presets": [
   {
+   "key": "cec_invitees_recent",
+   "label": "CEC invitees, 2025 to Jan–Jul 2026",
+   "note": "IRCC open data, CEC invitees who applied, 2025 and Jan-Jul 2026 combined; NOC 2011 mapped to 2021",
+   "shares": {
+    "2.0x": 0.042,
+    "1.5x": 0.2501,
+    "1.3x": 0.1166,
+    "none": 0.5914
+   }
+  },
+  {
+   "key": "cec_invitees_ytd",
+   "label": "CEC invitees, Jan–Jul 2026",
+   "note": "IRCC open data, CEC invitees who applied, Jan-Jul 2026",
+   "shares": {
+    "2.0x": 0.0381,
+    "1.5x": 0.2467,
+    "1.3x": 0.1263,
+    "none": 0.5889
+   }
+  },
+  {
    "key": "census_all",
-   "label": "All workers in Canada",
+   "label": "All workers in Canada (2021 Census)",
    "note": "2021 Census, experienced labour force, TEER 0-3",
    "shares": {
     "2.0x": 0.0754,
@@ -2611,7 +2633,7 @@
   },
   {
    "key": "census_imm",
-   "label": "All immigrants (PRs)",
+   "label": "All immigrants (2021 Census)",
    "note": "2021 Census, TEER 0-3",
    "shares": {
     "2.0x": 0.0785,
@@ -2622,7 +2644,7 @@
   },
   {
    "key": "census_cec",
-   "label": "CEC immigrants, landed 2016-21",
+   "label": "CEC immigrants, 2016–21 landings (overstates listed tiers)",
    "note": "2021 Census, TEER 0-3",
    "shares": {
     "2.0x": 0.0958,
@@ -2633,7 +2655,7 @@
   },
   {
    "key": "census_fsw",
-   "label": "Skilled-worker immigrants, landed 2016-21",
+   "label": "Skilled-worker immigrants, 2016–21 landings (overstates listed tiers)",
    "note": "2021 Census, TEER 0-3",
    "shares": {
     "2.0x": 0.1013,
@@ -2698,5 +2720,5 @@
    }
   }
  ],
- "defaultPreset": "ita2024_blend"
+ "defaultPreset": "cec_invitees_recent"
 }

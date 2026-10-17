@@ -21,7 +21,7 @@ const CEC = 'cec';
 const TIER_LABEL: Record<WageTier | 'none', string> = {
   '2.0x': '2.0×', '1.5x': '1.5×', '1.3x': '1.3×', none: 'Not listed',
 };
-/** Occupation median pay against the national median, as the table's row label. */
+/** Occupation median pay against the workforce's average median wage, as the table's row label. */
 const TIER_PAY: Record<WageTier, string> = {
   '2.0x': '2× or more',
   '1.5x': '1.5× to 2×',
@@ -152,7 +152,7 @@ function directive(hw: HighWage) {
       el(
         'p',
         { class: 'paper__note' },
-        `From ${longDate(hw.effective)}, Express Entry adds a bonus for at least 12 months of Canadian work experience in ${listed} occupations IRCC classes as high-wage: those where the median pay across Canada is at least 1.3 times the national median. The bonus goes on top of the Canadian experience points you already get, and is applied automatically. `,
+        `From ${longDate(hw.effective)}, Express Entry adds a bonus for at least 12 months of Canadian work experience in ${listed} occupations IRCC classes as high-wage: those whose median pay across Canada is at least 1.3 times the average median wage of the Canadian workforce. An occupation's tier is the highest it reached in the last three years, and yours is fixed on the day you are invited. The bonus goes on top of the Canadian experience points you already get, and is applied automatically. `,
         el('strong', { text: 'It is the occupation that counts, not your own salary.' }),
       ),
     ),
@@ -187,7 +187,7 @@ function directive(hw: HighWage) {
       el(
         'p',
         { class: 'hw-copy' },
-        `A job offer in a listed occupation (${hw.points.offer['2.0x']} / ${hw.points.offer['1.5x']} / ${hw.points.offer['1.3x']}, no LMIA needed) replaces your Canadian experience points instead of adding to them. With a year or more of Canadian experience, as everyone in a CEC draw has, experience beats an offer in the same tier, so this page leaves job offers out.`,
+        `A job offer in a listed occupation (${hw.points.offer['2.0x']} / ${hw.points.offer['1.5x']} / ${hw.points.offer['1.3x']}, no LMIA needed) replaces your Canadian experience points (length points plus bonus) instead of adding to them, and you get whichever is higher. It only raises your score if it is in a higher tier than your 12 months of experience, or if you have under 12 months in listed jobs. For most CEC candidates it changes nothing, so this page leaves job offers out.`,
       ),
     ),
   );
@@ -597,11 +597,11 @@ function finePrint(hw: HighWage) {
         'ul',
         { class: 'hw-rules hw-rules--fine' },
         el('li', {}, el('strong', { text: 'This is an estimate, not advice.' }), ' Check your own points with IRCC before acting on it.'),
-        el('li', {}, 'IRCC publishes the pool in bands. Scores are spread evenly inside each band, except 501–600, which is assumed to thin out from the 491–500 level. In 2024, 25,304 new profiles scored 501–550 against 1,973 at 551–600.'),
+        el('li', {}, 'IRCC publishes the pool in bands. Scores are spread evenly inside each band, except 501–600, which is assumed to thin out from the 491–500 level. In 2024, 25,304 new profiles scored 501–550 against 1,973 at 551–600. This probably understates how many CEC candidates wait just below the cutoff, so the real jump is likely a few points larger than shown.'),
         el('li', {}, 'A CEC draw can only invite CEC-eligible candidates, and IRCC does not say how many of the pool that is. The model assumes they are the same share at every score, and takes that share from the snapshot itself: it is whatever reproduces the round’s real cutoff, so it never needs setting by hand. If CEC candidates bunch at particular scores, the projection is off by that much.'),
-        el('li', {}, 'Tiers are assumed independent of score. If high-wage workers already score higher, the real cutoff rises further than shown.'),
-        el('li', {}, 'This is the first draw after rescoring only: no new profiles, no change in draw size, no new category draws.'),
-        el('li', {}, '“Who is in which tier” sources. The Census options use 2021 Census employment in TEER 0–3 occupations (Statistics Canada tables 98-10-0449, 98-10-0316, 98-10-0585); temporary-resident shares are estimated from 4-digit occupation groups. The IRCC invitee options use the 15 most common occupations of invited candidates in IRCC’s Express Entry Year-End Report 2024, which cover only about a third of invitations. “Top 15 only” assumes the rest look the same; the default instead fills the other two-thirds with the temporary-resident mix, since those top 15 lean heavily on software jobs.'),
+        el('li', {}, 'Tiers are assumed independent of score. If the shares differ by score, the cutoff could move several points either way.'),
+        el('li', {}, 'This projects the same draw rescored: no new profiles, no change in draw size, no new category draws. The real first draw will probably come in higher. Invitations pause for up to two weeks while scores are recalculated, new CEC profiles keep arriving meanwhile (each extra two weeks adds roughly 2–4 points), and some candidates will add job offers that raise their scores.'),
+        el('li', {}, '“Who is in which tier” sources. The default uses IRCC’s open data on CEC invitees by occupation for 2025 and 2026 so far, with their NOC 2011 codes mapped to NOC 2021. The Census options use 2021 Census employment in TEER 0–3 occupations (Statistics Canada tables 98-10-0449, 98-10-0316, 98-10-0585); the CEC and skilled-worker ones describe people who landed in 2016–21 and put noticeably more of them in listed occupations than recent CEC invitees. Temporary-resident shares are estimated from 4-digit occupation groups. The “IRCC invitees” options use the 15 most common occupations of invited candidates in IRCC’s Express Entry Year-End Report 2024, about a third of invitations.'),
       ),
       el(
         'p',
