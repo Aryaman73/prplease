@@ -935,6 +935,13 @@
 }
 
 .hw-rules li + li { margin-top: var(--space-2); }
+
+.hw-subhead { margin: 0; font-weight: 400; }
+.hw-copy {
+  margin: var(--space-3) 0 0;
+  font-size: var(--text-md);
+  color: var(--ink);
+}
 .hw-rules--fine { margin-top: 0; color: var(--ink-soft); }
 
 /* On-paper form controls: the typewriter face in a ruled box, like a form field. */

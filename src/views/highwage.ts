@@ -134,7 +134,6 @@ function directive(hw: HighWage) {
       el('td', { class: 'strong', text: TIER_PAY[t] }),
       el('td', { class: 'num', text: int(counts[t]) }),
       el('td', { class: 'num strong', text: `+${hw.points.experience[t]}` }),
-      el('td', { class: 'num', text: String(hw.points.offer[t]) }),
     ),
   );
 
@@ -151,30 +150,11 @@ function directive(hw: HighWage) {
       'div',
       { class: 'paper__body' },
       el('h2', { class: 'paper__title pixel', text: 'High-Wage Occupations' }),
-      el('p', {
-        class: 'paper__note',
-        text: `Express Entry adds points for work in ${listed} occupations IRCC classes as high-wage: those where the median pay across Canada is at least 1.3 times the national median. It is the occupation that counts, not your own salary.`,
-      }),
       el(
-        'ul',
-        { class: 'hw-rules' },
-        el(
-          'li',
-          {},
-          el('strong', { text: 'Canadian experience: ' }),
-          'the length points you already get (up to 80, or 70 with a spouse), plus +20, +40 or +70 if at least 12 months were in listed occupations. Applied automatically.',
-        ),
-        el(
-          'li',
-          {},
-          el('strong', { text: 'Or a job offer ' }),
-          'in a listed occupation: 50, 70 or 100. It replaces your experience points rather than adding to them, and you get whichever is higher. No LMIA needed.',
-        ),
-        el(
-          'li',
-          {},
-          'So with a year or more of Canadian experience in a listed occupation, a job offer in the same tier never raises your score. Offers matter for people with under a year of Canadian experience, or whose experience is outside the list.',
-        ),
+        'p',
+        { class: 'paper__note' },
+        `Express Entry adds a bonus for at least 12 months of Canadian work experience in ${listed} occupations IRCC classes as high-wage: those where the median pay across Canada is at least 1.3 times the national median. The bonus goes on top of the Canadian experience points you already get, and is applied automatically. `,
+        el('strong', { text: 'It is the occupation that counts, not your own salary.' }),
       ),
     ),
     el(
@@ -192,14 +172,33 @@ function directive(hw: HighWage) {
             el(
               'tr',
               {},
-              el('th', { text: 'Median pay' }),
+              el('th', { text: 'Occupation median pay' }),
               el('th', { class: 'num', text: 'NOCs' }),
               el('th', { class: 'num', text: 'Bonus' }),
-              el('th', { class: 'num', text: 'Or offer' }),
             ),
           ),
           el('tbody', {}, ...tierRows),
         ),
+      ),
+    ),
+    el(
+      'div',
+      { class: 'paper__body' },
+      el('h3', { class: 'inspect__label hw-subhead', text: 'Job offers' }),
+      el(
+        'p',
+        { class: 'hw-copy' },
+        `A job offer in a listed occupation is worth ${hw.points.offer['2.0x']}, ${hw.points.offer['1.5x']} or ${hw.points.offer['1.3x']} points: 30 more than the bonus for the same tier, and it no longer needs an LMIA. But it doesn't stack. It replaces your Canadian experience points (the length points plus the bonus), and you get whichever is higher.`,
+      ),
+      el(
+        'p',
+        { class: 'hw-copy' },
+        'A year of Canadian experience is already worth at least 35 length points, more than that 30-point gap, so for anyone with a year or more the experience side always wins and an offer in their own tier adds nothing. An offer only helps with under a year of Canadian experience, or when it is in a higher tier than the experience.',
+      ),
+      el(
+        'p',
+        { class: 'hw-copy' },
+        'Everyone a CEC draw can invite has at least that year, so this page leaves job offers out: the score check adds only the bonus, and the projection assumes no one you are competing with gains anything from an offer.',
       ),
     ),
   );
@@ -454,7 +453,7 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
       applicantTally,
       el('p', {
         class: 'hw-hint',
-        text: 'Job offers are not included. With a year of Canadian experience, an offer in the same tier never beats your experience points; one only helps if it is in a higher tier than your experience, or your experience is outside the list. Years of experience and spouse status do not change the result either: the bonus is added to the work-length points already in your score.',
+        text: 'Job offers are not included (see Job offers above). Years of experience and spouse status do not change the result: the bonus is added to the length points already in your score.',
       }),
     ),
   );
@@ -485,7 +484,7 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
         el('span', {}, el('i', { class: 'shift-key shift-key--after' }), 'With high-wage points'),
       ),
       chartHost,
-      el('p', { class: 'hw-hint', text: 'Candidates a CEC draw can reach, per 5-point bin. 601+ is left out: those are PNP nominees. Job offers are not modelled: everyone a CEC draw reaches has 1+ year of Canadian experience, so an offer in their own tier never beats it.' }),
+      el('p', { class: 'hw-hint', text: 'Candidates a CEC draw can reach, per 5-point bin. 601+ is left out: those are PNP nominees.' }),
       el(
         'section',
         { class: 'hw-assumptions' },
