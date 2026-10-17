@@ -407,7 +407,7 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
       'div',
       { class: 'paper__body' },
       el('h2', { class: 'paper__title pixel', text: 'Score Check' }),
-      el('p', { class: 'paper__note', text: 'For people in Canada applying through CEC, with a year or more of skilled Canadian work experience. The bonus needs at least 12 months of that experience in a listed occupation; pick the tier of that occupation. Nothing you enter leaves this browser.' }),
+      el('p', { class: 'paper__note', text: 'For people in Canada applying through CEC, with a year or more of skilled Canadian work experience. The bonus needs at least 12 months of that experience in a listed occupation; pick the tier of that occupation.' }),
       el(
         'form',
         { class: 'inspect', on: { submit: (e) => { e.preventDefault(); update(); } } },
