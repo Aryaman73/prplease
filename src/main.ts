@@ -2,6 +2,7 @@ import './styles/tokens.css';
 import './styles/base.css';
 import './styles/components.css';
 
+import { startAnalytics } from './analytics';
 import { loadDraws, loadHighWage, loadMeta, loadProcessing } from './data';
 import { el } from './dom';
 import { currentRoute, onRouteChange, type Route } from './router';
@@ -82,4 +83,5 @@ async function main() {
   }
 }
 
+startAnalytics();
 void main();
