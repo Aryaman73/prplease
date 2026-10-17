@@ -1,7 +1,7 @@
 import { renderShift } from '../chart/shift';
 import { el, field } from '../dom';
 import { int, stampDate } from '../format';
-import { applicantScore, project, sharesFromPercents, TIERS } from '../highwage/model';
+import { project, sharesFromPercents, TIERS } from '../highwage/model';
 import type { Draws, HighWage, Occupation, Round, WageTier } from '../types';
 
 /**
@@ -21,8 +21,6 @@ const CEC = 'cec';
 const TIER_LABEL: Record<WageTier | 'none', string> = {
   '2.0x': '2.0×', '1.5x': '1.5×', '1.3x': '1.3×', none: 'Not listed',
 };
-/** Silkscreen has no × glyph, so anything set in pixel type spells it as X. */
-const TIER_STAMP: Record<WageTier, string> = { '2.0x': '2.0X', '1.5x': '1.5X', '1.3x': '1.3X' };
 /** Occupation median pay against the national median, as the table's row label. */
 const TIER_PAY: Record<WageTier, string> = {
   '2.0x': '2× or more',
@@ -31,35 +29,26 @@ const TIER_PAY: Record<WageTier, string> = {
 };
 
 /**
- * The score check is for CEC applicants only, so experience starts at a year.
- * Job offers are left out on purpose: with a year of Canadian experience, an
- * offer in the same tier never beats work-length + bonus, and the cases where
- * one does (a higher tier, or experience outside the list) mean changing jobs.
+ * The score check is for CEC applicants only, and needs nothing but the score and
+ * a tier. Without a job offer the new factor is work-length + bonus in place of
+ * the work-length points already in today's CRS, so years and spouse status
+ * cancel out: new score = CRS today + bonus. Job offers are left out because with
+ * a year of Canadian experience an offer in the same tier never beats that.
  */
-const YEAR_OPTIONS: [number, string][] = [[1, '1 year'], [2, '2 years'], [3, '3 years'], [4, '4 years'], [5, '5 years or more']];
-
 interface Applicant {
   crs: string;
-  occupation: string;
-  years: number;
-  hasSpouse: boolean;
-  /** 12+ months of that Canadian experience was in the occupation above. */
-  hasYear: boolean;
+  tier: WageTier | 'none';
 }
 
+const isTier = (v: unknown): v is WageTier => v === '2.0x' || v === '1.5x' || v === '1.3x';
+
 function load(): Applicant {
-  const empty: Applicant = { crs: '', occupation: '', years: 1, hasSpouse: false, hasYear: true };
+  const empty: Applicant = { crs: '', tier: 'none' };
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return empty;
     const p = JSON.parse(raw) as Partial<Applicant>;
-    return {
-      crs: typeof p.crs === 'string' ? p.crs : '',
-      occupation: typeof p.occupation === 'string' ? p.occupation : '',
-      years: typeof p.years === 'number' && p.years >= 1 && p.years <= 5 ? p.years : empty.years,
-      hasSpouse: typeof p.hasSpouse === 'boolean' ? p.hasSpouse : false,
-      hasYear: typeof p.hasYear === 'boolean' ? p.hasYear : true,
-    };
+    return { crs: typeof p.crs === 'string' ? p.crs : '', tier: isTier(p.tier) ? p.tier : 'none' };
   } catch {
     return empty;
   }
@@ -78,13 +67,18 @@ function measuredAt(round: Round): number {
   return Number.isNaN(t) ? Date.parse(round.date) : t;
 }
 
-/** "21231", "21231 Software engineers…", or an exact title. */
-function findOccupation(list: Occupation[], query: string): Occupation | null {
+const LOOKUP_LIMIT = 8;
+
+/** Code prefix ("2123"), or every word somewhere in the title ("software eng"). */
+function searchOccupations(list: Occupation[], query: string): Occupation[] {
   const q = query.trim().toLowerCase();
-  if (!q) return null;
-  const code = q.match(/^\d{5}/)?.[0];
-  if (code) return list.find((o) => o.noc === code) ?? null;
-  return list.find((o) => o.title.toLowerCase() === q) ?? null;
+  if (!q) return [];
+  if (/^\d+$/.test(q)) return list.filter((o) => o.noc.startsWith(q));
+  const words = q.split(/\s+/);
+  return list.filter((o) => {
+    const title = o.title.toLowerCase();
+    return words.every((w) => title.includes(w));
+  });
 }
 
 function stamp(text: string, kind: 'approved' | 'denied' | 'flag') {
@@ -236,30 +230,25 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
   });
   crsInput.value = applicant.crs;
 
-  const listId = 'hw-occupations';
-  const occInput = el('input', {
-    class: 'hw-input hw-input--wide',
-    attrs: { id: 'hw-occ', type: 'text', list: listId, placeholder: 'NOC code or job title', autocomplete: 'off', spellcheck: 'false' },
+  let tier: WageTier | 'none' = applicant.tier;
+  const tierRadios = (['none', '1.3x', '1.5x', '2.0x'] as const).map((value) => {
+    const radio = el('input', {
+      class: 'scope__radio',
+      attrs: { type: 'radio', name: 'hw-tier', value },
+      on: { change: () => { tier = value; update(); } },
+    });
+    const points = value === 'none' ? '+0' : `+${hw.points.experience[value]}`;
+    return {
+      value,
+      radio,
+      label: el('label', { class: 'scope__option' }, radio, el('span', { text: `${TIER_LABEL[value]} ${points}` })),
+    };
   });
-  occInput.value = applicant.occupation;
-  const datalist = el(
-    'datalist',
-    { attrs: { id: listId } },
-    ...hw.occupations.map((o) => el('option', { attrs: { value: `${o.noc} ${o.title}` } })),
-  );
+  const setTier = (value: WageTier | 'none') => {
+    tier = value;
+    update();
+  };
 
-  const yearsSelect = el(
-    'select',
-    { class: 'hw-input', attrs: { id: 'hw-years' } },
-    ...YEAR_OPTIONS.map(([value, label]) => el('option', { text: label, attrs: { value: String(value) } })),
-  );
-  yearsSelect.value = String(applicant.years);
-  const yearBox = el('input', { attrs: { type: 'checkbox', id: 'hw-year' } });
-  yearBox.checked = applicant.hasYear;
-  const spouseBox = el('input', { attrs: { type: 'checkbox', id: 'hw-spouse' } });
-  spouseBox.checked = applicant.hasSpouse;
-
-  const occStamp = el('div', { class: 'hw-occ-stamp', attrs: { 'aria-live': 'polite' } });
   const applicantFields = el('div', { class: 'fields hw-fields' });
   const applicantTally = el('p', { class: 'inspect__tally' });
   const applicantVerdict = el('div', { class: 'hw-verdict', attrs: { 'aria-live': 'polite' } });
@@ -378,60 +367,38 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
   };
 
   const renderApplicant = (projected: number) => {
-    const state: Applicant = {
-      crs: crsInput.value,
-      occupation: occInput.value,
-      years: Number(yearsSelect.value),
-      hasSpouse: spouseBox.checked,
-      hasYear: yearBox.checked,
-    };
-    save(state);
-
-    const occ = findOccupation(hw.occupations, occInput.value);
-    occStamp.replaceChildren();
-    if (occ) {
-      occStamp.append(
-        occ.tier ? stamp(`LISTED ${TIER_STAMP[occ.tier]}`, 'approved') : stamp('NOT LISTED', 'denied'),
-        el('span', { class: 'hw-occ-name', text: `${occ.noc} · ${occ.title}` }),
-      );
-    } else if (occInput.value.trim()) {
-      occStamp.append(el('span', { class: 'hw-hint', text: 'Pick an occupation from the list, or type its 5-digit NOC code.' }));
-    }
+    save({ crs: crsInput.value, tier });
+    for (const r of tierRadios) r.radio.checked = r.value === tier;
 
     applicantFields.replaceChildren();
     applicantVerdict.replaceChildren();
     applicantTally.textContent = '';
     const crs = Number(crsInput.value);
     if (!crsInput.value.trim() || !Number.isFinite(crs) || crs < 0 || crs > 1200) {
-      applicantFields.append(el('p', { class: 'empty', text: 'Enter your current CRS score and occupation to see your new score.' }));
+      applicantFields.append(el('p', { class: 'empty', text: 'Enter your current CRS score and pick your tier to see your new score.' }));
       return;
     }
 
-    const experienceTier = occ?.tier && state.hasYear ? occ.tier : null;
-    const r = applicantScore(hw, { crs, years: state.years, hasSpouse: state.hasSpouse, experienceTier, offerTier: null });
-    const margin = r.score - projected;
-    const bonus = r.experienceOption - r.workLength;
+    const bonus = tier === 'none' ? 0 : hw.points.experience[tier];
+    const score = crs + bonus;
+    const margin = score - projected;
 
     applicantFields.append(
       field('Score today', int(crs)),
-      field('High-wage bonus', occ ? `+${bonus}` : '—', !occ),
-      field('New score', int(r.score)),
+      field('High-wage bonus', `+${bonus}`),
+      field('New score', int(score)),
       field('Projected CEC cutoff', int(projected)),
     );
     applicantTally.textContent =
       margin >= 0
-        ? `${int(r.score)} clears the projected cutoff by ${margin}.`
-        : `${int(r.score)} is ${-margin} short of the projected cutoff.`;
+        ? `${int(score)} clears the projected cutoff by ${margin}.`
+        : `${int(score)} is ${-margin} short of the projected cutoff.`;
     applicantVerdict.append(stamp(margin >= 0 ? 'APPROVED' : 'DENIED', margin >= 0 ? 'approved' : 'denied'));
   };
 
   /* Wiring */
   const rerunApplicant = () => update();
   crsInput.addEventListener('input', rerunApplicant);
-  occInput.addEventListener('input', rerunApplicant);
-  yearBox.addEventListener('change', rerunApplicant);
-  spouseBox.addEventListener('change', rerunApplicant);
-  yearsSelect.addEventListener('change', rerunApplicant);
 
   baseSelect.addEventListener('change', () => {
     proj.baseIndex = Number(baseSelect.value);
@@ -470,35 +437,24 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
       'div',
       { class: 'paper__body' },
       el('h2', { class: 'paper__title pixel', text: 'Score Check' }),
-      el('p', { class: 'paper__note', text: 'For people in Canada applying through CEC, with a year or more of skilled Canadian work experience. Your score with the high-wage bonus, against the projected cutoff below. Nothing you enter leaves this browser.' }),
+      el('p', { class: 'paper__note', text: 'For people in Canada applying through CEC, with a year or more of skilled Canadian work experience. The bonus needs at least 12 months of that experience in a listed occupation; pick the tier of that occupation. Nothing you enter leaves this browser.' }),
       el(
         'form',
-        { class: 'inspect hw-form', on: { submit: (e) => { e.preventDefault(); update(); } } },
+        { class: 'inspect', on: { submit: (e) => { e.preventDefault(); update(); } } },
         el('div', { class: 'inspect__group' }, el('label', { class: 'inspect__label', text: 'CRS today', attrs: { for: 'hw-crs' } }), crsInput),
-        el('div', { class: 'inspect__group hw-grow' }, el('label', { class: 'inspect__label', text: 'Your occupation', attrs: { for: 'hw-occ' } }), occInput, datalist),
-      ),
-      occStamp,
-      el(
-        'div',
-        { class: 'hw-grid hw-grid--form' },
-        control(
-          'Canadian work experience (total)',
-          'hw-years',
-          yearsSelect,
-          el('p', { class: 'hw-hint', text: 'As on your profile: your CRS today already counts these years.' }),
+        el(
+          'fieldset',
+          { class: 'scope' },
+          el('legend', { class: 'inspect__label', text: "Your occupation's tier" }),
+          ...tierRadios.map((r) => r.label),
         ),
       ),
-      el(
-        'div',
-        { class: 'hw-checks' },
-        el('label', { class: 'hw-check' }, yearBox, el('span', { text: 'At least 12 months of it was in the occupation above' })),
-        el('label', { class: 'hw-check' }, spouseBox, el('span', { text: 'I have a spouse or partner coming with me' })),
-      ),
+      el('p', { class: 'hw-hint', text: "Don't know your tier? Look up your NOC above." }),
       el('div', { class: 'hw-result' }, applicantFields, applicantVerdict),
       applicantTally,
       el('p', {
         class: 'hw-hint',
-        text: 'Job offers are not included. With a year of Canadian experience, an offer in the same tier never beats your experience points; one only helps if it is in a higher tier than your experience, or your experience is outside the list.',
+        text: 'Job offers are not included. With a year of Canadian experience, an offer in the same tier never beats your experience points; one only helps if it is in a higher tier than your experience, or your experience is outside the list. Years of experience and spouse status do not change the result either: the bonus is added to the work-length points already in your score.',
       }),
     ),
   );
@@ -571,7 +527,82 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
 
   syncTierInputs();
   update();
-  return el('div', {}, applicantPaper, projectionPaper);
+  return el('div', {}, occupationLookup(hw, setTier), applicantPaper, projectionPaper);
+}
+
+/* ── NOC lookup ────────────────────────────────────────────────────────────── */
+
+function occupationLookup(hw: HighWage, onPick: (tier: WageTier | 'none') => void) {
+  const input = el('input', {
+    class: 'hw-input hw-input--wide',
+    attrs: { id: 'hw-lookup', type: 'search', placeholder: 'e.g. 21231, or software engineer', autocomplete: 'off', spellcheck: 'false' },
+  });
+  const results = el('ul', { class: 'verdicts hw-lookup', attrs: { 'aria-live': 'polite' } });
+  const status = el('p', { class: 'hw-hint' });
+
+  const render = () => {
+    const matches = searchOccupations(hw.occupations, input.value);
+    results.replaceChildren();
+    status.textContent = '';
+    if (!input.value.trim()) return;
+    if (matches.length === 0) {
+      results.append(el('li', { class: 'empty', text: 'No NOC 2021 occupation matches that.' }));
+      return;
+    }
+    for (const o of matches.slice(0, LOOKUP_LIMIT)) {
+      const label = o.tier ? `${TIER_LABEL[o.tier]} · +${hw.points.experience[o.tier]}` : 'Not listed';
+      results.append(
+        el(
+          'li',
+          { class: 'verdict' },
+          el('span', { class: 'verdict__name', text: `${o.noc} · ${o.title}` }),
+          el('span', { class: `verdict__meta${o.tier ? ' hw-listed' : ''}`, text: label }),
+          el(
+            'span',
+            { class: 'verdict__mark' },
+            el('button', {
+              class: 'hw-pick',
+              text: 'Use',
+              attrs: { type: 'button', 'aria-label': `Use ${o.title} (${label}) in the score check` },
+              on: {
+                click: () => {
+                  onPick(o.tier ?? 'none');
+                  status.textContent = `Score check set to ${o.tier ? TIER_LABEL[o.tier] : 'Not listed'} (${o.noc}).`;
+                },
+              },
+            }),
+          ),
+        ),
+      );
+    }
+    if (matches.length > LOOKUP_LIMIT) {
+      status.textContent = `${matches.length - LOOKUP_LIMIT} more match. Keep typing to narrow it down.`;
+    }
+  };
+  input.addEventListener('input', render);
+
+  return el(
+    'article',
+    { class: 'paper' },
+    el('div', { class: 'paper__band' }, el('span', { text: 'Registry' }), el('span', { text: `NOC 2021 · ${int(hw.occupations.length)} occupations` })),
+    el(
+      'div',
+      { class: 'paper__body' },
+      el('h2', { class: 'paper__title pixel', text: 'Occupation Lookup' }),
+      el('p', {
+        class: 'paper__note',
+        text: 'Search by NOC code or job title. IRCC goes by the NOC that matches your duties, not your job title, so check the code on your profile.',
+      }),
+      el(
+        'div',
+        { class: 'hw-control hw-lookup__field' },
+        el('label', { class: 'inspect__label', text: 'NOC code or job title', attrs: { for: 'hw-lookup' } }),
+        input,
+      ),
+      results,
+      status,
+    ),
+  );
 }
 
 /* ── Method and sources ────────────────────────────────────────────────────── */

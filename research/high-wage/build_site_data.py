@@ -34,7 +34,6 @@ data = {
     # the Labour Market Integration factor pays max(work-length + high-wage bonus, job offer).
     "changesUrl": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/changes.html",
     "points": {
-        "workLength": {"single": [0, 40, 53, 64, 72, 80], "spouse": [0, 35, 46, 56, 63, 70]},
         "experience": {"2.0x": 70, "1.5x": 40, "1.3x": 20},
         "offer": {"2.0x": 100, "1.5x": 70, "1.3x": 50},
     },

@@ -155,44 +155,6 @@ export function project(hw: HighWage, input: ProjectionInput): Projection | null
   };
 }
 
-export interface ApplicantInput {
-  crs: number;
-  /** Years of skilled Canadian work experience, 0–5 (5 = five or more). */
-  years: number;
-  hasSpouse: boolean;
-  /** Tier of the listed occupation(s) with 12+ months of Canadian experience, if any. */
-  experienceTier: WageTier | null;
-  /** Tier of a qualifying job offer, if any. */
-  offerTier: WageTier | null;
-}
-
-export interface ApplicantResult {
-  /** Already counted in today's CRS, as core Canadian work experience. */
-  workLength: number;
-  experienceOption: number;
-  offerOption: number;
-  factor: number;
-  uses: 'experience' | 'offer';
-  score: number;
-}
-
-/**
- * The Labour Market Integration factor for one applicant. Today's CRS already
- * holds the work-length points, so the new score swaps them for the factor:
- * max(work-length + high-wage bonus, job offer).
- */
-export function applicantScore(hw: HighWage, a: ApplicantInput): ApplicantResult {
-  const years = Math.min(5, Math.max(0, Math.floor(a.years)));
-  const workLength = hw.points.workLength[a.hasSpouse ? 'spouse' : 'single'][years] ?? 0;
-  // The high-wage bonus needs 12 months in listed occupations, so none under a year.
-  const bonus = a.experienceTier && years >= 1 ? hw.points.experience[a.experienceTier] : 0;
-  const experienceOption = workLength + bonus;
-  const offerOption = a.offerTier ? hw.points.offer[a.offerTier] : 0;
-  const uses = offerOption > experienceOption ? 'offer' : 'experience';
-  const factor = Math.max(experienceOption, offerOption);
-  return { workLength, experienceOption, offerOption, factor, uses, score: a.crs - workLength + factor };
-}
-
 /** Normalise three listed-tier percentages into shares, with the remainder as `none`. */
 export function sharesFromPercents(p20: number, p15: number, p13: number): TierShares {
   const clean = [p20, p15, p13].map((v) => (Number.isFinite(v) && v > 0 ? v : 0));

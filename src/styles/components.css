@@ -952,32 +952,7 @@
 .hw-input--wide { width: 100%; }
 .hw-input--num { width: 12ch; text-align: right; }
 
-.hw-form { align-items: stretch; }
-/* The pixel CRS box sets the row height; the typewriter field matches it. */
-.hw-form .inspect__input,
-.hw-form .hw-input { height: 42px; }
-.hw-grow { flex: 1 1 260px; }
 
-.hw-occ-stamp {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-4);
-  min-height: var(--space-5);
-  margin-top: var(--space-4);
-}
-
-.hw-occ-name { font-size: var(--text-md); color: var(--ink-soft); }
-
-.hw-checks {
-  display: grid;
-  gap: var(--space-2);
-  margin-top: var(--space-4);
-  font-size: var(--text-md);
-}
-
-.hw-check { display: flex; align-items: flex-start; gap: var(--space-2); cursor: pointer; }
-.hw-check input { margin-top: 3px; accent-color: #4a4335; }
 
 .hw-result {
   display: grid;
@@ -989,6 +964,24 @@
 
 .hw-fields { max-width: 420px; }
 .hw-verdict { min-width: 140px; text-align: center; }
+
+.hw-lookup__field { margin-top: var(--space-5); max-width: 520px; }
+.hw-lookup { margin-top: var(--space-3); }
+.hw-listed { color: var(--ink); font-weight: 700; }
+
+.hw-pick {
+  padding: var(--space-1) var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid var(--ink-soft);
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.hw-pick:hover { background: rgba(255, 255, 255, 0.55); }
+.hw-pick:focus-visible { outline: 2px solid var(--stamp-blue); outline-offset: 2px; }
 
 .hw-hint {
   margin: var(--space-2) 0 0;
@@ -1038,8 +1031,6 @@
   gap: var(--space-4);
   margin-top: var(--space-4);
 }
-
-.hw-grid--form { margin-top: var(--space-4); }
 
 .hw-control { display: flex; flex-direction: column; gap: var(--space-2); min-width: 0; }
 
