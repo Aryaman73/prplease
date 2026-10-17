@@ -134,7 +134,11 @@ five sub-bands that sum to them, and stacking both would double-count the pool.
 ### High Wage (`#/high-wage`)
 
 Explains the high-wage occupation points that take effect on 3 November 2026 and
-estimates what they do to the next CEC cut-off. The occupation list and the
+estimates what they do to the next CEC cut-off. The score check follows IRCC's Labour Market
+Integration factor: the higher of (work-length points + high-wage bonus) and a job
+offer, swapped in for the work-length points already in today's CRS. Job offers are
+left out of the projection, because for anyone with a year of Canadian experience
+an offer in their own tier never wins. The occupation list and the
 tier-share presets come from `public/data/highwage.json`, which
 `research/high-wage/build_site_data.py` writes. That folder also holds the Census
 pulls behind the presets and the reference model (`model.py`), which

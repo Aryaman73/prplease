@@ -1,7 +1,7 @@
 import { renderShift } from '../chart/shift';
 import { el, field } from '../dom';
 import { int, stampDate } from '../format';
-import { personalBonus, project, sharesFromPercents, TIERS } from '../highwage/model';
+import { applicantScore, project, sharesFromPercents, TIERS } from '../highwage/model';
 import type { Draws, HighWage, Occupation, Round, WageTier } from '../types';
 
 /**
@@ -30,28 +30,28 @@ const TIER_PAY: Record<WageTier, string> = {
   '1.3x': '1.3× to 1.5×',
 };
 
-/**
- * Share of listed-occupation candidates who add an employer's job offer. Nobody
- * knows this yet. The LMIA-era figure is the floor: in IRCC's 2022–24 year-end
- * reports 6–12% of profiles and ~20% of invitees had arranged employment, back
- * when it took an LMIA.
- */
-const OFFER_PRESETS = [
-  { value: 12, label: '12%', hint: 'LMIA era' },
-  { value: 25, label: '25%', hint: 'first draw' },
-  { value: 50, label: '50%', hint: 'later on' },
-] as const;
-const DEFAULT_OFFER = 25;
+const YEAR_OPTIONS = ['Less than 1 year', '1 year', '2 years', '3 years', '4 years', '5 years or more'];
+const OFFER_OPTIONS: { value: WageTier | 'none'; label: string }[] = [
+  { value: 'none', label: 'No job offer' },
+  { value: '2.0x', label: 'In a 2.0× occupation' },
+  { value: '1.5x', label: 'In a 1.5× occupation' },
+  { value: '1.3x', label: 'In a 1.3× occupation' },
+];
 
 interface Applicant {
   crs: string;
   occupation: string;
+  years: number;
+  hasSpouse: boolean;
+  /** 12+ months of that Canadian experience was in the occupation above. */
   hasYear: boolean;
-  hasOffer: boolean;
+  offer: WageTier | 'none';
 }
 
+const isTier = (v: unknown): v is WageTier => v === '2.0x' || v === '1.5x' || v === '1.3x';
+
 function load(): Applicant {
-  const empty: Applicant = { crs: '', occupation: '', hasYear: true, hasOffer: false };
+  const empty: Applicant = { crs: '', occupation: '', years: 1, hasSpouse: false, hasYear: true, offer: 'none' };
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return empty;
@@ -59,8 +59,10 @@ function load(): Applicant {
     return {
       crs: typeof p.crs === 'string' ? p.crs : '',
       occupation: typeof p.occupation === 'string' ? p.occupation : '',
+      years: typeof p.years === 'number' && p.years >= 0 && p.years <= 5 ? p.years : empty.years,
+      hasSpouse: typeof p.hasSpouse === 'boolean' ? p.hasSpouse : false,
       hasYear: typeof p.hasYear === 'boolean' ? p.hasYear : true,
-      hasOffer: typeof p.hasOffer === 'boolean' ? p.hasOffer : false,
+      offer: isTier(p.offer) ? p.offer : 'none',
     };
   } catch {
     return empty;
@@ -141,8 +143,8 @@ function directive(hw: HighWage) {
       {},
       el('td', { class: 'strong', text: TIER_PAY[t] }),
       el('td', { class: 'num', text: int(counts[t]) }),
-      el('td', { class: 'num', text: `+${hw.points.experience[t]}` }),
-      el('td', { class: 'num strong', text: `+${hw.points.offer[t]}` }),
+      el('td', { class: 'num strong', text: `+${hw.points.experience[t]}` }),
+      el('td', { class: 'num', text: String(hw.points.offer[t]) }),
     ),
   );
 
@@ -169,19 +171,19 @@ function directive(hw: HighWage) {
         el(
           'li',
           {},
-          el('strong', { text: 'Worked a year in a listed occupation in Canada? ' }),
-          'You get +20, +40 or +70, automatically. The year has to fall within the last 10.',
+          el('strong', { text: 'Canadian experience: ' }),
+          'the length points you already get (up to 80, or 70 with a spouse), plus +20, +40 or +70 if at least 12 months were in listed occupations. Applied automatically.',
         ),
         el(
           'li',
           {},
-          el('strong', { text: 'Can your employer put in writing that you will still have the job a year after PR? ' }),
-          'Add it to your profile for +30 more. No LMIA needed.',
+          el('strong', { text: 'Or a job offer ' }),
+          'in a listed occupation: 50, 70 or 100. It replaces your experience points rather than adding to them, and you get whichever is higher. No LMIA needed.',
         ),
         el(
           'li',
           {},
-          'One or the other, never both: at most +100. Your existing Canadian experience points are unchanged.',
+          'So with a year or more of Canadian experience in a listed occupation, a job offer in the same tier never raises your score. Offers matter for people with under a year of Canadian experience, or whose experience is outside the list.',
         ),
       ),
     ),
@@ -202,8 +204,8 @@ function directive(hw: HighWage) {
               {},
               el('th', { text: 'Median pay' }),
               el('th', { class: 'num', text: 'NOCs' }),
-              el('th', { class: 'num', text: '1 yr worked' }),
-              el('th', { class: 'num', text: '+ letter' }),
+              el('th', { class: 'num', text: 'Bonus' }),
+              el('th', { class: 'num', text: 'Or offer' }),
             ),
           ),
           el('tbody', {}, ...tierRows),
@@ -225,7 +227,6 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
     percents: [defaultPreset.shares['2.0x'], defaultPreset.shares['1.5x'], defaultPreset.shares['1.3x']].map((v) =>
       Math.round(v * 1000) / 10,
     ) as [number, number, number],
-    offer: DEFAULT_OFFER,
     size: null as number | null,
     reach: null as number | null,
   };
@@ -251,10 +252,22 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
     ...hw.occupations.map((o) => el('option', { attrs: { value: `${o.noc} ${o.title}` } })),
   );
 
+  const yearsSelect = el(
+    'select',
+    { class: 'hw-input', attrs: { id: 'hw-years' } },
+    ...YEAR_OPTIONS.map((label, i) => el('option', { text: label, attrs: { value: String(i) } })),
+  );
+  yearsSelect.value = String(applicant.years);
+  const offerSelect = el(
+    'select',
+    { class: 'hw-input', attrs: { id: 'hw-offer' } },
+    ...OFFER_OPTIONS.map((o) => el('option', { text: o.label, attrs: { value: o.value } })),
+  );
+  offerSelect.value = applicant.offer;
   const yearBox = el('input', { attrs: { type: 'checkbox', id: 'hw-year' } });
   yearBox.checked = applicant.hasYear;
-  const offerBox = el('input', { attrs: { type: 'checkbox', id: 'hw-offer' } });
-  offerBox.checked = applicant.hasOffer;
+  const spouseBox = el('input', { attrs: { type: 'checkbox', id: 'hw-spouse' } });
+  spouseBox.checked = applicant.hasSpouse;
 
   const occStamp = el('div', { class: 'hw-occ-stamp', attrs: { 'aria-live': 'polite' } });
   const applicantFields = el('div', { class: 'fields hw-fields' });
@@ -294,22 +307,8 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
     el('input', { class: 'hw-input hw-input--num', attrs: { id: `hw-t-${t}`, type: 'number', min: '0', max: '100', step: '0.5' } }),
   );
   const noneOut = el('output', { class: 'hw-none', attrs: { for: tierInputs.map((i) => i.id).join(' ') } });
-  const offerInput = el('input', { class: 'hw-input hw-input--num', attrs: { id: 'hw-offer-share', type: 'number', min: '0', max: '100', step: '1' } });
   const reachInput = el('input', { class: 'hw-input hw-input--num', attrs: { id: 'hw-reach', type: 'number', min: '1', max: '100', step: '1' } });
   const reachNote = el('p', { class: 'hw-hint' });
-
-  const offerRadios = OFFER_PRESETS.map((p) => {
-    const radio = el('input', {
-      class: 'scope__radio',
-      attrs: { type: 'radio', name: 'hw-offer-preset', value: String(p.value) },
-      on: { change: () => { proj.offer = p.value; update(); } },
-    });
-    return {
-      value: p.value,
-      radio,
-      label: el('label', { class: 'scope__option' }, radio, el('span', { text: p.label }), el('small', { class: 'hw-opt-hint', text: p.hint })),
-    };
-  });
 
   const syncTierInputs = () => {
     tierInputs.forEach((input, i) => { input.value = String(proj.percents[i]); });
@@ -332,7 +331,6 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
     const result = project(hw, {
       round: base,
       shares,
-      offerShare: proj.offer / 100,
       size: proj.size ?? undefined,
       reach: proj.reach ?? undefined,
     });
@@ -341,8 +339,6 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
     const preset = hw.presets.find((p) => p.key === proj.presetKey);
     presetNote.textContent = preset ? preset.note : 'Your own tier shares.';
     noneOut.textContent = `${(shares.none * 100).toFixed(1)}%`;
-    offerInput.value = String(proj.offer);
-    for (const r of offerRadios) r.radio.checked = r.value === proj.offer;
     if (proj.size === null) sizeInput.value = String(base.invitations ?? '');
 
     if (!result) {
@@ -360,7 +356,7 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
     figureAfter.textContent = String(result.after);
     const delta = result.after - result.before;
     figureDelta.textContent = `${delta >= 0 ? '+' : ''}${delta} points`;
-    baseNote.textContent = `From round No. ${base.number} (${stampDate(base.date)}): ${int(result.size)} invitations, pool measured ${stampDate(new Date(measuredAt(base)).toISOString())}. Assumes ${Math.round(shares.none * 100)}% of candidates are outside the list and ${proj.offer}% of the rest add an employer letter.`;
+    baseNote.textContent = `From round No. ${base.number} (${stampDate(base.date)}): ${int(result.size)} invitations, pool measured ${stampDate(new Date(measuredAt(base)).toISOString())}. Assumes ${Math.round(shares.none * 100)}% of candidates' experience is outside the list.`;
 
     actualLine.replaceChildren();
     if (actual) {
@@ -392,7 +388,14 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
   };
 
   const renderApplicant = (projected: number) => {
-    const state: Applicant = { crs: crsInput.value, occupation: occInput.value, hasYear: yearBox.checked, hasOffer: offerBox.checked };
+    const state: Applicant = {
+      crs: crsInput.value,
+      occupation: occInput.value,
+      years: Number(yearsSelect.value),
+      hasSpouse: spouseBox.checked,
+      hasYear: yearBox.checked,
+      offer: isTier(offerSelect.value) ? offerSelect.value : 'none',
+    };
     save(state);
 
     const occ = findOccupation(hw.occupations, occInput.value);
@@ -415,27 +418,36 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
       return;
     }
 
-    const tier = occ?.tier ?? null;
-    const bonus = personalBonus(hw, tier, yearBox.checked, offerBox.checked);
-    const score = crs + bonus;
-    const margin = score - projected;
+    const experienceTier = occ?.tier && state.hasYear ? occ.tier : null;
+    const offerTier = state.offer === 'none' ? null : state.offer;
+    const r = applicantScore(hw, { crs, years: state.years, hasSpouse: state.hasSpouse, experienceTier, offerTier });
+    const margin = r.score - projected;
+    const bonus = r.experienceOption - r.workLength;
 
     applicantFields.append(
       field('Score today', int(crs)),
-      field('High-wage bonus', occ ? `+${bonus}` : '—', !occ),
-      field('New score', int(score)),
+      field('Work-length points (in that score)', int(r.workLength)),
+      field('Experience option', bonus ? `${r.workLength} + ${bonus} = ${r.experienceOption}` : int(r.experienceOption)),
+      field('Job offer option', offerTier ? int(r.offerOption) : '—', !offerTier),
+      field('New score', `${int(r.score)} (${r.score - crs >= 0 ? '+' : ''}${r.score - crs})`),
       field('Projected CEC cutoff', int(projected)),
     );
-    applicantTally.textContent =
-      margin >= 0
-        ? `${int(score)} clears the projected cutoff by ${margin}.`
-        : `${int(score)} is ${-margin} short of the projected cutoff.`;
 
-    // The one nudge worth making: a listed occupation with no letter yet.
-    if (tier && !offerBox.checked) {
-      const withLetter = crs + personalBonus(hw, tier, yearBox.checked, true);
-      applicantTally.textContent += ` With an employer letter: ${int(withLetter)}.`;
-    }
+    const which = offerTier
+      ? r.uses === 'offer'
+        ? `The job offer counts (${r.offerOption} beats ${r.experienceOption}).`
+        : `Your experience counts (${r.experienceOption} beats ${r.offerOption}), so the job offer doesn't change your score.`
+      : '';
+    const verdict =
+      margin >= 0
+        ? `${int(r.score)} clears the projected cutoff by ${margin}.`
+        : `${int(r.score)} is ${-margin} short of the projected cutoff.`;
+    // Only worth saying when an offer in the applicant's own tier would actually win.
+    const ownTierOffer = occ?.tier ? hw.points.offer[occ.tier] : 0;
+    const hint = !offerTier && ownTierOffer > r.experienceOption
+      ? ` A job offer in this occupation would count instead: ${int(crs - r.workLength + ownTierOffer)}.`
+      : '';
+    applicantTally.textContent = `${which ? `${which} ` : ''}${verdict}${hint}`;
     applicantVerdict.append(stamp(margin >= 0 ? 'APPROVED' : 'DENIED', margin >= 0 ? 'approved' : 'denied'));
   };
 
@@ -444,7 +456,9 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
   crsInput.addEventListener('input', rerunApplicant);
   occInput.addEventListener('input', rerunApplicant);
   yearBox.addEventListener('change', rerunApplicant);
-  offerBox.addEventListener('change', rerunApplicant);
+  spouseBox.addEventListener('change', rerunApplicant);
+  yearsSelect.addEventListener('change', rerunApplicant);
+  offerSelect.addEventListener('change', rerunApplicant);
 
   baseSelect.addEventListener('change', () => {
     proj.baseIndex = Number(baseSelect.value);
@@ -466,11 +480,6 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
       update();
     }),
   );
-  offerInput.addEventListener('input', () => {
-    const v = Number(offerInput.value);
-    if (Number.isFinite(v)) proj.offer = Math.min(100, Math.max(0, v));
-    update();
-  });
   reachInput.addEventListener('input', () => {
     const v = Number(reachInput.value);
     proj.reach = Number.isFinite(v) && v > 0 ? Math.min(100, v) / 100 : null;
@@ -488,7 +497,7 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
       'div',
       { class: 'paper__body' },
       el('h2', { class: 'paper__title pixel', text: 'Score Check' }),
-      el('p', { class: 'paper__note', text: 'Your score with the high-wage bonus, against the projected cutoff below. Nothing you enter leaves this browser.' }),
+      el('p', { class: 'paper__note', text: 'Your score under the new rules, against the projected cutoff below. Your current CRS already includes your Canadian work-length points; the new factor replaces them with the higher of experience and a job offer. Nothing you enter leaves this browser.' }),
       el(
         'form',
         { class: 'inspect hw-form', on: { submit: (e) => { e.preventDefault(); update(); } } },
@@ -498,9 +507,15 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
       occStamp,
       el(
         'div',
+        { class: 'hw-grid hw-grid--form' },
+        control('Canadian work experience (total)', 'hw-years', yearsSelect),
+        control('Qualifying job offer', 'hw-offer', offerSelect),
+      ),
+      el(
+        'div',
         { class: 'hw-checks' },
-        el('label', { class: 'hw-check' }, yearBox, el('span', { text: "I've worked 1+ year in this occupation in Canada" })),
-        el('label', { class: 'hw-check' }, offerBox, el('span', { text: "My employer will put in writing that I'll have the job a year after PR" })),
+        el('label', { class: 'hw-check' }, yearBox, el('span', { text: 'At least 12 months of it was in the occupation above' })),
+        el('label', { class: 'hw-check' }, spouseBox, el('span', { text: 'I have a spouse or partner coming with me' })),
       ),
       el('div', { class: 'hw-result' }, applicantFields, applicantVerdict),
       applicantTally,
@@ -527,19 +542,13 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
       actualLine,
       baseNote,
       el(
-        'fieldset',
-        { class: 'scope hw-scope' },
-        el('legend', { class: 'inspect__label', text: 'Candidates who add an employer letter' }),
-        ...offerRadios.map((r) => r.label),
-      ),
-      el(
         'div',
         { class: 'hw-legend' },
         el('span', {}, el('i', { class: 'shift-key shift-key--today' }), 'Today'),
         el('span', {}, el('i', { class: 'shift-key shift-key--after' }), 'With high-wage points'),
       ),
       chartHost,
-      el('p', { class: 'hw-hint', text: 'Candidates a CEC draw can reach, per 5-point bin. 601+ is left out: those are PNP nominees.' }),
+      el('p', { class: 'hw-hint', text: 'Candidates a CEC draw can reach, per 5-point bin. 601+ is left out: those are PNP nominees. Job offers are not modelled: everyone a CEC draw reaches has 1+ year of Canadian experience, so an offer in their own tier never beats it.' }),
       el(
         'details',
         { class: 'hw-assumptions' },
@@ -563,7 +572,6 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
               el('span', { class: 'hw-tier' }, el('span', { text: 'Not listed' }), noneOut),
             ),
           ),
-          control('Employer letter (%)', 'hw-offer-share', offerInput),
           control('Reach (%)', 'hw-reach', reachInput, reachNote),
         ),
       ),
@@ -610,6 +618,8 @@ function finePrint(hw: HighWage) {
         { class: 'paper__note' },
         'Sources: ',
         link('IRCC high-wage occupations list', hw.listUrl),
+        ' · ',
+        link('IRCC: how the new points combine', hw.changesUrl),
         ' · ',
         link('IRCC job offer requirements', 'https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/documents/job-offer.html'),
         ' · ',

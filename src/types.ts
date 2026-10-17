@@ -110,8 +110,13 @@ export interface HighWage {
   effective: string;
   listPublished: string;
   listUrl: string;
+  changesUrl: string;
   points: {
+    /** Work-length points by years of Canadian experience (index 0–5, 5 = five or more). */
+    workLength: { single: number[]; spouse: number[] };
+    /** High-wage bonus, added to work-length points. */
     experience: Record<WageTier, number>;
+    /** Job offer points — instead of work-length + bonus, not on top. */
     offer: Record<WageTier, number>;
   };
   occupations: Occupation[];

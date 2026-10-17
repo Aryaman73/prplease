@@ -13,8 +13,14 @@ import type { HighWage, Round, TierShares, WageTier } from '../types';
  *  3. "Reach" is the share of candidates the draw can invite (CEC-eligible, for a
  *     CEC draw). IRCC doesn't publish it, so it is solved for: the share at which
  *     this snapshot reproduces the draw's actual cutoff.
- *  4. Shift each score by tier — the experience bonus, or for `offerShare` of
- *     candidates the job-offer bonus — and find where the same draw size lands.
+ *  4. Shift each score by its tier's high-wage experience bonus and find where
+ *     the same draw size lands.
+ *
+ * Job offers are deliberately absent. The new Labour Market Integration factor
+ * pays the higher of (work-length + high-wage bonus) and a job offer, never both.
+ * Everyone a CEC draw reaches has 1+ year of Canadian experience, so at least 35
+ * work-length points, and an offer pays exactly 30 more than the same tier's
+ * bonus — so for them an offer in their own tier never wins.
  *
  * Tiers are assumed independent of score, and this is the first draw only: no
  * new profiles, no change in draw size.
@@ -84,8 +90,6 @@ export function cutoffFor(n: Float64Array, reach: number, size: number): number 
 export interface ProjectionInput {
   round: Round;
   shares: TierShares;
-  /** 0–1: share of listed-tier candidates who add an employer's job offer. */
-  offerShare: number;
   /** Defaults to the round's own invitation count. */
   size?: number;
   /** Defaults to the calibrated reach. */
@@ -106,7 +110,7 @@ export interface Projection {
 }
 
 export function project(hw: HighWage, input: ProjectionInput): Projection | null {
-  const { round, shares, offerShare } = input;
+  const { round, shares } = input;
   const today = density(round);
   if (!today || round.crsCutoff === null || round.invitations === null) return null;
 
@@ -114,8 +118,7 @@ export function project(hw: HighWage, input: ProjectionInput): Projection | null
   const reach = input.reach ?? calibratedReach;
   const size = input.size ?? round.invitations;
 
-  const bonus = (tier: WageTier | 'none', offer: boolean) =>
-    tier === 'none' ? 0 : offer ? hw.points.offer[tier] : hw.points.experience[tier];
+  const bonus = (tier: WageTier | 'none') => (tier === 'none' ? 0 : hw.points.experience[tier]);
 
   const shifted = new Float64Array(MAX_SCORE + 1);
   const byTier = Object.fromEntries(TIERS.map((t) => [t, new Float64Array(MAX_SCORE + 1)])) as Record<
@@ -127,13 +130,11 @@ export function project(hw: HighWage, input: ProjectionInput): Projection | null
     const count = today[s]!;
     if (!count) continue;
     for (const tier of TIERS) {
-      for (const [offer, weight] of [[false, 1 - offerShare], [true, offerShare]] as const) {
-        const v = count * shares[tier] * weight;
-        if (!v) continue;
-        const to = Math.min(MAX_SCORE, s + bonus(tier, offer));
-        shifted[to]! += v;
-        byTier[tier][to]! += v;
-      }
+      const v = count * shares[tier];
+      if (!v) continue;
+      const to = Math.min(MAX_SCORE, s + bonus(tier));
+      shifted[to]! += v;
+      byTier[tier][to]! += v;
     }
   }
 
@@ -154,11 +155,42 @@ export function project(hw: HighWage, input: ProjectionInput): Projection | null
   };
 }
 
-/** Bonus for one applicant: experience needs a year in the occupation; an offer pays regardless. */
-export function personalBonus(hw: HighWage, tier: WageTier | null, hasYear: boolean, hasOffer: boolean): number {
-  if (!tier) return 0;
-  const experience = hasYear ? hw.points.experience[tier] : 0;
-  return hasOffer ? Math.max(hw.points.offer[tier], experience) : experience;
+export interface ApplicantInput {
+  crs: number;
+  /** Years of skilled Canadian work experience, 0–5 (5 = five or more). */
+  years: number;
+  hasSpouse: boolean;
+  /** Tier of the listed occupation(s) with 12+ months of Canadian experience, if any. */
+  experienceTier: WageTier | null;
+  /** Tier of a qualifying job offer, if any. */
+  offerTier: WageTier | null;
+}
+
+export interface ApplicantResult {
+  /** Already counted in today's CRS, as core Canadian work experience. */
+  workLength: number;
+  experienceOption: number;
+  offerOption: number;
+  factor: number;
+  uses: 'experience' | 'offer';
+  score: number;
+}
+
+/**
+ * The Labour Market Integration factor for one applicant. Today's CRS already
+ * holds the work-length points, so the new score swaps them for the factor:
+ * max(work-length + high-wage bonus, job offer).
+ */
+export function applicantScore(hw: HighWage, a: ApplicantInput): ApplicantResult {
+  const years = Math.min(5, Math.max(0, Math.floor(a.years)));
+  const workLength = hw.points.workLength[a.hasSpouse ? 'spouse' : 'single'][years] ?? 0;
+  // The high-wage bonus needs 12 months in listed occupations, so none under a year.
+  const bonus = a.experienceTier && years >= 1 ? hw.points.experience[a.experienceTier] : 0;
+  const experienceOption = workLength + bonus;
+  const offerOption = a.offerTier ? hw.points.offer[a.offerTier] : 0;
+  const uses = offerOption > experienceOption ? 'offer' : 'experience';
+  const factor = Math.max(experienceOption, offerOption);
+  return { workLength, experienceOption, offerOption, factor, uses, score: a.crs - workLength + factor };
 }
 
 /** Normalise three listed-tier percentages into shares, with the remainder as `none`. */

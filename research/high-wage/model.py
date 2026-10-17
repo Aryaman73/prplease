@@ -7,6 +7,10 @@
 3. f = draw size / pool at or above the actual cutoff -> share of candidates the draw could reach.
 4. Shift each point's candidates by tier (experience or, for a share, job-offer points) and find the
    score where f * (candidates at or above it) first reaches the draw size again.
+
+Leave offer_share at 0 for CEC draws. IRCC's Labour Market Integration factor pays the higher of
+(work-length + high-wage bonus) and a job offer, and every CEC candidate has at least 35 work-length
+points, so an offer in their own tier (always bonus + 30) never wins. The site's port drops it.
 """
 import json, sys
 

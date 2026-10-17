@@ -999,9 +999,6 @@
 .hw-figure { flex-wrap: wrap; }
 .hw-actual { margin-top: var(--space-2); max-width: 520px; }
 
-.hw-scope { margin-top: var(--space-5); }
-/* A flex item, so the gap has to be a margin — the label's own space collapses. */
-.hw-opt-hint { margin-left: var(--space-1); color: inherit; opacity: 0.75; font-size: var(--text-xs); }
 
 .hw-legend {
   display: flex;
@@ -1041,6 +1038,8 @@
   gap: var(--space-4);
   margin-top: var(--space-4);
 }
+
+.hw-grid--form { margin-top: var(--space-4); }
 
 .hw-control { display: flex; flex-direction: column; gap: var(--space-2); min-width: 0; }
 
