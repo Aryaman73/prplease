@@ -188,17 +188,7 @@ function directive(hw: HighWage) {
       el(
         'p',
         { class: 'hw-copy' },
-        `A job offer in a listed occupation is worth ${hw.points.offer['2.0x']}, ${hw.points.offer['1.5x']} or ${hw.points.offer['1.3x']} points: 30 more than the bonus for the same tier, and it no longer needs an LMIA. But it doesn't stack. It replaces your Canadian experience points (the length points plus the bonus), and you get whichever is higher.`,
-      ),
-      el(
-        'p',
-        { class: 'hw-copy' },
-        'A year of Canadian experience is already worth at least 35 length points, more than that 30-point gap, so for anyone with a year or more the experience side always wins and an offer in their own tier adds nothing. An offer only helps with under a year of Canadian experience, or when it is in a higher tier than the experience.',
-      ),
-      el(
-        'p',
-        { class: 'hw-copy' },
-        'Everyone a CEC draw can invite has at least that year, so this page leaves job offers out: the score check adds only the bonus, and the projection assumes no one you are competing with gains anything from an offer.',
+        `A job offer in a listed occupation (${hw.points.offer['2.0x']} / ${hw.points.offer['1.5x']} / ${hw.points.offer['1.3x']}, no LMIA needed) replaces your Canadian experience points instead of adding to them. With a year or more of Canadian experience, as everyone in a CEC draw has, experience beats an offer in the same tier, so this page leaves job offers out.`,
       ),
     ),
   );
