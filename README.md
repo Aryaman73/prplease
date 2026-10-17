@@ -67,6 +67,7 @@ Total shipped weight is ~12.5 KB of JS and ~4.1 KB of CSS, gzipped.
 | `#/` | Bulletin — the latest round and the latest CEC round, plus the score check |
 | `#/log` | Entry Log — CRS cut-off over time, and the ledger of every round |
 | `#/pool` | The Pool — CRS composition of the pool over time |
+| `#/high-wage` | High Wage — the November 2026 high-wage occupation points, a score check, and a projection of the next CEC cut-off |
 | `#/file` | Your File — queue position from IRCC data, and a personal milestone tracker |
 | `#/rulebook` | Rulebook — the glossary |
 
@@ -129,6 +130,38 @@ Keyed by draw, a two-year window showed 125 "snapshots" with visible runs of
 identical rows; keyed by measurement date it shows the 63 observations that actually
 exist. The sub-bands are also excluded here: `451-500` and `401-450` each contain
 five sub-bands that sum to them, and stacking both would double-count the pool.
+
+### High Wage (`#/high-wage`)
+
+Explains the high-wage occupation points that take effect on 3 November 2026 and
+estimates what they do to the next CEC cut-off. IRCC's Labour Market Integration factor pays the
+higher of (work-length points + high-wage bonus) and a job offer. The work-length
+points are already in today's CRS, and for anyone with a year of Canadian experience
+an offer in their own tier never wins, so for CEC applicants the new score is simply
+CRS today + bonus. The score check therefore asks only for the score and a tier, with
+a separate NOC lookup to find the tier; job offers are left out of the projection
+for the same reason. The occupation list and the
+tier-share presets come from `public/data/highwage.json`, which
+`research/high-wage/build_site_data.py` writes. That folder also holds the Census
+pulls behind the presets and the reference model (`model.py`), which
+`src/highwage/model.ts` ports.
+
+**The projection only uses pool snapshots measured before the rule took effect.**
+Later snapshots already include the bonus, so projecting from them would count it
+twice. Once a CEC round has been held under the new rules, its real cut-off is shown
+next to the projection instead of replacing it, so the estimate can be checked.
+
+The "reach" (the share of the pool a CEC draw can invite) isn't published. It is
+solved per snapshot so that the model reproduces that round's actual cut-off, and
+calibrated that way it cancels out of the projection, so it is deliberately not a
+user input: any other value would make "today" disagree with the real cut-off. The
+two-series chart pairs the accent with an ochre validated beside it:
+
+```bash
+node dataviz/scripts/validate_palette.js "#9c6420,#2a6ba8" --mode light --surface "#d7cdb8"
+```
+
+As on Your File, the score-check inputs stay in `localStorage`.
 
 ### Interaction
 

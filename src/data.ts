@@ -1,4 +1,4 @@
-import type { Draws, Meta, Processing } from './types';
+import type { Draws, HighWage, Meta, Processing } from './types';
 
 /**
  * Data is fetched at runtime rather than bundled at build time. The sync Action
@@ -14,3 +14,4 @@ async function loadJson<T>(name: string): Promise<T> {
 export const loadDraws = () => loadJson<Draws>('draws.json');
 export const loadMeta = () => loadJson<Meta>('meta.json');
 export const loadProcessing = () => loadJson<Processing>('processing.json');
+export const loadHighWage = () => loadJson<HighWage>('highwage.json');

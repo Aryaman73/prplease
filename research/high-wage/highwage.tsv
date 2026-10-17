@@ -1,0 +1,186 @@
+00011	2.0x	Senior government managers and officials
+00012	2.0x	Senior managers - financial, communications and other business services
+00013	2.0x	Senior managers - health, education, social and community services and membership organizations
+10010	2.0x	Financial managers
+10011	2.0x	Human resources managers
+10012	2.0x	Purchasing managers
+10020	2.0x	Insurance, real estate and financial brokerage managers
+10021	2.0x	Banking, credit and other investment managers
+20010	2.0x	Engineering managers
+20011	2.0x	Architecture and science managers
+20012	2.0x	Computer and information systems managers
+21330	2.0x	Mining engineers
+21332	2.0x	Petroleum engineers
+31100	2.0x	Specialists in clinical and laboratory medicine
+31101	2.0x	Specialists in surgery
+31102	2.0x	General practitioners and family physicians
+31103	2.0x	Veterinarians
+31302	2.0x	Nurse practitioners
+31303	2.0x	Physician assistants, midwives and allied health professionals
+40010	2.0x	Government managers - health and social policy development and program administration
+40011	2.0x	Government managers - economic analysis, policy development and program administration
+40012	2.0x	Government managers - education policy development and program administration
+40019	2.0x	Other managers in public administration
+40040	2.0x	Commissioned police officers and related occupations in public protection services
+40041	2.0x	Fire chiefs and senior firefighting officers
+41100	2.0x	Judges
+41101	2.0x	Lawyers and Quebec notaries
+41200	2.0x	University professors and lecturers
+60010	2.0x	Corporate sales managers
+80010	2.0x	Managers in natural resources production and fishing
+90011	2.0x	Utilities managers
+00014	1.5x	Senior managers - trade, broadcasting and other services
+00015	1.5x	Senior managers - construction, transportation, production and utilities
+10019	1.5x	Other administrative services managers
+10022	1.5x	Advertising, marketing and public relations managers
+10029	1.5x	Other business services managers
+10030	1.5x	Telecommunication carriers managers
+11103	1.5x	Securities agents, investment dealers and brokers
+11201	1.5x	Professional occupations in business management consulting
+21100	1.5x	Physicists and astronomers
+21102	1.5x	Geoscientists and oceanographers
+21103	1.5x	Meteorologists and climatologists
+21109	1.5x	Other professional occupations in physical sciences
+21111	1.5x	Forestry professionals
+21120	1.5x	Public and environmental health and safety professionals
+21202	1.5x	Urban and land use planners
+21210	1.5x	Mathematicians, statisticians and actuaries
+21211	1.5x	Data scientists
+21220	1.5x	Cybersecurity specialists
+21221	1.5x	Business systems specialists
+21222	1.5x	Information systems specialists
+21223	1.5x	Database analysts and data administrators
+21230	1.5x	Computer systems developers and programmers
+21231	1.5x	Software engineers and designers
+21232	1.5x	Software developers and programmers
+21300	1.5x	Civil engineers
+21301	1.5x	Mechanical engineers
+21310	1.5x	Electrical and electronics engineers
+21311	1.5x	Computer engineers (except software engineers and designers)
+21320	1.5x	Chemical engineers
+21321	1.5x	Industrial and manufacturing engineers
+21322	1.5x	Metallurgical and materials engineers
+21331	1.5x	Geological engineers
+21390	1.5x	Aerospace engineers
+21399	1.5x	Other professional engineers
+22231	1.5x	Engineering inspectors and regulatory officers
+22312	1.5x	Industrial instrument technicians and mechanics
+30010	1.5x	Managers in health care
+31110	1.5x	Dentists
+31112	1.5x	Audiologists and speech-language pathologists
+31120	1.5x	Pharmacists
+31200	1.5x	Psychologists
+31202	1.5x	Physiotherapists
+31203	1.5x	Occupational therapists
+31300	1.5x	Nursing coordinators and supervisors
+31301	1.5x	Registered nurses and registered psychiatric nurses
+32111	1.5x	Dental hygienists and dental therapists
+40020	1.5x	Administrators - post-secondary education and vocational training
+40021	1.5x	School principals and administrators of elementary and secondary education
+40030	1.5x	Managers in social, community and correctional services
+40042	1.5x	Commissioned officers of the Canadian Armed Forces
+41210	1.5x	College and other vocational instructors
+41220	1.5x	Secondary school teachers
+41221	1.5x	Elementary school and kindergarten teachers
+41310	1.5x	Police investigators and other investigative occupations
+41311	1.5x	Probation and parole officers
+41320	1.5x	Educational counsellors
+41401	1.5x	Economists and economic policy researchers and analysts
+41402	1.5x	Business development officers and market researchers and analysts
+41404	1.5x	Health policy researchers, consultants and program officers
+41407	1.5x	Program officers unique to government
+42100	1.5x	Police officers (except commissioned)
+42101	1.5x	Firefighters
+50010	1.5x	Library, archive, museum and art gallery managers
+50011	1.5x	Managers - publishing, motion pictures, broadcasting and performing arts
+51100	1.5x	Librarians
+70010	1.5x	Construction managers
+70012	1.5x	Facility operation and maintenance managers
+70020	1.5x	Managers in transportation
+70021	1.5x	Postal and courier services managers
+72011	1.5x	Contractors and supervisors, electrical trades and telecommunications occupations
+72012	1.5x	Contractors and supervisors, pipefitting trades
+72023	1.5x	Supervisors, railway transport operations
+72103	1.5x	Boilermakers
+72202	1.5x	Power system electricians
+72203	1.5x	Electrical power line and cable workers
+72301	1.5x	Steamfitters, pipefitters and sprinkler system installers
+72406	1.5x	Elevator constructors and mechanics
+72600	1.5x	Air pilots, flight engineers and flying instructors
+72601	1.5x	Air traffic controllers and related occupations
+72604	1.5x	Railway traffic controllers and marine traffic regulators
+73310	1.5x	Railway and yard locomotive engineers
+82020	1.5x	Supervisors, mining and quarrying
+82021	1.5x	Contractors and supervisors, oil and gas drilling and services
+83101	1.5x	Oil and gas well drillers, servicers, testers and related workers
+90010	1.5x	Manufacturing managers
+92011	1.5x	Supervisors, petroleum, gas and chemical processing and utilities
+92100	1.5x	Power engineers and power systems operators
+93100	1.5x	Central control and process operators, mineral and metal processing
+93101	1.5x	Central control and process operators, petroleum, gas and chemical processing
+00010	1.3x	Legislators
+11100	1.3x	Financial auditors and accountants
+11101	1.3x	Financial and investment analysts
+11102	1.3x	Financial advisors
+11109	1.3x	Other financial officers
+11200	1.3x	Human resources professionals
+12201	1.3x	Insurance adjusters and claims examiners
+12203	1.3x	Assessors, business valuators and appraisers
+21101	1.3x	Chemists
+21110	1.3x	Biologists and related scientists
+21112	1.3x	Agricultural representatives, consultants and specialists
+21200	1.3x	Architects
+21201	1.3x	Landscape architects
+21203	1.3x	Land surveyors
+21234	1.3x	Web developers and programmers
+22214	1.3x	Technical occupations in geomatics and meteorology
+22232	1.3x	Occupational health and safety specialists
+22233	1.3x	Construction inspectors
+22310	1.3x	Electrical and electronics engineering technologists and technicians
+22313	1.3x	Aircraft instrument, electrical and avionics mechanics, technicians and inspectors
+31121	1.3x	Dietitians and nutritionists
+32102	1.3x	Paramedical occupations
+32103	1.3x	Respiratory therapists, clinical perfusionists and cardiopulmonary technologists
+32120	1.3x	Medical laboratory technologists
+32121	1.3x	Medical radiation technologists
+32122	1.3x	Medical sonographers
+41300	1.3x	Social workers
+41400	1.3x	Natural and applied science policy researchers, consultants and program officers
+41403	1.3x	Social policy researchers, consultants and program officers
+41405	1.3x	Education policy researchers, consultants and program officers
+41409	1.3x	Other professional occupations in social science
+43201	1.3x	Correctional service officers
+43203	1.3x	Border services, customs, and immigration officers
+50012	1.3x	Recreation, sports and fitness program and service directors
+51101	1.3x	Conservators and curators
+51102	1.3x	Archivists
+51111	1.3x	Authors and writers (except technical)
+51112	1.3x	Technical writers
+51120	1.3x	Producers, directors, choreographers and related occupations
+52112	1.3x	Broadcast technicians
+60020	1.3x	Retail and wholesale trade managers
+60031	1.3x	Accommodation service managers
+60040	1.3x	Managers in customer and personal services
+72010	1.3x	Contractors and supervisors, machining, metal forming, shaping and erecting trades and related occupations
+72013	1.3x	Contractors and supervisors, carpentry trades
+72014	1.3x	Contractors and supervisors, other construction trades, installers, repairers and servicers
+72020	1.3x	Contractors and supervisors, mechanic trades
+72021	1.3x	Contractors and supervisors, heavy equipment operator crews
+72102	1.3x	Sheet metal workers
+72105	1.3x	Ironworkers
+72201	1.3x	Industrial electricians
+72302	1.3x	Gas fitters
+72320	1.3x	Bricklayers
+72321	1.3x	Insulators
+72401	1.3x	Heavy-duty equipment mechanics
+72403	1.3x	Railway carmen/women
+72404	1.3x	Aircraft mechanics and aircraft inspectors
+72500	1.3x	Crane operators
+72602	1.3x	Deck officers, water transport
+72603	1.3x	Engineer officers, water transport
+73311	1.3x	Railway conductors and brakemen/women
+82010	1.3x	Supervisors, logging and forestry
+83100	1.3x	Underground production and development miners
+83120	1.3x	Fishing masters and officers
+92010	1.3x	Supervisors, mineral and metal processing
+93102	1.3x	Pulping, papermaking and coating control operators

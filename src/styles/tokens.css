@@ -80,6 +80,15 @@
   --chart-grid: #c6bba3;
 
   /*
+   * The High Wage projection is the one two-series chart: today's pool against
+   * the pool with the bonus applied. "After" keeps the accent; "today" is an
+   * ochre picked to pass beside it on parchment.
+   *   node dataviz/scripts/validate_palette.js "#9c6420,#2a6ba8" --mode light --surface "#d7cdb8"
+   *   → all checks PASS (CVD ΔE 20.0, contrast >= 3:1 for both).
+   */
+  --chart-before: #9c6420;
+
+  /*
    * Pool bands — an ordinal ramp, not a categorical palette. The seven CRS bands
    * are an ordered scale, so they take one hue running light→dark with score,
    * never seven separate hues.

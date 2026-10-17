@@ -233,6 +233,9 @@
   color: var(--ink-soft);
 }
 
+/* A body that opens with its note (no title above it) starts at the padding. */
+.paper__note:first-child { margin-top: 0; }
+
 /* ---------------------------------------------------------------------------
  * Fields — label, dotted leader, value. The core bureaucratic unit.
  * ------------------------------------------------------------------------- */
@@ -922,6 +925,132 @@
 
 .timeline__actions { margin-top: var(--space-5); }
 
+
+/* ---------------------------------------------------------------------------
+ * High Wage — the directive, the score check and the cutoff projection.
+ * ------------------------------------------------------------------------- */
+
+.hw-rules {
+  margin: var(--space-4) 0 0;
+  padding-left: var(--space-5);
+  font-size: var(--text-md);
+  color: var(--ink);
+}
+
+.hw-rules li + li { margin-top: var(--space-2); }
+
+.hw-subhead { margin: 0; font-weight: 400; }
+.hw-copy {
+  margin: var(--space-3) 0 0;
+  font-size: var(--text-md);
+  color: var(--ink);
+}
+.hw-rules--fine { margin-top: 0; color: var(--ink-soft); }
+
+/* On-paper form controls: the typewriter face in a ruled box, like a form field. */
+.hw-input {
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid var(--ink-soft);
+  border-radius: 0;
+  min-width: 0;
+}
+
+.hw-input--wide { width: 100%; }
+.hw-input--num { width: 12ch; text-align: right; }
+
+
+
+.hw-result {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-5);
+  margin-top: var(--space-5);
+}
+
+.hw-fields { max-width: 420px; }
+.hw-verdict { min-width: 140px; text-align: center; }
+
+.hw-lookup__field { margin-top: var(--space-5); max-width: 520px; }
+.hw-lookup { margin-top: var(--space-3); }
+.hw-listed { color: var(--ink); font-weight: 700; }
+
+.hw-pick {
+  padding: var(--space-1) var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid var(--ink-soft);
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.hw-pick:hover { background: rgba(255, 255, 255, 0.55); }
+.hw-pick:focus-visible { outline: 2px solid var(--stamp-blue); outline-offset: 2px; }
+
+.hw-hint {
+  margin: var(--space-2) 0 0;
+  font-size: var(--text-xs);
+  color: var(--ink-faint);
+}
+
+.hw-figure { flex-wrap: wrap; }
+.hw-actual { margin-top: var(--space-2); max-width: 520px; }
+
+
+.hw-legend {
+  display: flex;
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+  font-size: var(--text-xs);
+  color: var(--ink-soft);
+}
+
+.hw-legend i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: var(--space-2);
+  vertical-align: -1px;
+}
+
+.shift-bar--today, .shift-key--today { fill: var(--chart-before); background: var(--chart-before); }
+.shift-bar--after, .shift-key--after { fill: var(--chart-accent); background: var(--chart-accent); }
+.pool-row__key.shift-key--today, .pool-row__key.shift-key--after { height: 10px; }
+/* A threshold, so dashed — the grid never is. */
+.shift-cutoff { stroke: var(--ink); stroke-width: 1; stroke-dasharray: 4 3; }
+.shift-cutoff__label { fill: var(--ink); font-weight: 700; }
+.shift-cutoff__label--end { text-anchor: end; }
+.shift-cutoff__label--start { text-anchor: start; }
+.hw-caption { padding-bottom: var(--space-3); }
+.shift-hover { fill: rgba(255, 255, 255, 0.28); }
+
+.hw-assumptions {
+  margin-top: var(--space-5);
+  padding-top: var(--space-3);
+  border-top: 1px dotted var(--rule-soft);
+}
+
+.hw-assumptions h3 { margin: 0; font-weight: 400; }
+
+.hw-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.hw-control { display: flex; flex-direction: column; gap: var(--space-2); min-width: 0; }
+
+.hw-tiers { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+.hw-tier { display: flex; flex-direction: column; gap: var(--space-1); font-size: var(--text-xs); color: var(--ink-soft); }
+.hw-none { padding: var(--space-2) 0; font-size: var(--text-sm); font-weight: 700; color: var(--ink); }
+
 /* ---------------------------------------------------------------------------
  * Colophon
  * ------------------------------------------------------------------------- */
@@ -1006,6 +1135,10 @@
   .timeline__mark { grid-column: 2; grid-row: 1; }
 
   .rulebook__entry { grid-template-columns: 1fr; gap: var(--space-2); }
+
+  .hw-result { grid-template-columns: 1fr; gap: var(--space-3); }
+  .hw-verdict { text-align: left; }
+  .hw-grid { grid-template-columns: 1fr; }
 
   /* At this width a long value wrapped beside its label reads as a ragged block;
    * stacking it is clearer, and the leader has nothing left to lead. */
