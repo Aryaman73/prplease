@@ -121,7 +121,9 @@ export function renderHighWage(draws: Draws, hw: HighWage | null): HTMLElement {
     'div',
     {},
     directive(hw),
-    bases.length ? applicantAndProjection(hw, bases, actual) : el('p', { class: 'empty', text: 'No CEC pool snapshot to project from.' }),
+    // Spread, not wrapped: papers are spaced by `.paper + .paper`, which only
+    // matches siblings, so a wrapper element would leave them touching.
+    ...(bases.length ? applicantAndProjection(hw, bases, actual) : [el('p', { class: 'empty', text: 'No CEC pool snapshot to project from.' })]),
     finePrint(hw),
   );
 }
@@ -197,7 +199,7 @@ function directive(hw: HighWage) {
 
 /* ── Score check + projection (they share one projected cutoff) ───────────── */
 
-function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | null) {
+function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | null): HTMLElement[] {
   const applicant = load();
   const defaultPreset = hw.presets.find((p) => p.key === hw.defaultPreset) ?? hw.presets[0]!;
 
@@ -526,7 +528,7 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
 
   syncTierInputs();
   update();
-  return el('div', {}, occupationLookup(hw, setTier), applicantPaper, projectionPaper);
+  return [occupationLookup(hw, setTier), applicantPaper, projectionPaper];
 }
 
 /* ── NOC lookup ────────────────────────────────────────────────────────────── */
