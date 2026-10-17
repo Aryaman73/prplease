@@ -978,6 +978,7 @@
 
 .hw-check { display: flex; align-items: flex-start; gap: var(--space-2); cursor: pointer; }
 .hw-check input { margin-top: 3px; accent-color: #4a4335; }
+.hw-check:has(input:disabled) { cursor: default; color: var(--ink-faint); }
 
 .hw-result {
   display: grid;

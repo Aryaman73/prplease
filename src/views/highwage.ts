@@ -418,6 +418,8 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
       return;
     }
 
+    // Twelve months in an occupation can't exceed the total; the box means nothing under a year.
+    yearBox.disabled = state.years < 1;
     const experienceTier = occ?.tier && state.hasYear ? occ.tier : null;
     const offerTier = state.offer === 'none' ? null : state.offer;
     const r = applicantScore(hw, { crs, years: state.years, hasSpouse: state.hasSpouse, experienceTier, offerTier });
@@ -432,6 +434,13 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
       field('New score', `${int(r.score)} (${r.score - crs >= 0 ? '+' : ''}${r.score - crs})`),
       field('Projected CEC cutoff', int(projected)),
     );
+
+    if (state.years < 1) {
+      applicantTally.textContent =
+        `New score ${int(r.score)}. CEC needs at least a year of skilled Canadian work experience, so CEC draws can't invite you yet; general and category draws have their own cutoffs.`;
+      applicantVerdict.append(stamp('NOT CEC', 'flag'));
+      return;
+    }
 
     const which = offerTier
       ? r.uses === 'offer'
@@ -508,7 +517,12 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
       el(
         'div',
         { class: 'hw-grid hw-grid--form' },
-        control('Canadian work experience (total)', 'hw-years', yearsSelect),
+        control(
+          'Canadian work experience (total)',
+          'hw-years',
+          yearsSelect,
+          el('p', { class: 'hw-hint', text: 'As on your profile. Your CRS today already counts these years, so changing one without the other describes a different applicant.' }),
+        ),
         control('Qualifying job offer', 'hw-offer', offerSelect),
       ),
       el(
