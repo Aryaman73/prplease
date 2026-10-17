@@ -1,0 +1,2701 @@
+{
+ "effective": "2026-11-03",
+ "listPublished": "2026-10-16",
+ "listUrl": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score/high-wage.html",
+ "points": {
+  "experience": {
+   "2.0x": 70,
+   "1.5x": 40,
+   "1.3x": 20
+  },
+  "offer": {
+   "2.0x": 100,
+   "1.5x": 70,
+   "1.3x": 50
+  }
+ },
+ "occupations": [
+  {
+   "noc": "00010",
+   "title": "Legislators",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "00011",
+   "title": "Senior government managers and officials",
+   "tier": "2.0x"
+  },
+  {
+   "noc": "00012",
+   "title": "Senior managers - financial, communications and other business services",
+   "tier": "2.0x"
+  },
+  {
+   "noc": "00013",
+   "title": "Senior managers - health, education, social and community services and membership organizations",
+   "tier": "2.0x"
+  },
+  {
+   "noc": "00014",
+   "title": "Senior managers - trade, broadcasting and other services",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "00015",
+   "title": "Senior managers - construction, transportation, production and utilities",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "10010",
+   "title": "Financial managers",
+   "tier": "2.0x"
+  },
+  {
+   "noc": "10011",
+   "title": "Human resources managers",
+   "tier": "2.0x"
+  },
+  {
+   "noc": "10012",
+   "title": "Purchasing managers",
+   "tier": "2.0x"
+  },
+  {
+   "noc": "10019",
+   "title": "Other administrative services managers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "10020",
+   "title": "Insurance, real estate and financial brokerage managers",
+   "tier": "2.0x"
+  },
+  {
+   "noc": "10021",
+   "title": "Banking, credit and other investment managers",
+   "tier": "2.0x"
+  },
+  {
+   "noc": "10022",
+   "title": "Advertising, marketing and public relations managers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "10029",
+   "title": "Other business services managers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "10030",
+   "title": "Telecommunication carriers managers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "11100",
+   "title": "Financial auditors and accountants",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "11101",
+   "title": "Financial and investment analysts",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "11102",
+   "title": "Financial advisors",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "11103",
+   "title": "Securities agents, investment dealers and brokers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "11109",
+   "title": "Other financial officers",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "11200",
+   "title": "Human resources professionals",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "11201",
+   "title": "Professional occupations in business management consulting",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "11202",
+   "title": "Professional occupations in advertising, marketing and public relations",
+   "tier": null
+  },
+  {
+   "noc": "12010",
+   "title": "Supervisors, general office and administrative support workers",
+   "tier": null
+  },
+  {
+   "noc": "12011",
+   "title": "Supervisors, finance and insurance office workers",
+   "tier": null
+  },
+  {
+   "noc": "12012",
+   "title": "Supervisors, library, correspondence and related information workers",
+   "tier": null
+  },
+  {
+   "noc": "12013",
+   "title": "Supervisors, supply chain, tracking and scheduling coordination occupations",
+   "tier": null
+  },
+  {
+   "noc": "12100",
+   "title": "Executive assistants",
+   "tier": null
+  },
+  {
+   "noc": "12101",
+   "title": "Human resources and recruitment officers",
+   "tier": null
+  },
+  {
+   "noc": "12102",
+   "title": "Procurement and purchasing agents and officers",
+   "tier": null
+  },
+  {
+   "noc": "12103",
+   "title": "Conference and event planners",
+   "tier": null
+  },
+  {
+   "noc": "12104",
+   "title": "Employment insurance and revenue officers",
+   "tier": null
+  },
+  {
+   "noc": "12110",
+   "title": "Court reporters, medical transcriptionists and related occupations",
+   "tier": null
+  },
+  {
+   "noc": "12111",
+   "title": "Health information management occupations",
+   "tier": null
+  },
+  {
+   "noc": "12112",
+   "title": "Records management technicians",
+   "tier": null
+  },
+  {
+   "noc": "12113",
+   "title": "Statistical officers and related research support occupations",
+   "tier": null
+  },
+  {
+   "noc": "12200",
+   "title": "Accounting technicians and bookkeepers",
+   "tier": null
+  },
+  {
+   "noc": "12201",
+   "title": "Insurance adjusters and claims examiners",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "12202",
+   "title": "Insurance underwriters",
+   "tier": null
+  },
+  {
+   "noc": "12203",
+   "title": "Assessors, business valuators and appraisers",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "13100",
+   "title": "Administrative officers",
+   "tier": null
+  },
+  {
+   "noc": "13101",
+   "title": "Property administrators",
+   "tier": null
+  },
+  {
+   "noc": "13102",
+   "title": "Payroll administrators",
+   "tier": null
+  },
+  {
+   "noc": "13110",
+   "title": "Administrative assistants",
+   "tier": null
+  },
+  {
+   "noc": "13111",
+   "title": "Legal administrative assistants",
+   "tier": null
+  },
+  {
+   "noc": "13112",
+   "title": "Medical administrative assistants",
+   "tier": null
+  },
+  {
+   "noc": "13200",
+   "title": "Customs, ship and other brokers",
+   "tier": null
+  },
+  {
+   "noc": "13201",
+   "title": "Production and transportation logistics coordinators",
+   "tier": null
+  },
+  {
+   "noc": "14100",
+   "title": "General office support workers",
+   "tier": null
+  },
+  {
+   "noc": "14101",
+   "title": "Receptionists",
+   "tier": null
+  },
+  {
+   "noc": "14102",
+   "title": "Personnel clerks",
+   "tier": null
+  },
+  {
+   "noc": "14103",
+   "title": "Court clerks and related court services occupations",
+   "tier": null
+  },
+  {
+   "noc": "14110",
+   "title": "Survey interviewers and statistical clerks",
+   "tier": null
+  },
+  {
+   "noc": "14111",
+   "title": "Data entry clerks",
+   "tier": null
+  },
+  {
+   "noc": "14112",
+   "title": "Desktop publishing operators and related occupations",
+   "tier": null
+  },
+  {
+   "noc": "14200",
+   "title": "Accounting and related clerks",
+   "tier": null
+  },
+  {
+   "noc": "14201",
+   "title": "Banking, insurance and other financial clerks",
+   "tier": null
+  },
+  {
+   "noc": "14202",
+   "title": "Collection clerks",
+   "tier": null
+  },
+  {
+   "noc": "14300",
+   "title": "Library assistants and clerks",
+   "tier": null
+  },
+  {
+   "noc": "14301",
+   "title": "Correspondence, publication and regulatory clerks",
+   "tier": null
+  },
+  {
+   "noc": "14400",
+   "title": "Shippers and receivers",
+   "tier": null
+  },
+  {
+   "noc": "14401",
+   "title": "Storekeepers and partspersons",
+   "tier": null
+  },
+  {
+   "noc": "14402",
+   "title": "Production logistics workers",
+   "tier": null
+  },
+  {
+   "noc": "14403",
+   "title": "Purchasing and inventory control workers",
+   "tier": null
+  },
+  {
+   "noc": "14404",
+   "title": "Dispatchers",
+   "tier": null
+  },
+  {
+   "noc": "14405",
+   "title": "Transportation route and crew schedulers",
+   "tier": null
+  },
+  {
+   "noc": "20010",
+   "title": "Engineering managers",
+   "tier": "2.0x"
+  },
+  {
+   "noc": "20011",
+   "title": "Architecture and science managers",
+   "tier": "2.0x"
+  },
+  {
+   "noc": "20012",
+   "title": "Computer and information systems managers",
+   "tier": "2.0x"
+  },
+  {
+   "noc": "21100",
+   "title": "Physicists and astronomers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "21101",
+   "title": "Chemists",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "21102",
+   "title": "Geoscientists and oceanographers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "21103",
+   "title": "Meteorologists and climatologists",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "21109",
+   "title": "Other professional occupations in physical sciences",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "21110",
+   "title": "Biologists and related scientists",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "21111",
+   "title": "Forestry professionals",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "21112",
+   "title": "Agricultural representatives, consultants and specialists",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "21120",
+   "title": "Public and environmental health and safety professionals",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "21200",
+   "title": "Architects",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "21201",
+   "title": "Landscape architects",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "21202",
+   "title": "Urban and land use planners",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "21203",
+   "title": "Land surveyors",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "21210",
+   "title": "Mathematicians, statisticians and actuaries",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "21211",
+   "title": "Data scientists",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "21220",
+   "title": "Cybersecurity specialists",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "21221",
+   "title": "Business systems specialists",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "21222",
+   "title": "Information systems specialists",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "21223",
+   "title": "Database analysts and data administrators",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "21230",
+   "title": "Computer systems developers and programmers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "21231",
+   "title": "Software engineers and designers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "21232",
+   "title": "Software developers and programmers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "21233",
+   "title": "Web designers",
+   "tier": null
+  },
+  {
+   "noc": "21234",
+   "title": "Web developers and programmers",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "21300",
+   "title": "Civil engineers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "21301",
+   "title": "Mechanical engineers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "21310",
+   "title": "Electrical and electronics engineers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "21311",
+   "title": "Computer engineers (except software engineers and designers)",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "21320",
+   "title": "Chemical engineers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "21321",
+   "title": "Industrial and manufacturing engineers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "21322",
+   "title": "Metallurgical and materials engineers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "21330",
+   "title": "Mining engineers",
+   "tier": "2.0x"
+  },
+  {
+   "noc": "21331",
+   "title": "Geological engineers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "21332",
+   "title": "Petroleum engineers",
+   "tier": "2.0x"
+  },
+  {
+   "noc": "21390",
+   "title": "Aerospace engineers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "21399",
+   "title": "Other professional engineers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "22100",
+   "title": "Chemical technologists and technicians",
+   "tier": null
+  },
+  {
+   "noc": "22101",
+   "title": "Geological and mineral technologists and technicians",
+   "tier": null
+  },
+  {
+   "noc": "22110",
+   "title": "Biological technologists and technicians",
+   "tier": null
+  },
+  {
+   "noc": "22111",
+   "title": "Agricultural and fish products inspectors",
+   "tier": null
+  },
+  {
+   "noc": "22112",
+   "title": "Forestry technologists and technicians",
+   "tier": null
+  },
+  {
+   "noc": "22113",
+   "title": "Conservation and fishery officers",
+   "tier": null
+  },
+  {
+   "noc": "22114",
+   "title": "Landscape and horticulture technicians and specialists",
+   "tier": null
+  },
+  {
+   "noc": "22210",
+   "title": "Architectural technologists and technicians",
+   "tier": null
+  },
+  {
+   "noc": "22211",
+   "title": "Industrial designers",
+   "tier": null
+  },
+  {
+   "noc": "22212",
+   "title": "Drafting technologists and technicians",
+   "tier": null
+  },
+  {
+   "noc": "22213",
+   "title": "Land survey technologists and technicians",
+   "tier": null
+  },
+  {
+   "noc": "22214",
+   "title": "Technical occupations in geomatics and meteorology",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "22220",
+   "title": "Computer network and web technicians",
+   "tier": null
+  },
+  {
+   "noc": "22221",
+   "title": "User support technicians",
+   "tier": null
+  },
+  {
+   "noc": "22222",
+   "title": "Information systems testing technicians",
+   "tier": null
+  },
+  {
+   "noc": "22230",
+   "title": "Non-destructive testers and inspectors",
+   "tier": null
+  },
+  {
+   "noc": "22231",
+   "title": "Engineering inspectors and regulatory officers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "22232",
+   "title": "Occupational health and safety specialists",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "22233",
+   "title": "Construction inspectors",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "22300",
+   "title": "Civil engineering technologists and technicians",
+   "tier": null
+  },
+  {
+   "noc": "22301",
+   "title": "Mechanical engineering technologists and technicians",
+   "tier": null
+  },
+  {
+   "noc": "22302",
+   "title": "Industrial engineering and manufacturing technologists and technicians",
+   "tier": null
+  },
+  {
+   "noc": "22303",
+   "title": "Construction estimators",
+   "tier": null
+  },
+  {
+   "noc": "22310",
+   "title": "Electrical and electronics engineering technologists and technicians",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "22311",
+   "title": "Electronic service technicians (household and business equipment)",
+   "tier": null
+  },
+  {
+   "noc": "22312",
+   "title": "Industrial instrument technicians and mechanics",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "22313",
+   "title": "Aircraft instrument, electrical and avionics mechanics, technicians and inspectors",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "30010",
+   "title": "Managers in health care",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "31100",
+   "title": "Specialists in clinical and laboratory medicine",
+   "tier": "2.0x"
+  },
+  {
+   "noc": "31101",
+   "title": "Specialists in surgery",
+   "tier": "2.0x"
+  },
+  {
+   "noc": "31102",
+   "title": "General practitioners and family physicians",
+   "tier": "2.0x"
+  },
+  {
+   "noc": "31103",
+   "title": "Veterinarians",
+   "tier": "2.0x"
+  },
+  {
+   "noc": "31110",
+   "title": "Dentists",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "31111",
+   "title": "Optometrists",
+   "tier": null
+  },
+  {
+   "noc": "31112",
+   "title": "Audiologists and speech-language pathologists",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "31120",
+   "title": "Pharmacists",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "31121",
+   "title": "Dietitians and nutritionists",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "31200",
+   "title": "Psychologists",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "31201",
+   "title": "Chiropractors",
+   "tier": null
+  },
+  {
+   "noc": "31202",
+   "title": "Physiotherapists",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "31203",
+   "title": "Occupational therapists",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "31204",
+   "title": "Kinesiologists and other professional occupations in therapy and assessment",
+   "tier": null
+  },
+  {
+   "noc": "31209",
+   "title": "Other professional occupations in health diagnosing and treating",
+   "tier": null
+  },
+  {
+   "noc": "31300",
+   "title": "Nursing coordinators and supervisors",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "31301",
+   "title": "Registered nurses and registered psychiatric nurses",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "31302",
+   "title": "Nurse practitioners",
+   "tier": "2.0x"
+  },
+  {
+   "noc": "31303",
+   "title": "Physician assistants, midwives and allied health professionals",
+   "tier": "2.0x"
+  },
+  {
+   "noc": "32100",
+   "title": "Opticians",
+   "tier": null
+  },
+  {
+   "noc": "32101",
+   "title": "Licensed practical nurses",
+   "tier": null
+  },
+  {
+   "noc": "32102",
+   "title": "Paramedical occupations",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "32103",
+   "title": "Respiratory therapists, clinical perfusionists and cardiopulmonary technologists",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "32104",
+   "title": "Animal health technologists and veterinary technicians",
+   "tier": null
+  },
+  {
+   "noc": "32109",
+   "title": "Other technical occupations in therapy and assessment",
+   "tier": null
+  },
+  {
+   "noc": "32110",
+   "title": "Denturists",
+   "tier": null
+  },
+  {
+   "noc": "32111",
+   "title": "Dental hygienists and dental therapists",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "32112",
+   "title": "Dental technologists and technicians",
+   "tier": null
+  },
+  {
+   "noc": "32120",
+   "title": "Medical laboratory technologists",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "32121",
+   "title": "Medical radiation technologists",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "32122",
+   "title": "Medical sonographers",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "32123",
+   "title": "Cardiology technologists and electrophysiological diagnostic technologists",
+   "tier": null
+  },
+  {
+   "noc": "32124",
+   "title": "Pharmacy technicians",
+   "tier": null
+  },
+  {
+   "noc": "32129",
+   "title": "Other medical technologists and technicians",
+   "tier": null
+  },
+  {
+   "noc": "32200",
+   "title": "Traditional Chinese medicine practitioners and acupuncturists",
+   "tier": null
+  },
+  {
+   "noc": "32201",
+   "title": "Massage therapists",
+   "tier": null
+  },
+  {
+   "noc": "32209",
+   "title": "Other practitioners of natural healing",
+   "tier": null
+  },
+  {
+   "noc": "33100",
+   "title": "Dental assistants and dental laboratory assistants",
+   "tier": null
+  },
+  {
+   "noc": "33101",
+   "title": "Medical laboratory assistants and related technical occupations",
+   "tier": null
+  },
+  {
+   "noc": "33102",
+   "title": "Nurse aides, orderlies and patient service associates",
+   "tier": null
+  },
+  {
+   "noc": "33103",
+   "title": "Pharmacy technical assistants and pharmacy assistants",
+   "tier": null
+  },
+  {
+   "noc": "33109",
+   "title": "Other assisting occupations in support of health services",
+   "tier": null
+  },
+  {
+   "noc": "40010",
+   "title": "Government managers - health and social policy development and program administration",
+   "tier": "2.0x"
+  },
+  {
+   "noc": "40011",
+   "title": "Government managers - economic analysis, policy development and program administration",
+   "tier": "2.0x"
+  },
+  {
+   "noc": "40012",
+   "title": "Government managers - education policy development and program administration",
+   "tier": "2.0x"
+  },
+  {
+   "noc": "40019",
+   "title": "Other managers in public administration",
+   "tier": "2.0x"
+  },
+  {
+   "noc": "40020",
+   "title": "Administrators - post-secondary education and vocational training",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "40021",
+   "title": "School principals and administrators of elementary and secondary education",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "40030",
+   "title": "Managers in social, community and correctional services",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "40040",
+   "title": "Commissioned police officers and related occupations in public protection services",
+   "tier": "2.0x"
+  },
+  {
+   "noc": "40041",
+   "title": "Fire chiefs and senior firefighting officers",
+   "tier": "2.0x"
+  },
+  {
+   "noc": "40042",
+   "title": "Commissioned officers of the Canadian Armed Forces",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "41100",
+   "title": "Judges",
+   "tier": "2.0x"
+  },
+  {
+   "noc": "41101",
+   "title": "Lawyers and Quebec notaries",
+   "tier": "2.0x"
+  },
+  {
+   "noc": "41200",
+   "title": "University professors and lecturers",
+   "tier": "2.0x"
+  },
+  {
+   "noc": "41201",
+   "title": "Post-secondary teaching and research assistants",
+   "tier": null
+  },
+  {
+   "noc": "41210",
+   "title": "College and other vocational instructors",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "41220",
+   "title": "Secondary school teachers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "41221",
+   "title": "Elementary school and kindergarten teachers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "41300",
+   "title": "Social workers",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "41301",
+   "title": "Therapists in counselling and related specialized therapies",
+   "tier": null
+  },
+  {
+   "noc": "41302",
+   "title": "Religious leaders",
+   "tier": null
+  },
+  {
+   "noc": "41310",
+   "title": "Police investigators and other investigative occupations",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "41311",
+   "title": "Probation and parole officers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "41320",
+   "title": "Educational counsellors",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "41321",
+   "title": "Career development practitioners and career counsellors (except education)",
+   "tier": null
+  },
+  {
+   "noc": "41400",
+   "title": "Natural and applied science policy researchers, consultants and program officers",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "41401",
+   "title": "Economists and economic policy researchers and analysts",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "41402",
+   "title": "Business development officers and market researchers and analysts",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "41403",
+   "title": "Social policy researchers, consultants and program officers",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "41404",
+   "title": "Health policy researchers, consultants and program officers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "41405",
+   "title": "Education policy researchers, consultants and program officers",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "41406",
+   "title": "Recreation, sports and fitness policy researchers, consultants and program officers",
+   "tier": null
+  },
+  {
+   "noc": "41407",
+   "title": "Program officers unique to government",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "41409",
+   "title": "Other professional occupations in social science",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "42100",
+   "title": "Police officers (except commissioned)",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "42101",
+   "title": "Firefighters",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "42102",
+   "title": "Specialized members of the Canadian Armed Forces",
+   "tier": null
+  },
+  {
+   "noc": "42200",
+   "title": "Paralegals and related occupations",
+   "tier": null
+  },
+  {
+   "noc": "42201",
+   "title": "Social and community service workers",
+   "tier": null
+  },
+  {
+   "noc": "42202",
+   "title": "Early childhood educators and assistants",
+   "tier": null
+  },
+  {
+   "noc": "42203",
+   "title": "Instructors of persons with disabilities",
+   "tier": null
+  },
+  {
+   "noc": "42204",
+   "title": "Religion workers",
+   "tier": null
+  },
+  {
+   "noc": "43100",
+   "title": "Elementary and secondary school teacher assistants",
+   "tier": null
+  },
+  {
+   "noc": "43109",
+   "title": "Other instructors",
+   "tier": null
+  },
+  {
+   "noc": "43200",
+   "title": "Sheriffs and bailiffs",
+   "tier": null
+  },
+  {
+   "noc": "43201",
+   "title": "Correctional service officers",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "43202",
+   "title": "By-law enforcement and other regulatory officers",
+   "tier": null
+  },
+  {
+   "noc": "43203",
+   "title": "Border services, customs, and immigration officers",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "43204",
+   "title": "Operations members of the Canadian Armed Forces",
+   "tier": null
+  },
+  {
+   "noc": "44100",
+   "title": "Home child care providers",
+   "tier": null
+  },
+  {
+   "noc": "44101",
+   "title": "Home support workers, caregivers and related occupations",
+   "tier": null
+  },
+  {
+   "noc": "44200",
+   "title": "Primary combat members of the Canadian Armed Forces",
+   "tier": null
+  },
+  {
+   "noc": "45100",
+   "title": "Student monitors, crossing guards and related occupations",
+   "tier": null
+  },
+  {
+   "noc": "50010",
+   "title": "Library, archive, museum and art gallery managers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "50011",
+   "title": "Managers - publishing, motion pictures, broadcasting and performing arts",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "50012",
+   "title": "Recreation, sports and fitness program and service directors",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "51100",
+   "title": "Librarians",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "51101",
+   "title": "Conservators and curators",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "51102",
+   "title": "Archivists",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "51110",
+   "title": "Editors",
+   "tier": null
+  },
+  {
+   "noc": "51111",
+   "title": "Authors and writers (except technical)",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "51112",
+   "title": "Technical writers",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "51113",
+   "title": "Journalists",
+   "tier": null
+  },
+  {
+   "noc": "51114",
+   "title": "Translators, terminologists and interpreters",
+   "tier": null
+  },
+  {
+   "noc": "51120",
+   "title": "Producers, directors, choreographers and related occupations",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "51121",
+   "title": "Conductors, composers and arrangers",
+   "tier": null
+  },
+  {
+   "noc": "51122",
+   "title": "Musicians and singers",
+   "tier": null
+  },
+  {
+   "noc": "52100",
+   "title": "Library and public archive technicians",
+   "tier": null
+  },
+  {
+   "noc": "52110",
+   "title": "Film and video camera operators",
+   "tier": null
+  },
+  {
+   "noc": "52111",
+   "title": "Graphic arts technicians",
+   "tier": null
+  },
+  {
+   "noc": "52112",
+   "title": "Broadcast technicians",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "52113",
+   "title": "Audio and video recording technicians",
+   "tier": null
+  },
+  {
+   "noc": "52114",
+   "title": "Announcers and other broadcasters",
+   "tier": null
+  },
+  {
+   "noc": "52119",
+   "title": "Other technical and coordinating occupations in motion pictures, broadcasting and the performing arts",
+   "tier": null
+  },
+  {
+   "noc": "52120",
+   "title": "Graphic designers and illustrators",
+   "tier": null
+  },
+  {
+   "noc": "52121",
+   "title": "Interior designers and interior decorators",
+   "tier": null
+  },
+  {
+   "noc": "53100",
+   "title": "Registrars, restorers, interpreters and other occupations related to museum and art galleries",
+   "tier": null
+  },
+  {
+   "noc": "53110",
+   "title": "Photographers",
+   "tier": null
+  },
+  {
+   "noc": "53111",
+   "title": "Motion pictures, broadcasting, photography and performing arts assistants and operators",
+   "tier": null
+  },
+  {
+   "noc": "53120",
+   "title": "Dancers",
+   "tier": null
+  },
+  {
+   "noc": "53121",
+   "title": "Actors, comedians and circus performers",
+   "tier": null
+  },
+  {
+   "noc": "53122",
+   "title": "Painters, sculptors and other visual artists",
+   "tier": null
+  },
+  {
+   "noc": "53123",
+   "title": "Theatre, fashion, exhibit and other creative designers",
+   "tier": null
+  },
+  {
+   "noc": "53124",
+   "title": "Artisans and craftspersons",
+   "tier": null
+  },
+  {
+   "noc": "53125",
+   "title": "Patternmakers - textile, leather and fur products",
+   "tier": null
+  },
+  {
+   "noc": "53200",
+   "title": "Athletes",
+   "tier": null
+  },
+  {
+   "noc": "53201",
+   "title": "Coaches",
+   "tier": null
+  },
+  {
+   "noc": "53202",
+   "title": "Sports officials and referees",
+   "tier": null
+  },
+  {
+   "noc": "54100",
+   "title": "Program leaders and instructors in recreation, sport and fitness",
+   "tier": null
+  },
+  {
+   "noc": "55109",
+   "title": "Other performers",
+   "tier": null
+  },
+  {
+   "noc": "60010",
+   "title": "Corporate sales managers",
+   "tier": "2.0x"
+  },
+  {
+   "noc": "60020",
+   "title": "Retail and wholesale trade managers",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "60030",
+   "title": "Restaurant and food service managers",
+   "tier": null
+  },
+  {
+   "noc": "60031",
+   "title": "Accommodation service managers",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "60040",
+   "title": "Managers in customer and personal services",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "62010",
+   "title": "Retail sales supervisors",
+   "tier": null
+  },
+  {
+   "noc": "62020",
+   "title": "Food service supervisors",
+   "tier": null
+  },
+  {
+   "noc": "62021",
+   "title": "Executive housekeepers",
+   "tier": null
+  },
+  {
+   "noc": "62022",
+   "title": "Accommodation, travel, tourism and related services supervisors",
+   "tier": null
+  },
+  {
+   "noc": "62023",
+   "title": "Customer and information services supervisors",
+   "tier": null
+  },
+  {
+   "noc": "62024",
+   "title": "Cleaning supervisors",
+   "tier": null
+  },
+  {
+   "noc": "62029",
+   "title": "Other services supervisors",
+   "tier": null
+  },
+  {
+   "noc": "62100",
+   "title": "Technical sales specialists - wholesale trade",
+   "tier": null
+  },
+  {
+   "noc": "62101",
+   "title": "Retail and wholesale buyers",
+   "tier": null
+  },
+  {
+   "noc": "62200",
+   "title": "Chefs",
+   "tier": null
+  },
+  {
+   "noc": "62201",
+   "title": "Funeral directors and embalmers",
+   "tier": null
+  },
+  {
+   "noc": "62202",
+   "title": "Jewellers, jewellery and watch repairers and related occupations",
+   "tier": null
+  },
+  {
+   "noc": "63100",
+   "title": "Insurance agents and brokers",
+   "tier": null
+  },
+  {
+   "noc": "63101",
+   "title": "Real estate agents and salespersons",
+   "tier": null
+  },
+  {
+   "noc": "63102",
+   "title": "Financial sales representatives",
+   "tier": null
+  },
+  {
+   "noc": "63200",
+   "title": "Cooks",
+   "tier": null
+  },
+  {
+   "noc": "63201",
+   "title": "Butchers - retail and wholesale",
+   "tier": null
+  },
+  {
+   "noc": "63202",
+   "title": "Bakers",
+   "tier": null
+  },
+  {
+   "noc": "63210",
+   "title": "Hairstylists and barbers",
+   "tier": null
+  },
+  {
+   "noc": "63211",
+   "title": "Estheticians, electrologists and related occupations",
+   "tier": null
+  },
+  {
+   "noc": "63220",
+   "title": "Shoe repairers and shoemakers",
+   "tier": null
+  },
+  {
+   "noc": "63221",
+   "title": "Upholsterers",
+   "tier": null
+  },
+  {
+   "noc": "64100",
+   "title": "Retail salespersons and visual merchandisers",
+   "tier": null
+  },
+  {
+   "noc": "64101",
+   "title": "Sales and account representatives - wholesale trade (non-technical)",
+   "tier": null
+  },
+  {
+   "noc": "64200",
+   "title": "Tailors, dressmakers, furriers and milliners",
+   "tier": null
+  },
+  {
+   "noc": "64201",
+   "title": "Image, social and other personal consultants",
+   "tier": null
+  },
+  {
+   "noc": "64300",
+   "title": "Maîtres d'hôtel and hosts/hostesses",
+   "tier": null
+  },
+  {
+   "noc": "64301",
+   "title": "Bartenders",
+   "tier": null
+  },
+  {
+   "noc": "64310",
+   "title": "Travel counsellors",
+   "tier": null
+  },
+  {
+   "noc": "64311",
+   "title": "Pursers and flight attendants",
+   "tier": null
+  },
+  {
+   "noc": "64312",
+   "title": "Airline ticket and service agents",
+   "tier": null
+  },
+  {
+   "noc": "64313",
+   "title": "Ground and water transport ticket agents, cargo service representatives and related clerks",
+   "tier": null
+  },
+  {
+   "noc": "64314",
+   "title": "Hotel front desk clerks",
+   "tier": null
+  },
+  {
+   "noc": "64320",
+   "title": "Tour and travel guides",
+   "tier": null
+  },
+  {
+   "noc": "64321",
+   "title": "Casino workers",
+   "tier": null
+  },
+  {
+   "noc": "64322",
+   "title": "Outdoor sport and recreational guides",
+   "tier": null
+  },
+  {
+   "noc": "64400",
+   "title": "Customer services representatives - financial institutions",
+   "tier": null
+  },
+  {
+   "noc": "64401",
+   "title": "Postal services representatives",
+   "tier": null
+  },
+  {
+   "noc": "64409",
+   "title": "Other customer and information services representatives",
+   "tier": null
+  },
+  {
+   "noc": "64410",
+   "title": "Security guards and related security service occupations",
+   "tier": null
+  },
+  {
+   "noc": "65100",
+   "title": "Cashiers",
+   "tier": null
+  },
+  {
+   "noc": "65101",
+   "title": "Service station attendants",
+   "tier": null
+  },
+  {
+   "noc": "65102",
+   "title": "Store shelf stockers, clerks and order fillers",
+   "tier": null
+  },
+  {
+   "noc": "65109",
+   "title": "Other sales related occupations",
+   "tier": null
+  },
+  {
+   "noc": "65200",
+   "title": "Food and beverage servers",
+   "tier": null
+  },
+  {
+   "noc": "65201",
+   "title": "Food counter attendants, kitchen helpers and related support occupations",
+   "tier": null
+  },
+  {
+   "noc": "65202",
+   "title": "Meat cutters and fishmongers - retail and wholesale",
+   "tier": null
+  },
+  {
+   "noc": "65210",
+   "title": "Support occupations in accommodation, travel and facilities set-up services",
+   "tier": null
+  },
+  {
+   "noc": "65211",
+   "title": "Operators and attendants in amusement, recreation and sport",
+   "tier": null
+  },
+  {
+   "noc": "65220",
+   "title": "Pet groomers and animal care workers",
+   "tier": null
+  },
+  {
+   "noc": "65229",
+   "title": "Other support occupations in personal services",
+   "tier": null
+  },
+  {
+   "noc": "65310",
+   "title": "Light duty cleaners",
+   "tier": null
+  },
+  {
+   "noc": "65311",
+   "title": "Specialized cleaners",
+   "tier": null
+  },
+  {
+   "noc": "65312",
+   "title": "Janitors, caretakers and heavy-duty cleaners",
+   "tier": null
+  },
+  {
+   "noc": "65320",
+   "title": "Dry cleaning, laundry and related occupations",
+   "tier": null
+  },
+  {
+   "noc": "65329",
+   "title": "Other service support occupations",
+   "tier": null
+  },
+  {
+   "noc": "70010",
+   "title": "Construction managers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "70011",
+   "title": "Home building and renovation managers",
+   "tier": null
+  },
+  {
+   "noc": "70012",
+   "title": "Facility operation and maintenance managers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "70020",
+   "title": "Managers in transportation",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "70021",
+   "title": "Postal and courier services managers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "72010",
+   "title": "Contractors and supervisors, machining, metal forming, shaping and erecting trades and related occupations",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "72011",
+   "title": "Contractors and supervisors, electrical trades and telecommunications occupations",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "72012",
+   "title": "Contractors and supervisors, pipefitting trades",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "72013",
+   "title": "Contractors and supervisors, carpentry trades",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "72014",
+   "title": "Contractors and supervisors, other construction trades, installers, repairers and servicers",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "72020",
+   "title": "Contractors and supervisors, mechanic trades",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "72021",
+   "title": "Contractors and supervisors, heavy equipment operator crews",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "72022",
+   "title": "Supervisors, printing and related occupations",
+   "tier": null
+  },
+  {
+   "noc": "72023",
+   "title": "Supervisors, railway transport operations",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "72024",
+   "title": "Supervisors, motor transport and other ground transit operators",
+   "tier": null
+  },
+  {
+   "noc": "72025",
+   "title": "Supervisors, mail and message distribution occupations",
+   "tier": null
+  },
+  {
+   "noc": "72100",
+   "title": "Machinists and machining and tooling inspectors",
+   "tier": null
+  },
+  {
+   "noc": "72101",
+   "title": "Tool and die makers",
+   "tier": null
+  },
+  {
+   "noc": "72102",
+   "title": "Sheet metal workers",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "72103",
+   "title": "Boilermakers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "72104",
+   "title": "Structural metal and platework fabricators and fitters",
+   "tier": null
+  },
+  {
+   "noc": "72105",
+   "title": "Ironworkers",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "72106",
+   "title": "Welders and related machine operators",
+   "tier": null
+  },
+  {
+   "noc": "72200",
+   "title": "Electricians (except industrial and power system)",
+   "tier": null
+  },
+  {
+   "noc": "72201",
+   "title": "Industrial electricians",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "72202",
+   "title": "Power system electricians",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "72203",
+   "title": "Electrical power line and cable workers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "72204",
+   "title": "Telecommunications line and cable installers and repairers",
+   "tier": null
+  },
+  {
+   "noc": "72205",
+   "title": "Telecommunications equipment installation and cable television service technicians",
+   "tier": null
+  },
+  {
+   "noc": "72300",
+   "title": "Plumbers",
+   "tier": null
+  },
+  {
+   "noc": "72301",
+   "title": "Steamfitters, pipefitters and sprinkler system installers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "72302",
+   "title": "Gas fitters",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "72310",
+   "title": "Carpenters",
+   "tier": null
+  },
+  {
+   "noc": "72311",
+   "title": "Cabinetmakers",
+   "tier": null
+  },
+  {
+   "noc": "72320",
+   "title": "Bricklayers",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "72321",
+   "title": "Insulators",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "72400",
+   "title": "Construction millwrights and industrial mechanics",
+   "tier": null
+  },
+  {
+   "noc": "72401",
+   "title": "Heavy-duty equipment mechanics",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "72402",
+   "title": "Heating, refrigeration and air conditioning mechanics",
+   "tier": null
+  },
+  {
+   "noc": "72403",
+   "title": "Railway carmen/women",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "72404",
+   "title": "Aircraft mechanics and aircraft inspectors",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "72405",
+   "title": "Machine fitters",
+   "tier": null
+  },
+  {
+   "noc": "72406",
+   "title": "Elevator constructors and mechanics",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "72410",
+   "title": "Automotive service technicians, truck and bus mechanics and mechanical repairers",
+   "tier": null
+  },
+  {
+   "noc": "72411",
+   "title": "Auto body collision, refinishing and glass technicians and damage repair estimators",
+   "tier": null
+  },
+  {
+   "noc": "72420",
+   "title": "Oil and solid fuel heating mechanics",
+   "tier": null
+  },
+  {
+   "noc": "72421",
+   "title": "Appliance servicers and repairers",
+   "tier": null
+  },
+  {
+   "noc": "72422",
+   "title": "Electrical mechanics",
+   "tier": null
+  },
+  {
+   "noc": "72423",
+   "title": "Motorcycle, all-terrain vehicle and other related mechanics",
+   "tier": null
+  },
+  {
+   "noc": "72429",
+   "title": "Other small engine and small equipment repairers",
+   "tier": null
+  },
+  {
+   "noc": "72500",
+   "title": "Crane operators",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "72501",
+   "title": "Water well drillers",
+   "tier": null
+  },
+  {
+   "noc": "72600",
+   "title": "Air pilots, flight engineers and flying instructors",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "72601",
+   "title": "Air traffic controllers and related occupations",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "72602",
+   "title": "Deck officers, water transport",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "72603",
+   "title": "Engineer officers, water transport",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "72604",
+   "title": "Railway traffic controllers and marine traffic regulators",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "72999",
+   "title": "Other technical trades and related occupations",
+   "tier": null
+  },
+  {
+   "noc": "73100",
+   "title": "Concrete finishers",
+   "tier": null
+  },
+  {
+   "noc": "73101",
+   "title": "Tilesetters",
+   "tier": null
+  },
+  {
+   "noc": "73102",
+   "title": "Plasterers, drywall installers and finishers and lathers",
+   "tier": null
+  },
+  {
+   "noc": "73110",
+   "title": "Roofers and shinglers",
+   "tier": null
+  },
+  {
+   "noc": "73111",
+   "title": "Glaziers",
+   "tier": null
+  },
+  {
+   "noc": "73112",
+   "title": "Painters and decorators (except interior decorators)",
+   "tier": null
+  },
+  {
+   "noc": "73113",
+   "title": "Floor covering installers",
+   "tier": null
+  },
+  {
+   "noc": "73200",
+   "title": "Residential and commercial installers and servicers",
+   "tier": null
+  },
+  {
+   "noc": "73201",
+   "title": "General building maintenance workers and building superintendents",
+   "tier": null
+  },
+  {
+   "noc": "73202",
+   "title": "Pest controllers and fumigators",
+   "tier": null
+  },
+  {
+   "noc": "73209",
+   "title": "Other repairers and servicers",
+   "tier": null
+  },
+  {
+   "noc": "73300",
+   "title": "Transport truck drivers",
+   "tier": null
+  },
+  {
+   "noc": "73301",
+   "title": "Bus drivers, subway operators and other transit operators",
+   "tier": null
+  },
+  {
+   "noc": "73310",
+   "title": "Railway and yard locomotive engineers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "73311",
+   "title": "Railway conductors and brakemen/women",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "73400",
+   "title": "Heavy equipment operators",
+   "tier": null
+  },
+  {
+   "noc": "73401",
+   "title": "Printing press operators",
+   "tier": null
+  },
+  {
+   "noc": "73402",
+   "title": "Drillers and blasters - surface mining, quarrying and construction",
+   "tier": null
+  },
+  {
+   "noc": "74100",
+   "title": "Mail and parcel sorters and related occupations",
+   "tier": null
+  },
+  {
+   "noc": "74101",
+   "title": "Letter carriers",
+   "tier": null
+  },
+  {
+   "noc": "74102",
+   "title": "Couriers and messengers",
+   "tier": null
+  },
+  {
+   "noc": "74200",
+   "title": "Railway yard and track maintenance workers",
+   "tier": null
+  },
+  {
+   "noc": "74201",
+   "title": "Water transport deck and engine room crew",
+   "tier": null
+  },
+  {
+   "noc": "74202",
+   "title": "Air transport ramp attendants",
+   "tier": null
+  },
+  {
+   "noc": "74203",
+   "title": "Automotive and heavy truck and equipment parts installers and servicers",
+   "tier": null
+  },
+  {
+   "noc": "74204",
+   "title": "Utility maintenance workers",
+   "tier": null
+  },
+  {
+   "noc": "74205",
+   "title": "Public works maintenance equipment operators and related workers",
+   "tier": null
+  },
+  {
+   "noc": "75100",
+   "title": "Longshore workers",
+   "tier": null
+  },
+  {
+   "noc": "75101",
+   "title": "Material handlers",
+   "tier": null
+  },
+  {
+   "noc": "75110",
+   "title": "Construction trades helpers and labourers",
+   "tier": null
+  },
+  {
+   "noc": "75119",
+   "title": "Other trades helpers and labourers",
+   "tier": null
+  },
+  {
+   "noc": "75200",
+   "title": "Taxi and limousine drivers and chauffeurs",
+   "tier": null
+  },
+  {
+   "noc": "75201",
+   "title": "Delivery service drivers and door-to-door distributors",
+   "tier": null
+  },
+  {
+   "noc": "75210",
+   "title": "Boat and cable ferry operators and related occupations",
+   "tier": null
+  },
+  {
+   "noc": "75211",
+   "title": "Railway and motor transport labourers",
+   "tier": null
+  },
+  {
+   "noc": "75212",
+   "title": "Public works and maintenance labourers",
+   "tier": null
+  },
+  {
+   "noc": "80010",
+   "title": "Managers in natural resources production and fishing",
+   "tier": "2.0x"
+  },
+  {
+   "noc": "80020",
+   "title": "Managers in agriculture",
+   "tier": null
+  },
+  {
+   "noc": "80021",
+   "title": "Managers in horticulture",
+   "tier": null
+  },
+  {
+   "noc": "80022",
+   "title": "Managers in aquaculture",
+   "tier": null
+  },
+  {
+   "noc": "82010",
+   "title": "Supervisors, logging and forestry",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "82020",
+   "title": "Supervisors, mining and quarrying",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "82021",
+   "title": "Contractors and supervisors, oil and gas drilling and services",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "82030",
+   "title": "Agricultural service contractors and farm supervisors",
+   "tier": null
+  },
+  {
+   "noc": "82031",
+   "title": "Contractors and supervisors, landscaping, grounds maintenance and horticulture services",
+   "tier": null
+  },
+  {
+   "noc": "83100",
+   "title": "Underground production and development miners",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "83101",
+   "title": "Oil and gas well drillers, servicers, testers and related workers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "83110",
+   "title": "Logging machinery operators",
+   "tier": null
+  },
+  {
+   "noc": "83120",
+   "title": "Fishing masters and officers",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "83121",
+   "title": "Fishermen/women",
+   "tier": null
+  },
+  {
+   "noc": "84100",
+   "title": "Underground mine service and support workers",
+   "tier": null
+  },
+  {
+   "noc": "84101",
+   "title": "Oil and gas well drilling and related workers and services operators",
+   "tier": null
+  },
+  {
+   "noc": "84110",
+   "title": "Chain saw and skidder operators",
+   "tier": null
+  },
+  {
+   "noc": "84111",
+   "title": "Silviculture and forestry workers",
+   "tier": null
+  },
+  {
+   "noc": "84120",
+   "title": "Specialized livestock workers and farm machinery operators",
+   "tier": null
+  },
+  {
+   "noc": "84121",
+   "title": "Fishing vessel deckhands",
+   "tier": null
+  },
+  {
+   "noc": "85100",
+   "title": "Livestock labourers",
+   "tier": null
+  },
+  {
+   "noc": "85101",
+   "title": "Harvesting labourers",
+   "tier": null
+  },
+  {
+   "noc": "85102",
+   "title": "Aquaculture and marine harvest labourers",
+   "tier": null
+  },
+  {
+   "noc": "85103",
+   "title": "Nursery and greenhouse labourers",
+   "tier": null
+  },
+  {
+   "noc": "85104",
+   "title": "Trappers and hunters",
+   "tier": null
+  },
+  {
+   "noc": "85110",
+   "title": "Mine labourers",
+   "tier": null
+  },
+  {
+   "noc": "85111",
+   "title": "Oil and gas drilling, servicing and related labourers",
+   "tier": null
+  },
+  {
+   "noc": "85120",
+   "title": "Logging and forestry labourers",
+   "tier": null
+  },
+  {
+   "noc": "85121",
+   "title": "Landscaping and grounds maintenance labourers",
+   "tier": null
+  },
+  {
+   "noc": "90010",
+   "title": "Manufacturing managers",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "90011",
+   "title": "Utilities managers",
+   "tier": "2.0x"
+  },
+  {
+   "noc": "92010",
+   "title": "Supervisors, mineral and metal processing",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "92011",
+   "title": "Supervisors, petroleum, gas and chemical processing and utilities",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "92012",
+   "title": "Supervisors, food and beverage processing",
+   "tier": null
+  },
+  {
+   "noc": "92013",
+   "title": "Supervisors, plastic and rubber products manufacturing",
+   "tier": null
+  },
+  {
+   "noc": "92014",
+   "title": "Supervisors, forest products processing",
+   "tier": null
+  },
+  {
+   "noc": "92015",
+   "title": "Supervisors, textile, fabric, fur and leather products processing and manufacturing",
+   "tier": null
+  },
+  {
+   "noc": "92020",
+   "title": "Supervisors, motor vehicle assembling",
+   "tier": null
+  },
+  {
+   "noc": "92021",
+   "title": "Supervisors, electronics and electrical products manufacturing",
+   "tier": null
+  },
+  {
+   "noc": "92022",
+   "title": "Supervisors, furniture and fixtures manufacturing",
+   "tier": null
+  },
+  {
+   "noc": "92023",
+   "title": "Supervisors, other mechanical and metal products manufacturing",
+   "tier": null
+  },
+  {
+   "noc": "92024",
+   "title": "Supervisors, other products manufacturing and assembly",
+   "tier": null
+  },
+  {
+   "noc": "92100",
+   "title": "Power engineers and power systems operators",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "92101",
+   "title": "Water and waste treatment plant operators",
+   "tier": null
+  },
+  {
+   "noc": "93100",
+   "title": "Central control and process operators, mineral and metal processing",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "93101",
+   "title": "Central control and process operators, petroleum, gas and chemical processing",
+   "tier": "1.5x"
+  },
+  {
+   "noc": "93102",
+   "title": "Pulping, papermaking and coating control operators",
+   "tier": "1.3x"
+  },
+  {
+   "noc": "93200",
+   "title": "Aircraft assemblers and aircraft assembly inspectors",
+   "tier": null
+  },
+  {
+   "noc": "94100",
+   "title": "Machine operators, mineral and metal processing",
+   "tier": null
+  },
+  {
+   "noc": "94101",
+   "title": "Foundry workers",
+   "tier": null
+  },
+  {
+   "noc": "94102",
+   "title": "Glass forming and finishing machine operators and glass cutters",
+   "tier": null
+  },
+  {
+   "noc": "94103",
+   "title": "Concrete, clay and stone forming operators",
+   "tier": null
+  },
+  {
+   "noc": "94104",
+   "title": "Inspectors and testers, mineral and metal processing",
+   "tier": null
+  },
+  {
+   "noc": "94105",
+   "title": "Metalworking and forging machine operators",
+   "tier": null
+  },
+  {
+   "noc": "94106",
+   "title": "Machining tool operators",
+   "tier": null
+  },
+  {
+   "noc": "94107",
+   "title": "Machine operators of other metal products",
+   "tier": null
+  },
+  {
+   "noc": "94110",
+   "title": "Chemical plant machine operators",
+   "tier": null
+  },
+  {
+   "noc": "94111",
+   "title": "Plastics processing machine operators",
+   "tier": null
+  },
+  {
+   "noc": "94112",
+   "title": "Rubber processing machine operators and related workers",
+   "tier": null
+  },
+  {
+   "noc": "94120",
+   "title": "Sawmill machine operators",
+   "tier": null
+  },
+  {
+   "noc": "94121",
+   "title": "Pulp mill, papermaking and finishing machine operators",
+   "tier": null
+  },
+  {
+   "noc": "94122",
+   "title": "Paper converting machine operators",
+   "tier": null
+  },
+  {
+   "noc": "94123",
+   "title": "Lumber graders and other wood processing inspectors and graders",
+   "tier": null
+  },
+  {
+   "noc": "94124",
+   "title": "Woodworking machine operators",
+   "tier": null
+  },
+  {
+   "noc": "94129",
+   "title": "Other wood processing machine operators",
+   "tier": null
+  },
+  {
+   "noc": "94130",
+   "title": "Textile fibre and yarn, hide and pelt processing machine operators and workers",
+   "tier": null
+  },
+  {
+   "noc": "94131",
+   "title": "Weavers, knitters and other fabric making occupations",
+   "tier": null
+  },
+  {
+   "noc": "94132",
+   "title": "Industrial sewing machine operators",
+   "tier": null
+  },
+  {
+   "noc": "94133",
+   "title": "Inspectors and graders, textile, fabric, fur and leather products manufacturing",
+   "tier": null
+  },
+  {
+   "noc": "94140",
+   "title": "Process control and machine operators, food and beverage processing",
+   "tier": null
+  },
+  {
+   "noc": "94141",
+   "title": "Industrial butchers and meat cutters, poultry preparers and related workers",
+   "tier": null
+  },
+  {
+   "noc": "94142",
+   "title": "Fish and seafood plant workers",
+   "tier": null
+  },
+  {
+   "noc": "94143",
+   "title": "Testers and graders, food and beverage processing",
+   "tier": null
+  },
+  {
+   "noc": "94150",
+   "title": "Plateless printing equipment operators",
+   "tier": null
+  },
+  {
+   "noc": "94151",
+   "title": "Camera, platemaking and other prepress occupations",
+   "tier": null
+  },
+  {
+   "noc": "94152",
+   "title": "Binding and finishing machine operators",
+   "tier": null
+  },
+  {
+   "noc": "94153",
+   "title": "Photographic and film processors",
+   "tier": null
+  },
+  {
+   "noc": "94200",
+   "title": "Motor vehicle assemblers, inspectors and testers",
+   "tier": null
+  },
+  {
+   "noc": "94201",
+   "title": "Electronics assemblers, fabricators, inspectors and testers",
+   "tier": null
+  },
+  {
+   "noc": "94202",
+   "title": "Assemblers and inspectors, electrical appliance, apparatus and equipment manufacturing",
+   "tier": null
+  },
+  {
+   "noc": "94203",
+   "title": "Assemblers, fabricators and inspectors, industrial electrical motors and transformers",
+   "tier": null
+  },
+  {
+   "noc": "94204",
+   "title": "Mechanical assemblers and inspectors",
+   "tier": null
+  },
+  {
+   "noc": "94205",
+   "title": "Machine operators and inspectors, electrical apparatus manufacturing",
+   "tier": null
+  },
+  {
+   "noc": "94210",
+   "title": "Furniture and fixture assemblers, finishers, refinishers and inspectors",
+   "tier": null
+  },
+  {
+   "noc": "94211",
+   "title": "Assemblers and inspectors of other wood products",
+   "tier": null
+  },
+  {
+   "noc": "94212",
+   "title": "Plastic products assemblers, finishers and inspectors",
+   "tier": null
+  },
+  {
+   "noc": "94213",
+   "title": "Industrial painters, coaters and metal finishing process operators",
+   "tier": null
+  },
+  {
+   "noc": "94219",
+   "title": "Other products assemblers, finishers and inspectors",
+   "tier": null
+  },
+  {
+   "noc": "95100",
+   "title": "Labourers in mineral and metal processing",
+   "tier": null
+  },
+  {
+   "noc": "95101",
+   "title": "Labourers in metal fabrication",
+   "tier": null
+  },
+  {
+   "noc": "95102",
+   "title": "Labourers in chemical products processing and utilities",
+   "tier": null
+  },
+  {
+   "noc": "95103",
+   "title": "Labourers in wood, pulp and paper processing",
+   "tier": null
+  },
+  {
+   "noc": "95104",
+   "title": "Labourers in rubber and plastic products manufacturing",
+   "tier": null
+  },
+  {
+   "noc": "95105",
+   "title": "Labourers in textile processing and cutting",
+   "tier": null
+  },
+  {
+   "noc": "95106",
+   "title": "Labourers in food and beverage processing",
+   "tier": null
+  },
+  {
+   "noc": "95107",
+   "title": "Labourers in fish and seafood processing",
+   "tier": null
+  },
+  {
+   "noc": "95109",
+   "title": "Other labourers in processing, manufacturing and utilities",
+   "tier": null
+  }
+ ],
+ "presets": [
+  {
+   "key": "census_all",
+   "label": "All workers in Canada",
+   "note": "2021 Census, experienced labour force, TEER 0-3",
+   "shares": {
+    "2.0x": 0.0754,
+    "1.5x": 0.2397,
+    "1.3x": 0.1514,
+    "none": 0.5335
+   }
+  },
+  {
+   "key": "census_imm",
+   "label": "All immigrants (PRs)",
+   "note": "2021 Census, TEER 0-3",
+   "shares": {
+    "2.0x": 0.0785,
+    "1.5x": 0.2447,
+    "1.3x": 0.1449,
+    "none": 0.5319
+   }
+  },
+  {
+   "key": "census_cec",
+   "label": "CEC immigrants, landed 2016-21",
+   "note": "2021 Census, TEER 0-3",
+   "shares": {
+    "2.0x": 0.0958,
+    "1.5x": 0.3555,
+    "1.3x": 0.1595,
+    "none": 0.3892
+   }
+  },
+  {
+   "key": "census_fsw",
+   "label": "Skilled-worker immigrants, landed 2016-21",
+   "note": "2021 Census, TEER 0-3",
+   "shares": {
+    "2.0x": 0.1013,
+    "1.5x": 0.3602,
+    "1.3x": 0.1508,
+    "none": 0.3877
+   }
+  },
+  {
+   "key": "npr",
+   "label": "Temporary residents (estimate)",
+   "note": "2021 Census, NPRs with employment income, TEER 0-3; minor groups apportioned",
+   "shares": {
+    "2.0x": 0.0663,
+    "1.5x": 0.1986,
+    "1.3x": 0.1215,
+    "none": 0.6137
+   }
+  },
+  {
+   "key": "ita2024_top",
+   "label": "IRCC invitees 2024 (top 15 only)",
+   "note": "Year-end report Table 12a; named occupations = 34% of ITAs, rest assumed same mix",
+   "shares": {
+    "2.0x": 0.0548,
+    "1.5x": 0.4276,
+    "1.3x": 0.0618,
+    "none": 0.4558
+   }
+  },
+  {
+   "key": "ita2024_blend",
+   "label": "IRCC invitees 2024 + temp residents for the rest",
+   "note": "Top 15 named (34%) from Table 12a; remaining 66% at temp-resident mix",
+   "shares": {
+    "2.0x": 0.0623,
+    "1.5x": 0.2764,
+    "1.3x": 0.1012,
+    "none": 0.56
+   }
+  },
+  {
+   "key": "ita2023_top",
+   "label": "IRCC invitees 2023 (top 15 only)",
+   "note": "Year-end report Table 12a; named occupations = 36% of ITAs, rest assumed same mix",
+   "shares": {
+    "2.0x": 0.0468,
+    "1.5x": 0.566,
+    "1.3x": 0.0531,
+    "none": 0.3341
+   }
+  },
+  {
+   "key": "ita2022_top",
+   "label": "IRCC invitees 2022 (top 15 only)",
+   "note": "Year-end report Table 12a; named occupations = 41% of ITAs, rest assumed same mix",
+   "shares": {
+    "2.0x": 0.0958,
+    "1.5x": 0.5467,
+    "1.3x": 0.0454,
+    "none": 0.3121
+   }
+  }
+ ],
+ "defaultPreset": "ita2024_blend"
+}

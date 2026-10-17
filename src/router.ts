@@ -1,4 +1,4 @@
-export type RouteKey = 'bulletin' | 'log' | 'pool' | 'case' | 'rulebook';
+export type RouteKey = 'bulletin' | 'log' | 'pool' | 'highwage' | 'case' | 'rulebook';
 
 export interface Route {
   key: RouteKey;
@@ -11,6 +11,7 @@ export const ROUTES: Route[] = [
   { key: 'bulletin', hash: '#/', label: 'Bulletin' },
   { key: 'log', hash: '#/log', label: 'Entry Log' },
   { key: 'pool', hash: '#/pool', label: 'The Pool' },
+  { key: 'highwage', hash: '#/high-wage', label: 'High Wage' },
   { key: 'case', hash: '#/file', label: 'Your File' },
   { key: 'rulebook', hash: '#/rulebook', label: 'Rulebook' },
 ];

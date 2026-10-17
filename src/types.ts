@@ -85,3 +85,36 @@ export interface Meta {
     processing: { upstreamUpdated: string | null; url: string };
   };
 }
+
+/** Shape of public/data/highwage.json, written by research/high-wage/build_site_data.py. */
+export type WageTier = '2.0x' | '1.5x' | '1.3x';
+
+export interface Occupation {
+  noc: string;
+  title: string;
+  /** Null when the unit group is not on IRCC's high-wage list. */
+  tier: WageTier | null;
+}
+
+/** Share of reachable candidates in each tier; `none` is the remainder. Sums to 1. */
+export type TierShares = Record<WageTier | 'none', number>;
+
+export interface SharePreset {
+  key: string;
+  label: string;
+  note: string;
+  shares: TierShares;
+}
+
+export interface HighWage {
+  effective: string;
+  listPublished: string;
+  listUrl: string;
+  points: {
+    experience: Record<WageTier, number>;
+    offer: Record<WageTier, number>;
+  };
+  occupations: Occupation[];
+  presets: SharePreset[];
+  defaultPreset: string;
+}

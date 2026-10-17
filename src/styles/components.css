@@ -922,6 +922,132 @@
 
 .timeline__actions { margin-top: var(--space-5); }
 
+
+/* ---------------------------------------------------------------------------
+ * High Wage — the directive, the score check and the cutoff projection.
+ * ------------------------------------------------------------------------- */
+
+.hw-rules {
+  margin: var(--space-4) 0 0;
+  padding-left: var(--space-5);
+  font-size: var(--text-md);
+  color: var(--ink);
+}
+
+.hw-rules li + li { margin-top: var(--space-2); }
+.hw-rules--fine { margin-top: 0; color: var(--ink-soft); }
+
+/* On-paper form controls: the typewriter face in a ruled box, like a form field. */
+.hw-input {
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid var(--ink-soft);
+  border-radius: 0;
+  min-width: 0;
+}
+
+.hw-input--wide { width: 100%; }
+.hw-input--num { width: 12ch; text-align: right; }
+
+.hw-form { align-items: stretch; }
+/* The pixel CRS box sets the row height; the typewriter field matches it. */
+.hw-form .inspect__input,
+.hw-form .hw-input { height: 42px; }
+.hw-grow { flex: 1 1 260px; }
+
+.hw-occ-stamp {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  min-height: var(--space-5);
+  margin-top: var(--space-4);
+}
+
+.hw-occ-name { font-size: var(--text-md); color: var(--ink-soft); }
+
+.hw-checks {
+  display: grid;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  font-size: var(--text-md);
+}
+
+.hw-check { display: flex; align-items: flex-start; gap: var(--space-2); cursor: pointer; }
+.hw-check input { margin-top: 3px; accent-color: #4a4335; }
+
+.hw-result {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-5);
+  margin-top: var(--space-5);
+}
+
+.hw-fields { max-width: 420px; }
+.hw-verdict { min-width: 140px; text-align: center; }
+
+.hw-hint {
+  margin: var(--space-2) 0 0;
+  font-size: var(--text-xs);
+  color: var(--ink-faint);
+}
+
+.hw-figure { flex-wrap: wrap; }
+.hw-actual { margin-top: var(--space-2); max-width: 520px; }
+
+.hw-scope { margin-top: var(--space-5); }
+/* A flex item, so the gap has to be a margin — the label's own space collapses. */
+.hw-opt-hint { margin-left: var(--space-1); color: inherit; opacity: 0.75; font-size: var(--text-xs); }
+
+.hw-legend {
+  display: flex;
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+  font-size: var(--text-xs);
+  color: var(--ink-soft);
+}
+
+.hw-legend i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: var(--space-2);
+  vertical-align: -1px;
+}
+
+.shift-bar--today, .shift-key--today { fill: var(--chart-before); background: var(--chart-before); }
+.shift-bar--after, .shift-key--after { fill: var(--chart-accent); background: var(--chart-accent); }
+.pool-row__key.shift-key--today, .pool-row__key.shift-key--after { height: 10px; }
+/* A threshold, so dashed — the grid never is. */
+.shift-cutoff { stroke: var(--ink); stroke-width: 1; stroke-dasharray: 4 3; }
+.shift-cutoff__label { fill: var(--ink); font-weight: 700; }
+.shift-hover { fill: rgba(255, 255, 255, 0.28); }
+
+.hw-assumptions {
+  margin-top: var(--space-5);
+  padding-top: var(--space-3);
+  border-top: 1px dotted var(--rule-soft);
+}
+
+.hw-assumptions summary { cursor: pointer; }
+
+.hw-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.hw-control { display: flex; flex-direction: column; gap: var(--space-2); min-width: 0; }
+
+.hw-tiers { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+.hw-tier { display: flex; flex-direction: column; gap: var(--space-1); font-size: var(--text-xs); color: var(--ink-soft); }
+.hw-none { padding: var(--space-2) 0; font-size: var(--text-sm); font-weight: 700; color: var(--ink); }
+
 /* ---------------------------------------------------------------------------
  * Colophon
  * ------------------------------------------------------------------------- */
@@ -1006,6 +1132,10 @@
   .timeline__mark { grid-column: 2; grid-row: 1; }
 
   .rulebook__entry { grid-template-columns: 1fr; gap: var(--space-2); }
+
+  .hw-result { grid-template-columns: 1fr; gap: var(--space-3); }
+  .hw-verdict { text-align: left; }
+  .hw-grid { grid-template-columns: 1fr; }
 
   /* At this width a long value wrapped beside its label reads as a ragged block;
    * stacking it is clearer, and the leader has nothing left to lead. */
