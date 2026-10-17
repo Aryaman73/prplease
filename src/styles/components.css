@@ -67,14 +67,6 @@
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.5);
 }
 
-.masthead__sub {
-  margin-top: var(--space-2);
-  font-size: var(--text-xs);
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--booth-text-dim);
-}
-
 /* The freshness marker, as the booth's own monitor. Deliberately prominent: a
  * stale immigration figure is worse than no figure, so the age of the data is
  * part of the data. */

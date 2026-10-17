@@ -13,12 +13,7 @@ export function masthead(meta: Meta | null, latest: Round | undefined) {
       'div',
       { class: 'masthead__plate' },
       crest(),
-      el(
-        'div',
-        {},
-        el('h1', { class: 'masthead__title pixel', text: 'PR, PLEASE' }),
-        el('p', { class: 'masthead__sub', text: 'Ministry of Immigration · Daily Bulletin' }),
-      ),
+      el('h1', { class: 'masthead__title pixel', text: 'PR, PLEASE' }),
     ),
     el(
       'div',
