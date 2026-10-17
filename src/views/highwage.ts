@@ -273,7 +273,6 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
     el('option', { text: 'Custom', attrs: { value: 'custom' } }),
   );
   presetSelect.value = proj.presetKey;
-  const presetNote = el('p', { class: 'hw-hint' });
   const tierInputs = (['2.0x', '1.5x', '1.3x'] as WageTier[]).map((t) =>
     el('input', { class: 'hw-input hw-input--num', attrs: { id: `hw-t-${t}`, type: 'number', min: '0', max: '100', step: '0.5' } }),
   );
@@ -307,8 +306,6 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
     });
 
     // Assumption read-outs
-    const preset = hw.presets.find((p) => p.key === proj.presetKey);
-    presetNote.textContent = preset ? preset.note : 'Your own tier shares.';
     noneOut.textContent = `${(shares.none * 100).toFixed(1)}%`;
     if (proj.size === null) sizeInput.value = String(base.invitations ?? '');
 
@@ -487,7 +484,7 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
           { class: 'hw-grid' },
           control('Base round (pool snapshot)', 'hw-base', baseSelect),
           control('Draw size', 'hw-size', sizeInput),
-          control('Who is in which tier', 'hw-preset', presetSelect, presetNote),
+          control('Who is in which tier', 'hw-preset', presetSelect),
           el(
             'div',
             { class: 'hw-control' },
@@ -624,7 +621,7 @@ function finePrint(hw: HighWage) {
         el('li', {}, 'IRCC does not say how much of the pool is CEC-eligible. That share is set so the chosen snapshot reproduces that round’s real cutoff, and is assumed equal at every score.'),
         el('li', {}, 'Tiers are assumed independent of score. If high-wage workers already score higher, the real cutoff rises further than shown.'),
         el('li', {}, 'This is the first draw after rescoring only: no new profiles, no change in draw size, no new category draws.'),
-        el('li', {}, 'Tier-share sources: 2021 Census employment in TEER 0–3 occupations (Statistics Canada tables 98-10-0449, 98-10-0316, 98-10-0585), and the top 15 occupations of invited candidates in IRCC’s Express Entry Year-End Report 2024. Temporary-resident shares are estimated from 4-digit occupation groups.'),
+        el('li', {}, '“Who is in which tier” sources. The Census options use 2021 Census employment in TEER 0–3 occupations (Statistics Canada tables 98-10-0449, 98-10-0316, 98-10-0585); temporary-resident shares are estimated from 4-digit occupation groups. The IRCC invitee options use the 15 most common occupations of invited candidates in IRCC’s Express Entry Year-End Report 2024, which cover only about a third of invitations. “Top 15 only” assumes the rest look the same; the default instead fills the other two-thirds with the temporary-resident mix, since those top 15 lean heavily on software jobs.'),
       ),
       el(
         'p',
