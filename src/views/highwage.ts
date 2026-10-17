@@ -210,7 +210,6 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
       Math.round(v * 1000) / 10,
     ) as [number, number, number],
     size: null as number | null,
-    reach: null as number | null,
   };
 
   let disposeChart: (() => void) | null = null;
@@ -277,8 +276,6 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
     el('input', { class: 'hw-input hw-input--num', attrs: { id: `hw-t-${t}`, type: 'number', min: '0', max: '100', step: '0.5' } }),
   );
   const noneOut = el('output', { class: 'hw-none', attrs: { for: tierInputs.map((i) => i.id).join(' ') } });
-  const reachInput = el('input', { class: 'hw-input hw-input--num', attrs: { id: 'hw-reach', type: 'number', min: '1', max: '100', step: '1' } });
-  const reachNote = el('p', { class: 'hw-hint' });
 
   const syncTierInputs = () => {
     tierInputs.forEach((input, i) => { input.value = String(proj.percents[i]); });
@@ -302,7 +299,6 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
       round: base,
       shares,
       size: proj.size ?? undefined,
-      reach: proj.reach ?? undefined,
     });
 
     // Assumption read-outs
@@ -317,8 +313,6 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
       return;
     }
 
-    if (proj.reach === null) reachInput.value = String(Math.round(result.calibratedReach * 100));
-    reachNote.textContent = `IRCC doesn't publish how many candidates in the pool are CEC-eligible. ${Math.round(result.calibratedReach * 100)}% is the share at which this snapshot reproduces the actual cutoff of ${int(base.crsCutoff)}. Higher means more competition.`;
 
     figureBefore.textContent = String(result.before);
     figureAfter.textContent = String(result.after);
@@ -392,7 +386,6 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
   baseSelect.addEventListener('change', () => {
     proj.baseIndex = Number(baseSelect.value);
     proj.size = null;
-    proj.reach = null;
     update();
   });
   sizeInput.addEventListener('input', () => {
@@ -409,11 +402,6 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
       update();
     }),
   );
-  reachInput.addEventListener('input', () => {
-    const v = Number(reachInput.value);
-    proj.reach = Number.isFinite(v) && v > 0 ? Math.min(100, v) / 100 : null;
-    update();
-  });
 
   const control = (label: string, forId: string, input: HTMLElement, hint?: HTMLElement) =>
     el('div', { class: 'hw-control' }, el('label', { class: 'inspect__label', text: label, attrs: { for: forId } }), input, hint ?? null);
@@ -498,7 +486,6 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
               el('span', { class: 'hw-tier' }, el('span', { text: 'Not listed' }), noneOut),
             ),
           ),
-          control('CEC-eligible share of the pool (%)', 'hw-reach', reachInput, reachNote),
         ),
       ),
     ),
@@ -618,7 +605,7 @@ function finePrint(hw: HighWage) {
         { class: 'hw-rules hw-rules--fine' },
         el('li', {}, el('strong', { text: 'This is an estimate, not advice.' }), ' Check your own points with IRCC before acting on it.'),
         el('li', {}, 'IRCC publishes the pool in bands. Scores are spread evenly inside each band, except 501–600, which is assumed to thin out from the 491–500 level. In 2024, 25,304 new profiles scored 501–550 against 1,973 at 551–600.'),
-        el('li', {}, 'IRCC does not say how much of the pool is CEC-eligible. That share is set so the chosen snapshot reproduces that round’s real cutoff, and is assumed equal at every score.'),
+        el('li', {}, 'A CEC draw can only invite CEC-eligible candidates, and IRCC does not say how many of the pool that is. The model assumes they are the same share at every score, and takes that share from the snapshot itself: it is whatever reproduces the round’s real cutoff, so it never needs setting by hand. If CEC candidates bunch at particular scores, the projection is off by that much.'),
         el('li', {}, 'Tiers are assumed independent of score. If high-wage workers already score higher, the real cutoff rises further than shown.'),
         el('li', {}, 'This is the first draw after rescoring only: no new profiles, no change in draw size, no new category draws.'),
         el('li', {}, '“Who is in which tier” sources. The Census options use 2021 Census employment in TEER 0–3 occupations (Statistics Canada tables 98-10-0449, 98-10-0316, 98-10-0585); temporary-resident shares are estimated from 4-digit occupation groups. The IRCC invitee options use the 15 most common occupations of invited candidates in IRCC’s Express Entry Year-End Report 2024, which cover only about a third of invitations. “Top 15 only” assumes the rest look the same; the default instead fills the other two-thirds with the temporary-resident mix, since those top 15 lean heavily on software jobs.'),

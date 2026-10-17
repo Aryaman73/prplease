@@ -152,7 +152,9 @@ twice. Once a CEC round has been held under the new rules, its real cut-off is s
 next to the projection instead of replacing it, so the estimate can be checked.
 
 The "reach" (the share of the pool a CEC draw can invite) isn't published. It is
-solved per snapshot so that the model reproduces that round's actual cut-off. The
+solved per snapshot so that the model reproduces that round's actual cut-off, and
+calibrated that way it cancels out of the projection, so it is deliberately not a
+user input: any other value would make "today" disagree with the real cut-off. The
 two-series chart pairs the accent with an ochre validated beside it:
 
 ```bash

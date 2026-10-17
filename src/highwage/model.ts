@@ -12,7 +12,11 @@ import type { HighWage, Round, TierShares, WageTier } from '../types';
  *  2. Drop 601+: those are PNP nominees, invited in the PNP draw the day before.
  *  3. "Reach" is the share of candidates the draw can invite (CEC-eligible, for a
  *     CEC draw). IRCC doesn't publish it, so it is solved for: the share at which
- *     this snapshot reproduces the draw's actual cutoff.
+ *     this snapshot reproduces the draw's actual cutoff. Calibrated that way it
+ *     cancels out of the projected cutoff entirely (only the snapshot's own count
+ *     above the real cutoff matters); it is kept to express the chart and the
+ *     invited-by-tier table in reachable candidates. Deliberately not an input:
+ *     any other value makes "today" disagree with the real cutoff.
  *  4. Shift each score by its tier's high-wage experience bonus and find where
  *     the same draw size lands.
  *
@@ -92,8 +96,6 @@ export interface ProjectionInput {
   shares: TierShares;
   /** Defaults to the round's own invitation count. */
   size?: number;
-  /** Defaults to the calibrated reach. */
-  reach?: number;
 }
 
 export interface Projection {
@@ -101,7 +103,6 @@ export interface Projection {
   after: number;
   size: number;
   reach: number;
-  calibratedReach: number;
   /** Candidates per CRS point, before and after the bonus. */
   today: Float64Array;
   shifted: Float64Array;
@@ -114,8 +115,7 @@ export function project(hw: HighWage, input: ProjectionInput): Projection | null
   const today = density(round);
   if (!today || round.crsCutoff === null || round.invitations === null) return null;
 
-  const calibratedReach = Math.min(1, round.invitations / sumFrom(today, round.crsCutoff));
-  const reach = input.reach ?? calibratedReach;
+  const reach = Math.min(1, round.invitations / sumFrom(today, round.crsCutoff));
   const size = input.size ?? round.invitations;
 
   const bonus = (tier: WageTier | 'none') => (tier === 'none' ? 0 : hw.points.experience[tier]);
@@ -148,7 +148,6 @@ export function project(hw: HighWage, input: ProjectionInput): Projection | null
     after,
     size,
     reach,
-    calibratedReach,
     today,
     shifted,
     invitedByTier,
