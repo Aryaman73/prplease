@@ -87,10 +87,6 @@ function searchOccupations(list: Occupation[], query: string): Occupation[] {
   });
 }
 
-function stamp(text: string, kind: 'approved' | 'denied' | 'flag') {
-  return el('span', { class: `stamp stamp--${kind} stamp--land`, text });
-}
-
 function unavailable(): HTMLElement {
   return el(
     'article',
@@ -242,7 +238,6 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
 
   const applicantFields = el('div', { class: 'fields hw-fields' });
   const applicantTally = el('p', { class: 'inspect__tally' });
-  const applicantVerdict = el('div', { class: 'hw-verdict', attrs: { 'aria-live': 'polite' } });
 
   /* Projection outputs */
   const figureBefore = el('span', { class: 'figure__value' });
@@ -354,7 +349,6 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
     for (const r of tierRadios) r.radio.checked = r.value === tier;
 
     applicantFields.replaceChildren();
-    applicantVerdict.replaceChildren();
     applicantTally.textContent = '';
     const crs = Number(crsInput.value);
     if (!crsInput.value.trim() || !Number.isFinite(crs) || crs < 0 || crs > 1200) {
@@ -376,7 +370,6 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
       margin >= 0
         ? `${int(score)} clears the projected cutoff by ${margin}.`
         : `${int(score)} is ${-margin} short of the projected cutoff.`;
-    applicantVerdict.append(stamp(margin >= 0 ? 'APPROVED' : 'DENIED', margin >= 0 ? 'approved' : 'denied'));
   };
 
   /* Wiring */
@@ -427,7 +420,7 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
         ),
       ),
       el('p', { class: 'hw-hint', text: "Don't know your tier? Look up your NOC above." }),
-      el('div', { class: 'hw-result' }, applicantFields, applicantVerdict),
+      el('div', { class: 'hw-result' }, applicantFields),
       applicantTally,
       el('p', {
         class: 'hw-hint',

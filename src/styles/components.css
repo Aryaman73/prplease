@@ -956,16 +956,9 @@
 
 
 
-.hw-result {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: center;
-  gap: var(--space-5);
-  margin-top: var(--space-5);
-}
+.hw-result { margin-top: var(--space-5); }
 
 .hw-fields { max-width: 420px; }
-.hw-verdict { min-width: 140px; text-align: center; }
 
 .hw-lookup__field { margin-top: var(--space-5); max-width: 520px; }
 .hw-lookup { margin-top: var(--space-3); }
@@ -1128,8 +1121,6 @@
 
   .rulebook__entry { grid-template-columns: 1fr; gap: var(--space-2); }
 
-  .hw-result { grid-template-columns: 1fr; gap: var(--space-3); }
-  .hw-verdict { text-align: left; }
   .hw-grid { grid-template-columns: 1fr; }
 
   /* At this width a long value wrapped beside its label reads as a ragged block;
