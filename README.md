@@ -143,19 +143,24 @@ a separate NOC lookup to find the tier; job offers are left out of the projectio
 for the same reason. The occupation list and the
 tier-share presets come from `public/data/highwage.json`, which
 `research/high-wage/build_site_data.py` writes. That folder also holds the Census
-pulls behind the presets and the reference model (`model.py`), which
-`src/highwage/model.ts` ports.
+pulls and IRCC invitee data behind the presets, and `stockflow.py`, the CEC stock
+model the projection starts from.
 
-**The projection only uses pool snapshots measured before the rule took effect.**
-Later snapshots already include the bonus, so projecting from them would count it
-twice. Once a CEC round has been held under the new rules, its real cut-off is shown
+**The projection starts from a modelled CEC pool, not IRCC's bands.** The bands
+don't say how many candidates are CEC-eligible, and spreading them evenly misses
+how CEC candidates pile up just below a cut-off that drains everything above it
+every two weeks. `stockflow.py` simulates daily CEC inflow, draws, expiry and
+attrition, fitted to every CEC cut-off and pool snapshot since June 2025 (cut-off
+RMSE about 1.5 points), and exports the CEC stock at each pre-change round in six
+variants. The site moves each variant by the point or so it misses that round's
+real cut-off, shifts it by the tier bonuses, and shows the central result with the
+range across variants and listed shares ×0.8 to ×1.2.
+
+The fit stops at the last CEC draw before the rule took effect. Later snapshots
+already include the bonus, so projecting from them would count it twice. Once a CEC round has been held under the new rules, its real cut-off is shown
 next to the projection instead of replacing it, so the estimate can be checked.
 
-The "reach" (the share of the pool a CEC draw can invite) isn't published. It is
-solved per snapshot so that the model reproduces that round's actual cut-off, and
-calibrated that way it cancels out of the projection, so it is deliberately not a
-user input: any other value would make "today" disagree with the real cut-off. The
-two-series chart pairs the accent with an ochre validated beside it:
+The two-series chart pairs the accent with an ochre validated beside it:
 
 ```bash
 node dataviz/scripts/validate_palette.js "#9c6420,#2a6ba8" --mode light --surface "#d7cdb8"

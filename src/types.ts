@@ -106,6 +106,29 @@ export interface SharePreset {
   shares: TierShares;
 }
 
+/** One pre-change CEC round with its modelled CEC stock (research/high-wage/stockflow.py). */
+export interface StockBase {
+  number: string;
+  date: string;
+  poolAsOf: string | null;
+  invitations: number;
+  crsCutoff: number;
+  /** CEC candidates per CRS point from `HighWage.stockflow.from` upward, by fitted variant. */
+  stock: Record<string, number[]>;
+}
+
+export interface StockFit {
+  key: string;
+  label: string;
+  cutoffRmse: number;
+  cutoffMaxError: number;
+  draws: number;
+  snapshots: number;
+  attritionPerWeek: number;
+  growthPerYear: number;
+  nonCecPerBand: Record<string, number>;
+}
+
 export interface HighWage {
   effective: string;
   listPublished: string;
@@ -120,4 +143,11 @@ export interface HighWage {
   occupations: Occupation[];
   presets: SharePreset[];
   defaultPreset: string;
+  stockflow: {
+    fittedThrough: string;
+    from: number;
+    variants: StockFit[];
+    /** Newest first. */
+    bases: StockBase[];
+  };
 }

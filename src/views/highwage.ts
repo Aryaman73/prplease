@@ -2,7 +2,7 @@ import { renderShift } from '../chart/shift';
 import { el, field } from '../dom';
 import { int, stampDate } from '../format';
 import { project, sharesFromPercents, TIERS } from '../highwage/model';
-import type { Draws, HighWage, Occupation, Round, WageTier } from '../types';
+import type { Draws, HighWage, Occupation, Round, StockBase, WageTier } from '../types';
 
 /**
  * High Wage — the November 2026 high-wage occupation points: what they are, what
@@ -62,11 +62,6 @@ function save(state: Applicant) {
   }
 }
 
-function measuredAt(round: Round): number {
-  const t = round.poolAsOf ? Date.parse(round.poolAsOf) : Number.NaN;
-  return Number.isNaN(t) ? Date.parse(round.date) : t;
-}
-
 const LOOKUP_LIMIT = 8;
 
 /** "2026-11-03" -> "3 November 2026", for prose (stampDate is the form register). */
@@ -108,8 +103,8 @@ export function renderHighWage(draws: Draws, hw: HighWage | null): HTMLElement {
   const cecRounds = draws.rounds.filter(
     (r) => r.category === CEC && r.crsCutoff !== null && r.invitations !== null,
   );
-  // Newest first. Only snapshots measured before the change can be projected from.
-  const bases = cecRounds.filter((r) => measuredAt(r) < effective).slice(0, 12);
+  // Newest first: the pre-change CEC rounds the stock-flow model was fitted through.
+  const bases = hw.stockflow.bases;
   // The first CEC round held under the new rules, if there has been one.
   const actual = [...cecRounds].reverse().find((r) => Date.parse(`${r.date}T00:00:00Z`) >= effective) ?? null;
 
@@ -119,7 +114,7 @@ export function renderHighWage(draws: Draws, hw: HighWage | null): HTMLElement {
     directive(hw),
     // Spread, not wrapped: papers are spaced by `.paper + .paper`, which only
     // matches siblings, so a wrapper element would leave them touching.
-    ...(bases.length ? applicantAndProjection(hw, bases, actual) : [el('p', { class: 'empty', text: 'No CEC pool snapshot to project from.' })]),
+    ...(bases.length ? applicantAndProjection(hw, bases, actual) : [el('p', { class: 'empty', text: 'No CEC round to project from.' })]),
     finePrint(hw),
   );
 }
@@ -195,7 +190,7 @@ function directive(hw: HighWage) {
 
 /* ── Score check + projection (they share one projected cutoff) ───────────── */
 
-function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | null): HTMLElement[] {
+function applicantAndProjection(hw: HighWage, bases: StockBase[], actual: Round | null): HTMLElement[] {
   const applicant = load();
   const defaultPreset = hw.presets.find((p) => p.key === hw.defaultPreset) ?? hw.presets[0]!;
 
@@ -243,6 +238,7 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
   const figureBefore = el('span', { class: 'figure__value' });
   const figureAfter = el('span', { class: 'figure__value' });
   const figureDelta = el('span', { class: 'figure__label' });
+  const figureRange = el('p', { class: 'hw-range' });
   const baseNote = el('p', { class: 'paper__note' });
   const actualLine = el('div', { class: 'fields hw-actual' });
   const chartHost = el('div', { class: 'chart__host' });
@@ -290,30 +286,18 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
   const update = () => {
     const base = bases[proj.baseIndex]!;
     const shares = sharesFromPercents(...proj.percents);
-    const result = project(hw, {
-      round: base,
-      shares,
-      size: proj.size ?? undefined,
-    });
+    const result = project(hw, { base, shares, size: proj.size ?? undefined });
 
     // Assumption read-outs
     noneOut.textContent = `${(shares.none * 100).toFixed(1)}%`;
-    if (proj.size === null) sizeInput.value = String(base.invitations ?? '');
-
-    if (!result) {
-      figureBefore.textContent = '—';
-      figureAfter.textContent = '—';
-      figureDelta.textContent = '';
-      baseNote.textContent = `Round No. ${base.number} has an incomplete pool snapshot.`;
-      return;
-    }
-
+    if (proj.size === null) sizeInput.value = String(base.invitations);
 
     figureBefore.textContent = String(result.before);
     figureAfter.textContent = String(result.after);
     const delta = result.after - result.before;
     figureDelta.textContent = `${delta >= 0 ? '+' : ''}${delta} points`;
-    baseNote.textContent = `From round No. ${base.number} (${stampDate(base.date)}): ${int(result.size)} invitations, pool measured ${stampDate(new Date(measuredAt(base)).toISOString())}. Assumes ${Math.round(shares.none * 100)}% of candidates' experience is outside the list.`;
+    figureRange.textContent = result.low === result.high ? '' : `Likely ${result.low}–${result.high}`;
+    baseNote.textContent = `From round No. ${base.number} (${stampDate(base.date)}): ${int(result.size)} invitations. Assumes ${Math.round(shares.none * 100)}% of candidates' experience is outside the list.`;
 
     actualLine.replaceChildren();
     if (actual) {
@@ -324,7 +308,7 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
 
     disposeChart?.();
     disposeChart = renderShift(chartHost, {
-      today: result.today, shifted: result.shifted, reach: result.reach, before: result.before, after: result.after,
+      today: result.today, shifted: result.shifted, before: result.before, after: result.after,
     });
 
     const invited = TIERS.map((t) => result.invitedByTier[t]);
@@ -341,10 +325,10 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
       ),
     );
 
-    renderApplicant(result.after);
+    renderApplicant(result.after, result.low, result.high);
   };
 
-  const renderApplicant = (projected: number) => {
+  const renderApplicant = (projected: number, low: number, high: number) => {
     save({ crs: crsInput.value, tier });
     for (const r of tierRadios) r.radio.checked = r.value === tier;
 
@@ -366,10 +350,13 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
       field('New score', int(score)),
       field('Projected CEC cutoff', int(projected)),
     );
-    applicantTally.textContent =
+    const verdict =
       margin >= 0
         ? `${int(score)} clears the projected cutoff by ${margin}.`
         : `${int(score)} is ${-margin} short of the projected cutoff.`;
+    // The range is the honest answer near the line: say which side of it the score sits.
+    const where = score >= high ? '' : score < low ? '' : ` That is inside the likely range of ${low}–${high}, so it could go either way.`;
+    applicantTally.textContent = verdict + where;
   };
 
   /* Wiring */
@@ -446,6 +433,7 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
         figureAfter,
         figureDelta,
       ),
+      figureRange,
       actualLine,
       baseNote,
       el(
@@ -455,7 +443,7 @@ function applicantAndProjection(hw: HighWage, bases: Round[], actual: Round | nu
         el('span', {}, el('i', { class: 'shift-key shift-key--after' }), 'With high-wage points'),
       ),
       chartHost,
-      el('p', { class: 'hw-hint', text: 'Candidates a CEC draw can reach, per 5-point bin. 601+ is left out: those are PNP nominees.' }),
+      el('p', { class: 'hw-hint', text: 'CEC candidates per 5-point bin, as the stock-flow model estimates them for this round.' }),
       el(
         'section',
         { class: 'hw-assumptions' },
@@ -597,8 +585,8 @@ function finePrint(hw: HighWage) {
         'ul',
         { class: 'hw-rules hw-rules--fine' },
         el('li', {}, el('strong', { text: 'This is an estimate, not advice.' }), ' Check your own points with IRCC before acting on it.'),
-        el('li', {}, 'IRCC publishes the pool in bands. Scores are spread evenly inside each band, except 501–600, which is assumed to thin out from the 491–500 level. In 2024, 25,304 new profiles scored 501–550 against 1,973 at 551–600. This probably understates how many CEC candidates wait just below the cutoff, so the real jump is likely a few points larger than shown.'),
-        el('li', {}, 'A CEC draw can only invite CEC-eligible candidates, and IRCC does not say how many of the pool that is. The model assumes they are the same share at every score, and takes that share from the snapshot itself: it is whatever reproduces the round’s real cutoff, so it never needs setting by hand. If CEC candidates bunch at particular scores, the projection is off by that much.'),
+        el('li', {}, 'IRCC publishes the pool in bands and says nothing about how many of each band are CEC candidates, the only ones a CEC draw can invite. So the CEC pool is modelled instead: new CEC profiles arrive every day, each CEC draw takes everyone above its cutoff, profiles expire after 12 months, and a weekly attrition rate covers everything else (category draws, PNP nominations). Fitted to every CEC draw and pool snapshot since June 2025, it reproduces their cutoffs to within about 1.5 points, and it finds CEC candidates piling up just below the cutoff, which a smooth spread of the bands misses.'),
+        el('li', {}, 'The likely range spans six versions of that fit (different inflow shapes, attrition and weighting), each with the listed tiers’ shares 20% lower or higher than selected. Each version is moved by the point or so it misses the chosen round’s real cutoff, so “Today” matches it.'),
         el('li', {}, 'Tiers are assumed independent of score. If the shares differ by score, the cutoff could move several points either way.'),
         el('li', {}, 'This projects the same draw rescored: no new profiles, no change in draw size, no new category draws. The real first draw will probably come in higher. Invitations pause for up to two weeks while scores are recalculated, new CEC profiles keep arriving meanwhile (each extra two weeks adds roughly 2–4 points), and some candidates will add job offers that raise their scores.'),
         el('li', {}, '“Who is in which tier” sources. The default uses IRCC’s open data on CEC invitees by occupation for 2025 and 2026 so far, with their NOC 2011 codes mapped to NOC 2021. The Census options use 2021 Census employment in TEER 0–3 occupations (Statistics Canada tables 98-10-0449, 98-10-0316, 98-10-0585); the CEC and skilled-worker ones describe people who landed in 2016–21 and put noticeably more of them in listed occupations than recent CEC invitees. Temporary-resident shares are estimated from 4-digit occupation groups. The “IRCC invitees” options use the 15 most common occupations of invited candidates in IRCC’s Express Entry Year-End Report 2024, about a third of invitations.'),

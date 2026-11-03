@@ -1,24 +1,22 @@
-import type { HighWage, Round, TierShares, WageTier } from '../types';
+import type { HighWage, StockBase, TierShares, WageTier } from '../types';
 
 /**
  * Cutoff projection for the high-wage occupation points (in effect 3 Nov 2026).
  *
- * Port of research/high-wage/model.py — keep the two in step. The method:
+ * The CEC stock — CEC candidates per CRS point at each pre-change CEC round — comes
+ * from research/high-wage/stockflow.py, which simulates daily CEC inflow, draws,
+ * expiry and attrition, fitted to every CEC cutoff and IRCC's pool bands since June
+ * 2025. It replaces spreading IRCC's banded snapshot evenly with one CEC share at
+ * every score, which put far too few CEC candidates just below the cutoff: CEC draws
+ * drain everyone above it every two weeks, so they pile up underneath.
  *
- *  1. Spread a round's banded pool snapshot to one count per CRS point: uniform
- *     inside each band, except 501–600, which decays geometrically from the
- *     491–500 density so the band still sums to IRCC's figure. Frequent CEC draws
- *     drain everything above the cutoff, so the mass sits just above 500.
- *  2. Drop 601+: those are PNP nominees, invited in the PNP draw the day before.
- *  3. "Reach" is the share of candidates the draw can invite (CEC-eligible, for a
- *     CEC draw). IRCC doesn't publish it, so it is solved for: the share at which
- *     this snapshot reproduces the draw's actual cutoff. Calibrated that way it
- *     cancels out of the projected cutoff entirely (only the snapshot's own count
- *     above the real cutoff matters); it is kept to express the chart and the
- *     invited-by-tier table in reachable candidates. Deliberately not an input:
- *     any other value makes "today" disagree with the real cutoff.
- *  4. Shift each score by its tier's high-wage experience bonus and find where
- *     the same draw size lands.
+ * For each fitted variant:
+ *  1. Move the stock by the few points the fit misses this round's real cutoff, so
+ *     "today" reproduces the actual draw exactly.
+ *  2. Shift each score by its tier's high-wage experience bonus and find where the
+ *     same draw size lands.
+ * The headline uses the central fit; the range spans every variant with the listed
+ * tiers' shares scaled by 0.8, 1 and 1.2, since those shares are the larger unknown.
  *
  * Job offers are deliberately absent. The new Labour Market Integration factor
  * pays the higher of (work-length + high-wage bonus) and a job offer, never both.
@@ -33,47 +31,8 @@ import type { HighWage, Round, TierShares, WageTier } from '../types';
 export const TIERS: readonly (WageTier | 'none')[] = ['2.0x', '1.5x', '1.3x', 'none'];
 
 const MAX_SCORE = 800;
-
-/** Band labels as sync.mjs keys them in `round.pool.bands`; 501–600 is handled separately. */
-const BANDS: readonly [string, number, number][] = [
-  ['491-500', 491, 500], ['481-490', 481, 490], ['471-480', 471, 480], ['461-470', 461, 470],
-  ['451-460', 451, 460], ['441-450', 441, 450], ['431-440', 431, 440], ['421-430', 421, 430],
-  ['411-420', 411, 420], ['401-410', 401, 410], ['351-400', 351, 400], ['301-350', 301, 350],
-  ['0-300', 0, 300],
-];
-
-/** Per-point candidate counts from a round's snapshot, or null if any band is missing. */
-export function density(round: Round): Float64Array | null {
-  const bands = round.pool.bands;
-  const n = new Float64Array(MAX_SCORE + 1);
-
-  for (const [label, lo, hi] of BANDS) {
-    const count = bands[label];
-    if (count === null || count === undefined) return null;
-    for (let s = lo; s <= hi; s++) n[s]! += count / (hi - lo + 1);
-  }
-
-  const top = bands['501-600'];
-  const edge = bands['491-500'];
-  if (top === null || top === undefined || edge === null || edge === undefined) return null;
-
-  // Geometric decay a·r^i over 100 points, starting at the 491–500 per-point level.
-  let a = edge / 10;
-  let r = 1;
-  if (top >= a * 100) {
-    a = top / 100; // the band is denser than its neighbour: no decay fits, so flat
-  } else {
-    let lo = 0;
-    let hi = 1;
-    for (let i = 0; i < 60; i++) {
-      r = (lo + hi) / 2;
-      if ((a * (1 - r ** 100)) / (1 - r) < top) lo = r;
-      else hi = r;
-    }
-  }
-  for (let i = 0; i < 100; i++) n[501 + i] = a * r ** i;
-  return n;
-}
+const CENTRAL = 'central';
+const SHARE_SCALES = [0.8, 1, 1.2];
 
 function sumFrom(n: Float64Array, from: number): number {
   let total = 0;
@@ -81,18 +40,57 @@ function sumFrom(n: Float64Array, from: number): number {
   return total;
 }
 
-/** Lowest score at which `reach` × candidates at or above it reaches `size`. */
-export function cutoffFor(n: Float64Array, reach: number, size: number): number {
+/** Lowest score at which candidates at or above it reach `size`. */
+export function cutoffFor(n: Float64Array, size: number): number {
+  // The tolerance absorbs float error from summing in a different order than the
+  // counts were calibrated in; without it a draw could land one point low.
+  const target = size * (1 - 1e-9);
   let running = 0;
   for (let s = MAX_SCORE; s >= 0; s--) {
-    running += n[s]! * reach;
-    if (running >= size) return s;
+    running += n[s]!;
+    if (running >= target) return s;
   }
   return 0;
 }
 
+/** A variant's per-point stock on the full 0–800 scale, moved by `offset` points. */
+function place(values: number[], from: number, offset = 0): Float64Array {
+  const n = new Float64Array(MAX_SCORE + 1);
+  values.forEach((v, i) => {
+    const s = from + i + offset;
+    if (s >= 0 && s <= MAX_SCORE) n[s] = v;
+  });
+  return n;
+}
+
+function shift(hw: HighWage, n: Float64Array, shares: TierShares, byTier?: Record<WageTier | 'none', Float64Array>) {
+  const out = new Float64Array(MAX_SCORE + 1);
+  for (let s = 0; s <= MAX_SCORE; s++) {
+    const count = n[s]!;
+    if (!count) continue;
+    for (const tier of TIERS) {
+      const v = count * shares[tier];
+      if (!v) continue;
+      const to = Math.min(MAX_SCORE, s + (tier === 'none' ? 0 : hw.points.experience[tier]));
+      out[to]! += v;
+      if (byTier) byTier[tier][to]! += v;
+    }
+  }
+  return out;
+}
+
+/** Listed tiers scaled by `k`, with `none` taking up the difference. */
+function scaleListed(shares: TierShares, k: number): TierShares {
+  const listed = shares['2.0x'] + shares['1.5x'] + shares['1.3x'];
+  const f = listed * k > 1 ? 1 / listed : k;
+  const a = shares['2.0x'] * f;
+  const b = shares['1.5x'] * f;
+  const c = shares['1.3x'] * f;
+  return { '2.0x': a, '1.5x': b, '1.3x': c, none: Math.max(0, 1 - a - b - c) };
+}
+
 export interface ProjectionInput {
-  round: Round;
+  base: StockBase;
   shares: TierShares;
   /** Defaults to the round's own invitation count. */
   size?: number;
@@ -101,53 +99,52 @@ export interface ProjectionInput {
 export interface Projection {
   before: number;
   after: number;
+  /** Spread of `after` across fitted variants and listed shares ×0.8 / ×1 / ×1.2. */
+  low: number;
+  high: number;
   size: number;
-  reach: number;
-  /** Candidates per CRS point, before and after the bonus. */
+  /** CEC candidates per CRS point (central fit), before and after the bonus. */
   today: Float64Array;
   shifted: Float64Array;
-  /** Reachable candidates at or above the new cutoff, by tier. */
+  /** CEC candidates at or above the new cutoff, by tier. */
   invitedByTier: Record<WageTier | 'none', number>;
 }
 
-export function project(hw: HighWage, input: ProjectionInput): Projection | null {
-  const { round, shares } = input;
-  const today = density(round);
-  if (!today || round.crsCutoff === null || round.invitations === null) return null;
+export function project(hw: HighWage, input: ProjectionInput): Projection {
+  const { base, shares } = input;
+  const from = hw.stockflow.from;
+  const size = input.size ?? base.invitations;
 
-  const reach = Math.min(1, round.invitations / sumFrom(today, round.crsCutoff));
-  const size = input.size ?? round.invitations;
+  // Calibrate each variant so it reproduces the real draw, then project.
+  const calibrated = (values: number[]) => {
+    const raw = place(values, from);
+    return place(values, from, base.crsCutoff - cutoffFor(raw, base.invitations));
+  };
 
-  const bonus = (tier: WageTier | 'none') => (tier === 'none' ? 0 : hw.points.experience[tier]);
+  const afters: number[] = [];
+  for (const values of Object.values(base.stock)) {
+    const n = calibrated(values);
+    for (const k of SHARE_SCALES) afters.push(cutoffFor(shift(hw, n, scaleListed(shares, k)), size));
+  }
 
-  const shifted = new Float64Array(MAX_SCORE + 1);
+  const today = calibrated(base.stock[CENTRAL] ?? Object.values(base.stock)[0]!);
   const byTier = Object.fromEntries(TIERS.map((t) => [t, new Float64Array(MAX_SCORE + 1)])) as Record<
     WageTier | 'none',
     Float64Array
   >;
-
-  for (let s = 0; s <= MAX_SCORE; s++) {
-    const count = today[s]!;
-    if (!count) continue;
-    for (const tier of TIERS) {
-      const v = count * shares[tier];
-      if (!v) continue;
-      const to = Math.min(MAX_SCORE, s + bonus(tier));
-      shifted[to]! += v;
-      byTier[tier][to]! += v;
-    }
-  }
-
-  const after = cutoffFor(shifted, reach, size);
-  const invitedByTier = Object.fromEntries(
-    TIERS.map((t) => [t, sumFrom(byTier[t], after) * reach]),
-  ) as Record<WageTier | 'none', number>;
+  const shifted = shift(hw, today, shares, byTier);
+  const after = cutoffFor(shifted, size);
+  const invitedByTier = Object.fromEntries(TIERS.map((t) => [t, sumFrom(byTier[t], after)])) as Record<
+    WageTier | 'none',
+    number
+  >;
 
   return {
-    before: cutoffFor(today, reach, size),
+    before: cutoffFor(today, size),
     after,
+    low: Math.min(after, ...afters),
+    high: Math.max(after, ...afters),
     size,
-    reach,
     today,
     shifted,
     invitedByTier,

@@ -2,7 +2,7 @@ import { int } from '../format';
 import { niceTicks, svgEl } from './svg';
 
 /**
- * Reachable candidates by CRS score, today and with the high-wage bonus applied —
+ * CEC candidates by CRS score, today and with the high-wage bonus applied —
  * paired bars per 5-point bin, with the two cutoffs as dashed thresholds.
  *
  * Two series, so it carries a legend (drawn by the caller) and both cutoffs are
@@ -14,13 +14,13 @@ const HEIGHT = 280;
 const HEIGHT_COMPACT = 220;
 const COMPACT_WIDTH = 620;
 const BIN = 5;
-const LO = 430;
+// Below 460 the modelled stock is unconstrained (the fit uses bands from 461 up) and can't reach the cutoff.
+const LO = 460;
 const HI = 640;
 
 export interface ShiftOptions {
   today: Float64Array;
   shifted: Float64Array;
-  reach: number;
   before: number;
   after: number;
 }
@@ -48,7 +48,7 @@ export function renderShift(container: HTMLElement, options: ShiftOptions): () =
   };
 }
 
-function paint(container: HTMLElement, { today, shifted, reach, before, after }: ShiftOptions) {
+function paint(container: HTMLElement, { today, shifted, before, after }: ShiftOptions) {
   container.replaceChildren();
 
   const bins: Bin[] = [];
@@ -56,8 +56,8 @@ function paint(container: HTMLElement, { today, shifted, reach, before, after }:
     let a = 0;
     let b = 0;
     for (let s = from; s < from + BIN; s++) {
-      a += (today[s] ?? 0) * reach;
-      b += (shifted[s] ?? 0) * reach;
+      a += today[s] ?? 0;
+      b += shifted[s] ?? 0;
     }
     bins.push({ from, today: a, shifted: b });
   }
@@ -82,7 +82,7 @@ function paint(container: HTMLElement, { today, shifted, reach, before, after }:
     width, height,
     class: 'chart',
     role: 'img',
-    'aria-label': `Reachable candidates by CRS score in 5-point bins, today and with high-wage points. The cutoff moves from ${before} to ${after}.`,
+    'aria-label': `CEC candidates by CRS score in 5-point bins, today and with high-wage points. The cutoff moves from ${before} to ${after}.`,
   });
 
   for (const tick of yTicks) {
@@ -142,7 +142,7 @@ function paint(container: HTMLElement, { today, shifted, reach, before, after }:
       node('div', 'chart__tooltip-value', `CRS ${b.from}–${b.from + BIN - 1}`),
       row('shift-key shift-key--today', 'Today', int(Math.round(b.today))),
       row('shift-key shift-key--after', 'With points', int(Math.round(b.shifted))),
-      node('div', 'chart__tooltip-meta', 'reachable candidates'),
+      node('div', 'chart__tooltip-meta', 'CEC candidates'),
     );
     tooltip.hidden = false;
     const flip = x > MARGIN.left + plotW - 170;

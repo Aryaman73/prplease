@@ -1,6 +1,6 @@
 # High-wage occupation points — research
 
-Where the numbers on the **High Wage** tab come from. Python 3, standard library only.
+Where the numbers on the **High Wage** tab come from. Python 3, standard library only, except `stockflow.py`, which needs numpy.
 
 | File | What it is |
 |---|---|
@@ -11,7 +11,7 @@ Where the numbers on the **High Wage** tab come from. Python 3, standard library
 | `analyze.py` → `highwage_with_counts.csv` | Workers in high-wage NOCs by population; per-NOC table |
 | `invitee_tiers.py` → `invitee_tiers.json` | CEC invitees by occupation from [IRCC open data](https://open.canada.ca/data/en/dataset/593e9165-c6ce-4f9b-b519-03d315f92cd4) (NOC 2011, mapped to 2021 with StatCan's correspondence). Source of the default preset |
 | `presets.py` → `presets.json` | Tier-share presets for the projection (CEC invitees, Census populations, NPR estimate, IRCC Year-End Report 2024 Table 12a) |
-| `model.py` | Reference implementation of the cutoff model; `src/highwage/model.ts` is its port |
+| `stockflow.py` → `cec_stock.json` | CEC candidates per CRS point at each pre-change CEC round: a daily simulation of CEC inflow, draws, expiry and attrition, fitted to every CEC cutoff and pool snapshot since June 2025, in six variants for the range. `src/highwage/model.ts` shifts this stock by the tier bonuses |
 | `build_site_data.py` → `public/data/highwage.json` | What the site loads |
 
 ## Rebuild
@@ -21,6 +21,7 @@ python3 -I research/high-wage/fetch.py
 python3 -I research/high-wage/npr.py
 python3 -I research/high-wage/invitee_tiers.py
 python3 -I research/high-wage/presets.py
+python3 -I research/high-wage/stockflow.py
 python3 -I research/high-wage/build_site_data.py
 ```
 
@@ -31,3 +32,4 @@ Only `build_site_data.py` is needed when IRCC updates the list: edit `highwage.t
 - Census data is from May 2021, before the 2022–25 rise in temporary residents.
 - The Year-End Report names only the top 15 occupations of invited candidates (about a third of invitations).
 - The NPR figures are an estimate: StatCan doesn't publish non-permanent residents at unit-group level.
+- The stock-flow fit stops at the last CEC draw before 3 November 2026. Later pool snapshots already include the new points, so refitting through them would need the bonus modelled too.

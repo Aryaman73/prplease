@@ -4,6 +4,7 @@ Inputs (this folder):
   highwage.tsv  - IRCC's 186 high-wage NOCs and tiers (canada.ca list published 2026-10-16)
   noc2021.tsv   - all 516 NOC 2021 unit groups, so a lookup can say "not listed" by name
   presets.json  - tier-share presets (presets.py, which reads invitee_tiers.py's output)
+  cec_stock.json - modelled CEC candidates per CRS point at each pre-change CEC round (stockflow.py)
 
 Run: python3 -I research/high-wage/build_site_data.py
 """
@@ -40,8 +41,18 @@ data = {
     "occupations": occupations,
     "presets": presets,
     "defaultPreset": "cec_invitees_recent",
+    "stockflow": json.load(open(os.path.join(HERE, "cec_stock.json"))),
 }
 assert sum(1 for o in occupations if o["tier"]) == 186
-json.dump(data, open(OUT, "w"), indent=1, ensure_ascii=False)
-open(OUT, "a").write("\n")
+# Indented for readable diffs, except the stock arrays, which go on one line each.
+arrays = {}
+for base in data["stockflow"]["bases"]:
+    for key, values in base["stock"].items():
+        token = f"@@{len(arrays)}@@"
+        arrays[token] = json.dumps(values, separators=(",", ":"))
+        base["stock"][key] = token
+text = json.dumps(data, indent=1, ensure_ascii=False)
+for token, compact in arrays.items():
+    text = text.replace(f'"{token}"', compact)
+open(OUT, "w").write(text + "\n")
 print("wrote", os.path.relpath(OUT), len(occupations), "occupations,", len(presets), "presets")

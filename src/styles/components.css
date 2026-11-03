@@ -985,6 +985,7 @@
 }
 
 .hw-figure { flex-wrap: wrap; }
+.hw-range { margin: calc(-1 * var(--space-2)) 0 0; font-size: var(--text-md); font-weight: 700; color: var(--ink-soft); }
 .hw-actual { margin-top: var(--space-2); max-width: 520px; }
 
 
