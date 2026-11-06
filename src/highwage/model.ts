@@ -106,7 +106,7 @@ export interface Projection {
   /** CEC candidates per CRS point (central fit), before and after the bonus. */
   today: Float64Array;
   shifted: Float64Array;
-  /** CEC candidates at or above the new cutoff, by tier. */
+  /** CEC candidates invited at the new cutoff, by tier; sums to `size`. */
   invitedByTier: Record<WageTier | 'none', number>;
 }
 
@@ -134,10 +134,13 @@ export function project(hw: HighWage, input: ProjectionInput): Projection {
   >;
   const shifted = shift(hw, today, shares, byTier);
   const after = cutoffFor(shifted, size);
-  const invitedByTier = Object.fromEntries(TIERS.map((t) => [t, sumFrom(byTier[t], after)])) as Record<
-    WageTier | 'none',
-    number
-  >;
+  // A tie-break fills the draw from the people on the cutoff score, so only the share
+  // of them it reaches is invited, from each tier alike. The tiers then sum to `size`.
+  const atCutoff = shifted[after]!;
+  const tieShare = atCutoff > 0 ? Math.min(1, Math.max(0, (size - sumFrom(shifted, after + 1)) / atCutoff)) : 0;
+  const invitedByTier = Object.fromEntries(
+    TIERS.map((t) => [t, sumFrom(byTier[t], after + 1) + byTier[t][after]! * tieShare]),
+  ) as Record<WageTier | 'none', number>;
 
   return {
     before: cutoffFor(today, size),
