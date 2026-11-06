@@ -951,8 +951,10 @@
   min-width: 0;
 }
 
+/* Every assumption box is one height, so selects and number fields line up. */
+.hw-assumptions .hw-input { width: 100%; height: 42px; }
 .hw-input--wide { width: 100%; }
-.hw-input--num { width: 12ch; text-align: right; }
+.hw-input--num { text-align: right; }
 
 
 
@@ -1031,11 +1033,47 @@
   margin-top: var(--space-4);
 }
 
+.hw-share-block { margin-top: var(--space-4); }
+
+/* Tall segmented bar: one whole, a 2px surface gap between parts, square-cut outer ends. */
+.hw-share { display: flex; gap: 2px; height: 40px; margin-top: var(--space-2); }
+
+.hw-share__seg {
+  flex: 0 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  transition: flex-grow 240ms ease;
+}
+
+.hw-share__seg[hidden] { display: none; }
+
+.hw-tier-high { color: var(--paper); background: var(--tier-high); }
+.hw-tier-mid { color: var(--paper); background: var(--tier-mid); }
+.hw-tier-low { color: #131210; background: var(--tier-low); }
+.hw-tier-none { color: var(--ink-soft); background: transparent; box-shadow: inset 0 0 0 1px var(--ink-faint); }
+
 .hw-control { display: flex; flex-direction: column; gap: var(--space-2); min-width: 0; }
 
-.hw-tiers { display: flex; flex-wrap: wrap; gap: var(--space-3); }
-.hw-tier { display: flex; flex-direction: column; gap: var(--space-1); font-size: var(--text-xs); color: var(--ink-soft); }
-.hw-none { padding: var(--space-2) 0; font-size: var(--text-sm); font-weight: 700; color: var(--ink); }
+.hw-tiers {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+.hw-tier { display: flex; flex-direction: column; gap: var(--space-1); min-width: 0; font-size: var(--text-xs); color: var(--ink-soft); }
+.hw-tier__key { display: flex; align-items: center; gap: var(--space-2); white-space: nowrap; }
+.hw-tier__swatch { flex: none; width: 10px; height: 10px; }
+
+/* Worked out, not typed: the same box, without the input's fill. */
+.hw-none { display: flex; align-items: center; justify-content: flex-end; font-weight: 700; background: transparent; border-style: dotted; }
 
 /* ---------------------------------------------------------------------------
  * Colophon
@@ -1123,6 +1161,7 @@
   .rulebook__entry { grid-template-columns: 1fr; gap: var(--space-2); }
 
   .hw-grid { grid-template-columns: 1fr; }
+  .hw-tiers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
   /* At this width a long value wrapped beside its label reads as a ragged block;
    * stacking it is clearer, and the leader has nothing left to lead. */

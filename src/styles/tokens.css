@@ -89,6 +89,17 @@
   --chart-before: #9c6420;
 
   /*
+   * High-wage tiers are an ordered scale, so they take three steps of the pool ramp.
+   *   node dataviz/scripts/validate_palette.js "#6b93b3,#3b5a78,#14273d" \
+   *        --ordinal --mode light --surface "#d7cdb8"   → all checks PASS.
+   * "Not listed" earns no bonus, so it is an outline rather than a fourth fill: every
+   * neutral fill tried sat too close to the light step (normal-vision ΔE 11, floor 15).
+   */
+  --tier-low: var(--pool-1);
+  --tier-mid: var(--pool-4);
+  --tier-high: var(--pool-7);
+
+  /*
    * Pool bands — an ordinal ramp, not a categorical palette. The seven CRS bands
    * are an ordered scale, so they take one hue running light→dark with score,
    * never seven separate hues.

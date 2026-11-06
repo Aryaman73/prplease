@@ -56,7 +56,6 @@ def invitee_shares(labels):
     return {t: v / total for t, v in counts.items()}
 
 
-year = partial[-4:]
 presets.append({"key": "cec_invitees_recent", "label": f"CEC invitees, 2025 to {partial.replace('-', '–')}",
                 "note": f"IRCC open data, CEC invitees who applied, 2025 and {partial} combined; NOC 2011 mapped to 2021",
                 "shares": invitee_shares(["2025", partial])})
@@ -104,6 +103,22 @@ for year, rows in ITA.items():
         presets.append({"key": "ita2024_blend", "label": "IRCC invitees 2024 + temp residents for the rest",
                         "note": f"Top 15 named ({cover:.0%}) from Table 12a; remaining {1 - cover:.0%} at temp-resident mix",
                         "shares": mix})
+
+# What the site's dropdown offers, in order, with the first as the default: the latest
+# year of each kind of stat. Everything else stays above for comparison and stays in
+# presets.json, but build_site_data.py doesn't ship it.
+SHOWN = {
+    "cec_invitees_ytd": f"CEC invitees ({partial[-4:]})",
+    "ita2024_top": "Top invited occupations (2024)",
+    "census_cec": "CEC immigrants (2021 Census)",
+    "npr": "Temporary residents (2021 Census)",
+    "census_all": "All workers (2021 Census)",
+}
+order = list(SHOWN)
+for p in presets:
+    p["shown"] = p["key"] in SHOWN
+    p["label"] = SHOWN.get(p["key"], p["label"])
+presets.sort(key=lambda p: order.index(p["key"]) if p["shown"] else len(order))
 
 json.dump(presets, open(os.path.join(HERE, "presets.json"), "w"), indent=1)
 for p in presets:
