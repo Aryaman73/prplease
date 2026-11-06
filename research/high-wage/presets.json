@@ -1,5 +1,65 @@
 [
  {
+  "key": "cec_invitees_ytd",
+  "label": "CEC invitees (2026)",
+  "note": "IRCC open data, CEC invitees who applied, Jan-Jul 2026",
+  "shares": {
+   "2.0x": 0.038128978023297705,
+   "1.5x": 0.24666986910051641,
+   "1.3x": 0.12625195148312718,
+   "none": 0.5889492013930587
+  },
+  "shown": true
+ },
+ {
+  "key": "ita2024_top",
+  "label": "Top invited occupations (2024)",
+  "note": "Year-end report Table 12a; named occupations = 34% of ITAs, rest assumed same mix",
+  "shares": {
+   "2.0x": 0.054752557696883176,
+   "1.5x": 0.42758148941232454,
+   "1.3x": 0.06183083511777302,
+   "none": 0.4558351177730192
+  },
+  "shown": true
+ },
+ {
+  "key": "census_cec",
+  "label": "CEC immigrants (2021 Census)",
+  "note": "2021 Census, TEER 0-3",
+  "shares": {
+   "2.0x": 0.09580670303975058,
+   "1.5x": 0.3554793452844895,
+   "1.3x": 0.15946999220576774,
+   "none": 0.38924395946999213
+  },
+  "shown": true
+ },
+ {
+  "key": "npr",
+  "label": "Temporary residents (2021 Census)",
+  "note": "2021 Census, NPRs with employment income, TEER 0-3; minor groups apportioned",
+  "shares": {
+   "2.0x": 0.0662618400931355,
+   "1.5x": 0.19857382998100995,
+   "1.3x": 0.12149839393788928,
+   "none": 0.6136659359879653
+  },
+  "shown": true
+ },
+ {
+  "key": "census_all",
+  "label": "All workers (2021 Census)",
+  "note": "2021 Census, experienced labour force, TEER 0-3",
+  "shares": {
+   "2.0x": 0.07544916407911038,
+   "1.5x": 0.23968230417425088,
+   "1.3x": 0.15136936537314347,
+   "none": 0.5334991663734953
+  },
+  "shown": true
+ },
+ {
   "key": "cec_invitees_recent",
   "label": "CEC invitees, 2025 to Jan\u2013Jul 2026",
   "note": "IRCC open data, CEC invitees who applied, 2025 and Jan-Jul 2026 combined; NOC 2011 mapped to 2021",
@@ -8,29 +68,8 @@
    "1.5x": 0.250082715679506,
    "1.3x": 0.11656006981984916,
    "none": 0.5913597936667145
-  }
- },
- {
-  "key": "cec_invitees_ytd",
-  "label": "CEC invitees, Jan\u2013Jul 2026",
-  "note": "IRCC open data, CEC invitees who applied, Jan-Jul 2026",
-  "shares": {
-   "2.0x": 0.038128978023297705,
-   "1.5x": 0.24666986910051641,
-   "1.3x": 0.12625195148312718,
-   "none": 0.5889492013930587
-  }
- },
- {
-  "key": "census_all",
-  "label": "All workers in Canada (2021 Census)",
-  "note": "2021 Census, experienced labour force, TEER 0-3",
-  "shares": {
-   "2.0x": 0.07544916407911038,
-   "1.5x": 0.23968230417425088,
-   "1.3x": 0.15136936537314347,
-   "none": 0.5334991663734953
-  }
+  },
+  "shown": false
  },
  {
   "key": "census_imm",
@@ -41,18 +80,8 @@
    "1.5x": 0.24473668781949093,
    "1.3x": 0.14493546666964463,
    "none": 0.531874411969167
-  }
- },
- {
-  "key": "census_cec",
-  "label": "CEC immigrants, 2016\u201321 landings (overstates listed tiers)",
-  "note": "2021 Census, TEER 0-3",
-  "shares": {
-   "2.0x": 0.09580670303975058,
-   "1.5x": 0.3554793452844895,
-   "1.3x": 0.15946999220576774,
-   "none": 0.38924395946999213
-  }
+  },
+  "shown": false
  },
  {
   "key": "census_fsw",
@@ -63,29 +92,8 @@
    "1.5x": 0.36016115231032514,
    "1.3x": 0.15084854535082715,
    "none": 0.3876925270964062
-  }
- },
- {
-  "key": "npr",
-  "label": "Temporary residents (estimate)",
-  "note": "2021 Census, NPRs with employment income, TEER 0-3; minor groups apportioned",
-  "shares": {
-   "2.0x": 0.0662618400931355,
-   "1.5x": 0.19857382998100995,
-   "1.3x": 0.12149839393788928,
-   "none": 0.6136659359879653
-  }
- },
- {
-  "key": "ita2024_top",
-  "label": "IRCC invitees 2024 (top 15 only)",
-  "note": "Year-end report Table 12a; named occupations = 34% of ITAs, rest assumed same mix",
-  "shares": {
-   "2.0x": 0.054752557696883176,
-   "1.5x": 0.42758148941232454,
-   "1.3x": 0.06183083511777302,
-   "none": 0.4558351177730192
-  }
+  },
+  "shown": false
  },
  {
   "key": "ita2024_blend",
@@ -96,7 +104,8 @@
    "1.5x": 0.2764294414459657,
    "1.3x": 0.10121324588608509,
    "none": 0.5600082771539627
-  }
+  },
+  "shown": false
  },
  {
   "key": "ita2023_top",
@@ -107,7 +116,8 @@
    "1.5x": 0.5660084877131458,
    "1.3x": 0.053111737948209704,
    "none": 0.33409570277756595
-  }
+  },
+  "shown": false
  },
  {
   "key": "ita2022_top",
@@ -118,6 +128,7 @@
    "1.5x": 0.5467054776395872,
    "1.3x": 0.04535591426303255,
    "none": 0.3121460703889918
-  }
+  },
+  "shown": false
  }
 ]

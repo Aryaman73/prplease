@@ -23,7 +23,8 @@ for line in open(os.path.join(HERE, "noc2021.tsv")):
     code, title = line.rstrip("\n").split("\t")
     occupations.append({"noc": code, "title": title, "tier": tiers.get(code)})
 
-presets = json.load(open(os.path.join(HERE, "presets.json")))
+# Only the presets the dropdown offers; presets.py keeps the rest for comparison.
+presets = [p for p in json.load(open(os.path.join(HERE, "presets.json"))) if p.pop("shown")]
 for p in presets:
     p["shares"] = {k: round(v, 4) for k, v in p["shares"].items()}
 
@@ -40,7 +41,7 @@ data = {
     },
     "occupations": occupations,
     "presets": presets,
-    "defaultPreset": "cec_invitees_recent",
+    "defaultPreset": presets[0]["key"],
     "stockflow": json.load(open(os.path.join(HERE, "cec_stock.json"))),
 }
 assert sum(1 for o in occupations if o["tier"]) == 186

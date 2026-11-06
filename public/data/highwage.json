@@ -2599,19 +2599,8 @@
  ],
  "presets": [
   {
-   "key": "cec_invitees_recent",
-   "label": "CEC invitees, 2025 to Jan–Jul 2026",
-   "note": "IRCC open data, CEC invitees who applied, 2025 and Jan-Jul 2026 combined; NOC 2011 mapped to 2021",
-   "shares": {
-    "2.0x": 0.042,
-    "1.5x": 0.2501,
-    "1.3x": 0.1166,
-    "none": 0.5914
-   }
-  },
-  {
    "key": "cec_invitees_ytd",
-   "label": "CEC invitees, Jan–Jul 2026",
+   "label": "CEC invitees (2026)",
    "note": "IRCC open data, CEC invitees who applied, Jan-Jul 2026",
    "shares": {
     "2.0x": 0.0381,
@@ -2621,63 +2610,8 @@
    }
   },
   {
-   "key": "census_all",
-   "label": "All workers in Canada (2021 Census)",
-   "note": "2021 Census, experienced labour force, TEER 0-3",
-   "shares": {
-    "2.0x": 0.0754,
-    "1.5x": 0.2397,
-    "1.3x": 0.1514,
-    "none": 0.5335
-   }
-  },
-  {
-   "key": "census_imm",
-   "label": "All immigrants (2021 Census)",
-   "note": "2021 Census, TEER 0-3",
-   "shares": {
-    "2.0x": 0.0785,
-    "1.5x": 0.2447,
-    "1.3x": 0.1449,
-    "none": 0.5319
-   }
-  },
-  {
-   "key": "census_cec",
-   "label": "CEC immigrants, 2016–21 landings (overstates listed tiers)",
-   "note": "2021 Census, TEER 0-3",
-   "shares": {
-    "2.0x": 0.0958,
-    "1.5x": 0.3555,
-    "1.3x": 0.1595,
-    "none": 0.3892
-   }
-  },
-  {
-   "key": "census_fsw",
-   "label": "Skilled-worker immigrants, 2016–21 landings (overstates listed tiers)",
-   "note": "2021 Census, TEER 0-3",
-   "shares": {
-    "2.0x": 0.1013,
-    "1.5x": 0.3602,
-    "1.3x": 0.1508,
-    "none": 0.3877
-   }
-  },
-  {
-   "key": "npr",
-   "label": "Temporary residents (estimate)",
-   "note": "2021 Census, NPRs with employment income, TEER 0-3; minor groups apportioned",
-   "shares": {
-    "2.0x": 0.0663,
-    "1.5x": 0.1986,
-    "1.3x": 0.1215,
-    "none": 0.6137
-   }
-  },
-  {
    "key": "ita2024_top",
-   "label": "IRCC invitees 2024 (top 15 only)",
+   "label": "Top invited occupations (2024)",
    "note": "Year-end report Table 12a; named occupations = 34% of ITAs, rest assumed same mix",
    "shares": {
     "2.0x": 0.0548,
@@ -2687,40 +2621,40 @@
    }
   },
   {
-   "key": "ita2024_blend",
-   "label": "IRCC invitees 2024 + temp residents for the rest",
-   "note": "Top 15 named (34%) from Table 12a; remaining 66% at temp-resident mix",
-   "shares": {
-    "2.0x": 0.0623,
-    "1.5x": 0.2764,
-    "1.3x": 0.1012,
-    "none": 0.56
-   }
-  },
-  {
-   "key": "ita2023_top",
-   "label": "IRCC invitees 2023 (top 15 only)",
-   "note": "Year-end report Table 12a; named occupations = 36% of ITAs, rest assumed same mix",
-   "shares": {
-    "2.0x": 0.0468,
-    "1.5x": 0.566,
-    "1.3x": 0.0531,
-    "none": 0.3341
-   }
-  },
-  {
-   "key": "ita2022_top",
-   "label": "IRCC invitees 2022 (top 15 only)",
-   "note": "Year-end report Table 12a; named occupations = 41% of ITAs, rest assumed same mix",
+   "key": "census_cec",
+   "label": "CEC immigrants (2021 Census)",
+   "note": "2021 Census, TEER 0-3",
    "shares": {
     "2.0x": 0.0958,
-    "1.5x": 0.5467,
-    "1.3x": 0.0454,
-    "none": 0.3121
+    "1.5x": 0.3555,
+    "1.3x": 0.1595,
+    "none": 0.3892
+   }
+  },
+  {
+   "key": "npr",
+   "label": "Temporary residents (2021 Census)",
+   "note": "2021 Census, NPRs with employment income, TEER 0-3; minor groups apportioned",
+   "shares": {
+    "2.0x": 0.0663,
+    "1.5x": 0.1986,
+    "1.3x": 0.1215,
+    "none": 0.6137
+   }
+  },
+  {
+   "key": "census_all",
+   "label": "All workers (2021 Census)",
+   "note": "2021 Census, experienced labour force, TEER 0-3",
+   "shares": {
+    "2.0x": 0.0754,
+    "1.5x": 0.2397,
+    "1.3x": 0.1514,
+    "none": 0.5335
    }
   }
  ],
- "defaultPreset": "cec_invitees_recent",
+ "defaultPreset": "cec_invitees_ytd",
  "stockflow": {
   "fittedThrough": "2026-10-15",
   "from": 420,

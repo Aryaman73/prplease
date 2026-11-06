@@ -62,6 +62,20 @@ function save(state: Applicant) {
   }
 }
 
+const TIER_CLASS: Record<WageTier | 'none', string> = { '2.0x': 'high', '1.5x': 'mid', '1.3x': 'low', none: 'none' };
+/** Below this share (%) a segment is too narrow at phone width to hold its figure. */
+const SHARE_LABEL_MIN = 8;
+
+/** A tier's name and bonus beside its colour: the bar's legend, on the box it describes. */
+function tierKey(tier: WageTier | 'none', points: string) {
+  return el(
+    'span',
+    { class: 'hw-tier__key' },
+    el('i', { class: `hw-tier__swatch hw-tier-${TIER_CLASS[tier]}`, attrs: { 'aria-hidden': 'true' } }),
+    `${TIER_LABEL[tier]} ${points}`,
+  );
+}
+
 const LOOKUP_LIMIT = 8;
 
 /** "2026-11-03" -> "3 November 2026", for prose (stampDate is the form register). */
@@ -266,7 +280,17 @@ function applicantAndProjection(hw: HighWage, bases: StockBase[], actual: Round 
   const tierInputs = (['2.0x', '1.5x', '1.3x'] as WageTier[]).map((t) =>
     el('input', { class: 'hw-input hw-input--num', attrs: { id: `hw-t-${t}`, type: 'number', min: '0', max: '100', step: '0.5' } }),
   );
-  const noneOut = el('output', { class: 'hw-none', attrs: { for: tierInputs.map((i) => i.id).join(' ') } });
+  const noneOut = el('output', { class: 'hw-input hw-none', attrs: { for: tierInputs.map((i) => i.id).join(' ') } });
+
+  // One whole split into four ordered parts, so a segmented bar: it stays readable at
+  // phone width, and sliding segments show what a new data source changes.
+  const shareBar = el('div', { class: 'hw-share', attrs: { role: 'img' } });
+  const shareSegments = TIERS.map((t) => {
+    const value = el('span', {});
+    const segment = el('div', { class: `hw-share__seg hw-tier-${TIER_CLASS[t]}` }, value);
+    shareBar.append(segment);
+    return { tier: t, segment, value };
+  });
 
   const syncTierInputs = () => {
     tierInputs.forEach((input, i) => { input.value = String(proj.percents[i]); });
@@ -290,6 +314,18 @@ function applicantAndProjection(hw: HighWage, bases: StockBase[], actual: Round 
 
     // Assumption read-outs
     noneOut.textContent = `${(shares.none * 100).toFixed(1)}%`;
+    for (const { tier: t, segment, value } of shareSegments) {
+      const pct = shares[t] * 100;
+      segment.hidden = pct <= 0;
+      segment.style.flexGrow = String(shares[t]);
+      segment.title = `${TIER_LABEL[t]}: ${pct.toFixed(1)}%`;
+      // Thin segments go unlabelled; the figure is in the box underneath.
+      value.textContent = pct >= SHARE_LABEL_MIN ? `${Math.round(pct)}%` : '';
+    }
+    shareBar.setAttribute(
+      'aria-label',
+      `Share of CEC candidates by tier: ${TIERS.map((t) => `${TIER_LABEL[t]} ${(shares[t] * 100).toFixed(1)}%`).join(', ')}.`,
+    );
     if (proj.size === null) sizeInput.value = String(base.invitations);
 
     figureBefore.textContent = String(result.before);
@@ -453,19 +489,20 @@ function applicantAndProjection(hw: HighWage, bases: StockBase[], actual: Round 
           { class: 'hw-grid' },
           control('Base round (pool snapshot)', 'hw-base', baseSelect),
           control('Draw size', 'hw-size', sizeInput),
-          control('Who is in which tier', 'hw-preset', presetSelect),
+        ),
+        el(
+          'div',
+          { class: 'hw-control hw-share-block' },
+          el('label', { class: 'inspect__label', text: 'Who is in which tier', attrs: { for: 'hw-preset' } }),
+          presetSelect,
+          shareBar,
           el(
             'div',
-            { class: 'hw-control' },
-            el('span', { class: 'inspect__label', text: 'Tier shares (%)' }),
-            el(
-              'div',
-              { class: 'hw-tiers' },
-              ...(['2.0x', '1.5x', '1.3x'] as WageTier[]).map((t, i) =>
-                el('label', { class: 'hw-tier', attrs: { for: tierInputs[i]!.id } }, el('span', { text: TIER_LABEL[t] }), tierInputs[i]!),
-              ),
-              el('span', { class: 'hw-tier' }, el('span', { text: 'Not listed' }), noneOut),
+            { class: 'hw-tiers' },
+            ...(['2.0x', '1.5x', '1.3x'] as WageTier[]).map((t, i) =>
+              el('label', { class: 'hw-tier', attrs: { for: tierInputs[i]!.id } }, tierKey(t, `+${hw.points.experience[t]}`), tierInputs[i]!),
             ),
+            el('div', { class: 'hw-tier' }, tierKey('none', '+0'), noneOut),
           ),
         ),
       ),
@@ -589,7 +626,7 @@ function finePrint(hw: HighWage) {
         el('li', {}, 'The likely range spans six versions of that fit (different inflow shapes, attrition and weighting), each with the listed tiers’ shares 20% lower or higher than selected. Each version is moved by the point or so it misses the chosen round’s real cutoff, so “Today” matches it.'),
         el('li', {}, 'Tiers are assumed independent of score. If the shares differ by score, the cutoff could move several points either way.'),
         el('li', {}, 'This projects the same draw rescored: no new profiles, no change in draw size, no new category draws. The real first draw will probably come in higher. Invitations pause for up to two weeks while scores are recalculated, new CEC profiles keep arriving meanwhile (each extra two weeks adds roughly 2–4 points), and some candidates will add job offers that raise their scores.'),
-        el('li', {}, '“Who is in which tier” sources. The default uses IRCC’s open data on CEC invitees by occupation for 2025 and 2026 so far, with their NOC 2011 codes mapped to NOC 2021. The Census options use 2021 Census employment in TEER 0–3 occupations (Statistics Canada tables 98-10-0449, 98-10-0316, 98-10-0585); the CEC and skilled-worker ones describe people who landed in 2016–21 and put noticeably more of them in listed occupations than recent CEC invitees. Temporary-resident shares are estimated from 4-digit occupation groups. The “IRCC invitees” options use the 15 most common occupations of invited candidates in IRCC’s Express Entry Year-End Report 2024, about a third of invitations.'),
+        el('li', {}, '“Who is in which tier” sources. “CEC invitees”, the default, is IRCC’s open data on CEC invitees by occupation for 2026 so far, with NOC 2011 codes mapped to NOC 2021. “Top invited occupations” is the 15 most common occupations of all invited candidates in IRCC’s Express Entry Year-End Report 2024, about a third of invitations, assuming the rest look the same. The 2021 Census options use employment in TEER 0–3 occupations (Statistics Canada tables 98-10-0449, 98-10-0316, 98-10-0585). “CEC immigrants” describes people who landed in 2016–21 and puts noticeably more of them in listed occupations than recent CEC invitees. Temporary-resident shares are estimated from 4-digit occupation groups.'),
       ),
       el(
         'p',

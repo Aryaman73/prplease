@@ -10,7 +10,7 @@ Where the numbers on the **High Wage** tab come from. Python 3, standard library
 | `npr.py` → `npr.json` | Temporary residents in high-wage NOCs, estimated from 98-10-0585 (NPR = total − non-immigrants − immigrants), apportioned from 4-digit minor groups |
 | `analyze.py` → `highwage_with_counts.csv` | Workers in high-wage NOCs by population; per-NOC table |
 | `invitee_tiers.py` → `invitee_tiers.json` | CEC invitees by occupation from [IRCC open data](https://open.canada.ca/data/en/dataset/593e9165-c6ce-4f9b-b519-03d315f92cd4) (NOC 2011, mapped to 2021 with StatCan's correspondence). Source of the default preset |
-| `presets.py` → `presets.json` | Tier-share presets for the projection (CEC invitees, Census populations, NPR estimate, IRCC Year-End Report 2024 Table 12a) |
+| `presets.py` → `presets.json` | Tier-share presets for the projection (CEC invitees, Census populations, NPR estimate, IRCC Year-End Report Table 12a). `SHOWN` picks the few the site's dropdown offers and their labels; the rest are kept for comparison and don't ship |
 | `stockflow.py` → `cec_stock.json` | CEC candidates per CRS point at each pre-change CEC round: a daily simulation of CEC inflow, draws, expiry and attrition, fitted to every CEC cutoff and pool snapshot since June 2025, in six variants for the range. `src/highwage/model.ts` shifts this stock by the tier bonuses |
 | `build_site_data.py` → `public/data/highwage.json` | What the site loads |
 
