@@ -89,6 +89,15 @@
   --chart-before: #9c6420;
 
   /*
+   * Admissions columns that went over the levels-plan target. A chart red, not
+   * --stamp-red: stamps are rationed, and this one had to pass beside the accent.
+   *   node dataviz/scripts/validate_palette.js "#2a6ba8,#a8382c" --mode light --surface "#d7cdb8"
+   *   → all checks PASS (CVD ΔE 19.4 protan, normal-vision ΔE 25.0, contrast >= 3:1).
+   * The legend names it and the tooltip says "Over target", so it is never colour alone.
+   */
+  --chart-over: #a8382c;
+
+  /*
    * High-wage tiers are an ordered scale, so they take three steps of the pool ramp.
    *   node dataviz/scripts/validate_palette.js "#6b93b3,#3b5a78,#14273d" \
    *        --ordinal --mode light --surface "#d7cdb8"   → all checks PASS.

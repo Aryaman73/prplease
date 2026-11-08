@@ -1091,6 +1091,61 @@
 .colophon a { color: var(--booth-text); }
 
 /* ---------------------------------------------------------------------------
+ * Admissions — actual landings against the levels plan.
+ *
+ * Columns are the chart accent, or --chart-over where admissions passed the
+ * target. The plan itself is drawn in ink: a target is a reference, not a
+ * series, so it takes no hue of its own.
+ * ------------------------------------------------------------------------- */
+
+.adm-bar { fill: var(--chart-accent); }
+/* The year in progress: the same count, hatched so it can't read as a shortfall. */
+.adm-bar--partial { fill: url(#adm-hatch); }
+.adm-bar--over { fill: var(--chart-over); }
+.adm-bar--partial.adm-bar--over { fill: url(#adm-hatch-over); }
+.adm-hatch__ground { fill: var(--paper); }
+.adm-hatch__ink { fill: var(--chart-accent); }
+.adm-hatch__ink--over { fill: var(--chart-over); }
+.adm-range { fill: var(--ink); opacity: 0.1; }
+.adm-range--notional { opacity: 0.06; }
+.adm-target { stroke: var(--ink); stroke-width: 2; }
+/* Notional out-year targets are projections, so this is the one dashed mark. */
+.adm-target--notional { stroke-dasharray: 3 2; }
+.adm-earlier { fill: var(--paper); stroke: var(--ink-soft); stroke-width: 1.5; }
+.adm-partial-label { fill: var(--ink-soft); }
+
+.adm-legend { flex-wrap: wrap; row-gap: var(--space-2); }
+.adm-key--bar { background: var(--chart-accent); }
+.adm-key--over { background: var(--chart-over); }
+.adm-key--partial {
+  background: repeating-linear-gradient(45deg, var(--chart-accent) 0 2px, var(--paper) 2px 4px);
+  box-shadow: inset 0 0 0 1px var(--chart-accent);
+}
+.adm-key--range { background: rgba(38, 36, 30, 0.1); }
+.hw-legend i.adm-key--target,
+.hw-legend i.adm-key--notional { width: 14px; height: 2px; vertical-align: 3px; background: var(--ink); }
+.hw-legend i.adm-key--notional {
+  background: repeating-linear-gradient(90deg, var(--ink) 0 3px, transparent 3px 5px);
+}
+.hw-legend i.adm-key--earlier {
+  width: 8px; height: 8px;
+  border: 1.5px solid var(--ink-soft);
+  border-radius: 50%;
+  background: var(--paper);
+}
+
+.adm-tooltip { min-width: 180px; }
+.adm-tooltip .pool-row__band { white-space: nowrap; }
+
+.adm-fields { max-width: 560px; margin-bottom: var(--space-4); }
+
+.ledger td.adm-notes {
+  min-width: 340px;
+  white-space: normal;
+  color: var(--ink-soft);
+}
+
+/* ---------------------------------------------------------------------------
  * Mobile — the booth metaphor does not survive at 375px, so it is dropped.
  * Palette, stamps and type carry the aesthetic instead.
  * ------------------------------------------------------------------------- */
