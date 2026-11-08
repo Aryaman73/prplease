@@ -519,13 +519,11 @@
  * Tabs — index tabs on a file divider.
  * ------------------------------------------------------------------------- */
 
+.index { margin-bottom: var(--space-5); }
+
 .tabs {
   display: flex;
-  /* Five tabs at 16px come to ~790px against a 868px content box. That fits, but
-   * with no room for a narrower window, so let them wrap rather than overflow. */
-  flex-wrap: wrap;
   gap: var(--space-1);
-  margin-bottom: var(--space-5);
   border-bottom: 1px solid var(--rule);
 }
 
@@ -549,6 +547,31 @@
   color: var(--ink);
   background: var(--paper);
   border-color: var(--paper-edge);
+}
+
+/* The sub-index is typed, not stencilled: it is read under the tab it belongs
+ * to, and the pixel face has no size small enough to sit below 16px. */
+.subtabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-5);
+  padding: var(--space-3) var(--space-3) 0;
+}
+
+.subtab {
+  padding-bottom: 2px;
+  font-family: var(--font-mono);
+  font-size: var(--text-md);
+  text-decoration: none;
+  color: var(--booth-text-dim);
+  border-bottom: 2px solid transparent;
+}
+
+.subtab:hover { color: var(--booth-text); }
+
+.subtab--active {
+  color: var(--booth-text);
+  border-bottom-color: var(--booth-text);
 }
 
 /* ---------------------------------------------------------------------------
@@ -1191,8 +1214,25 @@
   .control { flex: 1 1 140px; }
   .control__input { width: 100%; }
 
-  .tabs { gap: 0; }
-  .tab { text-align: center; padding: var(--space-2); }
+  /* Four labels still don't fit one row at 375px, so they become an even 2×2
+   * grid of cards rather than tabs that wrap and leave one stranded. */
+  .tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-1);
+    border-bottom: none;
+  }
+
+  .tab {
+    text-align: center;
+    padding: var(--space-2);
+    border-bottom: 1px solid var(--rule);
+    transform: none;
+  }
+
+  .tab--active { border-color: var(--paper-edge); }
+
+  .subtabs { gap: var(--space-1) var(--space-4); padding: var(--space-3) var(--space-1) 0; }
 
   /* The ledger keeps its own horizontal scroll so the page body never does. */
   .ledger__scroll { max-height: 60vh; }
@@ -1221,8 +1261,4 @@
   .field { flex-wrap: wrap; }
   .field__leader { display: none; }
   .field__value { flex: 1 1 100%; text-align: left; }
-
-  /* Five tabs won't sit in one row at 375px. `.tabs` wraps at every width now,
-   * so this only has to say how the wrapped rows fill. */
-  .tab { flex: 1 0 auto; }
 }
