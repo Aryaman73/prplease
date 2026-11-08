@@ -2,9 +2,17 @@
   "dataChangedAt": "2026-10-28T22:55:24.998Z",
   "generator": "scripts/sync.mjs",
   "history": {
-    "processingSnapshots": 106
+    "processingSnapshots": 107
   },
   "sources": {
+    "admissions": {
+      "hash": "b590c775d5efd315",
+      "levels": "data/levels.json (hand-curated)",
+      "plans": 13,
+      "through": "2026-08",
+      "upstreamAsOf": "2026-08-31",
+      "url": "https://www.ircc.canada.ca/opendata-donneesouvertes/data/EN_ODP-PR-ProvImmCat.xlsx"
+    },
     "draws": {
       "hash": "1f7fb626a8c7b37d",
       "records": 454,
@@ -23,6 +31,7 @@
     }
   },
   "warnings": {
+    "admissionsClassSumMismatches": [],
     "bandSumMismatches": [
       {
         "band": "dd3",
