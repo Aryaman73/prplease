@@ -1,0 +1,1337 @@
+{
+  "_about": "Hand-curated from the IRCC immigration levels plan notices. One entry per plan; each carries the targets it set for every year it covers. Edit when a new plan is tabled (by November 1 each year), then run `npm run sync`. Category keys: total, economic, fhs (Federal High Skilled: FSW + FST + CEC, i.e. Express Entry's federal programs; PNP is separate even when it goes through Express Entry), pnp, family, refugees (refugees and protected persons), humanitarian (humanitarian & compassionate and other). null = the plan set no figure for it.",
+  "plans": [
+    {
+      "key": "2015",
+      "tabled": "2014-10-31",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/notice-supplementary-information-2015-immigration-levels-plan.html",
+      "notes": [
+        "Published as ranges only; no single target. Refugees and humanitarian admissions were planned as one combined \"Humanitarian\" class (24,900\u201330,200), so neither has a target of its own here.",
+        "Federal High Skilled is the sum of the Federal Skilled Worker (incl. Trades) and Canadian Experience Class rows."
+      ],
+      "years": {
+        "2015": {
+          "total": {
+            "target": null,
+            "low": 260000,
+            "high": 285000
+          },
+          "economic": {
+            "target": null,
+            "low": 172100,
+            "high": 186700
+          },
+          "fhs": {
+            "target": null,
+            "low": 68000,
+            "high": 74000
+          },
+          "pnp": {
+            "target": null,
+            "low": 46000,
+            "high": 48000
+          },
+          "family": {
+            "target": null,
+            "low": 63000,
+            "high": 68000
+          },
+          "refugees": null,
+          "humanitarian": null
+        }
+      }
+    },
+    {
+      "key": "2016",
+      "tabled": "2016-03-08",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/notice-supplementary-information-2016-immigration-levels-plan.html",
+      "notes": [],
+      "years": {
+        "2016": {
+          "total": {
+            "target": 300000,
+            "low": 280000,
+            "high": 305000
+          },
+          "economic": {
+            "target": 160600,
+            "low": 151200,
+            "high": 162400
+          },
+          "fhs": {
+            "target": 58400,
+            "low": 54000,
+            "high": 59000
+          },
+          "pnp": {
+            "target": 47800,
+            "low": 46000,
+            "high": 48000
+          },
+          "family": {
+            "target": 80000,
+            "low": 75000,
+            "high": 82000
+          },
+          "refugees": {
+            "target": 55800,
+            "low": 51000,
+            "high": 57000
+          },
+          "humanitarian": {
+            "target": 3600,
+            "low": 2800,
+            "high": 3600
+          }
+        }
+      }
+    },
+    {
+      "key": "2017",
+      "tabled": "2016-10-31",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/notice-supplementary-information-2017-immigration-levels-plan.html",
+      "notes": [
+        "The 2017 \"Federal Economic\" line used for Federal High Skilled also includes up to 2,000 Atlantic Immigration Pilot admissions."
+      ],
+      "years": {
+        "2017": {
+          "total": {
+            "target": 300000,
+            "low": 280000,
+            "high": 320000
+          },
+          "economic": {
+            "target": 172500,
+            "low": 164100,
+            "high": 183500
+          },
+          "fhs": {
+            "target": 73700,
+            "low": 69600,
+            "high": 77300
+          },
+          "pnp": {
+            "target": 51000,
+            "low": 49000,
+            "high": 54000
+          },
+          "family": {
+            "target": 84000,
+            "low": 80000,
+            "high": 86000
+          },
+          "refugees": {
+            "target": 40000,
+            "low": 33000,
+            "high": 46000
+          },
+          "humanitarian": {
+            "target": 3500,
+            "low": 2900,
+            "high": 4500
+          }
+        }
+      }
+    },
+    {
+      "key": "2018-2020",
+      "tabled": "2017-11-01",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/supplementary-immigration-levels-2018.html",
+      "notes": [],
+      "years": {
+        "2018": {
+          "total": {
+            "target": 310000,
+            "low": 290000,
+            "high": 330000
+          },
+          "economic": {
+            "target": 177500,
+            "low": 169600,
+            "high": 188500
+          },
+          "fhs": {
+            "target": 74900,
+            "low": 72700,
+            "high": 78200
+          },
+          "pnp": {
+            "target": 55000,
+            "low": 53000,
+            "high": 57400
+          },
+          "family": {
+            "target": 86000,
+            "low": 81000,
+            "high": 89000
+          },
+          "refugees": {
+            "target": 43000,
+            "low": 36500,
+            "high": 48000
+          },
+          "humanitarian": {
+            "target": 3500,
+            "low": 2900,
+            "high": 4500
+          }
+        },
+        "2019": {
+          "total": {
+            "target": 330000,
+            "low": 300000,
+            "high": 350000
+          },
+          "economic": {
+            "target": 191600,
+            "low": 175500,
+            "high": 201000
+          },
+          "fhs": {
+            "target": 81400,
+            "low": 76000,
+            "high": 83000
+          },
+          "pnp": {
+            "target": 61000,
+            "low": 57000,
+            "high": 63500
+          },
+          "family": {
+            "target": 88500,
+            "low": 82000,
+            "high": 91000
+          },
+          "refugees": {
+            "target": 45650,
+            "low": 39000,
+            "high": 53000
+          },
+          "humanitarian": {
+            "target": 4250,
+            "low": 3500,
+            "high": 5000
+          }
+        },
+        "2020": {
+          "total": {
+            "target": 340000,
+            "low": 310000,
+            "high": 360000
+          },
+          "economic": {
+            "target": 195800,
+            "low": 181000,
+            "high": 202500
+          },
+          "fhs": {
+            "target": 85800,
+            "low": 81000,
+            "high": 88000
+          },
+          "pnp": {
+            "target": 67800,
+            "low": 62000,
+            "high": 68500
+          },
+          "family": {
+            "target": 91000,
+            "low": 82000,
+            "high": 96000
+          },
+          "refugees": {
+            "target": 48700,
+            "low": 43500,
+            "high": 56500
+          },
+          "humanitarian": {
+            "target": 4500,
+            "low": 3500,
+            "high": 5000
+          }
+        }
+      }
+    },
+    {
+      "key": "2019-2021",
+      "tabled": "2018-10-31",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/supplementary-immigration-levels-2019.html",
+      "notes": [],
+      "years": {
+        "2019": {
+          "total": {
+            "target": 330800,
+            "low": 310000,
+            "high": 350000
+          },
+          "economic": {
+            "target": 191600,
+            "low": 174000,
+            "high": 209500
+          },
+          "fhs": {
+            "target": 81400,
+            "low": 76000,
+            "high": 86000
+          },
+          "pnp": {
+            "target": 61000,
+            "low": 57000,
+            "high": 68000
+          },
+          "family": {
+            "target": 88500,
+            "low": 83000,
+            "high": 98000
+          },
+          "refugees": {
+            "target": 46450,
+            "low": 39500,
+            "high": 53500
+          },
+          "humanitarian": {
+            "target": 4250,
+            "low": 3500,
+            "high": 5000
+          }
+        },
+        "2020": {
+          "total": {
+            "target": 341000,
+            "low": 310000,
+            "high": 360000
+          },
+          "economic": {
+            "target": 195800,
+            "low": 181000,
+            "high": 206000
+          },
+          "fhs": {
+            "target": 85800,
+            "low": 81000,
+            "high": 88000
+          },
+          "pnp": {
+            "target": 67800,
+            "low": 62000,
+            "high": 71000
+          },
+          "family": {
+            "target": 91000,
+            "low": 84000,
+            "high": 102000
+          },
+          "refugees": {
+            "target": 49700,
+            "low": 43500,
+            "high": 56500
+          },
+          "humanitarian": {
+            "target": 4500,
+            "low": 3500,
+            "high": 5000
+          }
+        },
+        "2021": {
+          "total": {
+            "target": 350000,
+            "low": 320000,
+            "high": 370000
+          },
+          "economic": {
+            "target": 202300,
+            "low": 189000,
+            "high": 212000
+          },
+          "fhs": {
+            "target": 88800,
+            "low": 84000,
+            "high": 91000
+          },
+          "pnp": {
+            "target": 71300,
+            "low": 67000,
+            "high": 74000
+          },
+          "family": {
+            "target": 91000,
+            "low": 84000,
+            "high": 102000
+          },
+          "refugees": {
+            "target": 51700,
+            "low": 44500,
+            "high": 58500
+          },
+          "humanitarian": {
+            "target": 5000,
+            "low": 4000,
+            "high": 6000
+          }
+        }
+      }
+    },
+    {
+      "key": "2020-2022",
+      "tabled": "2020-03-12",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/supplementary-immigration-levels-2020.html",
+      "notes": [
+        "Tabled in March 2020 rather than the preceding fall, because of the 2019 federal election. Days later, pandemic border closures began."
+      ],
+      "years": {
+        "2020": {
+          "total": {
+            "target": 341000,
+            "low": 320000,
+            "high": 370000
+          },
+          "economic": {
+            "target": 195800,
+            "low": 186500,
+            "high": 213000
+          },
+          "fhs": {
+            "target": 91800,
+            "low": 88500,
+            "high": 100000
+          },
+          "pnp": {
+            "target": 67800,
+            "low": 65500,
+            "high": 74000
+          },
+          "family": {
+            "target": 91000,
+            "low": 84500,
+            "high": 96000
+          },
+          "refugees": {
+            "target": 49700,
+            "low": 45000,
+            "high": 56000
+          },
+          "humanitarian": {
+            "target": 4500,
+            "low": 4000,
+            "high": 5000
+          }
+        },
+        "2021": {
+          "total": {
+            "target": 351000,
+            "low": 330000,
+            "high": 380000
+          },
+          "economic": {
+            "target": 203050,
+            "low": 192500,
+            "high": 220000
+          },
+          "fhs": {
+            "target": 91150,
+            "low": 89300,
+            "high": 100000
+          },
+          "pnp": {
+            "target": 71300,
+            "low": 67200,
+            "high": 74800
+          },
+          "family": {
+            "target": 91000,
+            "low": 87000,
+            "high": 98000
+          },
+          "refugees": {
+            "target": 51950,
+            "low": 46000,
+            "high": 56500
+          },
+          "humanitarian": {
+            "target": 5000,
+            "low": 4500,
+            "high": 5500
+          }
+        },
+        "2022": {
+          "total": {
+            "target": 361000,
+            "low": 340000,
+            "high": 390000
+          },
+          "economic": {
+            "target": 212050,
+            "low": 201000,
+            "high": 229000
+          },
+          "fhs": {
+            "target": 91550,
+            "low": 88800,
+            "high": 100600
+          },
+          "pnp": {
+            "target": 73000,
+            "low": 70000,
+            "high": 76000
+          },
+          "family": {
+            "target": 91000,
+            "low": 87000,
+            "high": 98000
+          },
+          "refugees": {
+            "target": 52950,
+            "low": 47500,
+            "high": 57500
+          },
+          "humanitarian": {
+            "target": 5000,
+            "low": 4500,
+            "high": 5500
+          }
+        }
+      }
+    },
+    {
+      "key": "2021-2023",
+      "tabled": "2020-10-30",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/supplementary-immigration-levels-2021-2023.html",
+      "notes": [],
+      "years": {
+        "2021": {
+          "total": {
+            "target": 401000,
+            "low": 300000,
+            "high": 410000
+          },
+          "economic": {
+            "target": 232500,
+            "low": 180500,
+            "high": 237000
+          },
+          "fhs": {
+            "target": 108500,
+            "low": 81000,
+            "high": 110250
+          },
+          "pnp": {
+            "target": 80800,
+            "low": 64000,
+            "high": 81500
+          },
+          "family": {
+            "target": 103500,
+            "low": 76000,
+            "high": 105000
+          },
+          "refugees": {
+            "target": 59500,
+            "low": 39500,
+            "high": 62000
+          },
+          "humanitarian": {
+            "target": 5500,
+            "low": 4000,
+            "high": 6000
+          }
+        },
+        "2022": {
+          "total": {
+            "target": 411000,
+            "low": 320000,
+            "high": 420000
+          },
+          "economic": {
+            "target": 241500,
+            "low": 199000,
+            "high": 247000
+          },
+          "fhs": {
+            "target": 110500,
+            "low": 96250,
+            "high": 112900
+          },
+          "pnp": {
+            "target": 81500,
+            "low": 63600,
+            "high": 82500
+          },
+          "family": {
+            "target": 103500,
+            "low": 74000,
+            "high": 105000
+          },
+          "refugees": {
+            "target": 60500,
+            "low": 42000,
+            "high": 62000
+          },
+          "humanitarian": {
+            "target": 5500,
+            "low": 5000,
+            "high": 6000
+          }
+        },
+        "2023": {
+          "total": {
+            "target": 421000,
+            "low": 330000,
+            "high": 430000
+          },
+          "economic": {
+            "target": 249500,
+            "low": 207000,
+            "high": 253500
+          },
+          "fhs": {
+            "target": 113750,
+            "low": 100000,
+            "high": 114500
+          },
+          "pnp": {
+            "target": 83000,
+            "low": 65000,
+            "high": 84000
+          },
+          "family": {
+            "target": 104500,
+            "low": 74000,
+            "high": 106000
+          },
+          "refugees": {
+            "target": 61000,
+            "low": 43500,
+            "high": 62500
+          },
+          "humanitarian": {
+            "target": 6000,
+            "low": 5500,
+            "high": 8000
+          }
+        }
+      }
+    },
+    {
+      "key": "2022-2024",
+      "tabled": "2022-02-14",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/supplementary-immigration-levels-2022-2024.html",
+      "notes": [
+        "Tabled in February 2022 rather than the preceding fall, because of the 2021 federal election."
+      ],
+      "years": {
+        "2022": {
+          "total": {
+            "target": 431645,
+            "low": 360000,
+            "high": 445000
+          },
+          "economic": {
+            "target": 241850,
+            "low": 210000,
+            "high": 248000
+          },
+          "fhs": {
+            "target": 55900,
+            "low": 52000,
+            "high": 64000
+          },
+          "pnp": {
+            "target": 83500,
+            "low": 80000,
+            "high": 95000
+          },
+          "family": {
+            "target": 105000,
+            "low": 90000,
+            "high": 109000
+          },
+          "refugees": {
+            "target": 76545,
+            "low": 55000,
+            "high": 79500
+          },
+          "humanitarian": {
+            "target": 8250,
+            "low": 5000,
+            "high": 8500
+          }
+        },
+        "2023": {
+          "total": {
+            "target": 447055,
+            "low": 380000,
+            "high": 465000
+          },
+          "economic": {
+            "target": 253000,
+            "low": 222000,
+            "high": 259000
+          },
+          "fhs": {
+            "target": 75750,
+            "low": 63000,
+            "high": 84000
+          },
+          "pnp": {
+            "target": 86000,
+            "low": 82000,
+            "high": 95000
+          },
+          "family": {
+            "target": 109500,
+            "low": 94000,
+            "high": 113000
+          },
+          "refugees": {
+            "target": 74055,
+            "low": 57000,
+            "high": 82000
+          },
+          "humanitarian": {
+            "target": 10500,
+            "low": 7000,
+            "high": 11000
+          }
+        },
+        "2024": {
+          "total": {
+            "target": 451000,
+            "low": 390000,
+            "high": 475000
+          },
+          "economic": {
+            "target": 267750,
+            "low": 235000,
+            "high": 273000
+          },
+          "fhs": {
+            "target": 111500,
+            "low": 91000,
+            "high": 118000
+          },
+          "pnp": {
+            "target": 93000,
+            "low": 88000,
+            "high": 98000
+          },
+          "family": {
+            "target": 113000,
+            "low": 99000,
+            "high": 117000
+          },
+          "refugees": {
+            "target": 62500,
+            "low": 50000,
+            "high": 75500
+          },
+          "humanitarian": {
+            "target": 7750,
+            "low": 6000,
+            "high": 9500
+          }
+        }
+      }
+    },
+    {
+      "key": "2023-2025",
+      "tabled": "2022-11-01",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/supplementary-immigration-levels-2023-2025.html",
+      "notes": [],
+      "years": {
+        "2023": {
+          "total": {
+            "target": 465000,
+            "low": 410000,
+            "high": 505000
+          },
+          "economic": {
+            "target": 266210,
+            "low": 233000,
+            "high": 277250
+          },
+          "fhs": {
+            "target": 82880,
+            "low": 67750,
+            "high": 88000
+          },
+          "pnp": {
+            "target": 105500,
+            "low": 91000,
+            "high": 110000
+          },
+          "family": {
+            "target": 106500,
+            "low": 100000,
+            "high": 118000
+          },
+          "refugees": {
+            "target": 76305,
+            "low": 66000,
+            "high": 93000
+          },
+          "humanitarian": {
+            "target": 15985,
+            "low": 11000,
+            "high": 16750
+          }
+        },
+        "2024": {
+          "total": {
+            "target": 485000,
+            "low": 430000,
+            "high": 542500
+          },
+          "economic": {
+            "target": 281135,
+            "low": 250000,
+            "high": 305000
+          },
+          "fhs": {
+            "target": 109020,
+            "low": 89500,
+            "high": 115750
+          },
+          "pnp": {
+            "target": 110000,
+            "low": 105500,
+            "high": 120000
+          },
+          "family": {
+            "target": 114000,
+            "low": 105000,
+            "high": 130000
+          },
+          "refugees": {
+            "target": 76115,
+            "low": 66000,
+            "high": 93000
+          },
+          "humanitarian": {
+            "target": 13750,
+            "low": 9000,
+            "high": 14500
+          }
+        },
+        "2025": {
+          "total": {
+            "target": 500000,
+            "low": 442500,
+            "high": 550000
+          },
+          "economic": {
+            "target": 301250,
+            "low": 265000,
+            "high": 326000
+          },
+          "fhs": {
+            "target": 114000,
+            "low": 93500,
+            "high": 121000
+          },
+          "pnp": {
+            "target": 117500,
+            "low": 112000,
+            "high": 129250
+          },
+          "family": {
+            "target": 118000,
+            "low": 107000,
+            "high": 135000
+          },
+          "refugees": {
+            "target": 72750,
+            "low": 64000,
+            "high": 80000
+          },
+          "humanitarian": {
+            "target": 8000,
+            "low": 6500,
+            "high": 9000
+          }
+        }
+      }
+    },
+    {
+      "key": "2024-2026",
+      "tabled": "2023-11-01",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/supplementary-immigration-levels-2024-2026.html",
+      "notes": [],
+      "years": {
+        "2024": {
+          "total": {
+            "target": 485000,
+            "low": 430000,
+            "high": 532500
+          },
+          "economic": {
+            "target": 281135,
+            "low": 250000,
+            "high": 305000
+          },
+          "fhs": {
+            "target": 110770,
+            "low": 90000,
+            "high": 116000
+          },
+          "pnp": {
+            "target": 110000,
+            "low": 105500,
+            "high": 117000
+          },
+          "family": {
+            "target": 114000,
+            "low": 105000,
+            "high": 130000
+          },
+          "refugees": {
+            "target": 76115,
+            "low": 66000,
+            "high": 93000
+          },
+          "humanitarian": {
+            "target": 13750,
+            "low": 9000,
+            "high": 17500
+          }
+        },
+        "2025": {
+          "total": {
+            "target": 500000,
+            "low": 442500,
+            "high": 550000
+          },
+          "economic": {
+            "target": 301250,
+            "low": 265000,
+            "high": 326000
+          },
+          "fhs": {
+            "target": 117500,
+            "low": 96500,
+            "high": 124000
+          },
+          "pnp": {
+            "target": 120000,
+            "low": 113000,
+            "high": 130000
+          },
+          "family": {
+            "target": 118000,
+            "low": 107000,
+            "high": 135000
+          },
+          "refugees": {
+            "target": 72750,
+            "low": 64000,
+            "high": 80000
+          },
+          "humanitarian": {
+            "target": 8000,
+            "low": 6500,
+            "high": 12000
+          }
+        },
+        "2026": {
+          "total": {
+            "target": 500000,
+            "low": 442500,
+            "high": 550000
+          },
+          "economic": {
+            "target": 301250,
+            "low": 265000,
+            "high": 326000
+          },
+          "fhs": {
+            "target": 117500,
+            "low": 96500,
+            "high": 124000
+          },
+          "pnp": {
+            "target": 120000,
+            "low": 113000,
+            "high": 130000
+          },
+          "family": {
+            "target": 118000,
+            "low": 107000,
+            "high": 135000
+          },
+          "refugees": {
+            "target": 72750,
+            "low": 64000,
+            "high": 80000
+          },
+          "humanitarian": {
+            "target": 8000,
+            "low": 6500,
+            "high": 12000
+          }
+        }
+      }
+    },
+    {
+      "key": "2025-2027",
+      "tabled": "2024-10-24",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/supplementary-immigration-levels-2025-2027.html",
+      "notes": [
+        "This plan split Express Entry into \"Federal Economic Priorities\" and \"In-Canada Focus\". Federal High Skilled here is their sum; the plan gives no combined range, and its footnotes say category ranges do not add up."
+      ],
+      "years": {
+        "2025": {
+          "total": {
+            "target": 395000,
+            "low": 367000,
+            "high": 436000
+          },
+          "economic": {
+            "target": 232150,
+            "low": 215000,
+            "high": 256000
+          },
+          "fhs": {
+            "target": 124680,
+            "low": null,
+            "high": null
+          },
+          "pnp": {
+            "target": 55000,
+            "low": 20000,
+            "high": 65000
+          },
+          "family": {
+            "target": 94500,
+            "low": 88500,
+            "high": 102000
+          },
+          "refugees": {
+            "target": 58350,
+            "low": 55000,
+            "high": 65000
+          },
+          "humanitarian": {
+            "target": 10000,
+            "low": 8500,
+            "high": 13000
+          }
+        },
+        "2026": {
+          "total": {
+            "target": 380000,
+            "low": 352000,
+            "high": 416000
+          },
+          "economic": {
+            "target": 229750,
+            "low": 214000,
+            "high": 249000
+          },
+          "fhs": {
+            "target": 123230,
+            "low": null,
+            "high": null
+          },
+          "pnp": {
+            "target": 55000,
+            "low": 20000,
+            "high": 65000
+          },
+          "family": {
+            "target": 88000,
+            "low": 82000,
+            "high": 96000
+          },
+          "refugees": {
+            "target": 55350,
+            "low": 50000,
+            "high": 62000
+          },
+          "humanitarian": {
+            "target": 6900,
+            "low": 6000,
+            "high": 9000
+          }
+        },
+        "2027": {
+          "total": {
+            "target": 365000,
+            "low": 338000,
+            "high": 401000
+          },
+          "economic": {
+            "target": 225350,
+            "low": 207000,
+            "high": 246000
+          },
+          "fhs": {
+            "target": 118730,
+            "low": null,
+            "high": null
+          },
+          "pnp": {
+            "target": 55000,
+            "low": 20000,
+            "high": 65000
+          },
+          "family": {
+            "target": 81000,
+            "low": 77000,
+            "high": 89000
+          },
+          "refugees": {
+            "target": 54350,
+            "low": 50000,
+            "high": 60000
+          },
+          "humanitarian": {
+            "target": 4300,
+            "low": 4000,
+            "high": 6000
+          }
+        }
+      }
+    },
+    {
+      "key": "2026-2028",
+      "tabled": "2025-11-04",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/immigration-system/levels/supplementary-immigration-levels-2026-2028.html",
+      "notes": [
+        "Alongside this plan the government announced one-time initiatives to move about 115,000 Protected Persons in Canada and up to 33,000 work permit holders to permanent residence over 2026 and 2027. The plan says those admissions are in addition to its targets, so 2026\u201327 admissions can exceed the target without the plan having been missed."
+      ],
+      "years": {
+        "2026": {
+          "total": {
+            "target": 380000,
+            "low": 350000,
+            "high": 420000
+          },
+          "economic": {
+            "target": 239800,
+            "low": 224000,
+            "high": 264000
+          },
+          "fhs": {
+            "target": 109000,
+            "low": 85000,
+            "high": 120000
+          },
+          "pnp": {
+            "target": 91500,
+            "low": 82000,
+            "high": 105000
+          },
+          "family": {
+            "target": 84000,
+            "low": 78500,
+            "high": 92000
+          },
+          "refugees": {
+            "target": 49300,
+            "low": 42000,
+            "high": 55000
+          },
+          "humanitarian": {
+            "target": 6900,
+            "low": 6000,
+            "high": 9000
+          }
+        },
+        "2027": {
+          "total": {
+            "target": 380000,
+            "low": 350000,
+            "high": 420000
+          },
+          "economic": {
+            "target": 244700,
+            "low": 229000,
+            "high": 268000
+          },
+          "fhs": {
+            "target": 111000,
+            "low": 86000,
+            "high": 122000
+          },
+          "pnp": {
+            "target": 92500,
+            "low": 82000,
+            "high": 106000
+          },
+          "family": {
+            "target": 81000,
+            "low": 75000,
+            "high": 90000
+          },
+          "refugees": {
+            "target": 49300,
+            "low": 42000,
+            "high": 55000
+          },
+          "humanitarian": {
+            "target": 5000,
+            "low": 4000,
+            "high": 7000
+          }
+        },
+        "2028": {
+          "total": {
+            "target": 380000,
+            "low": 350000,
+            "high": 420000
+          },
+          "economic": {
+            "target": 244700,
+            "low": 229000,
+            "high": 268000
+          },
+          "fhs": {
+            "target": 111000,
+            "low": 86000,
+            "high": 122000
+          },
+          "pnp": {
+            "target": 92500,
+            "low": 82000,
+            "high": 106000
+          },
+          "family": {
+            "target": 81000,
+            "low": 75000,
+            "high": 90000
+          },
+          "refugees": {
+            "target": 49300,
+            "low": 42000,
+            "high": 55000
+          },
+          "humanitarian": {
+            "target": 5000,
+            "low": 4000,
+            "high": 7000
+          }
+        }
+      }
+    },
+    {
+      "key": "2027-2029",
+      "tabled": "2026-11-05",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/immigration-system/levels/supplementary-immigration-levels-2027-2029.html",
+      "notes": [
+        "Adds a time-limited measure for 2027 with two cohorts (in-Canada workers, and long-waiting humanitarian cases) on top of the one-time initiatives carried over from the 2026\u20132028 plan. The plan page does not state a number for it."
+      ],
+      "years": {
+        "2027": {
+          "total": {
+            "target": 380000,
+            "low": 352500,
+            "high": 422000
+          },
+          "economic": {
+            "target": 244700,
+            "low": 230000,
+            "high": 270000
+          },
+          "fhs": {
+            "target": 100000,
+            "low": 87000,
+            "high": 123000
+          },
+          "pnp": {
+            "target": 95000,
+            "low": 83000,
+            "high": 106000
+          },
+          "family": {
+            "target": 81000,
+            "low": 76000,
+            "high": 89000
+          },
+          "refugees": {
+            "target": 49300,
+            "low": 42000,
+            "high": 55000
+          },
+          "humanitarian": {
+            "target": 5000,
+            "low": 4500,
+            "high": 8000
+          }
+        },
+        "2028": {
+          "total": {
+            "target": 380000,
+            "low": 352500,
+            "high": 422000
+          },
+          "economic": {
+            "target": 244700,
+            "low": 230000,
+            "high": 270000
+          },
+          "fhs": {
+            "target": 100000,
+            "low": 87000,
+            "high": 123000
+          },
+          "pnp": {
+            "target": 95000,
+            "low": 83000,
+            "high": 106000
+          },
+          "family": {
+            "target": 81000,
+            "low": 76000,
+            "high": 89000
+          },
+          "refugees": {
+            "target": 49300,
+            "low": 42000,
+            "high": 55000
+          },
+          "humanitarian": {
+            "target": 5000,
+            "low": 4500,
+            "high": 8000
+          }
+        },
+        "2029": {
+          "total": {
+            "target": 380000,
+            "low": 352500,
+            "high": 422000
+          },
+          "economic": {
+            "target": 244700,
+            "low": 230000,
+            "high": 270000
+          },
+          "fhs": {
+            "target": 100000,
+            "low": 87000,
+            "high": 123000
+          },
+          "pnp": {
+            "target": 95000,
+            "low": 83000,
+            "high": 106000
+          },
+          "family": {
+            "target": 81000,
+            "low": 76000,
+            "high": 89000
+          },
+          "refugees": {
+            "target": 49300,
+            "low": 42000,
+            "high": 55000
+          },
+          "humanitarian": {
+            "target": 5000,
+            "low": 4500,
+            "high": 8000
+          }
+        }
+      }
+    }
+  ]
+}

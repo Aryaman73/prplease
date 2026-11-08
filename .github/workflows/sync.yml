@@ -15,7 +15,9 @@ on:
     branches: [main]
     paths:
       - 'data/timelines.csv'
+      - 'data/levels.json'
       - 'scripts/sync.mjs'
+      - 'scripts/admissions.mjs'
       - '.github/workflows/sync.yml'
 
 # Prevent a scheduled run and a manual run from racing to commit.

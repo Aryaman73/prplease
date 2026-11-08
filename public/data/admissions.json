@@ -1,0 +1,3452 @@
+{
+  "categories": [
+    {
+      "key": "total",
+      "label": "All permanent residents"
+    },
+    {
+      "key": "economic",
+      "label": "Economic class"
+    },
+    {
+      "key": "fhs",
+      "label": "Federal High Skilled (Express Entry)"
+    },
+    {
+      "key": "pnp",
+      "label": "Provincial Nominee Program"
+    },
+    {
+      "key": "family",
+      "label": "Family class"
+    },
+    {
+      "key": "refugees",
+      "label": "Refugees and protected persons"
+    },
+    {
+      "key": "humanitarian",
+      "label": "Humanitarian and other"
+    }
+  ],
+  "monthly": {
+    "economic": [
+      7475,
+      10375,
+      13640,
+      14690,
+      16100,
+      18170,
+      19570,
+      16765,
+      16985,
+      14400,
+      11910,
+      10335,
+      11570,
+      13505,
+      17605,
+      18130,
+      17450,
+      17695,
+      15285,
+      11370,
+      9865,
+      7955,
+      6660,
+      8915,
+      13335,
+      11185,
+      13440,
+      13280,
+      12870,
+      14705,
+      13315,
+      12915,
+      13465,
+      13550,
+      12535,
+      14695,
+      16170,
+      16660,
+      19820,
+      18755,
+      17160,
+      17100,
+      16340,
+      15600,
+      15960,
+      13815,
+      9960,
+      9010,
+      9315,
+      10335,
+      15370,
+      14950,
+      17350,
+      19345,
+      21720,
+      21050,
+      21665,
+      18720,
+      14730,
+      12055,
+      15435,
+      15100,
+      10455,
+      3170,
+      6580,
+      14895,
+      8745,
+      6195,
+      7535,
+      7125,
+      7445,
+      3655,
+      14570,
+      13460,
+      13725,
+      12225,
+      9455,
+      24720,
+      28115,
+      26355,
+      27955,
+      27230,
+      30135,
+      25010,
+      23095,
+      22870,
+      23195,
+      20835,
+      21895,
+      25885,
+      27245,
+      20895,
+      25640,
+      18415,
+      13105,
+      12610,
+      30430,
+      31285,
+      26810,
+      16045,
+      25745,
+      24365,
+      23955,
+      22470,
+      17685,
+      18640,
+      13745,
+      21450,
+      31890,
+      23695,
+      20850,
+      28365,
+      27925,
+      25710,
+      28820,
+      23735,
+      20445,
+      18515,
+      18450,
+      13215,
+      22285,
+      22410,
+      22135,
+      17245,
+      22595,
+      24100,
+      23145,
+      17925,
+      18445,
+      16365,
+      9860,
+      11825,
+      16050,
+      17375,
+      17265,
+      14640,
+      17850,
+      17800,
+      22170,
+      19520
+    ],
+    "family": [
+      4205,
+      4395,
+      4885,
+      4595,
+      5645,
+      6230,
+      5700,
+      5580,
+      6570,
+      6115,
+      5350,
+      6155,
+      5005,
+      5475,
+      6390,
+      6625,
+      7525,
+      8010,
+      7925,
+      6840,
+      6715,
+      6345,
+      5580,
+      5525,
+      6265,
+      7565,
+      8925,
+      8220,
+      8435,
+      8265,
+      6975,
+      6375,
+      5625,
+      5180,
+      4735,
+      5850,
+      4945,
+      5825,
+      6435,
+      6240,
+      7050,
+      7915,
+      7980,
+      6680,
+      7245,
+      7975,
+      8260,
+      8560,
+      6085,
+      6375,
+      7725,
+      7700,
+      10070,
+      9300,
+      8425,
+      6850,
+      7990,
+      7390,
+      6800,
+      6560,
+      6085,
+      7070,
+      5660,
+      740,
+      2350,
+      2850,
+      3310,
+      3545,
+      4260,
+      4235,
+      4090,
+      5020,
+      4655,
+      5415,
+      4475,
+      4785,
+      3905,
+      5970,
+      7180,
+      6345,
+      9620,
+      10170,
+      9545,
+      9330,
+      7110,
+      8090,
+      9435,
+      8255,
+      8975,
+      10085,
+      9785,
+      7085,
+      9275,
+      7645,
+      5475,
+      6095,
+      12720,
+      11095,
+      9930,
+      7745,
+      11550,
+      10465,
+      9285,
+      6795,
+      7295,
+      8175,
+      6550,
+      8090,
+      9370,
+      7865,
+      7235,
+      7965,
+      9795,
+      9175,
+      9545,
+      7950,
+      8380,
+      7815,
+      9990,
+      10870,
+      7235,
+      7550,
+      7370,
+      6530,
+      8720,
+      9545,
+      9245,
+      7145,
+      8985,
+      8550,
+      7405,
+      7860,
+      4855,
+      7335,
+      7415,
+      10085,
+      8250,
+      7150,
+      7790,
+      6235
+    ],
+    "fhs": [
+      3125,
+      3305,
+      4360,
+      4785,
+      5725,
+      6770,
+      8180,
+      7550,
+      7930,
+      6645,
+      5345,
+      4890,
+      5290,
+      5370,
+      7310,
+      7835,
+      6530,
+      6120,
+      5410,
+      4015,
+      3345,
+      3095,
+      2345,
+      3160,
+      4310,
+      3890,
+      3990,
+      3440,
+      3160,
+      3615,
+      3715,
+      4200,
+      5355,
+      7335,
+      6665,
+      7315,
+      8305,
+      8195,
+      8700,
+      7485,
+      6470,
+      6320,
+      5730,
+      5170,
+      5530,
+      5220,
+      4225,
+      4140,
+      4125,
+      4635,
+      7100,
+      7470,
+      8265,
+      8610,
+      9825,
+      9380,
+      9710,
+      8300,
+      6650,
+      6030,
+      7405,
+      7865,
+      5410,
+      1705,
+      2855,
+      8980,
+      3560,
+      2490,
+      1735,
+      2715,
+      3380,
+      1625,
+      5580,
+      6750,
+      9000,
+      7250,
+      6075,
+      17020,
+      16790,
+      16710,
+      15005,
+      14245,
+      14690,
+      10220,
+      8815,
+      7040,
+      6810,
+      6090,
+      5770,
+      6370,
+      6570,
+      4385,
+      6475,
+      5505,
+      3385,
+      2805,
+      5345,
+      6550,
+      7340,
+      5050,
+      7850,
+      8175,
+      6845,
+      6960,
+      5115,
+      5855,
+      5445,
+      7145,
+      11650,
+      7420,
+      6435,
+      8560,
+      8130,
+      7535,
+      8720,
+      6710,
+      7955,
+      6840,
+      6530,
+      6105,
+      5885,
+      9430,
+      9170,
+      7480,
+      8460,
+      7405,
+      7355,
+      6405,
+      6740,
+      6320,
+      2590,
+      2280,
+      7225,
+      5610,
+      5305,
+      5540,
+      6700,
+      6915,
+      9735,
+      8835
+    ],
+    "humanitarian": [
+      375,
+      225,
+      300,
+      350,
+      400,
+      345,
+      365,
+      315,
+      465,
+      355,
+      350,
+      410,
+      285,
+      250,
+      335,
+      400,
+      430,
+      340,
+      370,
+      335,
+      360,
+      300,
+      195,
+      120,
+      280,
+      300,
+      285,
+      250,
+      375,
+      445,
+      400,
+      310,
+      165,
+      190,
+      280,
+      310,
+      255,
+      340,
+      450,
+      380,
+      435,
+      320,
+      310,
+      330,
+      310,
+      235,
+      270,
+      310,
+      285,
+      320,
+      250,
+      255,
+      490,
+      195,
+      360,
+      265,
+      375,
+      670,
+      770,
+      365,
+      325,
+      300,
+      195,
+      15,
+      550,
+      215,
+      200,
+      220,
+      340,
+      395,
+      535,
+      120,
+      600,
+      620,
+      610,
+      845,
+      1125,
+      1295,
+      945,
+      480,
+      1175,
+      1715,
+      795,
+      1110,
+      890,
+      1015,
+      1370,
+      710,
+      1025,
+      1070,
+      775,
+      970,
+      810,
+      710,
+      330,
+      475,
+      2710,
+      1180,
+      1280,
+      770,
+      1185,
+      1140,
+      1155,
+      1170,
+      825,
+      595,
+      1315,
+      1055,
+      810,
+      705,
+      835,
+      1410,
+      1725,
+      2180,
+      2285,
+      1865,
+      2270,
+      1810,
+      2160,
+      1195,
+      1195,
+      1440,
+      965,
+      540,
+      735,
+      835,
+      805,
+      715,
+      715,
+      620,
+      530,
+      935,
+      595,
+      560,
+      465,
+      465,
+      570,
+      525,
+      725,
+      450
+    ],
+    "pnp": [
+      1635,
+      2455,
+      4540,
+      4630,
+      4450,
+      4565,
+      4930,
+      4250,
+      4060,
+      3960,
+      2920,
+      2130,
+      3135,
+      4340,
+      5685,
+      5380,
+      5220,
+      5540,
+      4245,
+      3025,
+      2500,
+      2380,
+      2465,
+      2270,
+      4655,
+      3865,
+      4895,
+      4740,
+      4690,
+      5095,
+      4220,
+      4530,
+      4280,
+      3310,
+      2715,
+      2750,
+      4505,
+      5200,
+      6565,
+      6455,
+      6065,
+      5700,
+      5515,
+      5585,
+      5835,
+      4760,
+      3300,
+      2920,
+      3045,
+      3320,
+      5335,
+      4535,
+      5965,
+      7145,
+      7895,
+      8785,
+      7975,
+      6590,
+      4725,
+      3315,
+      5020,
+      4825,
+      3420,
+      1290,
+      2950,
+      4925,
+      3065,
+      1970,
+      4010,
+      2920,
+      2820,
+      1490,
+      6340,
+      4605,
+      2675,
+      2905,
+      2030,
+      4755,
+      6965,
+      4825,
+      5155,
+      4375,
+      4350,
+      5035,
+      4215,
+      6175,
+      6580,
+      5995,
+      7870,
+      10075,
+      10720,
+      8160,
+      11110,
+      8250,
+      4650,
+      4445,
+      15805,
+      13370,
+      9740,
+      5920,
+      10980,
+      9455,
+      9340,
+      8305,
+      5220,
+      6495,
+      4635,
+      9350,
+      12770,
+      10185,
+      9170,
+      13375,
+      12930,
+      11155,
+      12280,
+      10035,
+      7295,
+      7350,
+      5630,
+      2735,
+      13325,
+      8860,
+      7815,
+      5205,
+      6415,
+      8965,
+      8130,
+      5640,
+      5920,
+      5650,
+      4160,
+      5025,
+      6030,
+      7585,
+      7755,
+      5585,
+      7525,
+      7350,
+      8440,
+      8050
+    ],
+    "refugees": [
+      855,
+      1445,
+      2925,
+      1530,
+      1725,
+      2260,
+      2110,
+      1665,
+      2745,
+      3095,
+      3230,
+      7950,
+      10405,
+      12775,
+      2580,
+      2945,
+      4055,
+      4640,
+      2890,
+      2715,
+      3515,
+      3690,
+      3750,
+      4535,
+      1990,
+      3765,
+      5455,
+      3375,
+      3745,
+      4030,
+      5065,
+      2590,
+      2885,
+      2235,
+      2595,
+      3340,
+      2165,
+      2815,
+      4080,
+      3445,
+      4105,
+      4715,
+      4395,
+      2705,
+      4385,
+      4350,
+      4395,
+      3900,
+      2940,
+      3220,
+      3700,
+      3980,
+      5085,
+      5500,
+      6100,
+      3400,
+      5470,
+      4440,
+      2740,
+      1930,
+      2860,
+      3425,
+      2205,
+      165,
+      1425,
+      1090,
+      1455,
+      1400,
+      2855,
+      3210,
+      3165,
+      2200,
+      4880,
+      3895,
+      3555,
+      3295,
+      2975,
+      3810,
+      3495,
+      4700,
+      6480,
+      7385,
+      7130,
+      8585,
+      4330,
+      5375,
+      6975,
+      6575,
+      6100,
+      6900,
+      5540,
+      5185,
+      8960,
+      6935,
+      7170,
+      4265,
+      5080,
+      6095,
+      6850,
+      4990,
+      7520,
+      6365,
+      6305,
+      4635,
+      6360,
+      6210,
+      7880,
+      6650,
+      5695,
+      6855,
+      5960,
+      4855,
+      7395,
+      7610,
+      7195,
+      5680,
+      6025,
+      6325,
+      6330,
+      6730,
+      3325,
+      3870,
+      4505,
+      3730,
+      4375,
+      4550,
+      5515,
+      4690,
+      5510,
+      7380,
+      6265,
+      5415,
+      2705,
+      4000,
+      4460,
+      4675,
+      7730,
+      9360,
+      9755,
+      13980
+    ],
+    "total": [
+      12910,
+      16440,
+      21770,
+      21165,
+      23895,
+      27025,
+      27770,
+      24350,
+      26770,
+      23990,
+      20855,
+      24890,
+      27280,
+      32035,
+      26925,
+      28125,
+      29460,
+      30710,
+      26485,
+      21265,
+      20480,
+      18320,
+      16205,
+      19085,
+      21895,
+      22825,
+      28120,
+      25120,
+      25435,
+      27460,
+      25770,
+      22210,
+      22155,
+      21175,
+      20155,
+      24220,
+      23550,
+      25645,
+      30815,
+      28825,
+      28785,
+      30070,
+      29045,
+      25325,
+      27920,
+      26395,
+      22880,
+      21805,
+      18645,
+      20250,
+      27060,
+      26900,
+      33015,
+      34365,
+      36615,
+      31585,
+      35515,
+      31235,
+      25080,
+      20910,
+      24720,
+      25900,
+      18530,
+      4105,
+      10900,
+      19070,
+      13725,
+      11375,
+      15020,
+      14995,
+      15265,
+      11005,
+      24705,
+      23395,
+      22395,
+      21165,
+      17475,
+      35805,
+      39750,
+      37910,
+      45255,
+      46505,
+      47630,
+      44070,
+      35450,
+      37365,
+      40990,
+      36370,
+      37995,
+      43955,
+      43350,
+      34150,
+      44705,
+      33740,
+      26100,
+      23460,
+      50945,
+      49670,
+      44885,
+      29565,
+      46005,
+      42355,
+      40705,
+      35095,
+      32190,
+      33630,
+      29515,
+      37265,
+      47785,
+      39115,
+      34875,
+      42615,
+      46855,
+      44700,
+      47870,
+      39255,
+      37145,
+      34480,
+      36940,
+      32020,
+      34055,
+      35275,
+      34990,
+      28055,
+      36430,
+      39045,
+      38735,
+      30480,
+      33665,
+      32925,
+      24065,
+      26065,
+      24225,
+      29290,
+      29630,
+      29890,
+      34425,
+      34850,
+      40465,
+      40225
+    ]
+  },
+  "months": [
+    "2015-01",
+    "2015-02",
+    "2015-03",
+    "2015-04",
+    "2015-05",
+    "2015-06",
+    "2015-07",
+    "2015-08",
+    "2015-09",
+    "2015-10",
+    "2015-11",
+    "2015-12",
+    "2016-01",
+    "2016-02",
+    "2016-03",
+    "2016-04",
+    "2016-05",
+    "2016-06",
+    "2016-07",
+    "2016-08",
+    "2016-09",
+    "2016-10",
+    "2016-11",
+    "2016-12",
+    "2017-01",
+    "2017-02",
+    "2017-03",
+    "2017-04",
+    "2017-05",
+    "2017-06",
+    "2017-07",
+    "2017-08",
+    "2017-09",
+    "2017-10",
+    "2017-11",
+    "2017-12",
+    "2018-01",
+    "2018-02",
+    "2018-03",
+    "2018-04",
+    "2018-05",
+    "2018-06",
+    "2018-07",
+    "2018-08",
+    "2018-09",
+    "2018-10",
+    "2018-11",
+    "2018-12",
+    "2019-01",
+    "2019-02",
+    "2019-03",
+    "2019-04",
+    "2019-05",
+    "2019-06",
+    "2019-07",
+    "2019-08",
+    "2019-09",
+    "2019-10",
+    "2019-11",
+    "2019-12",
+    "2020-01",
+    "2020-02",
+    "2020-03",
+    "2020-04",
+    "2020-05",
+    "2020-06",
+    "2020-07",
+    "2020-08",
+    "2020-09",
+    "2020-10",
+    "2020-11",
+    "2020-12",
+    "2021-01",
+    "2021-02",
+    "2021-03",
+    "2021-04",
+    "2021-05",
+    "2021-06",
+    "2021-07",
+    "2021-08",
+    "2021-09",
+    "2021-10",
+    "2021-11",
+    "2021-12",
+    "2022-01",
+    "2022-02",
+    "2022-03",
+    "2022-04",
+    "2022-05",
+    "2022-06",
+    "2022-07",
+    "2022-08",
+    "2022-09",
+    "2022-10",
+    "2022-11",
+    "2022-12",
+    "2023-01",
+    "2023-02",
+    "2023-03",
+    "2023-04",
+    "2023-05",
+    "2023-06",
+    "2023-07",
+    "2023-08",
+    "2023-09",
+    "2023-10",
+    "2023-11",
+    "2023-12",
+    "2024-01",
+    "2024-02",
+    "2024-03",
+    "2024-04",
+    "2024-05",
+    "2024-06",
+    "2024-07",
+    "2024-08",
+    "2024-09",
+    "2024-10",
+    "2024-11",
+    "2024-12",
+    "2025-01",
+    "2025-02",
+    "2025-03",
+    "2025-04",
+    "2025-05",
+    "2025-06",
+    "2025-07",
+    "2025-08",
+    "2025-09",
+    "2025-10",
+    "2025-11",
+    "2025-12",
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06",
+    "2026-07",
+    "2026-08"
+  ],
+  "plans": [
+    {
+      "key": "2015",
+      "notes": [
+        "Published as ranges only; no single target. Refugees and humanitarian admissions were planned as one combined \"Humanitarian\" class (24,900–30,200), so neither has a target of its own here.",
+        "Federal High Skilled is the sum of the Federal Skilled Worker (incl. Trades) and Canadian Experience Class rows."
+      ],
+      "tabled": "2014-10-31",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/notice-supplementary-information-2015-immigration-levels-plan.html"
+    },
+    {
+      "key": "2016",
+      "notes": [],
+      "tabled": "2016-03-08",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/notice-supplementary-information-2016-immigration-levels-plan.html"
+    },
+    {
+      "key": "2017",
+      "notes": [
+        "The 2017 \"Federal Economic\" line used for Federal High Skilled also includes up to 2,000 Atlantic Immigration Pilot admissions."
+      ],
+      "tabled": "2016-10-31",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/notice-supplementary-information-2017-immigration-levels-plan.html"
+    },
+    {
+      "key": "2018-2020",
+      "notes": [],
+      "tabled": "2017-11-01",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/supplementary-immigration-levels-2018.html"
+    },
+    {
+      "key": "2019-2021",
+      "notes": [],
+      "tabled": "2018-10-31",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/supplementary-immigration-levels-2019.html"
+    },
+    {
+      "key": "2020-2022",
+      "notes": [
+        "Tabled in March 2020 rather than the preceding fall, because of the 2019 federal election. Days later, pandemic border closures began."
+      ],
+      "tabled": "2020-03-12",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/supplementary-immigration-levels-2020.html"
+    },
+    {
+      "key": "2021-2023",
+      "notes": [],
+      "tabled": "2020-10-30",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/supplementary-immigration-levels-2021-2023.html"
+    },
+    {
+      "key": "2022-2024",
+      "notes": [
+        "Tabled in February 2022 rather than the preceding fall, because of the 2021 federal election."
+      ],
+      "tabled": "2022-02-14",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/supplementary-immigration-levels-2022-2024.html"
+    },
+    {
+      "key": "2023-2025",
+      "notes": [],
+      "tabled": "2022-11-01",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/supplementary-immigration-levels-2023-2025.html"
+    },
+    {
+      "key": "2024-2026",
+      "notes": [],
+      "tabled": "2023-11-01",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/supplementary-immigration-levels-2024-2026.html"
+    },
+    {
+      "key": "2025-2027",
+      "notes": [
+        "This plan split Express Entry into \"Federal Economic Priorities\" and \"In-Canada Focus\". Federal High Skilled here is their sum; the plan gives no combined range, and its footnotes say category ranges do not add up."
+      ],
+      "tabled": "2024-10-24",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/supplementary-immigration-levels-2025-2027.html"
+    },
+    {
+      "key": "2026-2028",
+      "notes": [
+        "Alongside this plan the government announced one-time initiatives to move about 115,000 Protected Persons in Canada and up to 33,000 work permit holders to permanent residence over 2026 and 2027. The plan says those admissions are in addition to its targets, so 2026–27 admissions can exceed the target without the plan having been missed."
+      ],
+      "tabled": "2025-11-04",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/immigration-system/levels/supplementary-immigration-levels-2026-2028.html"
+    },
+    {
+      "key": "2027-2029",
+      "notes": [
+        "Adds a time-limited measure for 2027 with two cohorts (in-Canada workers, and long-waiting humanitarian cases) on top of the one-time initiatives carried over from the 2026–2028 plan. The plan page does not state a number for it."
+      ],
+      "tabled": "2026-11-05",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/immigration-system/levels/supplementary-immigration-levels-2027-2029.html"
+    }
+  ],
+  "source": {
+    "asOf": "2026-08-31",
+    "dataset": "https://open.canada.ca/data/en/dataset/f7e5498e-0ad8-4417-85c9-9b8aff9b9eda",
+    "through": "2026-08",
+    "url": "https://www.ircc.canada.ca/opendata-donneesouvertes/data/EN_ODP-PR-ProvImmCat.xlsx"
+  },
+  "warnings": {
+    "classSumMismatches": []
+  },
+  "years": [
+    {
+      "actual": {
+        "economic": 170420,
+        "family": 65485,
+        "fhs": 68785,
+        "humanitarian": 4285,
+        "pnp": 44535,
+        "refugees": 31550,
+        "total": 271840
+      },
+      "monthsReported": 12,
+      "priorSamePeriod": null,
+      "target": {
+        "notional": false,
+        "plan": "2015",
+        "values": {
+          "economic": {
+            "high": 186700,
+            "low": 172100,
+            "target": null
+          },
+          "family": {
+            "high": 68000,
+            "low": 63000,
+            "target": null
+          },
+          "fhs": {
+            "high": 74000,
+            "low": 68000,
+            "target": null
+          },
+          "humanitarian": null,
+          "pnp": {
+            "high": 48000,
+            "low": 46000,
+            "target": null
+          },
+          "refugees": null,
+          "total": {
+            "high": 285000,
+            "low": 260000,
+            "target": null
+          }
+        }
+      },
+      "versions": [
+        {
+          "plan": "2015",
+          "tabled": "2014-10-31",
+          "values": {
+            "economic": {
+              "high": 186700,
+              "low": 172100,
+              "target": null
+            },
+            "family": {
+              "high": 68000,
+              "low": 63000,
+              "target": null
+            },
+            "fhs": {
+              "high": 74000,
+              "low": 68000,
+              "target": null
+            },
+            "humanitarian": null,
+            "pnp": {
+              "high": 48000,
+              "low": 46000,
+              "target": null
+            },
+            "refugees": null,
+            "total": {
+              "high": 285000,
+              "low": 260000,
+              "target": null
+            }
+          }
+        }
+      ],
+      "year": 2015
+    },
+    {
+      "actual": {
+        "economic": 156030,
+        "family": 78005,
+        "fhs": 59985,
+        "humanitarian": 3775,
+        "pnp": 46180,
+        "refugees": 58510,
+        "total": 296375
+      },
+      "monthsReported": 12,
+      "priorSamePeriod": null,
+      "target": {
+        "notional": false,
+        "plan": "2016",
+        "values": {
+          "economic": {
+            "high": 162400,
+            "low": 151200,
+            "target": 160600
+          },
+          "family": {
+            "high": 82000,
+            "low": 75000,
+            "target": 80000
+          },
+          "fhs": {
+            "high": 59000,
+            "low": 54000,
+            "target": 58400
+          },
+          "humanitarian": {
+            "high": 3600,
+            "low": 2800,
+            "target": 3600
+          },
+          "pnp": {
+            "high": 48000,
+            "low": 46000,
+            "target": 47800
+          },
+          "refugees": {
+            "high": 57000,
+            "low": 51000,
+            "target": 55800
+          },
+          "total": {
+            "high": 305000,
+            "low": 280000,
+            "target": 300000
+          }
+        }
+      },
+      "versions": [
+        {
+          "plan": "2016",
+          "tabled": "2016-03-08",
+          "values": {
+            "economic": {
+              "high": 162400,
+              "low": 151200,
+              "target": 160600
+            },
+            "family": {
+              "high": 82000,
+              "low": 75000,
+              "target": 80000
+            },
+            "fhs": {
+              "high": 59000,
+              "low": 54000,
+              "target": 58400
+            },
+            "humanitarian": {
+              "high": 3600,
+              "low": 2800,
+              "target": 3600
+            },
+            "pnp": {
+              "high": 48000,
+              "low": 46000,
+              "target": 47800
+            },
+            "refugees": {
+              "high": 57000,
+              "low": 51000,
+              "target": 55800
+            },
+            "total": {
+              "high": 305000,
+              "low": 280000,
+              "target": 300000
+            }
+          }
+        }
+      ],
+      "year": 2016
+    },
+    {
+      "actual": {
+        "economic": 159315,
+        "family": 82465,
+        "fhs": 57150,
+        "humanitarian": 3620,
+        "pnp": 49740,
+        "refugees": 41095,
+        "total": 286540
+      },
+      "monthsReported": 12,
+      "priorSamePeriod": null,
+      "target": {
+        "notional": false,
+        "plan": "2017",
+        "values": {
+          "economic": {
+            "high": 183500,
+            "low": 164100,
+            "target": 172500
+          },
+          "family": {
+            "high": 86000,
+            "low": 80000,
+            "target": 84000
+          },
+          "fhs": {
+            "high": 77300,
+            "low": 69600,
+            "target": 73700
+          },
+          "humanitarian": {
+            "high": 4500,
+            "low": 2900,
+            "target": 3500
+          },
+          "pnp": {
+            "high": 54000,
+            "low": 49000,
+            "target": 51000
+          },
+          "refugees": {
+            "high": 46000,
+            "low": 33000,
+            "target": 40000
+          },
+          "total": {
+            "high": 320000,
+            "low": 280000,
+            "target": 300000
+          }
+        }
+      },
+      "versions": [
+        {
+          "plan": "2017",
+          "tabled": "2016-10-31",
+          "values": {
+            "economic": {
+              "high": 183500,
+              "low": 164100,
+              "target": 172500
+            },
+            "family": {
+              "high": 86000,
+              "low": 80000,
+              "target": 84000
+            },
+            "fhs": {
+              "high": 77300,
+              "low": 69600,
+              "target": 73700
+            },
+            "humanitarian": {
+              "high": 4500,
+              "low": 2900,
+              "target": 3500
+            },
+            "pnp": {
+              "high": 54000,
+              "low": 49000,
+              "target": 51000
+            },
+            "refugees": {
+              "high": 46000,
+              "low": 33000,
+              "target": 40000
+            },
+            "total": {
+              "high": 320000,
+              "low": 280000,
+              "target": 300000
+            }
+          }
+        }
+      ],
+      "year": 2017
+    },
+    {
+      "actual": {
+        "economic": 186375,
+        "family": 85165,
+        "fhs": 75595,
+        "humanitarian": 4025,
+        "pnp": 62440,
+        "refugees": 45480,
+        "total": 321055
+      },
+      "monthsReported": 12,
+      "priorSamePeriod": null,
+      "target": {
+        "notional": false,
+        "plan": "2018-2020",
+        "values": {
+          "economic": {
+            "high": 188500,
+            "low": 169600,
+            "target": 177500
+          },
+          "family": {
+            "high": 89000,
+            "low": 81000,
+            "target": 86000
+          },
+          "fhs": {
+            "high": 78200,
+            "low": 72700,
+            "target": 74900
+          },
+          "humanitarian": {
+            "high": 4500,
+            "low": 2900,
+            "target": 3500
+          },
+          "pnp": {
+            "high": 57400,
+            "low": 53000,
+            "target": 55000
+          },
+          "refugees": {
+            "high": 48000,
+            "low": 36500,
+            "target": 43000
+          },
+          "total": {
+            "high": 330000,
+            "low": 290000,
+            "target": 310000
+          }
+        }
+      },
+      "versions": [
+        {
+          "plan": "2018-2020",
+          "tabled": "2017-11-01",
+          "values": {
+            "economic": {
+              "high": 188500,
+              "low": 169600,
+              "target": 177500
+            },
+            "family": {
+              "high": 89000,
+              "low": 81000,
+              "target": 86000
+            },
+            "fhs": {
+              "high": 78200,
+              "low": 72700,
+              "target": 74900
+            },
+            "humanitarian": {
+              "high": 4500,
+              "low": 2900,
+              "target": 3500
+            },
+            "pnp": {
+              "high": 57400,
+              "low": 53000,
+              "target": 55000
+            },
+            "refugees": {
+              "high": 48000,
+              "low": 36500,
+              "target": 43000
+            },
+            "total": {
+              "high": 330000,
+              "low": 290000,
+              "target": 310000
+            }
+          }
+        }
+      ],
+      "year": 2018
+    },
+    {
+      "actual": {
+        "economic": 196655,
+        "family": 91295,
+        "fhs": 90225,
+        "humanitarian": 4670,
+        "pnp": 68645,
+        "refugees": 48515,
+        "total": 341175
+      },
+      "monthsReported": 12,
+      "priorSamePeriod": null,
+      "target": {
+        "notional": false,
+        "plan": "2019-2021",
+        "values": {
+          "economic": {
+            "high": 209500,
+            "low": 174000,
+            "target": 191600
+          },
+          "family": {
+            "high": 98000,
+            "low": 83000,
+            "target": 88500
+          },
+          "fhs": {
+            "high": 86000,
+            "low": 76000,
+            "target": 81400
+          },
+          "humanitarian": {
+            "high": 5000,
+            "low": 3500,
+            "target": 4250
+          },
+          "pnp": {
+            "high": 68000,
+            "low": 57000,
+            "target": 61000
+          },
+          "refugees": {
+            "high": 53500,
+            "low": 39500,
+            "target": 46450
+          },
+          "total": {
+            "high": 350000,
+            "low": 310000,
+            "target": 330800
+          }
+        }
+      },
+      "versions": [
+        {
+          "plan": "2018-2020",
+          "tabled": "2017-11-01",
+          "values": {
+            "economic": {
+              "high": 201000,
+              "low": 175500,
+              "target": 191600
+            },
+            "family": {
+              "high": 91000,
+              "low": 82000,
+              "target": 88500
+            },
+            "fhs": {
+              "high": 83000,
+              "low": 76000,
+              "target": 81400
+            },
+            "humanitarian": {
+              "high": 5000,
+              "low": 3500,
+              "target": 4250
+            },
+            "pnp": {
+              "high": 63500,
+              "low": 57000,
+              "target": 61000
+            },
+            "refugees": {
+              "high": 53000,
+              "low": 39000,
+              "target": 45650
+            },
+            "total": {
+              "high": 350000,
+              "low": 300000,
+              "target": 330000
+            }
+          }
+        },
+        {
+          "plan": "2019-2021",
+          "tabled": "2018-10-31",
+          "values": {
+            "economic": {
+              "high": 209500,
+              "low": 174000,
+              "target": 191600
+            },
+            "family": {
+              "high": 98000,
+              "low": 83000,
+              "target": 88500
+            },
+            "fhs": {
+              "high": 86000,
+              "low": 76000,
+              "target": 81400
+            },
+            "humanitarian": {
+              "high": 5000,
+              "low": 3500,
+              "target": 4250
+            },
+            "pnp": {
+              "high": 68000,
+              "low": 57000,
+              "target": 61000
+            },
+            "refugees": {
+              "high": 53500,
+              "low": 39500,
+              "target": 46450
+            },
+            "total": {
+              "high": 350000,
+              "low": 310000,
+              "target": 330800
+            }
+          }
+        }
+      ],
+      "year": 2019
+    },
+    {
+      "actual": {
+        "economic": 106360,
+        "family": 49305,
+        "fhs": 49895,
+        "humanitarian": 3450,
+        "pnp": 38720,
+        "refugees": 25495,
+        "total": 184605
+      },
+      "monthsReported": 12,
+      "priorSamePeriod": null,
+      "target": {
+        "notional": false,
+        "plan": "2020-2022",
+        "values": {
+          "economic": {
+            "high": 213000,
+            "low": 186500,
+            "target": 195800
+          },
+          "family": {
+            "high": 96000,
+            "low": 84500,
+            "target": 91000
+          },
+          "fhs": {
+            "high": 100000,
+            "low": 88500,
+            "target": 91800
+          },
+          "humanitarian": {
+            "high": 5000,
+            "low": 4000,
+            "target": 4500
+          },
+          "pnp": {
+            "high": 74000,
+            "low": 65500,
+            "target": 67800
+          },
+          "refugees": {
+            "high": 56000,
+            "low": 45000,
+            "target": 49700
+          },
+          "total": {
+            "high": 370000,
+            "low": 320000,
+            "target": 341000
+          }
+        }
+      },
+      "versions": [
+        {
+          "plan": "2018-2020",
+          "tabled": "2017-11-01",
+          "values": {
+            "economic": {
+              "high": 202500,
+              "low": 181000,
+              "target": 195800
+            },
+            "family": {
+              "high": 96000,
+              "low": 82000,
+              "target": 91000
+            },
+            "fhs": {
+              "high": 88000,
+              "low": 81000,
+              "target": 85800
+            },
+            "humanitarian": {
+              "high": 5000,
+              "low": 3500,
+              "target": 4500
+            },
+            "pnp": {
+              "high": 68500,
+              "low": 62000,
+              "target": 67800
+            },
+            "refugees": {
+              "high": 56500,
+              "low": 43500,
+              "target": 48700
+            },
+            "total": {
+              "high": 360000,
+              "low": 310000,
+              "target": 340000
+            }
+          }
+        },
+        {
+          "plan": "2019-2021",
+          "tabled": "2018-10-31",
+          "values": {
+            "economic": {
+              "high": 206000,
+              "low": 181000,
+              "target": 195800
+            },
+            "family": {
+              "high": 102000,
+              "low": 84000,
+              "target": 91000
+            },
+            "fhs": {
+              "high": 88000,
+              "low": 81000,
+              "target": 85800
+            },
+            "humanitarian": {
+              "high": 5000,
+              "low": 3500,
+              "target": 4500
+            },
+            "pnp": {
+              "high": 71000,
+              "low": 62000,
+              "target": 67800
+            },
+            "refugees": {
+              "high": 56500,
+              "low": 43500,
+              "target": 49700
+            },
+            "total": {
+              "high": 360000,
+              "low": 310000,
+              "target": 341000
+            }
+          }
+        },
+        {
+          "plan": "2020-2022",
+          "tabled": "2020-03-12",
+          "values": {
+            "economic": {
+              "high": 213000,
+              "low": 186500,
+              "target": 195800
+            },
+            "family": {
+              "high": 96000,
+              "low": 84500,
+              "target": 91000
+            },
+            "fhs": {
+              "high": 100000,
+              "low": 88500,
+              "target": 91800
+            },
+            "humanitarian": {
+              "high": 5000,
+              "low": 4000,
+              "target": 4500
+            },
+            "pnp": {
+              "high": 74000,
+              "low": 65500,
+              "target": 67800
+            },
+            "refugees": {
+              "high": 56000,
+              "low": 45000,
+              "target": 49700
+            },
+            "total": {
+              "high": 370000,
+              "low": 320000,
+              "target": 341000
+            }
+          }
+        }
+      ],
+      "year": 2020
+    },
+    {
+      "actual": {
+        "economic": 252995,
+        "family": 81440,
+        "fhs": 139455,
+        "humanitarian": 11375,
+        "pnp": 54030,
+        "refugees": 60220,
+        "total": 406055
+      },
+      "monthsReported": 12,
+      "priorSamePeriod": null,
+      "target": {
+        "notional": false,
+        "plan": "2021-2023",
+        "values": {
+          "economic": {
+            "high": 237000,
+            "low": 180500,
+            "target": 232500
+          },
+          "family": {
+            "high": 105000,
+            "low": 76000,
+            "target": 103500
+          },
+          "fhs": {
+            "high": 110250,
+            "low": 81000,
+            "target": 108500
+          },
+          "humanitarian": {
+            "high": 6000,
+            "low": 4000,
+            "target": 5500
+          },
+          "pnp": {
+            "high": 81500,
+            "low": 64000,
+            "target": 80800
+          },
+          "refugees": {
+            "high": 62000,
+            "low": 39500,
+            "target": 59500
+          },
+          "total": {
+            "high": 410000,
+            "low": 300000,
+            "target": 401000
+          }
+        }
+      },
+      "versions": [
+        {
+          "plan": "2019-2021",
+          "tabled": "2018-10-31",
+          "values": {
+            "economic": {
+              "high": 212000,
+              "low": 189000,
+              "target": 202300
+            },
+            "family": {
+              "high": 102000,
+              "low": 84000,
+              "target": 91000
+            },
+            "fhs": {
+              "high": 91000,
+              "low": 84000,
+              "target": 88800
+            },
+            "humanitarian": {
+              "high": 6000,
+              "low": 4000,
+              "target": 5000
+            },
+            "pnp": {
+              "high": 74000,
+              "low": 67000,
+              "target": 71300
+            },
+            "refugees": {
+              "high": 58500,
+              "low": 44500,
+              "target": 51700
+            },
+            "total": {
+              "high": 370000,
+              "low": 320000,
+              "target": 350000
+            }
+          }
+        },
+        {
+          "plan": "2020-2022",
+          "tabled": "2020-03-12",
+          "values": {
+            "economic": {
+              "high": 220000,
+              "low": 192500,
+              "target": 203050
+            },
+            "family": {
+              "high": 98000,
+              "low": 87000,
+              "target": 91000
+            },
+            "fhs": {
+              "high": 100000,
+              "low": 89300,
+              "target": 91150
+            },
+            "humanitarian": {
+              "high": 5500,
+              "low": 4500,
+              "target": 5000
+            },
+            "pnp": {
+              "high": 74800,
+              "low": 67200,
+              "target": 71300
+            },
+            "refugees": {
+              "high": 56500,
+              "low": 46000,
+              "target": 51950
+            },
+            "total": {
+              "high": 380000,
+              "low": 330000,
+              "target": 351000
+            }
+          }
+        },
+        {
+          "plan": "2021-2023",
+          "tabled": "2020-10-30",
+          "values": {
+            "economic": {
+              "high": 237000,
+              "low": 180500,
+              "target": 232500
+            },
+            "family": {
+              "high": 105000,
+              "low": 76000,
+              "target": 103500
+            },
+            "fhs": {
+              "high": 110250,
+              "low": 81000,
+              "target": 108500
+            },
+            "humanitarian": {
+              "high": 6000,
+              "low": 4000,
+              "target": 5500
+            },
+            "pnp": {
+              "high": 81500,
+              "low": 64000,
+              "target": 80800
+            },
+            "refugees": {
+              "high": 62000,
+              "low": 39500,
+              "target": 59500
+            },
+            "total": {
+              "high": 410000,
+              "low": 300000,
+              "target": 401000
+            }
+          }
+        }
+      ],
+      "year": 2021
+    },
+    {
+      "actual": {
+        "economic": 255695,
+        "family": 97380,
+        "fhs": 70175,
+        "humanitarian": 10195,
+        "pnp": 88265,
+        "refugees": 74350,
+        "total": 437635
+      },
+      "monthsReported": 12,
+      "priorSamePeriod": null,
+      "target": {
+        "notional": false,
+        "plan": "2022-2024",
+        "values": {
+          "economic": {
+            "high": 248000,
+            "low": 210000,
+            "target": 241850
+          },
+          "family": {
+            "high": 109000,
+            "low": 90000,
+            "target": 105000
+          },
+          "fhs": {
+            "high": 64000,
+            "low": 52000,
+            "target": 55900
+          },
+          "humanitarian": {
+            "high": 8500,
+            "low": 5000,
+            "target": 8250
+          },
+          "pnp": {
+            "high": 95000,
+            "low": 80000,
+            "target": 83500
+          },
+          "refugees": {
+            "high": 79500,
+            "low": 55000,
+            "target": 76545
+          },
+          "total": {
+            "high": 445000,
+            "low": 360000,
+            "target": 431645
+          }
+        }
+      },
+      "versions": [
+        {
+          "plan": "2020-2022",
+          "tabled": "2020-03-12",
+          "values": {
+            "economic": {
+              "high": 229000,
+              "low": 201000,
+              "target": 212050
+            },
+            "family": {
+              "high": 98000,
+              "low": 87000,
+              "target": 91000
+            },
+            "fhs": {
+              "high": 100600,
+              "low": 88800,
+              "target": 91550
+            },
+            "humanitarian": {
+              "high": 5500,
+              "low": 4500,
+              "target": 5000
+            },
+            "pnp": {
+              "high": 76000,
+              "low": 70000,
+              "target": 73000
+            },
+            "refugees": {
+              "high": 57500,
+              "low": 47500,
+              "target": 52950
+            },
+            "total": {
+              "high": 390000,
+              "low": 340000,
+              "target": 361000
+            }
+          }
+        },
+        {
+          "plan": "2021-2023",
+          "tabled": "2020-10-30",
+          "values": {
+            "economic": {
+              "high": 247000,
+              "low": 199000,
+              "target": 241500
+            },
+            "family": {
+              "high": 105000,
+              "low": 74000,
+              "target": 103500
+            },
+            "fhs": {
+              "high": 112900,
+              "low": 96250,
+              "target": 110500
+            },
+            "humanitarian": {
+              "high": 6000,
+              "low": 5000,
+              "target": 5500
+            },
+            "pnp": {
+              "high": 82500,
+              "low": 63600,
+              "target": 81500
+            },
+            "refugees": {
+              "high": 62000,
+              "low": 42000,
+              "target": 60500
+            },
+            "total": {
+              "high": 420000,
+              "low": 320000,
+              "target": 411000
+            }
+          }
+        },
+        {
+          "plan": "2022-2024",
+          "tabled": "2022-02-14",
+          "values": {
+            "economic": {
+              "high": 248000,
+              "low": 210000,
+              "target": 241850
+            },
+            "family": {
+              "high": 109000,
+              "low": 90000,
+              "target": 105000
+            },
+            "fhs": {
+              "high": 64000,
+              "low": 52000,
+              "target": 55900
+            },
+            "humanitarian": {
+              "high": 8500,
+              "low": 5000,
+              "target": 8250
+            },
+            "pnp": {
+              "high": 95000,
+              "low": 80000,
+              "target": 83500
+            },
+            "refugees": {
+              "high": 79500,
+              "low": 55000,
+              "target": 76545
+            },
+            "total": {
+              "high": 445000,
+              "low": 360000,
+              "target": 431645
+            }
+          }
+        }
+      ],
+      "year": 2022
+    },
+    {
+      "actual": {
+        "economic": 272650,
+        "family": 109745,
+        "fhs": 77840,
+        "humanitarian": 14425,
+        "pnp": 108620,
+        "refugees": 74965,
+        "total": 471820
+      },
+      "monthsReported": 12,
+      "priorSamePeriod": null,
+      "target": {
+        "notional": false,
+        "plan": "2023-2025",
+        "values": {
+          "economic": {
+            "high": 277250,
+            "low": 233000,
+            "target": 266210
+          },
+          "family": {
+            "high": 118000,
+            "low": 100000,
+            "target": 106500
+          },
+          "fhs": {
+            "high": 88000,
+            "low": 67750,
+            "target": 82880
+          },
+          "humanitarian": {
+            "high": 16750,
+            "low": 11000,
+            "target": 15985
+          },
+          "pnp": {
+            "high": 110000,
+            "low": 91000,
+            "target": 105500
+          },
+          "refugees": {
+            "high": 93000,
+            "low": 66000,
+            "target": 76305
+          },
+          "total": {
+            "high": 505000,
+            "low": 410000,
+            "target": 465000
+          }
+        }
+      },
+      "versions": [
+        {
+          "plan": "2021-2023",
+          "tabled": "2020-10-30",
+          "values": {
+            "economic": {
+              "high": 253500,
+              "low": 207000,
+              "target": 249500
+            },
+            "family": {
+              "high": 106000,
+              "low": 74000,
+              "target": 104500
+            },
+            "fhs": {
+              "high": 114500,
+              "low": 100000,
+              "target": 113750
+            },
+            "humanitarian": {
+              "high": 8000,
+              "low": 5500,
+              "target": 6000
+            },
+            "pnp": {
+              "high": 84000,
+              "low": 65000,
+              "target": 83000
+            },
+            "refugees": {
+              "high": 62500,
+              "low": 43500,
+              "target": 61000
+            },
+            "total": {
+              "high": 430000,
+              "low": 330000,
+              "target": 421000
+            }
+          }
+        },
+        {
+          "plan": "2022-2024",
+          "tabled": "2022-02-14",
+          "values": {
+            "economic": {
+              "high": 259000,
+              "low": 222000,
+              "target": 253000
+            },
+            "family": {
+              "high": 113000,
+              "low": 94000,
+              "target": 109500
+            },
+            "fhs": {
+              "high": 84000,
+              "low": 63000,
+              "target": 75750
+            },
+            "humanitarian": {
+              "high": 11000,
+              "low": 7000,
+              "target": 10500
+            },
+            "pnp": {
+              "high": 95000,
+              "low": 82000,
+              "target": 86000
+            },
+            "refugees": {
+              "high": 82000,
+              "low": 57000,
+              "target": 74055
+            },
+            "total": {
+              "high": 465000,
+              "low": 380000,
+              "target": 447055
+            }
+          }
+        },
+        {
+          "plan": "2023-2025",
+          "tabled": "2022-11-01",
+          "values": {
+            "economic": {
+              "high": 277250,
+              "low": 233000,
+              "target": 266210
+            },
+            "family": {
+              "high": 118000,
+              "low": 100000,
+              "target": 106500
+            },
+            "fhs": {
+              "high": 88000,
+              "low": 67750,
+              "target": 82880
+            },
+            "humanitarian": {
+              "high": 16750,
+              "low": 11000,
+              "target": 15985
+            },
+            "pnp": {
+              "high": 110000,
+              "low": 91000,
+              "target": 105500
+            },
+            "refugees": {
+              "high": 93000,
+              "low": 66000,
+              "target": 76305
+            },
+            "total": {
+              "high": 505000,
+              "low": 410000,
+              "target": 465000
+            }
+          }
+        }
+      ],
+      "year": 2023
+    },
+    {
+      "actual": {
+        "economic": 281615,
+        "family": 105990,
+        "fhs": 92730,
+        "humanitarian": 19310,
+        "pnp": 114915,
+        "refugees": 76690,
+        "total": 483655
+      },
+      "monthsReported": 12,
+      "priorSamePeriod": null,
+      "target": {
+        "notional": false,
+        "plan": "2024-2026",
+        "values": {
+          "economic": {
+            "high": 305000,
+            "low": 250000,
+            "target": 281135
+          },
+          "family": {
+            "high": 130000,
+            "low": 105000,
+            "target": 114000
+          },
+          "fhs": {
+            "high": 116000,
+            "low": 90000,
+            "target": 110770
+          },
+          "humanitarian": {
+            "high": 17500,
+            "low": 9000,
+            "target": 13750
+          },
+          "pnp": {
+            "high": 117000,
+            "low": 105500,
+            "target": 110000
+          },
+          "refugees": {
+            "high": 93000,
+            "low": 66000,
+            "target": 76115
+          },
+          "total": {
+            "high": 532500,
+            "low": 430000,
+            "target": 485000
+          }
+        }
+      },
+      "versions": [
+        {
+          "plan": "2022-2024",
+          "tabled": "2022-02-14",
+          "values": {
+            "economic": {
+              "high": 273000,
+              "low": 235000,
+              "target": 267750
+            },
+            "family": {
+              "high": 117000,
+              "low": 99000,
+              "target": 113000
+            },
+            "fhs": {
+              "high": 118000,
+              "low": 91000,
+              "target": 111500
+            },
+            "humanitarian": {
+              "high": 9500,
+              "low": 6000,
+              "target": 7750
+            },
+            "pnp": {
+              "high": 98000,
+              "low": 88000,
+              "target": 93000
+            },
+            "refugees": {
+              "high": 75500,
+              "low": 50000,
+              "target": 62500
+            },
+            "total": {
+              "high": 475000,
+              "low": 390000,
+              "target": 451000
+            }
+          }
+        },
+        {
+          "plan": "2023-2025",
+          "tabled": "2022-11-01",
+          "values": {
+            "economic": {
+              "high": 305000,
+              "low": 250000,
+              "target": 281135
+            },
+            "family": {
+              "high": 130000,
+              "low": 105000,
+              "target": 114000
+            },
+            "fhs": {
+              "high": 115750,
+              "low": 89500,
+              "target": 109020
+            },
+            "humanitarian": {
+              "high": 14500,
+              "low": 9000,
+              "target": 13750
+            },
+            "pnp": {
+              "high": 120000,
+              "low": 105500,
+              "target": 110000
+            },
+            "refugees": {
+              "high": 93000,
+              "low": 66000,
+              "target": 76115
+            },
+            "total": {
+              "high": 542500,
+              "low": 430000,
+              "target": 485000
+            }
+          }
+        },
+        {
+          "plan": "2024-2026",
+          "tabled": "2023-11-01",
+          "values": {
+            "economic": {
+              "high": 305000,
+              "low": 250000,
+              "target": 281135
+            },
+            "family": {
+              "high": 130000,
+              "low": 105000,
+              "target": 114000
+            },
+            "fhs": {
+              "high": 116000,
+              "low": 90000,
+              "target": 110770
+            },
+            "humanitarian": {
+              "high": 17500,
+              "low": 9000,
+              "target": 13750
+            },
+            "pnp": {
+              "high": 117000,
+              "low": 105500,
+              "target": 110000
+            },
+            "refugees": {
+              "high": 93000,
+              "low": 66000,
+              "target": 76115
+            },
+            "total": {
+              "high": 532500,
+              "low": 430000,
+              "target": 485000
+            }
+          }
+        }
+      ],
+      "year": 2024
+    },
+    {
+      "actual": {
+        "economic": 228330,
+        "family": 96170,
+        "fhs": 79720,
+        "humanitarian": 10070,
+        "pnp": 85120,
+        "refugees": 59170,
+        "total": 393780
+      },
+      "monthsReported": 12,
+      "priorSamePeriod": null,
+      "target": {
+        "notional": false,
+        "plan": "2025-2027",
+        "values": {
+          "economic": {
+            "high": 256000,
+            "low": 215000,
+            "target": 232150
+          },
+          "family": {
+            "high": 102000,
+            "low": 88500,
+            "target": 94500
+          },
+          "fhs": {
+            "high": null,
+            "low": null,
+            "target": 124680
+          },
+          "humanitarian": {
+            "high": 13000,
+            "low": 8500,
+            "target": 10000
+          },
+          "pnp": {
+            "high": 65000,
+            "low": 20000,
+            "target": 55000
+          },
+          "refugees": {
+            "high": 65000,
+            "low": 55000,
+            "target": 58350
+          },
+          "total": {
+            "high": 436000,
+            "low": 367000,
+            "target": 395000
+          }
+        }
+      },
+      "versions": [
+        {
+          "plan": "2023-2025",
+          "tabled": "2022-11-01",
+          "values": {
+            "economic": {
+              "high": 326000,
+              "low": 265000,
+              "target": 301250
+            },
+            "family": {
+              "high": 135000,
+              "low": 107000,
+              "target": 118000
+            },
+            "fhs": {
+              "high": 121000,
+              "low": 93500,
+              "target": 114000
+            },
+            "humanitarian": {
+              "high": 9000,
+              "low": 6500,
+              "target": 8000
+            },
+            "pnp": {
+              "high": 129250,
+              "low": 112000,
+              "target": 117500
+            },
+            "refugees": {
+              "high": 80000,
+              "low": 64000,
+              "target": 72750
+            },
+            "total": {
+              "high": 550000,
+              "low": 442500,
+              "target": 500000
+            }
+          }
+        },
+        {
+          "plan": "2024-2026",
+          "tabled": "2023-11-01",
+          "values": {
+            "economic": {
+              "high": 326000,
+              "low": 265000,
+              "target": 301250
+            },
+            "family": {
+              "high": 135000,
+              "low": 107000,
+              "target": 118000
+            },
+            "fhs": {
+              "high": 124000,
+              "low": 96500,
+              "target": 117500
+            },
+            "humanitarian": {
+              "high": 12000,
+              "low": 6500,
+              "target": 8000
+            },
+            "pnp": {
+              "high": 130000,
+              "low": 113000,
+              "target": 120000
+            },
+            "refugees": {
+              "high": 80000,
+              "low": 64000,
+              "target": 72750
+            },
+            "total": {
+              "high": 550000,
+              "low": 442500,
+              "target": 500000
+            }
+          }
+        },
+        {
+          "plan": "2025-2027",
+          "tabled": "2024-10-24",
+          "values": {
+            "economic": {
+              "high": 256000,
+              "low": 215000,
+              "target": 232150
+            },
+            "family": {
+              "high": 102000,
+              "low": 88500,
+              "target": 94500
+            },
+            "fhs": {
+              "high": null,
+              "low": null,
+              "target": 124680
+            },
+            "humanitarian": {
+              "high": 13000,
+              "low": 8500,
+              "target": 10000
+            },
+            "pnp": {
+              "high": 65000,
+              "low": 20000,
+              "target": 55000
+            },
+            "refugees": {
+              "high": 65000,
+              "low": 55000,
+              "target": 58350
+            },
+            "total": {
+              "high": 436000,
+              "low": 367000,
+              "target": 395000
+            }
+          }
+        }
+      ],
+      "year": 2025
+    },
+    {
+      "actual": {
+        "economic": 142700,
+        "family": 59180,
+        "fhs": 56015,
+        "humanitarian": 4395,
+        "pnp": 58315,
+        "refugees": 56705,
+        "total": 262995
+      },
+      "monthsReported": 8,
+      "priorSamePeriod": {
+        "economic": 171840,
+        "family": 63340,
+        "fhs": 61590,
+        "humanitarian": 7230,
+        "pnp": 64355,
+        "refugees": 34560,
+        "total": 277065
+      },
+      "target": {
+        "notional": false,
+        "plan": "2026-2028",
+        "values": {
+          "economic": {
+            "high": 264000,
+            "low": 224000,
+            "target": 239800
+          },
+          "family": {
+            "high": 92000,
+            "low": 78500,
+            "target": 84000
+          },
+          "fhs": {
+            "high": 120000,
+            "low": 85000,
+            "target": 109000
+          },
+          "humanitarian": {
+            "high": 9000,
+            "low": 6000,
+            "target": 6900
+          },
+          "pnp": {
+            "high": 105000,
+            "low": 82000,
+            "target": 91500
+          },
+          "refugees": {
+            "high": 55000,
+            "low": 42000,
+            "target": 49300
+          },
+          "total": {
+            "high": 420000,
+            "low": 350000,
+            "target": 380000
+          }
+        }
+      },
+      "versions": [
+        {
+          "plan": "2024-2026",
+          "tabled": "2023-11-01",
+          "values": {
+            "economic": {
+              "high": 326000,
+              "low": 265000,
+              "target": 301250
+            },
+            "family": {
+              "high": 135000,
+              "low": 107000,
+              "target": 118000
+            },
+            "fhs": {
+              "high": 124000,
+              "low": 96500,
+              "target": 117500
+            },
+            "humanitarian": {
+              "high": 12000,
+              "low": 6500,
+              "target": 8000
+            },
+            "pnp": {
+              "high": 130000,
+              "low": 113000,
+              "target": 120000
+            },
+            "refugees": {
+              "high": 80000,
+              "low": 64000,
+              "target": 72750
+            },
+            "total": {
+              "high": 550000,
+              "low": 442500,
+              "target": 500000
+            }
+          }
+        },
+        {
+          "plan": "2025-2027",
+          "tabled": "2024-10-24",
+          "values": {
+            "economic": {
+              "high": 249000,
+              "low": 214000,
+              "target": 229750
+            },
+            "family": {
+              "high": 96000,
+              "low": 82000,
+              "target": 88000
+            },
+            "fhs": {
+              "high": null,
+              "low": null,
+              "target": 123230
+            },
+            "humanitarian": {
+              "high": 9000,
+              "low": 6000,
+              "target": 6900
+            },
+            "pnp": {
+              "high": 65000,
+              "low": 20000,
+              "target": 55000
+            },
+            "refugees": {
+              "high": 62000,
+              "low": 50000,
+              "target": 55350
+            },
+            "total": {
+              "high": 416000,
+              "low": 352000,
+              "target": 380000
+            }
+          }
+        },
+        {
+          "plan": "2026-2028",
+          "tabled": "2025-11-04",
+          "values": {
+            "economic": {
+              "high": 264000,
+              "low": 224000,
+              "target": 239800
+            },
+            "family": {
+              "high": 92000,
+              "low": 78500,
+              "target": 84000
+            },
+            "fhs": {
+              "high": 120000,
+              "low": 85000,
+              "target": 109000
+            },
+            "humanitarian": {
+              "high": 9000,
+              "low": 6000,
+              "target": 6900
+            },
+            "pnp": {
+              "high": 105000,
+              "low": 82000,
+              "target": 91500
+            },
+            "refugees": {
+              "high": 55000,
+              "low": 42000,
+              "target": 49300
+            },
+            "total": {
+              "high": 420000,
+              "low": 350000,
+              "target": 380000
+            }
+          }
+        }
+      ],
+      "year": 2026
+    },
+    {
+      "actual": null,
+      "monthsReported": 0,
+      "priorSamePeriod": null,
+      "target": {
+        "notional": false,
+        "plan": "2027-2029",
+        "values": {
+          "economic": {
+            "high": 270000,
+            "low": 230000,
+            "target": 244700
+          },
+          "family": {
+            "high": 89000,
+            "low": 76000,
+            "target": 81000
+          },
+          "fhs": {
+            "high": 123000,
+            "low": 87000,
+            "target": 100000
+          },
+          "humanitarian": {
+            "high": 8000,
+            "low": 4500,
+            "target": 5000
+          },
+          "pnp": {
+            "high": 106000,
+            "low": 83000,
+            "target": 95000
+          },
+          "refugees": {
+            "high": 55000,
+            "low": 42000,
+            "target": 49300
+          },
+          "total": {
+            "high": 422000,
+            "low": 352500,
+            "target": 380000
+          }
+        }
+      },
+      "versions": [
+        {
+          "plan": "2025-2027",
+          "tabled": "2024-10-24",
+          "values": {
+            "economic": {
+              "high": 246000,
+              "low": 207000,
+              "target": 225350
+            },
+            "family": {
+              "high": 89000,
+              "low": 77000,
+              "target": 81000
+            },
+            "fhs": {
+              "high": null,
+              "low": null,
+              "target": 118730
+            },
+            "humanitarian": {
+              "high": 6000,
+              "low": 4000,
+              "target": 4300
+            },
+            "pnp": {
+              "high": 65000,
+              "low": 20000,
+              "target": 55000
+            },
+            "refugees": {
+              "high": 60000,
+              "low": 50000,
+              "target": 54350
+            },
+            "total": {
+              "high": 401000,
+              "low": 338000,
+              "target": 365000
+            }
+          }
+        },
+        {
+          "plan": "2026-2028",
+          "tabled": "2025-11-04",
+          "values": {
+            "economic": {
+              "high": 268000,
+              "low": 229000,
+              "target": 244700
+            },
+            "family": {
+              "high": 90000,
+              "low": 75000,
+              "target": 81000
+            },
+            "fhs": {
+              "high": 122000,
+              "low": 86000,
+              "target": 111000
+            },
+            "humanitarian": {
+              "high": 7000,
+              "low": 4000,
+              "target": 5000
+            },
+            "pnp": {
+              "high": 106000,
+              "low": 82000,
+              "target": 92500
+            },
+            "refugees": {
+              "high": 55000,
+              "low": 42000,
+              "target": 49300
+            },
+            "total": {
+              "high": 420000,
+              "low": 350000,
+              "target": 380000
+            }
+          }
+        },
+        {
+          "plan": "2027-2029",
+          "tabled": "2026-11-05",
+          "values": {
+            "economic": {
+              "high": 270000,
+              "low": 230000,
+              "target": 244700
+            },
+            "family": {
+              "high": 89000,
+              "low": 76000,
+              "target": 81000
+            },
+            "fhs": {
+              "high": 123000,
+              "low": 87000,
+              "target": 100000
+            },
+            "humanitarian": {
+              "high": 8000,
+              "low": 4500,
+              "target": 5000
+            },
+            "pnp": {
+              "high": 106000,
+              "low": 83000,
+              "target": 95000
+            },
+            "refugees": {
+              "high": 55000,
+              "low": 42000,
+              "target": 49300
+            },
+            "total": {
+              "high": 422000,
+              "low": 352500,
+              "target": 380000
+            }
+          }
+        }
+      ],
+      "year": 2027
+    },
+    {
+      "actual": null,
+      "monthsReported": 0,
+      "priorSamePeriod": null,
+      "target": {
+        "notional": true,
+        "plan": "2027-2029",
+        "values": {
+          "economic": {
+            "high": 270000,
+            "low": 230000,
+            "target": 244700
+          },
+          "family": {
+            "high": 89000,
+            "low": 76000,
+            "target": 81000
+          },
+          "fhs": {
+            "high": 123000,
+            "low": 87000,
+            "target": 100000
+          },
+          "humanitarian": {
+            "high": 8000,
+            "low": 4500,
+            "target": 5000
+          },
+          "pnp": {
+            "high": 106000,
+            "low": 83000,
+            "target": 95000
+          },
+          "refugees": {
+            "high": 55000,
+            "low": 42000,
+            "target": 49300
+          },
+          "total": {
+            "high": 422000,
+            "low": 352500,
+            "target": 380000
+          }
+        }
+      },
+      "versions": [
+        {
+          "plan": "2026-2028",
+          "tabled": "2025-11-04",
+          "values": {
+            "economic": {
+              "high": 268000,
+              "low": 229000,
+              "target": 244700
+            },
+            "family": {
+              "high": 90000,
+              "low": 75000,
+              "target": 81000
+            },
+            "fhs": {
+              "high": 122000,
+              "low": 86000,
+              "target": 111000
+            },
+            "humanitarian": {
+              "high": 7000,
+              "low": 4000,
+              "target": 5000
+            },
+            "pnp": {
+              "high": 106000,
+              "low": 82000,
+              "target": 92500
+            },
+            "refugees": {
+              "high": 55000,
+              "low": 42000,
+              "target": 49300
+            },
+            "total": {
+              "high": 420000,
+              "low": 350000,
+              "target": 380000
+            }
+          }
+        },
+        {
+          "plan": "2027-2029",
+          "tabled": "2026-11-05",
+          "values": {
+            "economic": {
+              "high": 270000,
+              "low": 230000,
+              "target": 244700
+            },
+            "family": {
+              "high": 89000,
+              "low": 76000,
+              "target": 81000
+            },
+            "fhs": {
+              "high": 123000,
+              "low": 87000,
+              "target": 100000
+            },
+            "humanitarian": {
+              "high": 8000,
+              "low": 4500,
+              "target": 5000
+            },
+            "pnp": {
+              "high": 106000,
+              "low": 83000,
+              "target": 95000
+            },
+            "refugees": {
+              "high": 55000,
+              "low": 42000,
+              "target": 49300
+            },
+            "total": {
+              "high": 422000,
+              "low": 352500,
+              "target": 380000
+            }
+          }
+        }
+      ],
+      "year": 2028
+    },
+    {
+      "actual": null,
+      "monthsReported": 0,
+      "priorSamePeriod": null,
+      "target": {
+        "notional": true,
+        "plan": "2027-2029",
+        "values": {
+          "economic": {
+            "high": 270000,
+            "low": 230000,
+            "target": 244700
+          },
+          "family": {
+            "high": 89000,
+            "low": 76000,
+            "target": 81000
+          },
+          "fhs": {
+            "high": 123000,
+            "low": 87000,
+            "target": 100000
+          },
+          "humanitarian": {
+            "high": 8000,
+            "low": 4500,
+            "target": 5000
+          },
+          "pnp": {
+            "high": 106000,
+            "low": 83000,
+            "target": 95000
+          },
+          "refugees": {
+            "high": 55000,
+            "low": 42000,
+            "target": 49300
+          },
+          "total": {
+            "high": 422000,
+            "low": 352500,
+            "target": 380000
+          }
+        }
+      },
+      "versions": [
+        {
+          "plan": "2027-2029",
+          "tabled": "2026-11-05",
+          "values": {
+            "economic": {
+              "high": 270000,
+              "low": 230000,
+              "target": 244700
+            },
+            "family": {
+              "high": 89000,
+              "low": 76000,
+              "target": 81000
+            },
+            "fhs": {
+              "high": 123000,
+              "low": 87000,
+              "target": 100000
+            },
+            "humanitarian": {
+              "high": 8000,
+              "low": 4500,
+              "target": 5000
+            },
+            "pnp": {
+              "high": 106000,
+              "low": 83000,
+              "target": 95000
+            },
+            "refugees": {
+              "high": 55000,
+              "low": 42000,
+              "target": 49300
+            },
+            "total": {
+              "high": 422000,
+              "low": 352500,
+              "target": 380000
+            }
+          }
+        }
+      ],
+      "year": 2029
+    }
+  ]
+}

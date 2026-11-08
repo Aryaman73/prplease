@@ -68,6 +68,7 @@ Total shipped weight is ~12.5 KB of JS and ~4.1 KB of CSS, gzipped.
 | `#/log` | Entry Log — CRS cut-off over time, and the ledger of every round |
 | `#/pool` | The Pool — CRS composition of the pool over time |
 | `#/high-wage` | High Wage — the November 2026 high-wage occupation points, a score check, and a projection of the next CEC cut-off |
+| `#/admissions` | Admissions — permanent residents actually admitted each year, against the levels plan targets |
 | `#/file` | Your File — queue position from IRCC data, and a personal milestone tracker |
 | `#/rulebook` | Rulebook — the glossary |
 
@@ -168,6 +169,22 @@ node dataviz/scripts/validate_palette.js "#9c6420,#2a6ba8" --mode light --surfac
 
 As on Your File, the score-check inputs stay in `localStorage`.
 
+### Admissions (`#/admissions`)
+
+The far end of the pipeline: people who actually *became* permanent residents each
+year (landings), by class, against the immigration levels plan. An ITA is not an
+admission, and family, refugee and most PNP admissions never touch Express Entry.
+
+- **Each year's target is the one from the plan that starts with that year.** Plans
+  cover three years and their out-years are notional; those earlier figures are
+  kept and drawn as open rings, because the goalposts moving is the story (2025 was
+  500,000 in two plans before it became 395,000). Out-year ticks are dashed.
+- **The year in progress is hatched, not solid**, and is compared against the same
+  months of the previous year and the share of the year elapsed. No run-rate
+  forecast is drawn: admissions are lumpy and December is often heavy.
+- **Federal High Skilled** is CEC + FSW + FST outside Quebec, matching the plan's own
+  definition. Quebec's block reuses the label "Skilled Worker" for its own program.
+
 ### Interaction
 
 Every chart gets a crosshair that snaps to the nearest point by date, and keyboard
@@ -185,6 +202,13 @@ to write anything if the shape has drifted.
 | `ee_rounds_123_en.json` | Every round of invitations since 2015-01-31 (431 and counting): date, category, size, CRS cutoff, tie-break timestamp, and the full CRS pool distribution as of that draw. |
 | `flpt-en.json` | Current processing time, total applications waiting, and — the useful part — **people ahead of you, keyed by AOR month**, per stream. |
 | `data-ptime-non-country-en.json` | Odds and ends, including Federal Skilled Trades, which has no stream of its own in the feed above. |
+| `EN_ODP-PR-ProvImmCat.xlsx` | Monthly PR admissions by province and immigration class since January 2015, from the [open data portal](https://open.canada.ca/data/en/dataset/f7e5498e-0ad8-4417-85c9-9b8aff9b9eda). Read by `scripts/admissions.mjs` with a zero-dependency zip/XML reader. |
+
+The fourth source is isolated: if the workbook fails to fetch or its layout drifts,
+the sync reports it and leaves `admissions.json` as it was, rather than holding back
+a new round. Levels plan targets are hand-curated in `data/levels.json` (one entry
+per plan, with its canada.ca source); `sync.mjs` checks that every plan's class
+targets sum to its overall target. Add the new plan there each November.
 
 ### Things upstream does that you should know about
 
@@ -211,6 +235,7 @@ These are handled, but they explain why the parsers look defensive:
 | `public/data/draws.json` | Normalized rounds, newest first, with pool distributions. ~31 KB gzipped. |
 | `public/data/processing.json` | EE streams with current times and per-AOR-month queue positions. |
 | `public/data/timelines.json` | Aggregated community timelines (percentiles only). |
+| `public/data/admissions.json` | PR admissions by year and month per class, joined to every levels plan's targets. ~9 KB gzipped. |
 | `public/data/meta.json` | Content hashes, upstream update dates, and any warnings. |
 | `data/history/processing/YYYY-MM-DD.json` | Daily snapshot — see below. |
 

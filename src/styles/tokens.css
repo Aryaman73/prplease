@@ -89,6 +89,20 @@
   --chart-before: #9c6420;
 
   /*
+   * Admissions columns against the levels plan: the accent at or under target,
+   * a burnt orange over target but inside the range, a crimson outside the range.
+   * Chart colours, not --stamp-red: stamps are rationed. A brighter orange sat
+   * too close to red or fell under 3:1 on parchment; the red leans crimson to
+   * pull away from the orange.
+   *   node dataviz/scripts/validate_palette.js "#2a6ba8,#a06418,#8f2840" \
+   *        --mode light --surface "#d7cdb8" --pairs all
+   *   → all checks PASS (worst CVD ΔE 13.3 deutan, normal-vision ΔE 16.4, contrast >= 3:1).
+   * The legend names each, and the tooltip and ledger say it in words.
+   */
+  --chart-over: #a06418;
+  --chart-outside: #8f2840;
+
+  /*
    * High-wage tiers are an ordered scale, so they take three steps of the pool ramp.
    *   node dataviz/scripts/validate_palette.js "#6b93b3,#3b5a78,#14273d" \
    *        --ordinal --mode light --surface "#d7cdb8"   → all checks PASS.

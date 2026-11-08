@@ -12,7 +12,9 @@
  * a type annotation cannot do.
  *
  * Reads three upstream feeds, asserts their shape, normalizes them, and writes
- * public/data/*.json. Also appends a dated snapshot to data/history/ — IRCC only
+ * public/data/*.json. A fourth source, IRCC's monthly PR admissions workbook, is
+ * handled by scripts/admissions.mjs and is isolated: if it fails, the draws still
+ * ship and admissions.json keeps its last-good contents. Also appends a dated snapshot to data/history/ — IRCC only
  * publishes *current* processing times, so the series only exists if we keep it.
  *
  * Exit codes: 0 = success (data may or may not have changed), 1 = upstream schema
@@ -24,10 +26,13 @@ import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { ADMISSIONS_URL, AdmissionsError, buildAdmissions, parseAdmissions } from './admissions.mjs';
+
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT_DIR = join(ROOT, 'public', 'data');
 const HISTORY_DIR = join(ROOT, 'data', 'history');
 const TIMELINES_CSV = join(ROOT, 'data', 'timelines.csv');
+const LEVELS_JSON = join(ROOT, 'data', 'levels.json');
 
 const SOURCES = {
   rounds: 'https://www.canada.ca/content/dam/ircc/documents/json/ee_rounds_123_en.json',
@@ -168,6 +173,45 @@ async function fetchJson(url, attempts = 3) {
     }
   }
   throw new Error(`fetch failed after ${attempts} attempts: ${url} — ${lastError?.message}`);
+}
+
+/** Binary fetch for the admissions workbook. Same retry policy as fetchJson. */
+async function fetchBuffer(url, attempts = 3) {
+  let lastError;
+  for (let i = 1; i <= attempts; i++) {
+    try {
+      const res = await fetch(url, {
+        headers: { 'user-agent': 'prplease-sync (+https://aryamans.me/prplease)' },
+        signal: AbortSignal.timeout(60_000),
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const buf = Buffer.from(await res.arrayBuffer());
+      // An HTML error page with a 200 would otherwise surface as "not a zip".
+      if (buf.toString('latin1', 0, 2) !== 'PK') throw new Error('expected an xlsx (zip), got something else');
+      return buf;
+    } catch (err) {
+      lastError = err;
+      if (i < attempts) await new Promise((r) => setTimeout(r, 1000 * i));
+    }
+  }
+  throw new Error(`fetch failed after ${attempts} attempts: ${url} — ${lastError?.message}`);
+}
+
+/**
+ * Admissions are a separate concern from draws, published monthly by a different
+ * IRCC system. A failure here must not block a new round from reaching the site,
+ * so it is caught and reported, and the previous admissions.json stands.
+ */
+async function syncAdmissions() {
+  try {
+    const levels = JSON.parse(await readFile(LEVELS_JSON, 'utf8'));
+    const workbook = await fetchBuffer(ADMISSIONS_URL);
+    const data = buildAdmissions(parseAdmissions(workbook), levels);
+    return { data, error: null };
+  } catch (err) {
+    const kind = err instanceof AdmissionsError ? 'schema drift' : 'failure';
+    return { data: null, error: `admissions ${kind}: ${err.message}` };
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -617,10 +661,11 @@ async function main() {
   const startedAt = new Date().toISOString();
   console.log(`[sync] starting ${startedAt}`);
 
-  const [roundsRaw, flptRaw, ptimeRaw] = await Promise.all([
+  const [roundsRaw, flptRaw, ptimeRaw, admissions] = await Promise.all([
     fetchJson(SOURCES.rounds),
     fetchJson(SOURCES.flpt),
     fetchJson(SOURCES.ptime),
+    syncAdmissions(),
   ]);
   console.log('[sync] fetched all three sources');
 
@@ -634,6 +679,9 @@ async function main() {
     writeJson(join(OUT_DIR, 'processing.json'), processing.data),
     writeJson(join(OUT_DIR, 'timelines.json'), timelines.data),
   ]);
+  const admissionsWritten = admissions.data
+    ? await writeJson(join(OUT_DIR, 'admissions.json'), admissions.data)
+    : null;
 
   // Daily snapshot of processing times. IRCC publishes only current values, so
   // this file is the only place the series will ever exist. Named by UTC date;
@@ -654,7 +702,7 @@ async function main() {
     snapshotCount = (await readdir(join(HISTORY_DIR, 'processing'))).filter((f) => f.endsWith('.json')).length;
   } catch { /* first run */ }
 
-  const dataChanged = written.some((w) => w.changed);
+  const dataChanged = written.some((w) => w.changed) || Boolean(admissionsWritten?.changed);
 
   // `dataChangedAt` only moves when content actually moves, so meta.json is stable
   // on no-op runs and the cron produces no empty commits. The workflow run history
@@ -672,9 +720,21 @@ async function main() {
         streams: processing.data.streams.length, hash: written[1].hash,
       },
       timelines: { source: 'data/timelines.csv (hand-curated)', records: timelines.data.rows, hash: written[2].hash },
+      // On a failed run the previous entry is carried forward, so meta never
+      // claims a freshness the file on disk doesn't have.
+      admissions: admissions.data
+        ? {
+          url: ADMISSIONS_URL, levels: 'data/levels.json (hand-curated)',
+          upstreamAsOf: admissions.data.source.asOf, through: admissions.data.source.through,
+          plans: admissions.data.plans.length, hash: admissionsWritten.hash,
+        }
+        : (previousMeta.sources?.admissions ?? null),
     },
     history: { processingSnapshots: snapshotCount },
-    warnings: { ...rounds.warnings, ...timelines.warnings },
+    warnings: {
+      ...rounds.warnings, ...timelines.warnings,
+      admissionsClassSumMismatches: admissions.data?.warnings.classSumMismatches ?? [],
+    },
   };
   await writeJson(join(OUT_DIR, 'meta.json'), meta);
 
@@ -710,6 +770,10 @@ async function main() {
     notice(`${unparsedTieBreaks} tie-break timestamp(s) unparseable — a new upstream format, only draw 208 is expected`);
   } else if (unparsedTieBreaks) {
     console.warn('[warn] 1 tie-break timestamp unparseable (draw 208, no year upstream) — raw string retained');
+  }
+  if (admissions.error) notice(`${admissions.error} — admissions.json left as it was`);
+  for (const m of meta.warnings.admissionsClassSumMismatches) {
+    notice(`admissions ${m.year}: classes sum to ${m.sumOfClasses} against IRCC's total of ${m.total}`);
   }
   if (timelineErrors.length) {
     notice(`${timelineErrors.length} timeline row(s) rejected`);

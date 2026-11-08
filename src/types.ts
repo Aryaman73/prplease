@@ -151,3 +151,37 @@ export interface HighWage {
     bases: StockBase[];
   };
 }
+
+/** Shape of public/data/admissions.json, written by scripts/admissions.mjs. */
+export type AdmissionsKey = 'total' | 'economic' | 'fhs' | 'pnp' | 'family' | 'refugees' | 'humanitarian';
+
+export interface PlanFigure {
+  /** Null where a plan published a range only (2015). */
+  target: number | null;
+  low: number | null;
+  high: number | null;
+}
+
+/** A plan's figures for one year. Null where the plan set none for that category. */
+export type PlanYear = Record<AdmissionsKey, PlanFigure | null>;
+
+export interface AdmissionsYear {
+  year: number;
+  /** 12 for a complete year, fewer for the year in progress, 0 for future years. */
+  monthsReported: number;
+  actual: Record<AdmissionsKey, number> | null;
+  /** The same months of the previous year, only for a partial year. */
+  priorSamePeriod: Record<AdmissionsKey, number> | null;
+  target: { plan: string; notional: boolean; values: PlanYear } | null;
+  /** Every plan that set a figure for this year, oldest first. */
+  versions: { plan: string; tabled: string; values: PlanYear }[];
+}
+
+export interface Admissions {
+  source: { url: string; dataset: string; asOf: string | null; through: string };
+  categories: { key: AdmissionsKey; label: string }[];
+  months: string[];
+  monthly: Record<AdmissionsKey, number[]>;
+  years: AdmissionsYear[];
+  plans: { key: string; tabled: string; url: string; notes: string[] }[];
+}
