@@ -10,15 +10,16 @@ import { niceTicks, svgEl } from './svg';
  * band behind it. Earlier plans' figures for the same year sit on the column as
  * open rings — the goalposts as they were before they moved.
  *
- * A column that went over its target turns red. That includes the year in
- * progress once it has already passed the full-year figure; short of that, a
- * partial year is never judged.
+ * Column colour says how the year landed against the plan: blue at or under
+ * target and inside the range, orange over target but still inside the range,
+ * red outside the range in either direction. The year in progress is judged
+ * only on what it has already passed — over the full-year target or above the
+ * range's top — never on a shortfall that the remaining months could close.
  *
  * The year in progress is hatched rather than solid: it is a real count, but of
- * fewer than twelve months, and a solid column beside complete years would read
- * as a shortfall that hasn't happened. Future years carry targets only. Targets
- * from a plan's out-years are notional, so their tick is dashed — the one place
- * a dash appears, because it is genuinely a projection.
+ * fewer than twelve months. Future years carry targets only. A plan's out-year
+ * targets are notional, but they are drawn exactly like current ones; the
+ * tooltip and ledger say which plan set each.
  */
 
 const MARGIN = { top: 18, right: 10, bottom: 30, left: 46 };
@@ -99,7 +100,8 @@ function paint(container: HTMLElement, { years, category, categoryLabel }: Admis
 
   // Hatching for the partial year, at 45° on paper — one per column colour.
   const defs = svgEl('defs', {});
-  for (const [id, ink] of [['adm-hatch', 'adm-hatch__ink'], ['adm-hatch-over', 'adm-hatch__ink adm-hatch__ink--over']]) {
+  for (const tone of ['within', 'over', 'outside'] as const) {
+    const [id, ink] = [`adm-hatch-${tone}`, `adm-hatch__ink adm-hatch__ink--${tone}`];
     const pattern = svgEl('pattern', {
       id: id!, width: 5, height: 5, patternUnits: 'userSpaceOnUse', patternTransform: 'rotate(45)',
     });
@@ -138,15 +140,15 @@ function paint(container: HTMLElement, { years, category, categoryLabel }: Admis
       marks.append(svgEl('rect', {
         x: x - tickHalf, width: tickHalf * 2,
         y: yOf(f.high), height: Math.max(1, yOf(f.low) - yOf(f.high)),
-        class: `adm-range${y.target?.notional ? ' adm-range--notional' : ''}`,
+        class: 'adm-range',
       }));
     }
 
     const actual = y.actual?.[category];
     if (actual != null && y.monthsReported > 0) {
       const partial = y.monthsReported < 12;
-      const over = isOver(y, category) ? ' adm-bar--over' : '';
-      marks.append(column(x - barW / 2, barW, yOf(actual), yOf(0), `adm-bar${partial ? ' adm-bar--partial' : ''}${over}`));
+      const tone = TONE[standingOf(y, category) ?? 'within'];
+      marks.append(column(x - barW / 2, barW, yOf(actual), yOf(0), `adm-bar adm-bar--${tone}${partial ? ' adm-bar--partial' : ''}`));
       if (partial && !compact) {
         svg.append(text(monthsLabel(y.monthsReported), x, yOf(actual) - 6, 'chart__tick adm-partial-label'));
       }
@@ -171,7 +173,7 @@ function paint(container: HTMLElement, { years, category, categoryLabel }: Admis
     if (t) {
       overlay.append(svgEl('line', {
         x1: x - tickHalf, x2: x + tickHalf, y1: yOf(t), y2: yOf(t),
-        class: `adm-target${y.target?.notional ? ' adm-target--notional' : ''}`,
+        class: 'adm-target',
       }));
     }
   });
@@ -230,11 +232,32 @@ function paint(container: HTMLElement, { years, category, categoryLabel }: Admis
   });
 }
 
-/** Admitted more than the year's target — for a partial year, already past the full-year figure. */
-export function isOver(y: AdmissionsYear, key: AdmissionsKey): boolean {
+export type Standing = 'within' | 'over' | 'above' | 'below';
+
+export const STANDING_LABEL: Record<Standing, string> = {
+  within: 'Within range', over: 'Over target', above: 'Above range', below: 'Below range',
+};
+
+/** Colour group: above and below the range share one. */
+const TONE: Record<Standing, 'within' | 'over' | 'outside'> = {
+  within: 'within', over: 'over', above: 'outside', below: 'outside',
+};
+
+/**
+ * How a year landed against its plan, or null with nothing to judge. A year in
+ * progress can already be over target or above range, but not yet below range.
+ * Where a plan gave a target and no range (Express Entry in 2025–2027), only
+ * "over" can be said; with a range and no target (2015), only the range.
+ */
+export function standingOf(y: AdmissionsYear, key: AdmissionsKey): Standing | null {
   const actual = y.monthsReported > 0 ? y.actual?.[key] : undefined;
-  const target = y.target?.values[key]?.target;
-  return actual != null && target != null && actual > target;
+  const f = y.target?.values[key];
+  if (actual == null || !f) return null;
+  const complete = y.monthsReported === 12;
+  if (f.high != null && actual > f.high) return 'above';
+  if (complete && f.low != null && actual < f.low) return 'below';
+  if (f.target != null && actual > f.target) return 'over';
+  return f.target != null || complete ? 'within' : null;
 }
 
 /**
@@ -249,12 +272,15 @@ function tooltipRows(y: AdmissionsYear, key: AdmissionsKey): HTMLElement[] {
   const rows: HTMLElement[] = [node('div', 'chart__tooltip-value', String(y.year))];
 
   if (actual !== null) rows.push(row(partial ? `Admitted, ${monthsLabel(y.monthsReported).toLowerCase()}` : 'Admitted', int(actual)));
-  if (target) rows.push(row(y.target?.notional ? 'Target (notional)' : 'Target', int(target)));
+  if (target) rows.push(row('Target', int(target)));
 
   let meta = '';
+  const s = standingOf(y, key);
   if (actual !== null && target) {
     const share = `${((actual / target) * 100).toFixed(0)}% of target`;
-    meta = isOver(y, key) ? `Over target · ${share}` : share;
+    meta = s && s !== 'within' ? `${STANDING_LABEL[s]} · ${share}` : share;
+  } else if (s && s !== 'within') {
+    meta = STANDING_LABEL[s];
   } else if (!target && actual === null) {
     meta = 'No figure for this category';
   }

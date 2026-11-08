@@ -1,4 +1,4 @@
-import { monthsLabel, planLabel, renderAdmissionsChart } from '../chart/admissions';
+import { monthsLabel, planLabel, renderAdmissionsChart, STANDING_LABEL, standingOf } from '../chart/admissions';
 import { el, field } from '../dom';
 import { dash, int, stampDate } from '../format';
 import type { Admissions, AdmissionsKey, AdmissionsYear, PlanFigure } from '../types';
@@ -31,23 +31,6 @@ let selected: AdmissionsKey = 'total';
 const pct = (n: number) => `${(n * 100).toFixed(0)}%`;
 const range = (f: PlanFigure | null) =>
   f?.low != null && f.high != null ? `${int(f.low)} – ${int(f.high)}` : dash;
-
-type Standing = 'above' | 'within' | 'below';
-
-/** Judged against the range where there is one — that is what the plan commits to. */
-function standing(actual: number, f: PlanFigure | null): Standing | null {
-  if (!f) return null;
-  if (f.low != null && f.high != null) {
-    if (actual > f.high) return 'above';
-    if (actual < f.low) return 'below';
-    return 'within';
-  }
-  return null;
-}
-
-const STANDING_LABEL: Record<Standing, string> = {
-  above: 'Above range', within: 'Within range', below: 'Below range',
-};
 
 export function renderAdmissions(data: Admissions | null): HTMLElement {
   if (!data) {
@@ -126,11 +109,11 @@ export function renderAdmissions(data: Admissions | null): HTMLElement {
         el(
           'div',
           { class: 'hw-legend adm-legend' },
-          el('span', {}, el('i', { class: 'adm-key adm-key--bar' }), 'Admitted'),
-          el('span', {}, el('i', { class: 'adm-key adm-key--over' }), 'Over target'),
+          el('span', {}, el('i', { class: 'adm-key adm-key--within' }), 'At or under target'),
+          el('span', {}, el('i', { class: 'adm-key adm-key--over' }), 'Over target, within range'),
+          el('span', {}, el('i', { class: 'adm-key adm-key--outside' }), 'Outside range'),
           el('span', {}, el('i', { class: 'adm-key adm-key--partial' }), 'Year to date'),
           el('span', {}, el('i', { class: 'adm-key adm-key--target' }), 'Target'),
-          el('span', {}, el('i', { class: 'adm-key adm-key--notional' }), 'Notional target'),
           el('span', {}, el('i', { class: 'adm-key adm-key--range' }), 'Planning range'),
           el('span', {}, el('i', { class: 'adm-key adm-key--earlier' }), 'An earlier plan’s figure'),
         ),
@@ -225,7 +208,7 @@ function yearTable(years: AdmissionsYear[], key: AdmissionsKey) {
     el('th', { class: 'num', text: 'Target', attrs: { scope: 'col' } }),
     el('th', { class: 'num', text: 'Range', attrs: { scope: 'col' } }),
     el('th', { class: 'num', text: 'Of target', attrs: { scope: 'col' } }),
-    el('th', { text: 'Against range', attrs: { scope: 'col' } }),
+    el('th', { text: 'Against plan', attrs: { scope: 'col' } }),
     el('th', { text: 'Set in', attrs: { scope: 'col' } }),
     el('th', { text: 'Earlier plans', attrs: { scope: 'col' } }),
   );
@@ -235,7 +218,8 @@ function yearTable(years: AdmissionsYear[], key: AdmissionsKey) {
     const f = y.target?.values[key] ?? null;
     const actual = y.monthsReported > 0 ? y.actual?.[key] ?? null : null;
     const complete = y.monthsReported === 12;
-    const s = actual !== null && complete ? standing(actual, f) : null;
+    // A year in progress is only labelled once it has crossed something.
+    const s = complete || standingOf(y, key) !== 'within' ? standingOf(y, key) : null;
     const earlier = y.versions
       .filter((v) => v.plan !== y.target?.plan && v.values[key]?.target)
       .map((v) => `${int(v.values[key]!.target)} (${planLabel(v.plan)})`)
@@ -249,7 +233,7 @@ function yearTable(years: AdmissionsYear[], key: AdmissionsKey) {
         class: `num strong${complete ? '' : ' muted'}`,
         text: actual === null ? dash : complete ? int(actual) : `${int(actual)} (${monthsLabel(y.monthsReported).toLowerCase()})`,
       }),
-      el('td', { class: `num${y.target?.notional ? ' muted' : ''}`, text: f?.target ? int(f.target) : dash }),
+      el('td', { class: 'num', text: f?.target ? int(f.target) : dash }),
       el('td', { class: 'num', text: range(f) }),
       el('td', { class: 'num', text: actual !== null && complete && f?.target ? `${((actual / f.target) * 100).toFixed(1)}%` : dash }),
       el('td', { text: s ? STANDING_LABEL[s] : dash }),

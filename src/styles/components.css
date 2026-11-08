@@ -1093,40 +1093,38 @@
 /* ---------------------------------------------------------------------------
  * Admissions — actual landings against the levels plan.
  *
- * Columns are the chart accent, or --chart-over where admissions passed the
- * target. The plan itself is drawn in ink: a target is a reference, not a
- * series, so it takes no hue of its own.
+ * Columns take one of three colours by how the year landed: the accent at or
+ * under target, --chart-over above target but inside the range, --chart-outside
+ * beyond the range. The plan itself is drawn in ink: a target is a reference,
+ * not a series, so it takes no hue of its own.
  * ------------------------------------------------------------------------- */
 
-.adm-bar { fill: var(--chart-accent); }
-/* The year in progress: the same count, hatched so it can't read as a shortfall. */
-.adm-bar--partial { fill: url(#adm-hatch); }
+.adm-bar--within { fill: var(--chart-accent); }
 .adm-bar--over { fill: var(--chart-over); }
-.adm-bar--partial.adm-bar--over { fill: url(#adm-hatch-over); }
+.adm-bar--outside { fill: var(--chart-outside); }
+/* The year in progress: the same count, hatched so it can't read as a shortfall. */
+.adm-bar--within.adm-bar--partial { fill: url(#adm-hatch-within); }
+.adm-bar--over.adm-bar--partial { fill: url(#adm-hatch-over); }
+.adm-bar--outside.adm-bar--partial { fill: url(#adm-hatch-outside); }
 .adm-hatch__ground { fill: var(--paper); }
-.adm-hatch__ink { fill: var(--chart-accent); }
+.adm-hatch__ink--within { fill: var(--chart-accent); }
 .adm-hatch__ink--over { fill: var(--chart-over); }
+.adm-hatch__ink--outside { fill: var(--chart-outside); }
 .adm-range { fill: var(--ink); opacity: 0.1; }
-.adm-range--notional { opacity: 0.06; }
 .adm-target { stroke: var(--ink); stroke-width: 2; }
-/* Notional out-year targets are projections, so this is the one dashed mark. */
-.adm-target--notional { stroke-dasharray: 3 2; }
 .adm-earlier { fill: var(--paper); stroke: var(--ink-soft); stroke-width: 1.5; }
 .adm-partial-label { fill: var(--ink-soft); }
 
 .adm-legend { flex-wrap: wrap; row-gap: var(--space-2); }
-.adm-key--bar { background: var(--chart-accent); }
+.adm-key--within { background: var(--chart-accent); }
 .adm-key--over { background: var(--chart-over); }
+.adm-key--outside { background: var(--chart-outside); }
 .adm-key--partial {
   background: repeating-linear-gradient(45deg, var(--chart-accent) 0 2px, var(--paper) 2px 4px);
   box-shadow: inset 0 0 0 1px var(--chart-accent);
 }
 .adm-key--range { background: rgba(38, 36, 30, 0.1); }
-.hw-legend i.adm-key--target,
-.hw-legend i.adm-key--notional { width: 14px; height: 2px; vertical-align: 3px; background: var(--ink); }
-.hw-legend i.adm-key--notional {
-  background: repeating-linear-gradient(90deg, var(--ink) 0 3px, transparent 3px 5px);
-}
+.hw-legend i.adm-key--target { width: 14px; height: 2px; vertical-align: 3px; background: var(--ink); }
 .hw-legend i.adm-key--earlier {
   width: 8px; height: 8px;
   border: 1.5px solid var(--ink-soft);
