@@ -1,7 +1,7 @@
 import { crest } from './crest';
 import { el } from './dom';
 import { int, stampDate } from './format';
-import { ROUTES, type Route } from './router';
+import { GROUPS, ROUTES, type Route } from './router';
 import type { Meta, Round } from './types';
 
 /** A stencilled sign bolted above the window, and the clock beside it. */
@@ -25,21 +25,43 @@ export function masthead(meta: Meta | null, latest: Round | undefined) {
   );
 }
 
-/** Index tabs on a file divider. */
+/**
+ * Index tabs on a file divider, one per group. A group with more than one view
+ * gets a typed sub-index under the divider; a group's tab goes to its first view.
+ */
 export function nav(active: Route) {
+  const current = (on: boolean): Record<string, string> => (on ? { 'aria-current': 'page' } : {});
+  const members = ROUTES.filter((r) => r.group === active.group);
+
   return el(
     'nav',
-    { class: 'tabs', attrs: { 'aria-label': 'Sections' } },
-    ...ROUTES.map((route) =>
-      el('a', {
-        class: `tab${route.key === active.key ? ' tab--active' : ''}`,
-        text: route.label,
-        attrs: {
-          href: route.hash,
-          ...(route.key === active.key ? { 'aria-current': 'page' } : {}),
-        },
+    { class: 'index', attrs: { 'aria-label': 'Sections' } },
+    el(
+      'div',
+      { class: 'tabs' },
+      ...GROUPS.map((group) => {
+        const first = ROUTES.find((r) => r.group === group.key)!;
+        const on = group.key === active.group;
+        return el('a', {
+          class: `tab${on ? ' tab--active' : ''}`,
+          text: group.label,
+          attrs: { href: first.hash, ...current(on && members.length === 1) },
+        });
       }),
     ),
+    members.length > 1
+      ? el(
+          'div',
+          { class: 'subtabs' },
+          ...members.map((route) =>
+            el('a', {
+              class: `subtab${route.key === active.key ? ' subtab--active' : ''}`,
+              text: route.label,
+              attrs: { href: route.hash, ...current(route.key === active.key) },
+            }),
+          ),
+        )
+      : null,
   );
 }
 
