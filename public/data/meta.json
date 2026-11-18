@@ -1,16 +1,16 @@
 {
-  "dataChangedAt": "2026-10-28T22:55:24.998Z",
+  "dataChangedAt": "2026-11-18T01:26:44.127Z",
   "generator": "scripts/sync.mjs",
   "history": {
-    "processingSnapshots": 116
+    "processingSnapshots": 117
   },
   "sources": {
     "admissions": {
-      "hash": "b590c775d5efd315",
+      "hash": "3c4f16719252f0b4",
       "levels": "data/levels.json (hand-curated)",
       "plans": 13,
-      "through": "2026-08",
-      "upstreamAsOf": "2026-08-31",
+      "through": "2026-09",
+      "upstreamAsOf": "2026-09-30",
       "url": "https://www.ircc.canada.ca/opendata-donneesouvertes/data/EN_ODP-PR-ProvImmCat.xlsx"
     },
     "draws": {
@@ -19,9 +19,9 @@
       "url": "https://www.canada.ca/content/dam/ircc/documents/json/ee_rounds_123_en.json"
     },
     "processing": {
-      "hash": "d51821ea3d626467",
+      "hash": "04caa49c5584e83c",
       "streams": 4,
-      "upstreamUpdated": "October 9, 2026",
+      "upstreamUpdated": "November 17, 2026",
       "url": "https://www.canada.ca/content/dam/ircc/documents/json/flpt-en.json"
     },
     "timelines": {
