@@ -1,0 +1,58 @@
+{
+  "capturedOn": "2026-11-21",
+  "streams": [
+    {
+      "current": {
+        "days": 183,
+        "known": true,
+        "raw": "6 months"
+      },
+      "key": "cec",
+      "totalWaiting": {
+        "count": 48200,
+        "known": true,
+        "raw": "About 48,200 people waiting"
+      }
+    },
+    {
+      "current": {
+        "days": 274,
+        "known": true,
+        "raw": "About 9 months"
+      },
+      "key": "fsw",
+      "totalWaiting": {
+        "count": 60100,
+        "known": true,
+        "raw": "About 60,100 people waiting"
+      }
+    },
+    {
+      "current": {
+        "days": 213,
+        "known": true,
+        "raw": "About 7 months"
+      },
+      "key": "pnp-ee",
+      "totalWaiting": {
+        "count": 13800,
+        "known": true,
+        "raw": "About 13,800 people waiting"
+      }
+    },
+    {
+      "current": {
+        "days": 365,
+        "known": true,
+        "raw": "About 12 months"
+      },
+      "key": "pnp-base",
+      "totalWaiting": {
+        "count": 90200,
+        "known": true,
+        "raw": "About 90,200 people waiting"
+      }
+    }
+  ],
+  "upstreamUpdated": "November 17, 2026"
+}
