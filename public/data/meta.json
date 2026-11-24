@@ -1,8 +1,8 @@
 {
-  "dataChangedAt": "2026-11-18T01:26:44.127Z",
+  "dataChangedAt": "2026-11-24T04:07:57.531Z",
   "generator": "scripts/sync.mjs",
   "history": {
-    "processingSnapshots": 122
+    "processingSnapshots": 123
   },
   "sources": {
     "admissions": {
@@ -14,8 +14,8 @@
       "url": "https://www.ircc.canada.ca/opendata-donneesouvertes/data/EN_ODP-PR-ProvImmCat.xlsx"
     },
     "draws": {
-      "hash": "1f7fb626a8c7b37d",
-      "records": 454,
+      "hash": "2ebea64aa06c1230",
+      "records": 455,
       "url": "https://www.canada.ca/content/dam/ircc/documents/json/ee_rounds_123_en.json"
     },
     "processing": {

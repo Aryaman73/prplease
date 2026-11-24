@@ -155,7 +155,7 @@
       "label": "Physicians"
     },
     {
-      "count": 116,
+      "count": 117,
       "key": "pnp",
       "label": "Provincial Nominee Program"
     },
@@ -181,6 +181,42 @@
     }
   ],
   "rounds": [
+    {
+      "category": "pnp",
+      "categoryLabel": "Provincial Nominee Program",
+      "crsCutoff": 673,
+      "date": "2026-11-23",
+      "invitations": 1999,
+      "name": "Provincial Nominee Program",
+      "number": "454",
+      "pool": {
+        "bands": {
+          "0-300": 7238,
+          "301-350": 16627,
+          "351-400": 45934,
+          "401-410": 11265,
+          "401-450": 56261,
+          "411-420": 10522,
+          "421-430": 10611,
+          "431-440": 11716,
+          "441-450": 12147,
+          "451-460": 13416,
+          "451-500": 66810,
+          "461-470": 14435,
+          "471-480": 15296,
+          "481-490": 12464,
+          "491-500": 11199,
+          "501-600": 43754,
+          "601-1200": 2068
+        },
+        "total": 238692
+      },
+      "poolAsOf": "November 22, 2026",
+      "publishedAt": "2026-11-23T12:52:16.000Z",
+      "tieBreak": "2026-07-31T03:50:44.000Z",
+      "tieBreakRaw": "July 31, 2026 at 3:50:44 UTC",
+      "version": null
+    },
     {
       "category": "transport",
       "categoryLabel": "Transport occupations",
