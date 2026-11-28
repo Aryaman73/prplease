@@ -11,7 +11,7 @@ Where the numbers on the **High Wage** tab come from. Python 3, standard library
 | `analyze.py` → `highwage_with_counts.csv` | Workers in high-wage NOCs by population; per-NOC table |
 | `invitee_tiers.py` → `invitee_tiers.json` | CEC invitees by occupation from [IRCC open data](https://open.canada.ca/data/en/dataset/593e9165-c6ce-4f9b-b519-03d315f92cd4) (NOC 2011, mapped to 2021 with StatCan's correspondence). Source of the default preset |
 | `presets.py` → `presets.json` | Tier-share presets for the projection (CEC invitees, Census populations, NPR estimate, IRCC Year-End Report Table 12a). `SHOWN` picks the few the site's dropdown offers and their labels; the rest are kept for comparison and don't ship |
-| `stockflow.py` → `cec_stock.json` | CEC candidates per CRS point at each pre-change CEC round: a daily simulation of CEC inflow, draws, expiry and attrition, fitted to every CEC cutoff and pool snapshot since June 2025, in six variants for the range. `src/highwage/model.ts` shifts this stock by the tier bonuses |
+| `stockflow.py` → `cec_stock.json` | CEC candidates per CRS point at each pre-change CEC round: a daily simulation of CEC inflow, draws, expiry and attrition, fitted to every CEC cutoff and pool snapshot from June 2025 to the change, in six variants. Stage 2 runs each fit past 3 November with the bonus applied and refits the listed-tier share to the 501-600 band of every post-change snapshot (and any post-change CEC cutoff), ruling out fits that can't match it plausibly. The site projects the next CEC cutoff from the stock at the latest post-change snapshot |
 | `build_site_data.py` → `public/data/highwage.json` | What the site loads |
 
 ## Rebuild
@@ -25,6 +25,8 @@ python3 -I research/high-wage/stockflow.py
 python3 -I research/high-wage/build_site_data.py
 ```
 
+**After each new pool snapshot or CEC draw**, rerun `stockflow.py` then `build_site_data.py` so the projection uses the latest pool (the daily sync doesn't do this).
+
 Only `build_site_data.py` is needed when IRCC updates the list: edit `highwage.tsv`, then run it. To refresh the default tier shares from IRCC's monthly invitee data, run `invitee_tiers.py`, `presets.py`, then `build_site_data.py`.
 
 ## Caveats
@@ -32,4 +34,6 @@ Only `build_site_data.py` is needed when IRCC updates the list: edit `highwage.t
 - Census data is from May 2021, before the 2022–25 rise in temporary residents.
 - The Year-End Report names only the top 15 occupations of invited candidates (about a third of invitations).
 - The NPR figures are an estimate: StatCan doesn't publish non-permanent residents at unit-group level.
-- The stock-flow fit stops at the last CEC draw before 3 November 2026. Later pool snapshots already include the new points, so refitting through them would need the bonus modelled too.
+- The pre-change fit stops at the last CEC draw before 3 November 2026; post-change data only sets the listed-tier share (stage 2).
+- IRCC publishes 501-600 as one band, so the split inside it is the model's. All of the post-change jump is attributed to the CEC bonus; non-CEC candidates gaining job-offer points would mean fewer CEC above 500 and a lower cutoff.
+- Below 500 the refitted model runs 15-32% high at the 22 November snapshot: category draws (the 27 October French draw took 5,000 from 407 up) remove more there than average attrition allows.

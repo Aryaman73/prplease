@@ -1,18 +1,18 @@
 import { renderShift } from '../chart/shift';
 import { el, field } from '../dom';
 import { int, stampDate } from '../format';
-import { project, sharesFromPercents, TIERS } from '../highwage/model';
+import { project, projectNow, TIERS } from '../highwage/model';
 import type { Draws, HighWage, Occupation, Round, StockBase, WageTier } from '../types';
 
 /**
- * High Wage — the November 2026 high-wage occupation points: what they are, what
- * they do to one applicant's score, and a projection of the next CEC cutoff.
+ * High Wage — the November 2026 high-wage occupation points: what they are, a NOC
+ * lookup, a score check against the projected next CEC cutoff, and an audit of how
+ * the first post-change pool moved against what the model expected.
  *
- * The projection is only meaningful from pool snapshots taken *before* the rule
- * takes effect; later snapshots already include the bonus and would count it
- * twice. Once a CEC round has been held under the new rules, its real cutoff is
- * shown beside the projection rather than replacing it, so the estimate can be
- * checked against what happened.
+ * The projection comes from the latest post-change pool snapshot: stockflow.py runs
+ * each pre-change fit past 3 November with the bonus applied and refits the tier
+ * shares to that pool. Once a CEC round has been held under the new rules, its real
+ * cutoff is shown beside the projection.
  */
 
 const STORAGE_KEY = 'prplease:high-wage';
@@ -204,52 +204,41 @@ function directive(hw: HighWage) {
 
 /* ── Score check + projection (they share one projected cutoff) ───────────── */
 
+/** "November 22, 2026" (IRCC's form) -> "22 November 2026". */
+function poolDate(asOf: string): string {
+  const d = new Date(`${asOf} UTC`);
+  return Number.isNaN(d.getTime()) ? asOf : longDate(d.toISOString().slice(0, 10));
+}
+
 function applicantAndProjection(hw: HighWage, bases: StockBase[], actual: Round | null): HTMLElement[] {
   const applicant = load();
-  const defaultPreset = hw.presets.find((p) => p.key === hw.defaultPreset) ?? hw.presets[0]!;
+  const recal = hw.stockflow.recalibration;
+  const last = bases[0]!;
+  const defaultPreset = hw.presets.find((p) => p.key === recal.defaultPreset) ?? hw.presets[0]!;
+  const central = recal.variants.find((v) => v.key === 'central') ?? recal.variants[0]!;
+  const fitted = central.mixes[defaultPreset.key]!;
+  const shares = fitted.shares;
+  const assumedListed = 1 - defaultPreset.shares.none;
+  const snapshot = poolDate(recal.poolAsOf);
 
-  const proj = {
-    baseIndex: 0,
-    presetKey: defaultPreset.key as string,
-    percents: [defaultPreset.shares['2.0x'], defaultPreset.shares['1.5x'], defaultPreset.shares['1.3x']].map((v) =>
-      Math.round(v * 1000) / 10,
-    ) as [number, number, number],
-    size: null as number | null,
-  };
+  // What this page projected before the pool moved: the last pre-change round, rescored
+  // with the default shares. Kept so the refit can be read against it.
+  const before = project(hw, { base: last, shares: defaultPreset.shares });
+  const lastStock = before.today;
 
+  let size: number | null = null;
   let disposeChart: (() => void) | null = null;
 
-  /* Applicant inputs */
+  /* Applicant input: since the change, the profile's score already has the bonus in it. */
   const crsInput = el('input', {
     class: 'inspect__input pixel',
     attrs: { id: 'hw-crs', type: 'number', min: '0', max: '1200', inputmode: 'numeric', placeholder: '000', autocomplete: 'off' },
   });
   crsInput.value = applicant.crs;
-
-  let tier: WageTier | 'none' = applicant.tier;
-  const tierRadios = (['none', '1.3x', '1.5x', '2.0x'] as const).map((value) => {
-    const radio = el('input', {
-      class: 'scope__radio',
-      attrs: { type: 'radio', name: 'hw-tier', value },
-      on: { change: () => { tier = value; update(); } },
-    });
-    const points = value === 'none' ? '+0' : `+${hw.points.experience[value]}`;
-    return {
-      value,
-      radio,
-      label: el('label', { class: 'scope__option' }, radio, el('span', { text: `${TIER_LABEL[value]} ${points}` })),
-    };
-  });
-  const setTier = (value: WageTier | 'none') => {
-    tier = value;
-    update();
-  };
-
   const applicantFields = el('div', { class: 'fields hw-fields' });
   const applicantTally = el('p', { class: 'inspect__tally' });
 
   /* Projection outputs */
-  const figureBefore = el('span', { class: 'figure__value' });
   const figureAfter = el('span', { class: 'figure__value' });
   const figureDelta = el('span', { class: 'figure__label' });
   const figureRange = el('p', { class: 'hw-range' });
@@ -257,83 +246,41 @@ function applicantAndProjection(hw: HighWage, bases: StockBase[], actual: Round 
   const actualLine = el('div', { class: 'fields hw-actual' });
   const chartHost = el('div', { class: 'chart__host' });
   const tierBody = el('tbody', {});
+  const sizeInput = el('input', { class: 'hw-input', attrs: { id: 'hw-size', type: 'number', min: '100', step: '100' } });
 
-  /* Assumption controls */
-  const baseSelect = el(
-    'select',
-    { class: 'hw-input', attrs: { id: 'hw-base' } },
-    ...bases.map((r, i) =>
-      el('option', {
-        text: `No. ${r.number} · ${stampDate(r.date)} · ${int(r.invitations)} @ ${int(r.crsCutoff)}`,
-        attrs: { value: String(i) },
-      }),
+  const shareBar = el('div', {
+    class: 'hw-share',
+    attrs: {
+      role: 'img',
+      'aria-label': `Fitted share of CEC candidates by tier: ${TIERS.map((t) => `${TIER_LABEL[t]} ${(shares[t] * 100).toFixed(1)}%`).join(', ')}.`,
+    },
+  });
+  for (const t of TIERS) {
+    const pct = shares[t] * 100;
+    if (pct <= 0) continue;
+    const seg = el('div', { class: `hw-share__seg hw-tier-${TIER_CLASS[t]}` }, el('span', { text: pct >= SHARE_LABEL_MIN ? `${Math.round(pct)}%` : '' }));
+    seg.style.flexGrow = String(shares[t]);
+    seg.title = `${TIER_LABEL[t]}: ${pct.toFixed(1)}%`;
+    shareBar.append(seg);
+  }
+  const shareKeys = el(
+    'div',
+    { class: 'hw-tiers' },
+    ...TIERS.map((t) =>
+      el('div', { class: 'hw-tier' }, tierKey(t, t === 'none' ? '+0' : `+${hw.points.experience[t]}`), el('output', { class: 'hw-input hw-none', text: `${(shares[t] * 100).toFixed(1)}%` })),
     ),
   );
-  const sizeInput = el('input', { class: 'hw-input', attrs: { id: 'hw-size', type: 'number', min: '100', step: '100' } });
-  const presetSelect = el(
-    'select',
-    { class: 'hw-input hw-input--wide', attrs: { id: 'hw-preset' } },
-    ...hw.presets.map((p) => el('option', { text: p.label, attrs: { value: p.key } })),
-    el('option', { text: 'Custom', attrs: { value: 'custom' } }),
-  );
-  presetSelect.value = proj.presetKey;
-  const tierInputs = (['2.0x', '1.5x', '1.3x'] as WageTier[]).map((t) =>
-    el('input', { class: 'hw-input hw-input--num', attrs: { id: `hw-t-${t}`, type: 'number', min: '0', max: '100', step: '0.5' } }),
-  );
-  const noneOut = el('output', { class: 'hw-input hw-none', attrs: { for: tierInputs.map((i) => i.id).join(' ') } });
-
-  // One whole split into four ordered parts, so a segmented bar: it stays readable at
-  // phone width, and sliding segments show what a new data source changes.
-  const shareBar = el('div', { class: 'hw-share', attrs: { role: 'img' } });
-  const shareSegments = TIERS.map((t) => {
-    const value = el('span', {});
-    const segment = el('div', { class: `hw-share__seg hw-tier-${TIER_CLASS[t]}` }, value);
-    shareBar.append(segment);
-    return { tier: t, segment, value };
-  });
-
-  const syncTierInputs = () => {
-    tierInputs.forEach((input, i) => { input.value = String(proj.percents[i]); });
-  };
-
-  const applyPreset = (key: string) => {
-    const preset = hw.presets.find((p) => p.key === key);
-    proj.presetKey = key;
-    if (preset) {
-      proj.percents = [preset.shares['2.0x'], preset.shares['1.5x'], preset.shares['1.3x']].map((v) =>
-        Math.round(v * 1000) / 10,
-      ) as [number, number, number];
-      syncTierInputs();
-    }
-  };
 
   const update = () => {
-    const base = bases[proj.baseIndex]!;
-    const shares = sharesFromPercents(...proj.percents);
-    const result = project(hw, { base, shares, size: proj.size ?? undefined });
+    const n = size ?? last.invitations;
+    const result = projectNow(hw, n);
+    if (size === null) sizeInput.value = String(last.invitations);
 
-    // Assumption read-outs
-    noneOut.textContent = `${(shares.none * 100).toFixed(1)}%`;
-    for (const { tier: t, segment, value } of shareSegments) {
-      const pct = shares[t] * 100;
-      segment.hidden = pct <= 0;
-      segment.style.flexGrow = String(shares[t]);
-      segment.title = `${TIER_LABEL[t]}: ${pct.toFixed(1)}%`;
-      // Thin segments go unlabelled; the figure is in the box underneath.
-      value.textContent = pct >= SHARE_LABEL_MIN ? `${Math.round(pct)}%` : '';
-    }
-    shareBar.setAttribute(
-      'aria-label',
-      `Share of CEC candidates by tier: ${TIERS.map((t) => `${TIER_LABEL[t]} ${(shares[t] * 100).toFixed(1)}%`).join(', ')}.`,
-    );
-    if (proj.size === null) sizeInput.value = String(base.invitations);
-
-    figureBefore.textContent = String(result.before);
     figureAfter.textContent = String(result.after);
-    const delta = result.after - result.before;
+    const delta = result.after - last.crsCutoff;
     figureDelta.textContent = `${delta >= 0 ? '+' : ''}${delta} points`;
     figureRange.textContent = result.low === result.high ? '' : `Likely ${result.low}–${result.high}`;
-    baseNote.textContent = `From round No. ${base.number} (${stampDate(base.date)}): ${int(result.size)} invitations. Assumes ${Math.round(shares.none * 100)}% of candidates' experience is outside the list.`;
+    baseNote.textContent = `From the pool on ${snapshot}, for a CEC draw of ${int(n)}. No CEC draw had been held since No. ${last.number}, so the pool had about five extra weeks of new profiles as well as the bonus.`;
 
     actualLine.replaceChildren();
     if (actual) {
@@ -344,7 +291,8 @@ function applicantAndProjection(hw: HighWage, bases: StockBase[], actual: Round 
 
     disposeChart?.();
     disposeChart = renderShift(chartHost, {
-      today: result.today, shifted: result.shifted, before: result.before, after: result.after,
+      today: lastStock, shifted: result.now, before: last.crsCutoff, after: result.after,
+      labels: { today: stampDate(last.date), shifted: stampDate(recal.asOf) },
     });
 
     const invited = TIERS.map((t) => result.invitedByTier[t]);
@@ -365,62 +313,33 @@ function applicantAndProjection(hw: HighWage, bases: StockBase[], actual: Round 
   };
 
   const renderApplicant = (projected: number, low: number, high: number) => {
-    save({ crs: crsInput.value, tier });
-    for (const r of tierRadios) r.radio.checked = r.value === tier;
-
+    save({ crs: crsInput.value, tier: 'none' });
     applicantFields.replaceChildren();
     applicantTally.textContent = '';
-    const crs = Number(crsInput.value);
-    if (!crsInput.value.trim() || !Number.isFinite(crs) || crs < 0 || crs > 1200) {
-      applicantFields.append(el('p', { class: 'empty', text: 'Enter your current CRS score and pick your tier to see your new score.' }));
+    const score = Number(crsInput.value);
+    if (!crsInput.value.trim() || !Number.isFinite(score) || score < 0 || score > 1200) {
+      applicantFields.append(el('p', { class: 'empty', text: 'Enter the CRS score on your profile to compare it with the projected cutoff.' }));
       return;
     }
-
-    const bonus = tier === 'none' ? 0 : hw.points.experience[tier];
-    const score = crs + bonus;
     const margin = score - projected;
-
-    applicantFields.append(
-      field('Score today', int(crs)),
-      field('High-wage bonus', `+${bonus}`),
-      field('New score', int(score)),
-      field('Projected CEC cutoff', int(projected)),
-    );
+    applicantFields.append(field('Your score', int(score)), field('Projected CEC cutoff', int(projected)));
     const verdict =
       margin >= 0
         ? `${int(score)} clears the projected cutoff by ${margin}.`
         : `${int(score)} is ${-margin} short of the projected cutoff.`;
-    // The range is the honest answer near the line: say which side of it the score sits.
-    const where = score >= high ? '' : score < low ? '' : ` That is inside the likely range of ${low}–${high}, so it could go either way.`;
+    const where = score >= high || score < low ? '' : ` That is inside the likely range of ${low}–${high}, so it could go either way.`;
     applicantTally.textContent = verdict + where;
   };
 
-  /* Wiring */
-  const rerunApplicant = () => update();
-  crsInput.addEventListener('input', rerunApplicant);
-
-  baseSelect.addEventListener('change', () => {
-    proj.baseIndex = Number(baseSelect.value);
-    proj.size = null;
-    update();
-  });
+  crsInput.addEventListener('input', () => update());
   sizeInput.addEventListener('input', () => {
     const v = Number(sizeInput.value);
-    proj.size = Number.isFinite(v) && v > 0 ? v : null;
+    size = Number.isFinite(v) && v > 0 ? v : null;
     update();
   });
-  presetSelect.addEventListener('change', () => { applyPreset(presetSelect.value); update(); });
-  tierInputs.forEach((input, i) =>
-    input.addEventListener('input', () => {
-      proj.percents[i] = Number(input.value) || 0;
-      proj.presetKey = 'custom';
-      presetSelect.value = 'custom';
-      update();
-    }),
-  );
 
-  const control = (label: string, forId: string, input: HTMLElement, hint?: HTMLElement) =>
-    el('div', { class: 'hw-control' }, el('label', { class: 'inspect__label', text: label, attrs: { for: forId } }), input, hint ?? null);
+  const control = (label: string, forId: string, input: HTMLElement) =>
+    el('div', { class: 'hw-control' }, el('label', { class: 'inspect__label', text: label, attrs: { for: forId } }), input);
 
   const applicantPaper = el(
     'article',
@@ -430,25 +349,17 @@ function applicantAndProjection(hw: HighWage, bases: StockBase[], actual: Round 
       'div',
       { class: 'paper__body' },
       el('h2', { class: 'paper__title pixel', text: 'Score Check' }),
-      el('p', { class: 'paper__note', text: 'For people in Canada applying through CEC, with a year or more of skilled Canadian work experience. The bonus needs at least 12 months of that experience in a listed occupation; pick the tier of that occupation.' }),
+      el('p', {
+        class: 'paper__note',
+        text: `For people in Canada applying through CEC. Since ${longDate(hw.effective)} IRCC has rescored every profile, so the score on yours already includes any high-wage bonus. Enter it as shown.`,
+      }),
       el(
         'form',
         { class: 'inspect', on: { submit: (e) => { e.preventDefault(); update(); } } },
-        el('div', { class: 'inspect__group' }, el('label', { class: 'inspect__label', text: 'CRS today', attrs: { for: 'hw-crs' } }), crsInput),
-        el(
-          'fieldset',
-          { class: 'scope' },
-          el('legend', { class: 'inspect__label', text: "Your occupation's tier" }),
-          ...tierRadios.map((r) => r.label),
-        ),
+        el('div', { class: 'inspect__group' }, el('label', { class: 'inspect__label', text: 'CRS on your profile', attrs: { for: 'hw-crs' } }), crsInput),
       ),
-      el('p', { class: 'hw-hint', text: "Don't know your tier? Look up your NOC above." }),
       el('div', { class: 'hw-result' }, applicantFields),
       applicantTally,
-      el('p', {
-        class: 'hw-hint',
-        text: 'Job offers are not included (see Job offers above). Years of experience and spouse status do not change the result: the bonus is added to the length points already in your score.',
-      }),
     ),
   );
 
@@ -459,12 +370,12 @@ function applicantAndProjection(hw: HighWage, bases: StockBase[], actual: Round 
     el(
       'div',
       { class: 'paper__body' },
-      el('h2', { class: 'paper__title pixel', text: 'Projected Cut-off' }),
+      el('h2', { class: 'paper__title pixel', text: 'Next CEC Cut-off' }),
       el(
         'div',
         { class: 'figure hw-figure' },
-        el('span', { class: 'figure__label', text: 'Today' }),
-        figureBefore,
+        el('span', { class: 'figure__label', text: `No. ${last.number}` }),
+        el('span', { class: 'figure__value', text: String(last.crsCutoff) }),
         el('span', { class: 'figure__label', text: '→' }),
         figureAfter,
         figureDelta,
@@ -475,43 +386,30 @@ function applicantAndProjection(hw: HighWage, bases: StockBase[], actual: Round 
       el(
         'div',
         { class: 'hw-legend' },
-        el('span', {}, el('i', { class: 'shift-key shift-key--today' }), 'Today'),
-        el('span', {}, el('i', { class: 'shift-key shift-key--after' }), 'With high-wage points'),
+        el('span', {}, el('i', { class: 'shift-key shift-key--today' }), `Before the last pre-change draw (${stampDate(last.date)})`),
+        el('span', {}, el('i', { class: 'shift-key shift-key--after' }), `Pool on ${stampDate(recal.asOf)}, with the bonus`),
       ),
       chartHost,
-      el('p', { class: 'hw-hint', text: 'CEC candidates per 5-point bin, as the stock-flow model estimates them for this round.' }),
+      el('p', { class: 'hw-hint', text: 'CEC candidates per 5-point bin, as the stock-flow model estimates them. IRCC only publishes 501–600 as one band, so the shape inside it is the model’s.' }),
       el(
         'section',
         { class: 'hw-assumptions' },
         el('h3', { class: 'inspect__label', text: 'Assumptions' }),
-        el(
-          'div',
-          { class: 'hw-grid' },
-          control('Base round (pool snapshot)', 'hw-base', baseSelect),
-          control('Draw size', 'hw-size', sizeInput),
-        ),
+        el('div', { class: 'hw-grid' }, control('Draw size', 'hw-size', sizeInput)),
         el(
           'div',
           { class: 'hw-control hw-share-block' },
-          el('label', { class: 'inspect__label', text: 'Who is in which tier', attrs: { for: 'hw-preset' } }),
-          presetSelect,
+          el('span', { class: 'inspect__label', text: `Who is in which tier, fitted to the ${stampDate(recal.asOf)} pool` }),
           shareBar,
-          el(
-            'div',
-            { class: 'hw-tiers' },
-            ...(['2.0x', '1.5x', '1.3x'] as WageTier[]).map((t, i) =>
-              el('label', { class: 'hw-tier', attrs: { for: tierInputs[i]!.id } }, tierKey(t, `+${hw.points.experience[t]}`), tierInputs[i]!),
-            ),
-            el('div', { class: 'hw-tier' }, tierKey('none', '+0'), noneOut),
-          ),
+          shareKeys,
+          el('p', {
+            class: 'hw-hint',
+            text: `${defaultPreset.label}, scaled until the model reproduces the pool's 501–600 band: ${Math.round(fitted.listed * 100)}% of CEC candidates in listed tiers, up from the ${Math.round(assumedListed * 100)}% assumed before.`,
+          }),
         ),
       ),
     ),
-    el(
-      'div',
-      { class: 'paper__body hw-caption' },
-      el('h3', { class: 'inspect__label hw-subhead', text: 'Invited at the projected cutoff' }),
-    ),
+    el('div', { class: 'paper__body hw-caption' }, el('h3', { class: 'inspect__label hw-subhead', text: 'Invited at the projected cutoff' })),
     el(
       'div',
       { class: 'paper__body paper__body--flush' },
@@ -528,14 +426,120 @@ function applicantAndProjection(hw: HighWage, bases: StockBase[], actual: Round 
     ),
   );
 
-  syncTierInputs();
   update();
-  return [occupationLookup(hw, setTier), applicantPaper, projectionPaper];
+  return [occupationLookup(hw), applicantPaper, projectionPaper, poolCheck(hw, before.after, last)];
+}
+
+/* ── How the pool moved against the prediction ─────────────────────────────── */
+
+const CHECK_BANDS = ['461-470', '471-480', '481-490', '491-500', '501-600'];
+
+function poolCheck(hw: HighWage, projectedBefore: number, last: StockBase): HTMLElement {
+  const recal = hw.stockflow.recalibration;
+  const central = recal.variants.find((v) => v.key === 'central') ?? recal.variants[0]!;
+  const defaultPreset = hw.presets.find((p) => p.key === recal.defaultPreset) ?? hw.presets[0]!;
+  const fitted = central.mixes[defaultPreset.key]!;
+  const cell = (v: number | null | undefined, cls = 'num') => el('td', { class: cls, text: v == null ? '—' : int(v) });
+  const headline = projectNow(hw, last.invitations).after;
+
+  const rows = CHECK_BANDS.map((b) =>
+    el(
+      'tr',
+      {},
+      el('td', { class: 'strong', text: b }),
+      cell(recal.previous[b]),
+      cell(central.asAssumed[b]),
+      cell(central.predicted?.[b]),
+      cell(recal.observed[b], 'num strong'),
+    ),
+  );
+
+  const verdicts = recal.variants.map((v) => {
+    const kept = Object.values(v.mixes).filter((m) => !m.ruledOut);
+    const meta = v.ruledOut && !kept.length
+      ? `Ruled out: ${v.ruledOut}`
+      : `Kept: ${Math.round(Math.min(...kept.map((m) => m.listed)) * 100)}–${Math.round(Math.max(...kept.map((m) => m.listed)) * 100)}% listed`;
+    return el(
+      'li',
+      { class: 'verdict' },
+      el('span', { class: 'verdict__name', text: v.label }),
+      el('span', { class: `verdict__meta${kept.length ? ' hw-listed' : ''}`, text: meta }),
+    );
+  });
+
+  const prev = recal.previous['501-600'] ?? 0;
+  const seen = recal.observed['501-600'] ?? 0;
+  const expected = central.asAssumed['501-600'] ?? 0;
+  // How far the refitted model sits above the pool in the bands it isn't fitted to.
+  const misses = CHECK_BANDS.filter((b) => b !== '501-600').map((b) => {
+    const o = recal.observed[b];
+    const p = central.predicted?.[b];
+    return o && p ? Math.round(((p - o) / o) * 100) : 0;
+  });
+  const missLo = Math.min(...misses);
+  const missHi = Math.max(...misses);
+
+  return el(
+    'article',
+    { class: 'paper' },
+    el('div', { class: 'paper__band paper__band--rust' }, el('span', { text: 'Audit' })),
+    el(
+      'div',
+      { class: 'paper__body' },
+      el('h2', { class: 'paper__title pixel', text: 'Did the Pool Move as Expected?' }),
+      el(
+        'p',
+        { class: 'paper__note' },
+        `The ${poolDate(recal.poolAsOf)} pool is the first since the change. With the shares this page assumed, the model expected 501–600 to grow from ${int(prev)} to about ${int(expected)}. It grew to ${int(seen)}: more CEC candidates are in listed occupations than IRCC's invitee data suggested. Matching it takes ${Math.round(fitted.listed * 100)}% of them in listed tiers, not ${Math.round((1 - defaultPreset.shares.none) * 100)}%. `,
+        el('strong', { text: `That moves the projected cutoff for ${int(last.invitations)} invitations from ${projectedBefore} to ${headline}.` }),
+      ),
+    ),
+    el(
+      'div',
+      { class: 'paper__body paper__body--flush' },
+      el(
+        'div',
+        { class: 'ledger__scroll' },
+        el(
+          'table',
+          { class: 'ledger' },
+          el(
+            'thead',
+            {},
+            el(
+              'tr',
+              {},
+              el('th', { text: 'CRS band' }),
+              el('th', { class: 'num', text: stampDate(new Date(`${recal.previousPoolAsOf} UTC`).toISOString().slice(0, 10)) }),
+              el('th', { class: 'num', text: 'Expected' }),
+              el('th', { class: 'num', text: 'Refitted' }),
+              el('th', { class: 'num', text: stampDate(recal.asOf) }),
+            ),
+          ),
+          el('tbody', {}, ...rows),
+        ),
+      ),
+    ),
+    el(
+      'div',
+      { class: 'paper__body' },
+      el('p', {
+        class: 'hw-hint',
+        text: `Whole pool, CEC and not. Only 501–600 is fitted. Below 500 the refitted model runs ${missLo}–${missHi}% high, largely because category draws such as the French-language draw on 27 October (5,000 invited from 407 up) take far more from those bands than the model’s average attrition allows.`,
+      }),
+      el('h3', { class: 'inspect__label hw-subhead hw-subhead--gap', text: 'Which fits survived' }),
+      el('ul', { class: 'verdicts' }, ...verdicts),
+      el('p', {
+        class: 'hw-hint',
+        text: `Each fit is refitted with every tier mix in the presets. One is ruled out if it can't reproduce the 501–600 band, needs over ${Math.round(recal.maxListed * 100)}% of CEC candidates in listed tiers (no source comes close), or misses 461–500 by more than half. The likely range spans the rest.`,
+      }),
+    ),
+  );
 }
 
 /* ── NOC lookup ────────────────────────────────────────────────────────────── */
 
-function occupationLookup(hw: HighWage, onPick: (tier: WageTier | 'none') => void) {
+function occupationLookup(hw: HighWage) {
   const input = el('input', {
     class: 'hw-input hw-input--wide',
     attrs: { id: 'hw-lookup', type: 'search', placeholder: 'e.g. 21231, or software engineer', autocomplete: 'off', spellcheck: 'false' },
@@ -560,21 +564,6 @@ function occupationLookup(hw: HighWage, onPick: (tier: WageTier | 'none') => voi
           { class: 'verdict' },
           el('span', { class: 'verdict__name', text: `${o.noc} · ${o.title}` }),
           el('span', { class: `verdict__meta${o.tier ? ' hw-listed' : ''}`, text: label }),
-          el(
-            'span',
-            { class: 'verdict__mark' },
-            el('button', {
-              class: 'hw-pick',
-              text: 'Use',
-              attrs: { type: 'button', 'aria-label': `Use ${o.title} (${label}) in the score check` },
-              on: {
-                click: () => {
-                  onPick(o.tier ?? 'none');
-                  status.textContent = `Score check set to ${o.tier ? TIER_LABEL[o.tier] : 'Not listed'} (${o.noc}).`;
-                },
-              },
-            }),
-          ),
         ),
       );
     }
@@ -622,10 +611,11 @@ function finePrint(hw: HighWage) {
         'ul',
         { class: 'hw-rules hw-rules--fine' },
         el('li', {}, el('strong', { text: 'This is an estimate, not advice.' }), ' Check your own points with IRCC before acting on it.'),
-        el('li', {}, 'IRCC publishes the pool in bands and says nothing about how many of each band are CEC candidates, the only ones a CEC draw can invite. So the CEC pool is modelled instead: new CEC profiles arrive every day, each CEC draw takes everyone above its cutoff, profiles expire after 12 months, and a weekly attrition rate covers everything else (category draws, PNP nominations). Fitted to every CEC draw and pool snapshot since June 2025, it reproduces their cutoffs to within about 1.5 points, and it finds CEC candidates piling up just below the cutoff, which a smooth spread of the bands misses.'),
-        el('li', {}, 'The likely range spans six versions of that fit (different inflow shapes, attrition and weighting), each with the listed tiers’ shares 20% lower or higher than selected. Each version is moved by the point or so it misses the chosen round’s real cutoff, so “Today” matches it.'),
-        el('li', {}, 'Tiers are assumed independent of score. If the shares differ by score, the cutoff could move several points either way.'),
-        el('li', {}, 'This projects the same draw rescored: no new profiles, no change in draw size, no new category draws. The real first draw will probably come in higher. Invitations pause for up to two weeks while scores are recalculated, new CEC profiles keep arriving meanwhile (each extra two weeks adds roughly 2–4 points), and some candidates will add job offers that raise their scores.'),
+        el('li', {}, 'IRCC publishes the pool in bands and says nothing about how many of each band are CEC candidates, the only ones a CEC draw can invite. So the CEC pool is modelled instead: new CEC profiles arrive every day, each CEC draw takes everyone above its cutoff, profiles expire after 12 months, and a weekly attrition rate covers everything else (category draws, PNP nominations). Fitted to every CEC draw and pool snapshot from June 2025 to the change, it reproduces their cutoffs to within about 1.5 points.'),
+        el('li', {}, 'Each fit is then run past 3 November: everyone in a listed tier moves up by its bonus, and new profiles arrive already moved. The share in listed tiers is the unknown, so it is scaled until the model matches the 501–600 band in every pool snapshot since the change (and any CEC draw under the new rules). The fit is rerun as new snapshots arrive.'),
+        el('li', {}, 'The likely range spans the fits that survive that check, each with every preset’s mix between the three tiers.'),
+        el('li', {}, 'All of the jump in 501–600 is put down to the CEC bonus. Some of it may be candidates outside CEC who gained new job-offer points; if so, fewer CEC candidates are above 500 than modelled and the cutoff would come in lower.'),
+        el('li', {}, 'Tiers are assumed independent of score. The projection is for the pool as of its snapshot: profiles that arrive before the draw push the cutoff up (roughly 1–2 points a week), and category draws in between can pull it down.'),
         el('li', {}, '“Who is in which tier” sources. “CEC invitees”, the default, is IRCC’s open data on CEC invitees by occupation for 2026 so far, with NOC 2011 codes mapped to NOC 2021. “Top invited occupations” is the 15 most common occupations of all invited candidates in IRCC’s Express Entry Year-End Report 2024, about a third of invitations, assuming the rest look the same. The 2021 Census options use employment in TEER 0–3 occupations (Statistics Canada tables 98-10-0449, 98-10-0316, 98-10-0585). “CEC immigrants” describes people who landed in 2016–21 and puts noticeably more of them in listed occupations than recent CEC invitees. Temporary-resident shares are estimated from 4-digit occupation groups.'),
       ),
       el(

@@ -129,6 +129,44 @@ export interface StockFit {
   nonCecPerBand: Record<string, number>;
 }
 
+export interface RecalibratedMix {
+  /** Factor on the preset's listed shares that fits the post-change pool. */
+  factor: number;
+  listed: number;
+  shares: TierShares;
+  ruledOut: string | null;
+}
+
+export interface RecalibratedVariant {
+  key: string;
+  label: string;
+  /** Bands the fit predicted at the snapshot with the default preset as it stood. */
+  asAssumed: Record<string, number>;
+  /** The same with the refitted shares; absent when the variant is ruled out. */
+  predicted?: Record<string, number>;
+  ruledOut: string | null;
+  mixes: Record<string, RecalibratedMix>;
+}
+
+/** Stage 2 of research/high-wage/stockflow.py: the fit rerun past the change and refitted to the pool. */
+export interface Recalibration {
+  effective: string;
+  /** ISO date of the latest post-change pool snapshot. */
+  asOf: string;
+  poolAsOf: string;
+  previousPoolAsOf: string;
+  maxListed: number;
+  defaultPreset: string;
+  observed: Record<string, number | null>;
+  previous: Record<string, number | null>;
+  from: number;
+  variants: RecalibratedVariant[];
+  /** CEC candidates per CRS point at the snapshot, keyed "variant|preset", surviving fits only. */
+  stock: Record<string, number[]>;
+  /** The central fit with the default preset, by tier. */
+  byTier: Record<WageTier | 'none', number[]>;
+}
+
 export interface HighWage {
   effective: string;
   listPublished: string;
@@ -149,6 +187,7 @@ export interface HighWage {
     variants: StockFit[];
     /** Newest first. */
     bases: StockBase[];
+    recalibration: Recalibration;
   };
 }
 

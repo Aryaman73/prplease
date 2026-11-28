@@ -110,6 +110,37 @@ export interface Projection {
   invitedByTier: Record<WageTier | 'none', number>;
 }
 
+export interface Recalibrated {
+  after: number;
+  /** Spread of `after` across every fit and preset mix not ruled out. */
+  low: number;
+  high: number;
+  size: number;
+  /** CEC candidates per CRS point at the latest post-change snapshot (central fit, default mix). */
+  now: Float64Array;
+  invitedByTier: Record<WageTier | 'none', number>;
+}
+
+/**
+ * The next CEC cutoff from the latest post-change pool. The stock there already has
+ * the bonus in it (stockflow.py stage 2 moves everyone on 3 November and refits the
+ * tier shares to the pool's 501-600 band), so this only finds where a draw lands.
+ */
+export function projectNow(hw: HighWage, size: number): Recalibrated {
+  const r = hw.stockflow.recalibration;
+  const headline = `central|${r.defaultPreset}`;
+  const now = place(r.stock[headline] ?? Object.values(r.stock)[0]!, r.from);
+  const after = cutoffFor(now, size);
+  const all = Object.values(r.stock).map((v) => cutoffFor(place(v, r.from), size));
+  const byTier = Object.fromEntries(TIERS.map((t) => [t, place(r.byTier[t], r.from)])) as Record<WageTier | 'none', Float64Array>;
+  const atCutoff = now[after]!;
+  const tieShare = atCutoff > 0 ? Math.min(1, Math.max(0, (size - sumFrom(now, after + 1)) / atCutoff)) : 0;
+  const invitedByTier = Object.fromEntries(
+    TIERS.map((t) => [t, sumFrom(byTier[t], after + 1) + byTier[t][after]! * tieShare]),
+  ) as Record<WageTier | 'none', number>;
+  return { after, low: Math.min(after, ...all), high: Math.max(after, ...all), size, now, invitedByTier };
+}
+
 export function project(hw: HighWage, input: ProjectionInput): Projection {
   const { base, shares } = input;
   const from = hw.stockflow.from;

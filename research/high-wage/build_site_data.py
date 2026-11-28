@@ -46,12 +46,14 @@ data = {
 }
 assert sum(1 for o in occupations if o["tier"]) == 186
 # Indented for readable diffs, except the stock arrays, which go on one line each.
+assert data["stockflow"].get("recalibration"), "no post-change pool snapshot: rerun stockflow.py"
 arrays = {}
-for base in data["stockflow"]["bases"]:
-    for key, values in base["stock"].items():
+recal = data["stockflow"]["recalibration"]
+for group in [b["stock"] for b in data["stockflow"]["bases"]] + [recal["stock"], recal["byTier"]]:
+    for key, values in group.items():
         token = f"@@{len(arrays)}@@"
         arrays[token] = json.dumps(values, separators=(",", ":"))
-        base["stock"][key] = token
+        group[key] = token
 text = json.dumps(data, indent=1, ensure_ascii=False)
 for token, compact in arrays.items():
     text = text.replace(f'"{token}"', compact)

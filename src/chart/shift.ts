@@ -23,6 +23,8 @@ export interface ShiftOptions {
   shifted: Float64Array;
   before: number;
   after: number;
+  /** Series names for the tooltip and cutoff labels; default "today" / "with points". */
+  labels?: { today: string; shifted: string };
 }
 
 interface Bin {
@@ -48,8 +50,9 @@ export function renderShift(container: HTMLElement, options: ShiftOptions): () =
   };
 }
 
-function paint(container: HTMLElement, { today, shifted, before, after }: ShiftOptions) {
+function paint(container: HTMLElement, { today, shifted, before, after, labels }: ShiftOptions) {
   container.replaceChildren();
+  const names = labels ?? { today: 'Today', shifted: 'With points' };
 
   const bins: Bin[] = [];
   for (let from = LO; from < HI; from += BIN) {
@@ -82,7 +85,7 @@ function paint(container: HTMLElement, { today, shifted, before, after }: ShiftO
     width, height,
     class: 'chart',
     role: 'img',
-    'aria-label': `CEC candidates by CRS score in 5-point bins, today and with high-wage points. The cutoff moves from ${before} to ${after}.`,
+    'aria-label': `CEC candidates by CRS score in 5-point bins: ${names.today} and ${names.shifted}. The cutoff moves from ${before} to ${after}.`,
   });
 
   for (const tick of yTicks) {
@@ -109,7 +112,7 @@ function paint(container: HTMLElement, { today, shifted, before, after }: ShiftO
 
   // "before" reads leftward from its line and "after" rightward from its own, so
   // two cutoffs a few points apart never print on top of each other.
-  for (const [score, label, side] of [[before, `today ${before}`, 'end'], [after, `after ${after}`, 'start']] as const) {
+  for (const [score, label, side] of [[before, labels ? `last ${before}` : `today ${before}`, 'end'], [after, labels ? `next ${after}` : `after ${after}`, 'start']] as const) {
     if (score < LO || score > HI) continue;
     const x = xOf(score);
     svg.append(svgEl('line', { x1: x, x2: x, y1: MARGIN.top - 6, y2: MARGIN.top + plotH, class: 'shift-cutoff' }));
@@ -140,8 +143,8 @@ function paint(container: HTMLElement, { today, shifted, before, after }: ShiftO
 
     tooltip.replaceChildren(
       node('div', 'chart__tooltip-value', `CRS ${b.from}–${b.from + BIN - 1}`),
-      row('shift-key shift-key--today', 'Today', int(Math.round(b.today))),
-      row('shift-key shift-key--after', 'With points', int(Math.round(b.shifted))),
+      row('shift-key shift-key--today', names.today, int(Math.round(b.today))),
+      row('shift-key shift-key--after', names.shifted, int(Math.round(b.shifted))),
       node('div', 'chart__tooltip-meta', 'CEC candidates'),
     );
     tooltip.hidden = false;
